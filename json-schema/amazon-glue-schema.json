@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/amazon/glue/job.json",
+  "title": "Amazon Glue Job",
+  "description": "Represents an Amazon Glue ETL job with its associated configuration, state, and metadata.",
+  "type": "object",
+  "required": ["name", "role", "command"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the job"
+    },
+    "role": {
+      "type": "string",
+      "description": "The IAM role associated with the job"
+    },
+    "command": {
+      "type": "object",
+      "description": "The job command configuration",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the job command"
+        },
+        "scriptLocation": {
+          "type": "string",
+          "description": "The S3 location of the script"
+        },
+        "pythonVersion": {
+          "type": "string",
+          "description": "The Python version being used"
+        }
+      }
+    },
+    "glueVersion": {
+      "type": "string",
+      "description": "The Glue version to use for the job"
+    },
+    "workerType": {
+      "type": "string",
+      "enum": ["Standard", "G.1X", "G.2X", "G.025X"],
+      "description": "The type of predefined worker"
+    },
+    "numberOfWorkers": {
+      "type": "integer",
+      "description": "The number of workers allocated"
+    },
+    "maxRetries": {
+      "type": "integer",
+      "description": "The maximum number of times to retry a failed job"
+    },
+    "timeout": {
+      "type": "integer",
+      "description": "The job timeout in minutes"
+    },
+    "connections": {
+      "type": "object",
+      "description": "The connections used by the job",
+      "properties": {
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "defaultArguments": {
+      "type": "object",
+      "description": "Default arguments for the job",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "createdOn": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time the job was created"
+    },
+    "lastModifiedOn": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time the job was last modified"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "glue": "https://docs.aws.amazon.com/glue/latest/webapi/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Job": {
+      "@id": "glue:Job",
+      "@context": {
+        "name": "schema:name",
+        "role": "glue:role",
+        "command": "glue:command",
+        "glueVersion": "glue:glueVersion",
+        "workerType": "glue:workerType",
+        "numberOfWorkers": "glue:numberOfWorkers",
+        "maxRetries": "glue:maxRetries",
+        "timeout": "glue:timeout",
+        "defaultArguments": "glue:defaultArguments",
+        "createdOn": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "lastModifiedOn": {
+          "@id": "dcterms:modified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Crawler": {
+      "@id": "glue:Crawler",
+      "@context": {
+        "name": "schema:name",
+        "role": "glue:role",
+        "databaseName": "glue:databaseName",
+        "state": "glue:crawlerState",
+        "targets": "glue:crawlerTargets"
+      }
+    }
+  }
+}

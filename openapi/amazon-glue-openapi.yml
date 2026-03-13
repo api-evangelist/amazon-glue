@@ -1,0 +1,95 @@
+openapi: 3.1.0
+info:
+  title: Amazon Glue API
+  description: >-
+    Amazon Glue is a serverless data integration service for discovering,
+    preparing, and combining data for analytics, machine learning, and
+    application development. This API enables you to create and manage ETL
+    jobs, crawlers, data catalogs, classifiers, connections, and triggers
+    for orchestrating data integration workflows.
+  version: '2017-03-31'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+externalDocs:
+  description: Amazon Glue API Reference
+  url: https://docs.aws.amazon.com/glue/latest/webapi/API_Reference.html
+servers:
+  - url: https://glue.{region}.amazonaws.com
+    description: Amazon Glue Regional Endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS Region
+tags:
+  - name: Jobs
+    description: Operations for creating and managing ETL jobs
+  - name: Crawlers
+    description: Operations for creating and managing crawlers
+  - name: Data Catalog
+    description: Operations for managing databases and tables in the Data Catalog
+  - name: Triggers
+    description: Operations for managing job triggers and workflows
+paths:
+  /:
+    post:
+      operationId: CreateJob
+      summary: Create an ETL job
+      description: Creates a new ETL job definition.
+      tags:
+        - Jobs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - Name
+                - Role
+                - Command
+              properties:
+                Name:
+                  type: string
+                  description: The name of the job
+                Role:
+                  type: string
+                  description: The IAM role associated with the job
+                Command:
+                  type: object
+                  description: The job command configuration
+                  properties:
+                    Name:
+                      type: string
+                      description: The name of the job command (glueetl, pythonshell, gluestreaming)
+                    ScriptLocation:
+                      type: string
+                      description: S3 path to the script
+                    PythonVersion:
+                      type: string
+                      description: The Python version
+                DefaultArguments:
+                  type: object
+                  description: Default arguments for the job
+                GlueVersion:
+                  type: string
+                  description: The Glue version to use
+                NumberOfWorkers:
+                  type: integer
+                  description: The number of workers
+                WorkerType:
+                  type: string
+                  enum: [Standard, G.1X, G.2X, G.025X]
+                  description: The type of worker
+      responses:
+        '200':
+          description: Job created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Name:
+                    type: string
+                    description: The name of the created job
