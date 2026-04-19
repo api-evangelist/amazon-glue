@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-workflow-run-response-schema.json",
+  "title": "GetWorkflowRunResponse",
+  "description": "GetWorkflowRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Run": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRun"
+        },
+        {
+          "description": "The requested workflow run metadata."
+        }
+      ]
+    }
+  }
+}

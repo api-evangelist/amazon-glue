@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-update-column-statistics-for-partition-response-schema.json",
+  "title": "UpdateColumnStatisticsForPartitionResponse",
+  "description": "UpdateColumnStatisticsForPartitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnStatisticsErrors"
+        },
+        {
+          "description": "Error occurred during updating column statistics data."
+        }
+      ]
+    }
+  }
+}

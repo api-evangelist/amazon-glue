@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-workflow-response-schema.json",
+  "title": "GetWorkflowResponse",
+  "description": "GetWorkflowResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Workflow": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Workflow"
+        },
+        {
+          "description": "The resource metadata for the workflow."
+        }
+      ]
+    }
+  }
+}

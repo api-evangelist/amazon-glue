@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-delete-table-version-response-schema.json",
+  "title": "BatchDeleteTableVersionResponse",
+  "description": "BatchDeleteTableVersionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableVersionErrors"
+        },
+        {
+          "description": "A list of errors encountered while trying to delete the specified table versions."
+        }
+      ]
+    }
+  }
+}

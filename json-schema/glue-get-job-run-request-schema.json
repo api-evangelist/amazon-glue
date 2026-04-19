@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-job-run-request-schema.json",
+  "title": "GetJobRunRequest",
+  "description": "GetJobRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the job definition being run."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID of the job run."
+        }
+      ]
+    },
+    "PredecessorsIncluded": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BooleanValue"
+        },
+        {
+          "description": "True if a list of predecessor runs should be returned."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobName",
+    "RunId"
+  ]
+}

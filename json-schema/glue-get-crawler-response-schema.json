@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-crawler-response-schema.json",
+  "title": "GetCrawlerResponse",
+  "description": "GetCrawlerResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Crawler": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Crawler"
+        },
+        {
+          "description": "The metadata for the specified crawler."
+        }
+      ]
+    }
+  }
+}

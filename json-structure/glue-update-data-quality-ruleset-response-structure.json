@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-data-quality-ruleset-response-structure.json",
+  "name": "UpdateDataQualityRulesetResponse",
+  "description": "UpdateDataQualityRulesetResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the data quality ruleset."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DescriptionString"
+        },
+        {
+          "description": "A description of the ruleset."
+        }
+      ]
+    },
+    "Ruleset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityRulesetString"
+        },
+        {
+          "description": "A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide."
+        }
+      ]
+    }
+  }
+}

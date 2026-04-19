@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-table-request-structure.json",
+  "name": "CreateTableRequest",
+  "description": "CreateTableRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "TableInput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableInput"
+        },
+        {
+          "description": "The <code>TableInput</code> object that defines the metadata table to create in the catalog."
+        }
+      ]
+    },
+    "PartitionIndexes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PartitionIndexList"
+        },
+        {
+          "description": "A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table."
+        }
+      ]
+    },
+    "TransactionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransactionIdString"
+        },
+        {
+          "description": "The ID of the transaction."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableInput"
+  ]
+}

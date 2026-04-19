@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-update-schema-response-schema.json",
+  "title": "UpdateSchemaResponse",
+  "description": "UpdateSchemaResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the schema."
+        }
+      ]
+    },
+    "SchemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryNameString"
+        },
+        {
+          "description": "The name of the schema."
+        }
+      ]
+    },
+    "RegistryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryNameString"
+        },
+        {
+          "description": "The name of the registry that contains the schema."
+        }
+      ]
+    }
+  }
+}

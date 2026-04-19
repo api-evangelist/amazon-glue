@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-dataflow-graph-response-schema.json",
+  "title": "GetDataflowGraphResponse",
+  "description": "GetDataflowGraphResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "DagNodes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DagNodes"
+        },
+        {
+          "description": "A list of the nodes in the resulting DAG."
+        }
+      ]
+    },
+    "DagEdges": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DagEdges"
+        },
+        {
+          "description": "A list of the edges in the resulting DAG."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-tags-request-structure.json",
+  "name": "GetTagsRequest",
+  "description": "GetTagsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the resource for which to retrieve tags."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceArn"
+  ]
+}

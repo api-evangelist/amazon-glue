@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-user-defined-functions-request-schema.json",
+  "title": "GetUserDefinedFunctionsRequest",
+  "description": "GetUserDefinedFunctionsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned."
+        }
+      ]
+    },
+    "Pattern": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "An optional function-name pattern string that filters the function definitions returned."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogGetterPageSize"
+        },
+        {
+          "description": "The maximum number of functions to return in one response."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Pattern"
+  ]
+}

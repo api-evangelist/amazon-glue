@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-check-schema-version-validity-input-schema.json",
+  "title": "CheckSchemaVersionValidityInput",
+  "description": "CheckSchemaVersionValidityInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "DataFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataFormat"
+        },
+        {
+          "description": "The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported."
+        }
+      ]
+    },
+    "SchemaDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaDefinitionString"
+        },
+        {
+          "description": "The definition of the schema that has to be validated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DataFormat",
+    "SchemaDefinition"
+  ]
+}

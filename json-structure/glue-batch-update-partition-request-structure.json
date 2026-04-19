@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-update-partition-request-structure.json",
+  "name": "BatchUpdatePartitionRequest",
+  "description": "BatchUpdatePartitionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the metadata database in which the partition is to be updated."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the metadata table in which the partition is to be updated."
+        }
+      ]
+    },
+    "Entries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchUpdatePartitionRequestEntryList"
+        },
+        {
+          "description": "A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName",
+    "Entries"
+  ]
+}

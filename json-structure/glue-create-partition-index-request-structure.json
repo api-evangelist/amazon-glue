@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-partition-index-request-structure.json",
+  "name": "CreatePartitionIndexRequest",
+  "description": "CreatePartitionIndexRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The catalog ID where the table resides."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Specifies the name of a database in which you want to create a partition index."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Specifies the name of a table in which you want to create a partition index."
+        }
+      ]
+    },
+    "PartitionIndex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PartitionIndex"
+        },
+        {
+          "description": "Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName",
+    "PartitionIndex"
+  ]
+}

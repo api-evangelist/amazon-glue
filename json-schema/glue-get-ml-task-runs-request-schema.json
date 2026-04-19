@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-ml-task-runs-request-schema.json",
+  "title": "GetMLTaskRunsRequest",
+  "description": "GetMLTaskRunsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the machine learning transform."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A token for pagination of the results. The default is empty."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of results to return. "
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskRunFilterCriteria"
+        },
+        {
+          "description": "The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run."
+        }
+      ]
+    },
+    "Sort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskRunSortCriteria"
+        },
+        {
+          "description": "The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TransformId"
+  ]
+}

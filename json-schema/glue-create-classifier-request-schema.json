@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-create-classifier-request-schema.json",
+  "title": "CreateClassifierRequest",
+  "description": "CreateClassifierRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "GrokClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreateGrokClassifierRequest"
+        },
+        {
+          "description": "A <code>GrokClassifier</code> object specifying the classifier to create."
+        }
+      ]
+    },
+    "XMLClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreateXMLClassifierRequest"
+        },
+        {
+          "description": "An <code>XMLClassifier</code> object specifying the classifier to create."
+        }
+      ]
+    },
+    "JsonClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreateJsonClassifierRequest"
+        },
+        {
+          "description": "A <code>JsonClassifier</code> object specifying the classifier to create."
+        }
+      ]
+    },
+    "CsvClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreateCsvClassifierRequest"
+        },
+        {
+          "description": "A <code>CsvClassifier</code> object specifying the classifier to create."
+        }
+      ]
+    }
+  }
+}

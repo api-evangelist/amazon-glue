@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-reset-job-bookmark-request-schema.json",
+  "title": "ResetJobBookmarkRequest",
+  "description": "ResetJobBookmarkRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobName"
+        },
+        {
+          "description": "The name of the job in question."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RunId"
+        },
+        {
+          "description": "The unique run identifier associated with this job run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobName"
+  ]
+}

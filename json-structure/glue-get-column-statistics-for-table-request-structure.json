@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-column-statistics-for-table-request-structure.json",
+  "name": "GetColumnStatisticsForTableRequest",
+  "description": "GetColumnStatisticsForTableRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database where the partitions reside."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the partitions' table."
+        }
+      ]
+    },
+    "ColumnNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GetColumnNamesList"
+        },
+        {
+          "description": "A list of the column names."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName",
+    "ColumnNames"
+  ]
+}

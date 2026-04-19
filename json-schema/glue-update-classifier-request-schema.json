@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-update-classifier-request-schema.json",
+  "title": "UpdateClassifierRequest",
+  "description": "UpdateClassifierRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "GrokClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateGrokClassifierRequest"
+        },
+        {
+          "description": "A <code>GrokClassifier</code> object with updated fields."
+        }
+      ]
+    },
+    "XMLClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateXMLClassifierRequest"
+        },
+        {
+          "description": "An <code>XMLClassifier</code> object with updated fields."
+        }
+      ]
+    },
+    "JsonClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateJsonClassifierRequest"
+        },
+        {
+          "description": "A <code>JsonClassifier</code> object with updated fields."
+        }
+      ]
+    },
+    "CsvClassifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UpdateCsvClassifierRequest"
+        },
+        {
+          "description": "A <code>CsvClassifier</code> object with updated fields."
+        }
+      ]
+    }
+  }
+}

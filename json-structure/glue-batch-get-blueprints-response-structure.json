@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-get-blueprints-response-structure.json",
+  "name": "BatchGetBlueprintsResponse",
+  "description": "BatchGetBlueprintsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Blueprints": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Blueprints"
+        },
+        {
+          "description": "Returns a list of blueprint as a <code>Blueprints</code> object."
+        }
+      ]
+    },
+    "MissingBlueprints": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BlueprintNames"
+        },
+        {
+          "description": "Returns a list of <code>BlueprintNames</code> that were not found."
+        }
+      ]
+    }
+  }
+}

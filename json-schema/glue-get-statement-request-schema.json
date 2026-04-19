@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-statement-request-schema.json",
+  "title": "GetStatementRequest",
+  "description": "GetStatementRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SessionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The Session ID of the statement."
+        }
+      ]
+    },
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IntegerValue"
+        },
+        {
+          "description": "The Id of the statement."
+        }
+      ]
+    },
+    "RequestOrigin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationNameString"
+        },
+        {
+          "description": "The origin of the request."
+        }
+      ]
+    }
+  },
+  "required": [
+    "SessionId",
+    "Id"
+  ]
+}

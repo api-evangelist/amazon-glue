@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-start-job-run-response-schema.json",
+  "title": "StartJobRunResponse",
+  "description": "StartJobRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobRunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID assigned to this job run."
+        }
+      ]
+    }
+  }
+}

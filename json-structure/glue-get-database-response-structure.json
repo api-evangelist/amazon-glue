@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-database-response-structure.json",
+  "name": "GetDatabaseResponse",
+  "description": "GetDatabaseResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Database": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Database"
+        },
+        {
+          "description": "The definition of the specified database in the Data Catalog."
+        }
+      ]
+    }
+  }
+}

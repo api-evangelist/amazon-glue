@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-delete-table-version-request-structure.json",
+  "name": "BatchDeleteTableVersionRequest",
+  "description": "BatchDeleteTableVersionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the table. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "VersionIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchDeleteTableVersionList"
+        },
+        {
+          "description": "A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName",
+    "VersionIds"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-workflow-runs-request-schema.json",
+  "title": "GetWorkflowRunsRequest",
+  "description": "GetWorkflowRunsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow whose metadata of runs should be returned."
+        }
+      ]
+    },
+    "IncludeGraph": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether to include the workflow graph in response or not."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "The maximum size of the response."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of workflow runs to be included in the response."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

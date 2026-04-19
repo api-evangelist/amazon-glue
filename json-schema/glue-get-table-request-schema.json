@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-table-request-schema.json",
+  "title": "GetTableRequest",
+  "description": "GetTableRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "TransactionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransactionIdString"
+        },
+        {
+          "description": "The transaction ID at which to read the table contents. "
+        }
+      ]
+    },
+    "QueryAsOfTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "Name"
+  ]
+}

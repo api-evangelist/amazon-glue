@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-session-response-structure.json",
+  "name": "CreateSessionResponse",
+  "description": "CreateSessionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Session": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Session"
+        },
+        {
+          "description": "Returns the session object in the response."
+        }
+      ]
+    }
+  }
+}

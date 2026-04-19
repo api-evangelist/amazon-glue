@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-security-configuration-response-structure.json",
+  "name": "CreateSecurityConfigurationResponse",
+  "description": "CreateSecurityConfigurationResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name assigned to the new security configuration."
+        }
+      ]
+    },
+    "CreatedTimestamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimestampValue"
+        },
+        {
+          "description": "The time at which the new security configuration was created."
+        }
+      ]
+    }
+  }
+}

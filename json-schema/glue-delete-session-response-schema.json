@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-session-response-schema.json",
+  "title": "DeleteSessionResponse",
+  "description": "DeleteSessionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Returns the ID of the deleted session."
+        }
+      ]
+    }
+  }
+}

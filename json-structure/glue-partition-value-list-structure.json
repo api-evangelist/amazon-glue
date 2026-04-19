@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-partition-value-list-structure.json",
+  "name": "PartitionValueList",
+  "description": "Contains a list of values defining partitions.",
+  "type": "object",
+  "properties": {
+    "Values": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueStringList"
+        },
+        {
+          "description": "The list of values."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Values"
+  ]
+}

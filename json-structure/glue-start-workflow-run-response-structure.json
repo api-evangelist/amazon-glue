@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-start-workflow-run-response-structure.json",
+  "name": "StartWorkflowRunResponse",
+  "description": "StartWorkflowRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "An Id for the new run."
+        }
+      ]
+    }
+  }
+}

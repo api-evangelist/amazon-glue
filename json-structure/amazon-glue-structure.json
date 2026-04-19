@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/amazon-glue-structure.json",
+  "name": "Amazon Glue Job",
+  "description": "Represents an Amazon Glue ETL job with its associated configuration, state, and metadata.",
+  "type": "object",
+  "required": [
+    "name",
+    "role",
+    "command"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the job"
+    },
+    "role": {
+      "type": "string",
+      "description": "The IAM role associated with the job"
+    },
+    "command": {
+      "type": "object",
+      "description": "The job command configuration",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the job command"
+        },
+        "scriptLocation": {
+          "type": "string",
+          "description": "The S3 location of the script"
+        },
+        "pythonVersion": {
+          "type": "string",
+          "description": "The Python version being used"
+        }
+      }
+    },
+    "glueVersion": {
+      "type": "string",
+      "description": "The Glue version to use for the job"
+    },
+    "workerType": {
+      "type": "string",
+      "enum": [
+        "Standard",
+        "G.1X",
+        "G.2X",
+        "G.025X"
+      ],
+      "description": "The type of predefined worker"
+    },
+    "numberOfWorkers": {
+      "type": "int32",
+      "description": "The number of workers allocated"
+    },
+    "maxRetries": {
+      "type": "int32",
+      "description": "The maximum number of times to retry a failed job"
+    },
+    "timeout": {
+      "type": "int32",
+      "description": "The job timeout in minutes"
+    },
+    "connections": {
+      "type": "object",
+      "description": "The connections used by the job",
+      "properties": {
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "defaultArguments": {
+      "type": "object",
+      "description": "Default arguments for the job",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "createdOn": {
+      "type": "datetime",
+      "description": "The time the job was created"
+    },
+    "lastModifiedOn": {
+      "type": "datetime",
+      "description": "The time the job was last modified"
+    }
+  }
+}

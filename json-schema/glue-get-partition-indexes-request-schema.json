@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-partition-indexes-request-schema.json",
+  "title": "GetPartitionIndexesRequest",
+  "description": "GetPartitionIndexesRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The catalog ID where the table resides."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Specifies the name of a database from which you want to retrieve partition indexes."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Specifies the name of a table for which you want to retrieve the partition indexes."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, included if this is a continuation call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName"
+  ]
+}

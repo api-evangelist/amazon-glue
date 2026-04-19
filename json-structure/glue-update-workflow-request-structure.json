@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-workflow-request-structure.json",
+  "name": "UpdateWorkflowRequest",
+  "description": "UpdateWorkflowRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow to be updated."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "The description of the workflow."
+        }
+      ]
+    },
+    "DefaultRunProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunProperties"
+        },
+        {
+          "description": "A collection of properties to be used as part of each execution of the workflow."
+        }
+      ]
+    },
+    "MaxConcurrentRuns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableInteger"
+        },
+        {
+          "description": "You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-list-statements-response-structure.json",
+  "name": "ListStatementsResponse",
+  "description": "ListStatementsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Statements": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatementList"
+        },
+        {
+          "description": "Returns the list of statements."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationToken"
+        },
+        {
+          "description": "A continuation token, if not all statements have yet been returned."
+        }
+      ]
+    }
+  }
+}

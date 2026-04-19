@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-delete-table-response-structure.json",
+  "name": "BatchDeleteTableResponse",
+  "description": "BatchDeleteTableResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableErrors"
+        },
+        {
+          "description": "A list of errors encountered in attempting to delete the specified tables."
+        }
+      ]
+    }
+  }
+}

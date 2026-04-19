@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-create-user-defined-function-request-schema.json",
+  "title": "CreateUserDefinedFunctionRequest",
+  "description": "CreateUserDefinedFunctionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database in which to create the function."
+        }
+      ]
+    },
+    "FunctionInput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserDefinedFunctionInput"
+        },
+        {
+          "description": "A <code>FunctionInput</code> object that defines the function to create in the Data Catalog."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "FunctionInput"
+  ]
+}

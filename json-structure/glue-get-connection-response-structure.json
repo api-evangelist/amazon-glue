@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-connection-response-structure.json",
+  "name": "GetConnectionResponse",
+  "description": "GetConnectionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Connection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Connection"
+        },
+        {
+          "description": "The requested connection definition."
+        }
+      ]
+    }
+  }
+}

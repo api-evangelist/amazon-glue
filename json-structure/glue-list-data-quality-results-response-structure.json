@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-list-data-quality-results-response-structure.json",
+  "name": "ListDataQualityResultsResponse",
+  "description": "ListDataQualityResultsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Results": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityResultDescriptionList"
+        },
+        {
+          "description": "A list of <code>DataQualityResultDescription</code> objects."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A pagination token, if more results are available."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Results"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-stop-job-run-response-structure.json",
+  "name": "BatchStopJobRunResponse",
+  "description": "BatchStopJobRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SuccessfulSubmissions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchStopJobRunSuccessfulSubmissionList"
+        },
+        {
+          "description": "A list of the JobRuns that were successfully submitted for stopping."
+        }
+      ]
+    },
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchStopJobRunErrorList"
+        },
+        {
+          "description": "A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error."
+        }
+      ]
+    }
+  }
+}

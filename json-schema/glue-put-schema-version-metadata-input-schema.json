@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-put-schema-version-metadata-input-schema.json",
+  "title": "PutSchemaVersionMetadataInput",
+  "description": "PutSchemaVersionMetadataInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaId"
+        },
+        {
+          "description": "The unique ID for the schema."
+        }
+      ]
+    },
+    "SchemaVersionNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionNumber"
+        },
+        {
+          "description": "The version number of the schema."
+        }
+      ]
+    },
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The unique version ID of the schema version."
+        }
+      ]
+    },
+    "MetadataKeyValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetadataKeyValuePair"
+        },
+        {
+          "description": "The metadata key's corresponding value."
+        }
+      ]
+    }
+  },
+  "required": [
+    "MetadataKeyValue"
+  ]
+}

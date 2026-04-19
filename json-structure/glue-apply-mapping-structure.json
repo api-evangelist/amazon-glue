@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-apply-mapping-structure.json",
+  "name": "ApplyMapping",
+  "description": "Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeName"
+        },
+        {
+          "description": "The name of the transform node."
+        }
+      ]
+    },
+    "Inputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OneInput"
+        },
+        {
+          "description": "The data inputs identified by their node names."
+        }
+      ]
+    },
+    "Mapping": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Mappings"
+        },
+        {
+          "description": "Specifies the mapping of data property keys in the data source to data property keys in the data target."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Inputs",
+    "Mapping"
+  ]
+}

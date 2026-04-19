@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-stop-job-run-request-schema.json",
+  "title": "BatchStopJobRunRequest",
+  "description": "BatchStopJobRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the job definition for which to stop job runs."
+        }
+      ]
+    },
+    "JobRunIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchStopJobRunJobRunIdList"
+        },
+        {
+          "description": "A list of the <code>JobRunIds</code> that should be stopped for that job definition."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobName",
+    "JobRunIds"
+  ]
+}

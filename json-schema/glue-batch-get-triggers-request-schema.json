@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-triggers-request-schema.json",
+  "title": "BatchGetTriggersRequest",
+  "description": "BatchGetTriggersRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TriggerNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerNameList"
+        },
+        {
+          "description": "A list of trigger names, which may be the names returned from the <code>ListTriggers</code> operation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TriggerNames"
+  ]
+}

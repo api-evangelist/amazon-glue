@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-resume-workflow-run-response-structure.json",
+  "name": "ResumeWorkflowRunResponse",
+  "description": "ResumeWorkflowRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID."
+        }
+      ]
+    },
+    "NodeIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeIdList"
+        },
+        {
+          "description": "A list of the node IDs for the nodes that were actually restarted."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-resume-workflow-run-request-schema.json",
+  "title": "ResumeWorkflowRunRequest",
+  "description": "ResumeWorkflowRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the workflow to resume."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID of the workflow run to resume."
+        }
+      ]
+    },
+    "NodeIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeIdList"
+        },
+        {
+          "description": "A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RunId",
+    "NodeIds"
+  ]
+}

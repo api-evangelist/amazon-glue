@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-update-job-from-source-control-request-schema.json",
+  "title": "UpdateJobFromSourceControlRequest",
+  "description": "UpdateJobFromSourceControlRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the Glue job to be synchronized to or from the remote repository."
+        }
+      ]
+    },
+    "Provider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SourceControlProvider"
+        },
+        {
+          "description": "The provider for the remote repository."
+        }
+      ]
+    },
+    "RepositoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the remote repository that contains the job artifacts."
+        }
+      ]
+    },
+    "RepositoryOwner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The owner of the remote repository that contains the job artifacts."
+        }
+      ]
+    },
+    "BranchName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "An optional branch in the remote repository."
+        }
+      ]
+    },
+    "Folder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "An optional folder in the remote repository."
+        }
+      ]
+    },
+    "CommitId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CommitIdString"
+        },
+        {
+          "description": "A commit ID for a commit in the remote repository."
+        }
+      ]
+    },
+    "AuthStrategy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SourceControlAuthStrategy"
+        },
+        {
+          "description": "The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token."
+        }
+      ]
+    },
+    "AuthToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AuthTokenString"
+        },
+        {
+          "description": "The value of the authorization token."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-aggregate-schema.json",
+  "title": "Aggregate",
+  "description": "Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeName"
+        },
+        {
+          "description": "The name of the transform node."
+        }
+      ]
+    },
+    "Inputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OneInput"
+        },
+        {
+          "description": "Specifies the fields and rows to use as inputs for the aggregate transform."
+        }
+      ]
+    },
+    "Groups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueStudioPathList"
+        },
+        {
+          "description": "Specifies the fields to group by."
+        }
+      ]
+    },
+    "Aggs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregateOperations"
+        },
+        {
+          "description": "Specifies the aggregate functions to be performed on specified fields. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Inputs",
+    "Groups",
+    "Aggs"
+  ]
+}

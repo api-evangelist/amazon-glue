@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-remove-schema-version-metadata-response-structure.json",
+  "name": "RemoveSchemaVersionMetadataResponse",
+  "description": "RemoveSchemaVersionMetadataResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the schema."
+        }
+      ]
+    },
+    "SchemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryNameString"
+        },
+        {
+          "description": "The name of the schema."
+        }
+      ]
+    },
+    "RegistryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryNameString"
+        },
+        {
+          "description": "The name of the registry."
+        }
+      ]
+    },
+    "LatestVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LatestSchemaVersionBoolean"
+        },
+        {
+          "description": "The latest version of the schema."
+        }
+      ]
+    },
+    "VersionNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionLongNumber"
+        },
+        {
+          "description": "The version number of the schema."
+        }
+      ]
+    },
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The version ID for the schema version."
+        }
+      ]
+    },
+    "MetadataKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetadataKeyString"
+        },
+        {
+          "description": "The metadata key."
+        }
+      ]
+    },
+    "MetadataValue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetadataValueString"
+        },
+        {
+          "description": "The value of the metadata key."
+        }
+      ]
+    }
+  }
+}

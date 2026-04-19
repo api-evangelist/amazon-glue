@@ -1,0 +1,59 @@
+rules:
+  info-title-format:
+    description: API title must reference Amazon Glue
+    severity: warn
+    given: "$.info.title"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Amazon Glue"
+  info-description-required:
+    severity: error
+    given: "$.info"
+    then:
+      field: description
+      function: truthy
+  operation-summary-required:
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: summary
+      function: truthy
+  operation-id-required:
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+  operation-summary-company-prefix:
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^Amazon Glue"
+  response-success-required:
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          anyOf:
+            - required: ["200"]
+            - required: ["201"]
+            - required: ["204"]
+  no-empty-descriptions:
+    severity: error
+    given: "$..description"
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"
+  microcks-operation-extension:
+    severity: info
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: x-microcks-operation
+      function: truthy

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-athena-connector-source-schema.json",
+  "title": "AthenaConnectorSource",
+  "description": "Specifies a connector to an Amazon Athena data source.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeName"
+        },
+        {
+          "description": "The name of the data source."
+        }
+      ]
+    },
+    "ConnectionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The name of the connection that is associated with the connector."
+        }
+      ]
+    },
+    "ConnectorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The name of a connector that assists with accessing the data store in Glue Studio."
+        }
+      ]
+    },
+    "ConnectionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store."
+        }
+      ]
+    },
+    "ConnectionTable": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringPropertyWithQuote"
+        },
+        {
+          "description": "The name of the table in the data source."
+        }
+      ]
+    },
+    "SchemaName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>."
+        }
+      ]
+    },
+    "OutputSchemas": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueSchemas"
+        },
+        {
+          "description": "Specifies the data schema for the custom Athena source."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "ConnectionName",
+    "ConnectorName",
+    "ConnectionType",
+    "SchemaName"
+  ]
+}

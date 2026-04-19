@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-unfiltered-table-metadata-request-structure.json",
+  "name": "GetUnfilteredTableMetadataRequest",
+  "description": "GetUnfilteredTableMetadataRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The catalog ID where the table resides."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "(Required) Specifies the name of a database that contains the table."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "(Required) Specifies the name of a table for which you are requesting metadata."
+        }
+      ]
+    },
+    "AuditContext": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AuditContext"
+        },
+        {
+          "description": "A structure containing Lake Formation audit context information."
+        }
+      ]
+    },
+    "SupportedPermissionTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PermissionTypeList"
+        },
+        {
+          "description": "(Required) A list of supported permission types. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "CatalogId",
+    "DatabaseName",
+    "Name",
+    "SupportedPermissionTypes"
+  ]
+}

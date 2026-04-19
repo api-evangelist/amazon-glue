@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-query-schema-version-metadata-input-schema.json",
+  "title": "QuerySchemaVersionMetadataInput",
+  "description": "QuerySchemaVersionMetadataInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaId"
+        },
+        {
+          "description": "A wrapper structure that may contain the schema name and Amazon Resource Name (ARN)."
+        }
+      ]
+    },
+    "SchemaVersionNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionNumber"
+        },
+        {
+          "description": "The version number of the schema."
+        }
+      ]
+    },
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The unique version ID of the schema version."
+        }
+      ]
+    },
+    "MetadataList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetadataList"
+        },
+        {
+          "description": "Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QuerySchemaVersionMetadataMaxResults"
+        },
+        {
+          "description": "Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryTokenString"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-list-ml-transforms-request-schema.json",
+  "title": "ListMLTransformsRequest",
+  "description": "ListMLTransformsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A continuation token, if this is a continuation request."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum size of a list to return."
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransformFilterCriteria"
+        },
+        {
+          "description": "A <code>TransformFilterCriteria</code> used to filter the machine learning transforms."
+        }
+      ]
+    },
+    "Sort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransformSortCriteria"
+        },
+        {
+          "description": "A <code>TransformSortCriteria</code> used to sort the machine learning transforms."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Specifies to return only these tagged resources."
+        }
+      ]
+    }
+  }
+}

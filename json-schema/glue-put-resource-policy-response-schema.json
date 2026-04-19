@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-put-resource-policy-response-schema.json",
+  "title": "PutResourcePolicyResponse",
+  "description": "PutResourcePolicyResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "PolicyHash": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy."
+        }
+      ]
+    }
+  }
+}

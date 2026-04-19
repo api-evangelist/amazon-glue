@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-blueprint-request-structure.json",
+  "name": "CreateBlueprintRequest",
+  "description": "CreateBlueprintRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationNameString"
+        },
+        {
+          "description": "The name of the blueprint."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Generic512CharString"
+        },
+        {
+          "description": "A description of the blueprint."
+        }
+      ]
+    },
+    "BlueprintLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationS3Location"
+        },
+        {
+          "description": "Specifies a path in Amazon S3 where the blueprint is published."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "The tags to be applied to this blueprint."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "BlueprintLocation"
+  ]
+}

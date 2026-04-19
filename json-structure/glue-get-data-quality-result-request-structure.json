@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-data-quality-result-request-structure.json",
+  "name": "GetDataQualityResultRequest",
+  "description": "GetDataQualityResultRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ResultId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "A unique result ID for the data quality result."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResultId"
+  ]
+}

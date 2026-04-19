@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-ml-task-run-response-structure.json",
+  "name": "GetMLTaskRunResponse",
+  "description": "GetMLTaskRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the task run."
+        }
+      ]
+    },
+    "TaskRunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique run identifier associated with this run."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskStatusType"
+        },
+        {
+          "description": "The status for this task run."
+        }
+      ]
+    },
+    "LogGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "The names of the log groups that are associated with the task run."
+        }
+      ]
+    },
+    "Properties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TaskRunProperties"
+        },
+        {
+          "description": "The list of properties that are associated with the task run."
+        }
+      ]
+    },
+    "ErrorString": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "The error strings that are associated with the task run."
+        }
+      ]
+    },
+    "StartedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time when this task run started."
+        }
+      ]
+    },
+    "LastModifiedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time when this task run was last modified."
+        }
+      ]
+    },
+    "CompletedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time when this task run was completed."
+        }
+      ]
+    },
+    "ExecutionTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionTime"
+        },
+        {
+          "description": "The amount of time (in seconds) that the task run consumed resources."
+        }
+      ]
+    }
+  }
+}

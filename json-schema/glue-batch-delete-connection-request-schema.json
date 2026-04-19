@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-delete-connection-request-schema.json",
+  "title": "BatchDeleteConnectionRequest",
+  "description": "BatchDeleteConnectionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "ConnectionNameList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeleteConnectionNameList"
+        },
+        {
+          "description": "A list of names of the connections to delete."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ConnectionNameList"
+  ]
+}

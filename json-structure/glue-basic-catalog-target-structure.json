@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-basic-catalog-target-structure.json",
+  "name": "BasicCatalogTarget",
+  "description": "Specifies a target that uses a Glue Data Catalog table.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NodeName"
+        },
+        {
+          "description": "The name of your data target."
+        }
+      ]
+    },
+    "Inputs": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OneInput"
+        },
+        {
+          "description": "The nodes that are inputs to the data target."
+        }
+      ]
+    },
+    "Database": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The database that contains the table you want to use as the target. This database must already exist in the Data Catalog."
+        }
+      ]
+    },
+    "Table": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EnclosedInStringProperty"
+        },
+        {
+          "description": "The table that defines the schema of your output data. This table must already exist in the Data Catalog."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Inputs",
+    "Database",
+    "Table"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-list-crawls-request-structure.json",
+  "name": "ListCrawlsRequest",
+  "description": "ListCrawlsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CrawlerName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the crawler whose runs you want to retrieve."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of results to return. The default is 20, and maximum is 100."
+        }
+      ]
+    },
+    "Filters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CrawlsFilterList"
+        },
+        {
+          "description": "Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CrawlerName"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-list-data-quality-rulesets-request-schema.json",
+  "title": "ListDataQualityRulesetsRequest",
+  "description": "ListDataQualityRulesetsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A paginated token to offset the results."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of results to return."
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityRulesetFilterCriteria"
+        },
+        {
+          "description": "The filter criteria. "
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "A list of key-value pair tags."
+        }
+      ]
+    }
+  }
+}

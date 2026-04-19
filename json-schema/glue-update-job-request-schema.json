@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-update-job-request-schema.json",
+  "title": "UpdateJobRequest",
+  "description": "UpdateJobRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the job definition to update."
+        }
+      ]
+    },
+    "JobUpdate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobUpdate"
+        },
+        {
+          "description": "Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobName",
+    "JobUpdate"
+  ]
+}

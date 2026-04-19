@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-list-schemas-input-structure.json",
+  "name": "ListSchemasInput",
+  "description": "ListSchemasInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RegistryId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegistryId"
+        },
+        {
+          "description": "A wrapper structure that may contain the registry name and Amazon Resource Name (ARN)."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxResultsNumber"
+        },
+        {
+          "description": "Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryTokenString"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-delete-table-request-structure.json",
+  "name": "BatchDeleteTableRequest",
+  "description": "BatchDeleteTableRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "TablesToDelete": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchDeleteTableNameList"
+        },
+        {
+          "description": "A list of the table to delete."
+        }
+      ]
+    },
+    "TransactionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransactionIdString"
+        },
+        {
+          "description": "The transaction ID at which to delete the table contents."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TablesToDelete"
+  ]
+}

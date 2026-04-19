@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-unfiltered-table-metadata-response-structure.json",
+  "name": "GetUnfilteredTableMetadataResponse",
+  "description": "GetUnfilteredTableMetadataResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Table": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Table"
+        },
+        {
+          "description": "A Table object containing the table metadata."
+        }
+      ]
+    },
+    "AuthorizedColumns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameStringList"
+        },
+        {
+          "description": "A list of column names that the user has been granted access to."
+        }
+      ]
+    },
+    "IsRegisteredWithLakeFormation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "A Boolean value that indicates whether the partition location is registered with Lake Formation."
+        }
+      ]
+    },
+    "CellFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnRowFilterList"
+        },
+        {
+          "description": "A list of column row filters."
+        }
+      ]
+    }
+  }
+}

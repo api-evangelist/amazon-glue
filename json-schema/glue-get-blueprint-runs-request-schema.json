@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-blueprint-runs-request-schema.json",
+  "title": "GetBlueprintRunsRequest",
+  "description": "GetBlueprintRunsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "BlueprintName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the blueprint."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "A continuation token, if this is a continuation request."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum size of a list to return."
+        }
+      ]
+    }
+  },
+  "required": [
+    "BlueprintName"
+  ]
+}

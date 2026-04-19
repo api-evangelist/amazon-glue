@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-classifier-request-schema.json",
+  "title": "DeleteClassifierRequest",
+  "description": "DeleteClassifierRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the classifier to remove."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

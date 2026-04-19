@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-table-version-response-structure.json",
+  "name": "GetTableVersionResponse",
+  "description": "GetTableVersionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TableVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableVersion"
+        },
+        {
+          "description": "The requested table version."
+        }
+      ]
+    }
+  }
+}

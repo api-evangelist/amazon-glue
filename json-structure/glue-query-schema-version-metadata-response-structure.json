@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-query-schema-version-metadata-response-structure.json",
+  "name": "QuerySchemaVersionMetadataResponse",
+  "description": "QuerySchemaVersionMetadataResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "MetadataInfoMap": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetadataInfoMap"
+        },
+        {
+          "description": "A map of a metadata key and associated values."
+        }
+      ]
+    },
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The unique version ID of the schema version."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryTokenString"
+        },
+        {
+          "description": "A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last."
+        }
+      ]
+    }
+  }
+}

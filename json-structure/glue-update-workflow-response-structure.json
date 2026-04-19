@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-workflow-response-structure.json",
+  "name": "UpdateWorkflowResponse",
+  "description": "UpdateWorkflowResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the workflow which was specified in input."
+        }
+      ]
+    }
+  }
+}

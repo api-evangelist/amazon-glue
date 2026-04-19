@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-list-jobs-response-schema.json",
+  "title": "ListJobsResponse",
+  "description": "ListJobsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobNameList"
+        },
+        {
+          "description": "The names of all jobs in the account, or the jobs with the specified tags."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "A continuation token, if the returned list does not contain the last metric available."
+        }
+      ]
+    }
+  }
+}

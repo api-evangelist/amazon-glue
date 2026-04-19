@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-create-partition-response-schema.json",
+  "title": "BatchCreatePartitionResponse",
+  "description": "BatchCreatePartitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PartitionErrors"
+        },
+        {
+          "description": "The errors encountered when trying to create the requested partitions."
+        }
+      ]
+    }
+  }
+}

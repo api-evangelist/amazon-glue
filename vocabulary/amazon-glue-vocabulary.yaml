@@ -1,0 +1,150 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amazon Glue
+  description: Vocabulary for Amazon Glue serverless data integration and ETL APIs
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: amazon-glue
+      version: "2017-03-31"
+      baseUrl: https://glue.amazonaws.com
+      status: active
+
+  resources:
+    - name: jobs
+      description: ETL job definitions and configurations
+      actions: [list, create, get, update, delete, start, stop]
+    - name: crawlers
+      description: Data source crawlers that populate the Data Catalog
+      actions: [list, create, get, update, delete, start, stop]
+    - name: databases
+      description: Data Catalog database containers
+      actions: [list, create, get, update, delete]
+    - name: tables
+      description: Data Catalog table definitions
+      actions: [list, create, get, update, delete]
+    - name: connections
+      description: Data source connection configurations
+      actions: [list, create, get, update, delete]
+    - name: workflows
+      description: ETL pipeline orchestration workflows
+      actions: [list, create, get, update, delete, start, stop]
+    - name: triggers
+      description: Job and crawler execution triggers
+      actions: [list, create, get, update, delete, start, stop]
+    - name: ml-transforms
+      description: Machine learning transformations for data quality
+      actions: [list, create, get, update, delete, start]
+    - name: schemas
+      description: Schema Registry schema definitions
+      actions: [list, create, get, update, delete]
+    - name: data-quality
+      description: Data quality ruleset evaluation results
+      actions: [list, create, get, start]
+
+  actions:
+    - name: list
+      httpMethod: POST
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: get
+      httpMethod: POST
+      pattern: read
+    - name: update
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      httpMethod: POST
+      pattern: destructive
+    - name: start
+      httpMethod: POST
+      pattern: write
+    - name: stop
+      httpMethod: POST
+      pattern: write
+
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        parameters: [AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION]
+
+  enums:
+    job-run-state:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+      - ERROR
+      - WAITING
+    trigger-type:
+      - SCHEDULED
+      - CONDITIONAL
+      - ON_DEMAND
+      - EVENT
+
+capability:
+  workflows:
+    - name: Amazon Glue Data Integration
+      file: capabilities/amazon-glue-data-integration.yaml
+      apis: [amazon-glue]
+      tools: 15
+      personas: [Data Engineer, Data Analyst]
+
+  personas:
+    - id: data-engineer
+      name: Data Engineer
+      description: Builds and manages ETL pipelines and data catalog resources
+    - id: data-analyst
+      name: Data Analyst
+      description: Uses Glue to access and prepare data for analytics
+
+  domains:
+    - name: ETL Pipeline
+      resources: [jobs, workflows, triggers]
+    - name: Data Catalog
+      resources: [databases, tables, connections, crawlers]
+    - name: Data Quality
+      resources: [data-quality, ml-transforms]
+    - name: Schema Management
+      resources: [schemas]
+
+  namespaces:
+    - namespace: amazon-glue
+      type: consumed
+    - namespace: glue-data-integration-api
+      type: rest-exposed
+      port: 8083
+    - namespace: glue-data-integration-mcp
+      type: mcp-exposed
+      port: 9093
+
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION
+
+crossReference:
+  - resource: jobs
+    operations: [GetJobs, CreateJob, StartJobRun, GetJobRun, StopJobRun, DeleteJob]
+    workflows: [Amazon Glue Data Integration]
+    personas: [Data Engineer]
+  - resource: crawlers
+    operations: [GetCrawlers, CreateCrawler, StartCrawler, StopCrawler, DeleteCrawler]
+    workflows: [Amazon Glue Data Integration]
+    personas: [Data Engineer]
+  - resource: databases
+    operations: [GetDatabases, CreateDatabase, DeleteDatabase]
+    workflows: [Amazon Glue Data Integration]
+    personas: [Data Engineer, Data Analyst]
+  - resource: workflows
+    operations: [ListWorkflows, CreateWorkflow, GetWorkflow, StartWorkflow, DeleteWorkflow]
+    workflows: [Amazon Glue Data Integration]
+    personas: [Data Engineer]

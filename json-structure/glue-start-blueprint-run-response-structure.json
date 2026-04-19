@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-start-blueprint-run-response-structure.json",
+  "name": "StartBlueprintRunResponse",
+  "description": "StartBlueprintRunResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The run ID for this blueprint run."
+        }
+      ]
+    }
+  }
+}

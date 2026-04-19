@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-catalog-import-status-request-schema.json",
+  "title": "GetCatalogImportStatusRequest",
+  "description": "GetCatalogImportStatusRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID."
+        }
+      ]
+    }
+  }
+}

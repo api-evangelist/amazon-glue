@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-get-partition-response-structure.json",
+  "name": "BatchGetPartitionResponse",
+  "description": "BatchGetPartitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Partitions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PartitionList"
+        },
+        {
+          "description": "A list of the requested partitions."
+        }
+      ]
+    },
+    "UnprocessedKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetPartitionValueList"
+        },
+        {
+          "description": "A list of the partition values in the request for which partitions were not returned."
+        }
+      ]
+    }
+  }
+}

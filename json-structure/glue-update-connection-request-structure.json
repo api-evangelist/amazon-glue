@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-connection-request-structure.json",
+  "name": "UpdateConnectionRequest",
+  "description": "UpdateConnectionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the connection definition to update."
+        }
+      ]
+    },
+    "ConnectionInput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionInput"
+        },
+        {
+          "description": "A <code>ConnectionInput</code> object that redefines the connection in question."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "ConnectionInput"
+  ]
+}

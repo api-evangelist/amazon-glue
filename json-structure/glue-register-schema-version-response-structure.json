@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-register-schema-version-response-structure.json",
+  "name": "RegisterSchemaVersionResponse",
+  "description": "RegisterSchemaVersionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The unique ID that represents the version of this schema."
+        }
+      ]
+    },
+    "VersionNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionLongNumber"
+        },
+        {
+          "description": "The version of this schema (for sync flow only, in case this is the first version)."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionStatus"
+        },
+        {
+          "description": "The status of the schema version."
+        }
+      ]
+    }
+  }
+}

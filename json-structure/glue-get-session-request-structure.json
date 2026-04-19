@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-session-request-structure.json",
+  "name": "GetSessionRequest",
+  "description": "GetSessionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The ID of the session. "
+        }
+      ]
+    },
+    "RequestOrigin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationNameString"
+        },
+        {
+          "description": "The origin of the request. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Id"
+  ]
+}

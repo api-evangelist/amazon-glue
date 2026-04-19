@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-start-workflow-run-request-schema.json",
+  "title": "StartWorkflowRunRequest",
+  "description": "StartWorkflowRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the workflow to start."
+        }
+      ]
+    },
+    "RunProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunProperties"
+        },
+        {
+          "description": "The workflow run properties for the new workflow run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

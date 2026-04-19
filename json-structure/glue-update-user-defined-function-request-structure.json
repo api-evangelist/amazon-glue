@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-user-defined-function-request-structure.json",
+  "name": "UpdateUserDefinedFunctionRequest",
+  "description": "UpdateUserDefinedFunctionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database where the function to be updated is located."
+        }
+      ]
+    },
+    "FunctionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the function."
+        }
+      ]
+    },
+    "FunctionInput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserDefinedFunctionInput"
+        },
+        {
+          "description": "A <code>FunctionInput</code> object that redefines the function in the Data Catalog."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "FunctionName",
+    "FunctionInput"
+  ]
+}

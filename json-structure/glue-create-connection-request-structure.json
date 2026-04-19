@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-connection-request-structure.json",
+  "name": "CreateConnectionRequest",
+  "description": "CreateConnectionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "ConnectionInput": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionInput"
+        },
+        {
+          "description": "A <code>ConnectionInput</code> object defining the connection to create."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "The tags you assign to the connection."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ConnectionInput"
+  ]
+}

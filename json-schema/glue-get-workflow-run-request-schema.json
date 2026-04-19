@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-workflow-run-request-schema.json",
+  "title": "GetWorkflowRunRequest",
+  "description": "GetWorkflowRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow being run."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID of the workflow run."
+        }
+      ]
+    },
+    "IncludeGraph": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether to include the workflow graph in response or not."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RunId"
+  ]
+}

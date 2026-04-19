@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-custom-entity-type-response-schema.json",
+  "title": "GetCustomEntityTypeResponse",
+  "description": "GetCustomEntityTypeResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the custom pattern that you retrieved."
+        }
+      ]
+    },
+    "RegexString": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "A regular expression string that is used for detecting sensitive data in a custom pattern."
+        }
+      ]
+    },
+    "ContextWords": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ContextWords"
+        },
+        {
+          "description": "A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data."
+        }
+      ]
+    }
+  }
+}

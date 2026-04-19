@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-stop-crawler-schedule-request-structure.json",
+  "name": "StopCrawlerScheduleRequest",
+  "description": "StopCrawlerScheduleRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CrawlerName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the crawler whose schedule state to set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CrawlerName"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-dataflow-graph-request-structure.json",
+  "name": "GetDataflowGraphRequest",
+  "description": "GetDataflowGraphRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "PythonScript": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PythonScript"
+        },
+        {
+          "description": "The Python script to transform."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-job-bookmark-response-structure.json",
+  "name": "GetJobBookmarkResponse",
+  "description": "GetJobBookmarkResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobBookmarkEntry": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobBookmarkEntry"
+        },
+        {
+          "description": "A structure that defines a point that a job can resume processing."
+        }
+      ]
+    }
+  }
+}

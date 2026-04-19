@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-check-schema-version-validity-response-schema.json",
+  "title": "CheckSchemaVersionValidityResponse",
+  "description": "CheckSchemaVersionValidityResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Valid": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IsVersionValid"
+        },
+        {
+          "description": "Return true, if the schema is valid and false otherwise."
+        }
+      ]
+    },
+    "Error": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaValidationError"
+        },
+        {
+          "description": "A validation failure error message."
+        }
+      ]
+    }
+  }
+}

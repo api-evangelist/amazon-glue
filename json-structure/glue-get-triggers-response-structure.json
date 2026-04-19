@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-triggers-response-structure.json",
+  "name": "GetTriggersResponse",
+  "description": "GetTriggersResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Triggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerList"
+        },
+        {
+          "description": "A list of triggers for the specified job."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "A continuation token, if not all the requested triggers have yet been returned."
+        }
+      ]
+    }
+  }
+}

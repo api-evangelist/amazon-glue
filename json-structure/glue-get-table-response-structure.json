@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-table-response-structure.json",
+  "name": "GetTableResponse",
+  "description": "GetTableResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Table": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Table"
+        },
+        {
+          "description": "The <code>Table</code> object that defines the specified table."
+        }
+      ]
+    }
+  }
+}

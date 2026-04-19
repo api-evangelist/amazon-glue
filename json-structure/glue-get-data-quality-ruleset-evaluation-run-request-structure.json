@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-data-quality-ruleset-evaluation-run-request-structure.json",
+  "name": "GetDataQualityRulesetEvaluationRunRequest",
+  "description": "GetDataQualityRulesetEvaluationRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique run identifier associated with this run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RunId"
+  ]
+}

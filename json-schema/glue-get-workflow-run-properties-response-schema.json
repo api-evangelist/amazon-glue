@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-workflow-run-properties-response-schema.json",
+  "title": "GetWorkflowRunPropertiesResponse",
+  "description": "GetWorkflowRunPropertiesResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RunProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunProperties"
+        },
+        {
+          "description": "The workflow run properties which were set during the specified run."
+        }
+      ]
+    }
+  }
+}

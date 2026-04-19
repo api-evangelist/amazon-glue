@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-create-script-response-schema.json",
+  "title": "CreateScriptResponse",
+  "description": "CreateScriptResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "PythonScript": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PythonScript"
+        },
+        {
+          "description": "The Python script generated from the DAG."
+        }
+      ]
+    },
+    "ScalaCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScalaCode"
+        },
+        {
+          "description": "The Scala code generated from the DAG."
+        }
+      ]
+    }
+  }
+}

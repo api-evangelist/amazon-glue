@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-start-ml-labeling-set-generation-task-run-request-structure.json",
+  "name": "StartMLLabelingSetGenerationTaskRunRequest",
+  "description": "StartMLLabelingSetGenerationTaskRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the machine learning transform."
+        }
+      ]
+    },
+    "OutputS3Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UriString"
+        },
+        {
+          "description": "The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TransformId",
+    "OutputS3Path"
+  ]
+}

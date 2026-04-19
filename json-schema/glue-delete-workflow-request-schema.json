@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-workflow-request-schema.json",
+  "title": "DeleteWorkflowRequest",
+  "description": "DeleteWorkflowRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow to be deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

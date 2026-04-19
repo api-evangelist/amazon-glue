@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-get-blueprints-request-structure.json",
+  "name": "BatchGetBlueprintsRequest",
+  "description": "BatchGetBlueprintsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Names": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetBlueprintNames"
+        },
+        {
+          "description": "A list of blueprint names."
+        }
+      ]
+    },
+    "IncludeBlueprint": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether or not to include the blueprint in the response."
+        }
+      ]
+    },
+    "IncludeParameterSpec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Names"
+  ]
+}

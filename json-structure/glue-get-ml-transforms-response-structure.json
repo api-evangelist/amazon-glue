@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-ml-transforms-response-structure.json",
+  "name": "GetMLTransformsResponse",
+  "description": "GetMLTransformsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Transforms": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransformList"
+        },
+        {
+          "description": "A list of machine learning transforms."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A pagination token, if more results are available."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Transforms"
+  ]
+}

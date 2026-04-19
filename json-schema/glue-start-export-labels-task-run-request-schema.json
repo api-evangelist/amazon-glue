@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-start-export-labels-task-run-request-schema.json",
+  "title": "StartExportLabelsTaskRunRequest",
+  "description": "StartExportLabelsTaskRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the machine learning transform."
+        }
+      ]
+    },
+    "OutputS3Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UriString"
+        },
+        {
+          "description": "The Amazon S3 path where you export the labels."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TransformId",
+    "OutputS3Path"
+  ]
+}

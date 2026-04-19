@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-delete-schema-versions-response-structure.json",
+  "name": "DeleteSchemaVersionsResponse",
+  "description": "DeleteSchemaVersionsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaVersionErrors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionErrorList"
+        },
+        {
+          "description": "A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version."
+        }
+      ]
+    }
+  }
+}

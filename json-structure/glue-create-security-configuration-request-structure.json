@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-security-configuration-request-structure.json",
+  "name": "CreateSecurityConfigurationRequest",
+  "description": "CreateSecurityConfigurationRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name for the new security configuration."
+        }
+      ]
+    },
+    "EncryptionConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionConfiguration"
+        },
+        {
+          "description": "The encryption configuration for the new security configuration."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "EncryptionConfiguration"
+  ]
+}

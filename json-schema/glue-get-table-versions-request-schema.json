@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-table-versions-request-schema.json",
+  "title": "GetTableVersionsRequest",
+  "description": "GetTableVersionsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the table. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if this is not the first call."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogGetterPageSize"
+        },
+        {
+          "description": "The maximum number of table versions to return in one response."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName"
+  ]
+}

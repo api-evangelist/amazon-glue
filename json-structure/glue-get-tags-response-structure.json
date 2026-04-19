@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-tags-response-structure.json",
+  "name": "GetTagsResponse",
+  "description": "GetTagsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "The requested tags."
+        }
+      ]
+    }
+  }
+}

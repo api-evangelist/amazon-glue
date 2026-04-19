@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-security-configuration-request-schema.json",
+  "title": "GetSecurityConfigurationRequest",
+  "description": "GetSecurityConfigurationRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the security configuration to retrieve."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

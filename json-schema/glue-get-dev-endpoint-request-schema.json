@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-dev-endpoint-request-schema.json",
+  "title": "GetDevEndpointRequest",
+  "description": "GetDevEndpointRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "EndpointName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "Name of the <code>DevEndpoint</code> to retrieve information for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "EndpointName"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-batch-update-partition-response-structure.json",
+  "name": "BatchUpdatePartitionResponse",
+  "description": "BatchUpdatePartitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchUpdatePartitionFailureList"
+        },
+        {
+          "description": "The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects."
+        }
+      ]
+    }
+  }
+}

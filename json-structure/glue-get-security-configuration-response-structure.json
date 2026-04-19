@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-security-configuration-response-structure.json",
+  "name": "GetSecurityConfigurationResponse",
+  "description": "GetSecurityConfigurationResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SecurityConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SecurityConfiguration"
+        },
+        {
+          "description": "The requested security configuration."
+        }
+      ]
+    }
+  }
+}

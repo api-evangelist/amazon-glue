@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-workflow-request-structure.json",
+  "name": "GetWorkflowRequest",
+  "description": "GetWorkflowRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the workflow to retrieve."
+        }
+      ]
+    },
+    "IncludeGraph": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether to include a graph when returning the workflow resource metadata."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

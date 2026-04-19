@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-delete-trigger-request-structure.json",
+  "name": "DeleteTriggerRequest",
+  "description": "DeleteTriggerRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the trigger to delete."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

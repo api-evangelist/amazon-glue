@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-tables-response-structure.json",
+  "name": "GetTablesResponse",
+  "description": "GetTablesResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TableList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TableList"
+        },
+        {
+          "description": "A list of the requested <code>Table</code> objects."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, present if the current list segment is not the last."
+        }
+      ]
+    }
+  }
+}

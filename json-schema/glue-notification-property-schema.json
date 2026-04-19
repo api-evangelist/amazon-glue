@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-notification-property-schema.json",
+  "title": "NotificationProperty",
+  "description": "Specifies configuration properties of a notification.",
+  "type": "object",
+  "properties": {
+    "NotifyDelayAfter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NotifyDelayAfter"
+        },
+        {
+          "description": "After a job run starts, the number of minutes to wait before sending a job run delay notification."
+        }
+      ]
+    }
+  }
+}

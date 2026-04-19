@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-connections-request-structure.json",
+  "name": "GetConnectionsRequest",
+  "description": "GetConnectionsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GetConnectionsFilter"
+        },
+        {
+          "description": "A filter that controls which connections are returned."
+        }
+      ]
+    },
+    "HidePassword": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of connections to return in one response."
+        }
+      ]
+    }
+  }
+}

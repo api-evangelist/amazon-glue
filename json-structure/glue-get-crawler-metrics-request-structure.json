@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-crawler-metrics-request-structure.json",
+  "name": "GetCrawlerMetricsRequest",
+  "description": "GetCrawlerMetricsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CrawlerNameList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CrawlerNameList"
+        },
+        {
+          "description": "A list of the names of crawlers about which to retrieve metrics."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum size of a list to return."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-workflows-request-schema.json",
+  "title": "BatchGetWorkflowsRequest",
+  "description": "BatchGetWorkflowsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Names": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowNames"
+        },
+        {
+          "description": "A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation."
+        }
+      ]
+    },
+    "IncludeGraph": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": "Specifies whether to include a graph when returning the workflow resource metadata."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Names"
+  ]
+}

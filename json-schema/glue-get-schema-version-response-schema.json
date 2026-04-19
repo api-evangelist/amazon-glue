@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-schema-version-response-schema.json",
+  "title": "GetSchemaVersionResponse",
+  "description": "GetSchemaVersionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The <code>SchemaVersionId</code> of the schema version."
+        }
+      ]
+    },
+    "SchemaDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaDefinitionString"
+        },
+        {
+          "description": "The schema definition for the schema ID."
+        }
+      ]
+    },
+    "DataFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataFormat"
+        },
+        {
+          "description": "The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported."
+        }
+      ]
+    },
+    "SchemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the schema."
+        }
+      ]
+    },
+    "VersionNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VersionLongNumber"
+        },
+        {
+          "description": "The version number of the schema."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionStatus"
+        },
+        {
+          "description": "The status of the schema version. "
+        }
+      ]
+    },
+    "CreatedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedTimestamp"
+        },
+        {
+          "description": "The date and time the schema version was created."
+        }
+      ]
+    }
+  }
+}

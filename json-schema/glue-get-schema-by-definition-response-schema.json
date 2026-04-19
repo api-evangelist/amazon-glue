@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-schema-by-definition-response-schema.json",
+  "title": "GetSchemaByDefinitionResponse",
+  "description": "GetSchemaByDefinitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "SchemaVersionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionIdString"
+        },
+        {
+          "description": "The schema ID of the schema version."
+        }
+      ]
+    },
+    "SchemaArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the schema."
+        }
+      ]
+    },
+    "DataFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataFormat"
+        },
+        {
+          "description": "The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaVersionStatus"
+        },
+        {
+          "description": "The status of the schema version."
+        }
+      ]
+    },
+    "CreatedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CreatedTimestamp"
+        },
+        {
+          "description": "The date and time the schema was created."
+        }
+      ]
+    }
+  }
+}

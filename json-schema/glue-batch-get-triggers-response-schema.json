@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-triggers-response-schema.json",
+  "title": "BatchGetTriggersResponse",
+  "description": "BatchGetTriggersResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Triggers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerList"
+        },
+        {
+          "description": "A list of trigger definitions."
+        }
+      ]
+    },
+    "TriggersNotFound": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerNameList"
+        },
+        {
+          "description": "A list of names of triggers not found."
+        }
+      ]
+    }
+  }
+}

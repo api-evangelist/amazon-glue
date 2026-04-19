@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-connection-request-structure.json",
+  "name": "GetConnectionRequest",
+  "description": "GetConnectionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the connection definition to retrieve."
+        }
+      ]
+    },
+    "HidePassword": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

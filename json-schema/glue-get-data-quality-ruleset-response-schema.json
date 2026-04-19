@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-data-quality-ruleset-response-schema.json",
+  "title": "GetDataQualityRulesetResponse",
+  "description": "GetDataQualityRulesetResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the ruleset."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DescriptionString"
+        },
+        {
+          "description": "A description of the ruleset."
+        }
+      ]
+    },
+    "Ruleset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityRulesetString"
+        },
+        {
+          "description": "A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide."
+        }
+      ]
+    },
+    "TargetTable": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityTargetTable"
+        },
+        {
+          "description": "The name and database name of the target table."
+        }
+      ]
+    },
+    "CreatedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp. The time and date that this data quality ruleset was created."
+        }
+      ]
+    },
+    "LastModifiedOn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp. The last point in time when this data quality ruleset was modified."
+        }
+      ]
+    },
+    "RecommendationRunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "When a ruleset was created from a recommendation run, this run ID is generated to link the two together."
+        }
+      ]
+    }
+  }
+}

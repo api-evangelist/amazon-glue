@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-start-import-labels-task-run-request-schema.json",
+  "title": "StartImportLabelsTaskRunRequest",
+  "description": "StartImportLabelsTaskRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the machine learning transform."
+        }
+      ]
+    },
+    "InputS3Path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UriString"
+        },
+        {
+          "description": "The Amazon Simple Storage Service (Amazon S3) path from where you import the labels."
+        }
+      ]
+    },
+    "ReplaceAllLabels": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReplaceBoolean"
+        },
+        {
+          "description": "Indicates whether to overwrite your existing labels."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TransformId",
+    "InputS3Path"
+  ]
+}

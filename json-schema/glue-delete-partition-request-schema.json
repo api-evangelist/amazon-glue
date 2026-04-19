@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-partition-request-schema.json",
+  "title": "DeletePartitionRequest",
+  "description": "DeletePartitionRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the catalog database in which the table in question resides."
+        }
+      ]
+    },
+    "TableName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the table that contains the partition to be deleted."
+        }
+      ]
+    },
+    "PartitionValues": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ValueStringList"
+        },
+        {
+          "description": "The values that define the partition."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName",
+    "TableName",
+    "PartitionValues"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-mapping-response-structure.json",
+  "name": "GetMappingResponse",
+  "description": "GetMappingResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Mapping": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MappingList"
+        },
+        {
+          "description": "A list of mappings to the specified targets."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Mapping"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-data-quality-ruleset-request-structure.json",
+  "name": "CreateDataQualityRulesetRequest",
+  "description": "CreateDataQualityRulesetRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "A unique name for the data quality ruleset."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DescriptionString"
+        },
+        {
+          "description": "A description of the data quality ruleset."
+        }
+      ]
+    },
+    "Ruleset": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityRulesetString"
+        },
+        {
+          "description": "A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "A list of tags applied to the data quality ruleset."
+        }
+      ]
+    },
+    "TargetTable": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityTargetTable"
+        },
+        {
+          "description": "A target table associated with the data quality ruleset."
+        }
+      ]
+    },
+    "ClientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "Ruleset"
+  ]
+}

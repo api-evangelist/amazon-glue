@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-schema-versions-diff-response-structure.json",
+  "name": "GetSchemaVersionsDiffResponse",
+  "description": "GetSchemaVersionsDiffResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Diff": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaDefinitionDiff"
+        },
+        {
+          "description": "The difference between schemas as a string in JsonPatch format."
+        }
+      ]
+    }
+  }
+}

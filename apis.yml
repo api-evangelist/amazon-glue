@@ -1,15 +1,18 @@
+aid: amazon-glue
 name: Amazon Glue
 description: >-
   Amazon Glue is a serverless data integration service that makes it simple
   to discover, prepare, move, and integrate data from multiple sources for
   analytics, machine learning, and application development. It provides both
-  visual and code-based interfaces for ETL (extract, transform, and load)
-  operations.
+  visual and code-based interfaces for ETL operations and includes a Data Catalog
+  for unified metadata management.
+type: Index
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-url: https://aws.amazon.com/glue/
+url: https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/apis.yml
 type: Index
 created: '2024-01-15'
-modified: '2026-03-16'
+modified: '2026-04-19'
+specificationVersion: '0.19'
 tags:
   - Analytics
   - AWS
@@ -19,82 +22,114 @@ tags:
   - ETL
   - Serverless
 apis:
-  - name: Amazon Glue API
+  - aid: amazon-glue:amazon-glue-api
+    name: Amazon Glue API
     description: >-
       The Amazon Glue API enables programmatic access to create and manage ETL
       jobs, crawlers, data catalogs, connections, and development endpoints.
       You can discover data sources, transform data, and orchestrate data
       integration workflows across multiple data stores.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
     humanURL: https://aws.amazon.com/glue/
     baseURL: https://glue.amazonaws.com
     tags:
+      - Analytics
       - Data Catalog
       - Data Integration
       - ETL
-      - Serverless
     properties:
       - type: Documentation
-        url: https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html
+        url: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html
       - type: OpenAPI
         url: openapi/amazon-glue-openapi.yml
-      - type: OpenAPI
-        url: https://api.apis.guru/v2/specs/amazonaws.com/glue/2017-03-31/openapi.json
-      - type: JSON Schema
-        url: json-schema/amazon-glue-schema.json
-      - type: JSON-LD
-        url: json-ld/amazon-glue-context.jsonld
+      - type: GettingStarted
+        url: https://aws.amazon.com/glue/getting-started/
       - type: Pricing
         url: https://aws.amazon.com/glue/pricing/
-      - type: Getting Started
-        url: https://aws.amazon.com/glue/getting-started/
       - type: FAQ
         url: https://aws.amazon.com/glue/faqs/
-      - type: User Guide
-        url: https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html
-      - type: API Reference
-        url: https://docs.aws.amazon.com/glue/latest/webapi/API_Reference.html
-      - type: CLI Reference
-        url: https://docs.aws.amazon.com/cli/latest/reference/glue/
-      - type: Security
-        url: https://docs.aws.amazon.com/glue/latest/dg/security.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api.html
+      - type: Authentication
+        url: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+      - type: JSONSchema
+        url: json-schema/glue-job-schema.json
+      - type: JSONLD
+        url: json-ld/amazon-glue-context.jsonld
 common:
   - type: Portal
-    url: https://console.aws.amazon.com/
-  - type: Website
     url: https://aws.amazon.com/glue/
   - type: Documentation
     url: https://docs.aws.amazon.com/glue/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://aws.amazon.com/service-terms/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://aws.amazon.com/privacy/
   - type: Support
     url: https://aws.amazon.com/premiumsupport/
   - type: Blog
-    url: https://aws.amazon.com/blogs/big-data/category/analytics/aws-glue/
-  - type: GitHub Organization
+    url: https://aws.amazon.com/blogs/big-data/tag/aws-glue/
+  - type: GitHubOrganization
     url: https://github.com/aws
   - type: Console
-    url: https://console.aws.amazon.com/glue
-  - type: Sign Up
+    url: https://console.aws.amazon.com/glue/
+  - type: SignUp
     url: https://portal.aws.amazon.com/billing/signup
-  - type: Login
-    url: https://signin.aws.amazon.com/
-  - type: Service Status
-    url: https://status.aws.amazon.com/
-  - type: Knowledge Center
-    url: https://repost.aws/knowledge-center
-  - type: YouTube
-    url: https://www.youtube.com/user/AmazonWebServices
-  - type: Stack Overflow
-    url: https://stackoverflow.com/questions/tagged/aws-glue
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
   - type: Contact
     url: https://aws.amazon.com/contact-us/
-  - type: Security
-    url: https://aws.amazon.com/security/
-  - type: Compliance
-    url: https://aws.amazon.com/compliance/
+  - type: SpectralRules
+    url: rules/amazon-glue-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-glue-vocabulary.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-glue-data-integration.yaml
+  - type: Features
+    data:
+      - name: Serverless ETL
+        description: Run ETL jobs without managing infrastructure with automatic scaling and pay-per-use pricing.
+      - name: Visual ETL Editor
+        description: Build ETL pipelines visually using a drag-and-drop interface without writing code.
+      - name: Data Catalog
+        description: Unified metadata repository for all data assets across S3, databases, and data warehouses.
+      - name: Automated Schema Discovery
+        description: Crawlers automatically discover data schemas and populate the Data Catalog.
+      - name: Workflow Orchestration
+        description: Orchestrate multi-job ETL pipelines with triggers, conditional flows, and scheduling.
+      - name: ML Transforms
+        description: Use machine learning to automate complex data transformation tasks like entity deduplication.
+      - name: Schema Registry
+        description: Centrally manage and enforce data schema evolution with versioning and compatibility checks.
+      - name: Data Quality
+        description: Define and evaluate data quality rules to validate data during ETL processing.
+  - type: UseCases
+    data:
+      - name: Data Lake ETL
+        description: Build ETL pipelines to ingest, transform, and load data into Amazon S3 data lakes.
+      - name: Data Warehouse Loading
+        description: Extract and transform data from multiple sources and load into Amazon Redshift.
+      - name: Data Catalog Management
+        description: Maintain a unified data catalog for data discovery across all data assets.
+      - name: Real-Time Streaming ETL
+        description: Process streaming data from Kinesis and Kafka with Glue Streaming jobs.
+      - name: Machine Learning Data Prep
+        description: Prepare and transform training datasets for machine learning using Glue Studio.
+  - type: Integrations
+    data:
+      - name: Amazon S3
+        description: Primary data lake storage for Glue ETL input and output.
+      - name: Amazon Redshift
+        description: Load transformed data into Redshift data warehouse.
+      - name: Amazon Athena
+        description: Query Data Catalog tables directly with Athena serverless SQL.
+      - name: Amazon Kinesis
+        description: Process streaming data from Kinesis Data Streams with Glue streaming.
+      - name: Apache Kafka
+        description: Ingest and process Kafka streaming data in Glue jobs.
+      - name: AWS Lake Formation
+        description: Fine-grained access control to Glue Data Catalog resources.
+      - name: Amazon RDS
+        description: Connect to relational databases as ETL data sources.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

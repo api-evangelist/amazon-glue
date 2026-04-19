@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-list-sessions-response-structure.json",
+  "name": "ListSessionsResponse",
+  "description": "ListSessionsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Ids": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SessionIdList"
+        },
+        {
+          "description": "Returns the ID of the session. "
+        }
+      ]
+    },
+    "Sessions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SessionList"
+        },
+        {
+          "description": "Returns the session object. "
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrchestrationToken"
+        },
+        {
+          "description": "The token for the next set of results, or null if there are no more result. "
+        }
+      ]
+    }
+  }
+}

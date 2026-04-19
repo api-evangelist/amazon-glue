@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-tag-resource-request-schema.json",
+  "title": "TagResourceRequest",
+  "description": "TagResourceRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href=\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id\">Glue ARN string pattern</a>."
+        }
+      ]
+    },
+    "TagsToAdd": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Tags to add to this resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceArn",
+    "TagsToAdd"
+  ]
+}

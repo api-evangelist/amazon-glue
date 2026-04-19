@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-dev-endpoints-request-schema.json",
+  "title": "BatchGetDevEndpointsRequest",
+  "description": "BatchGetDevEndpointsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "DevEndpointNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DevEndpointNames"
+        },
+        {
+          "description": "The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DevEndpointNames"
+  ]
+}

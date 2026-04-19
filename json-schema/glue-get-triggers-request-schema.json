@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-triggers-request-schema.json",
+  "title": "GetTriggersRequest",
+  "description": "GetTriggersRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericString"
+        },
+        {
+          "description": "A continuation token, if this is a continuation call."
+        }
+      ]
+    },
+    "DependentJobName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum size of the response."
+        }
+      ]
+    }
+  }
+}

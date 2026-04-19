@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-resource-policy-response-schema.json",
+  "title": "GetResourcePolicyResponse",
+  "description": "GetResourcePolicyResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "PolicyInJson": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PolicyJsonString"
+        },
+        {
+          "description": "Contains the requested policy document, in JSON format."
+        }
+      ]
+    },
+    "PolicyHash": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "Contains the hash value associated with this policy."
+        }
+      ]
+    },
+    "CreateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time at which the policy was created."
+        }
+      ]
+    },
+    "UpdateTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time at which the policy was last updated."
+        }
+      ]
+    }
+  }
+}

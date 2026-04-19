@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-data-quality-ruleset-request-schema.json",
+  "title": "DeleteDataQualityRulesetRequest",
+  "description": "DeleteDataQualityRulesetRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "A name for the data quality ruleset."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name"
+  ]
+}

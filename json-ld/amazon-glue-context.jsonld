@@ -1,43 +1,1747 @@
 {
   "@context": {
     "@version": 1.1,
-    "glue": "https://docs.aws.amazon.com/glue/latest/webapi/",
+    "glue": "https://aws.amazon.com/glue/schema/",
     "schema": "https://schema.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
-
-    "Job": {
-      "@id": "glue:Job",
-      "@context": {
-        "name": "schema:name",
-        "role": "glue:role",
-        "command": "glue:command",
-        "glueVersion": "glue:glueVersion",
-        "workerType": "glue:workerType",
-        "numberOfWorkers": "glue:numberOfWorkers",
-        "maxRetries": "glue:maxRetries",
-        "timeout": "glue:timeout",
-        "defaultArguments": "glue:defaultArguments",
-        "createdOn": {
-          "@id": "dcterms:created",
-          "@type": "xsd:dateTime"
-        },
-        "lastModifiedOn": {
-          "@id": "dcterms:modified",
-          "@type": "xsd:dateTime"
-        }
-      }
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "GetDataCatalogEncryptionSettingsResponse": "glue:GetDataCatalogEncryptionSettingsResponse",
+    "GetJobBookmarkRequest": "glue:GetJobBookmarkRequest",
+    "GetBlueprintRunResponse": "glue:GetBlueprintRunResponse",
+    "StartCrawlerRequest": "glue:StartCrawlerRequest",
+    "UpdateDatabaseResponse": "glue:UpdateDatabaseResponse",
+    "GetTagsRequest": "glue:GetTagsRequest",
+    "CheckSchemaVersionValidityInput": "glue:CheckSchemaVersionValidityInput",
+    "StopCrawlerScheduleResponse": "glue:StopCrawlerScheduleResponse",
+    "DeleteColumnStatisticsForPartitionRequest": "glue:DeleteColumnStatisticsForPartitionRequest",
+    "CreateDataQualityRulesetResponse": "glue:CreateDataQualityRulesetResponse",
+    "UpdateColumnStatisticsForPartitionResponse": "glue:UpdateColumnStatisticsForPartitionResponse",
+    "UpdateConnectionResponse": "glue:UpdateConnectionResponse",
+    "UpdatePartitionRequest": "glue:UpdatePartitionRequest",
+    "GetSchemaVersionInput": "glue:GetSchemaVersionInput",
+    "AdditionalOptions": "glue:AdditionalOptions",
+    "GetTableRequest": "glue:GetTableRequest",
+    "GetMLTransformsRequest": "glue:GetMLTransformsRequest",
+    "UpdateRegistryResponse": "glue:UpdateRegistryResponse",
+    "GetSchemaVersionResponse": "glue:GetSchemaVersionResponse",
+    "DeleteBlueprintRequest": "glue:DeleteBlueprintRequest",
+    "CreateBlueprintResponse": "glue:CreateBlueprintResponse",
+    "BatchUpdatePartitionResponse": "glue:BatchUpdatePartitionResponse",
+    "ListMLTransformsRequest": "glue:ListMLTransformsRequest",
+    "CreateDataQualityRulesetRequest": "glue:CreateDataQualityRulesetRequest",
+    "ListCustomEntityTypesResponse": "glue:ListCustomEntityTypesResponse",
+    "GetPartitionResponse": "glue:GetPartitionResponse",
+    "ListDataQualityResultsResponse": "glue:ListDataQualityResultsResponse",
+    "BasicCatalogTarget": "glue:BasicCatalogTarget",
+    "DeleteSchemaVersionsResponse": "glue:DeleteSchemaVersionsResponse",
+    "CreateUserDefinedFunctionRequest": "glue:CreateUserDefinedFunctionRequest",
+    "CreateCrawlerRequest": "glue:CreateCrawlerRequest",
+    "UpdateSchemaResponse": "glue:UpdateSchemaResponse",
+    "DeleteDatabaseRequest": "glue:DeleteDatabaseRequest",
+    "GetDevEndpointsResponse": "glue:GetDevEndpointsResponse",
+    "AthenaConnectorSource": "glue:AthenaConnectorSource",
+    "GetWorkflowRunsRequest": "glue:GetWorkflowRunsRequest",
+    "ListDevEndpointsResponse": "glue:ListDevEndpointsResponse",
+    "ApplyMapping": "glue:ApplyMapping",
+    "GetMappingResponse": "glue:GetMappingResponse",
+    "ListWorkflowsRequest": "glue:ListWorkflowsRequest",
+    "UpdateDatabaseRequest": "glue:UpdateDatabaseRequest",
+    "GetUnfilteredPartitionMetadataRequest": "glue:GetUnfilteredPartitionMetadataRequest",
+    "GetDatabasesResponse": "glue:GetDatabasesResponse",
+    "GetCrawlersRequest": "glue:GetCrawlersRequest",
+    "AggregateOperation": "glue:AggregateOperation",
+    "StartCrawlerScheduleRequest": "glue:StartCrawlerScheduleRequest",
+    "GetWorkflowRunsResponse": "glue:GetWorkflowRunsResponse",
+    "DeleteRegistryResponse": "glue:DeleteRegistryResponse",
+    "RegisterSchemaVersionResponse": "glue:RegisterSchemaVersionResponse",
+    "DeletePartitionRequest": "glue:DeletePartitionRequest",
+    "CreateWorkflowResponse": "glue:CreateWorkflowResponse",
+    "StartWorkflowRunResponse": "glue:StartWorkflowRunResponse",
+    "ListTriggersRequest": "glue:ListTriggersRequest",
+    "GetCrawlerRequest": "glue:GetCrawlerRequest",
+    "DeleteDatabaseResponse": "glue:DeleteDatabaseResponse",
+    "CreatePartitionIndexRequest": "glue:CreatePartitionIndexRequest",
+    "SearchTablesResponse": "glue:SearchTablesResponse",
+    "BatchGetCrawlersRequest": "glue:BatchGetCrawlersRequest",
+    "CreateSessionResponse": "glue:CreateSessionResponse",
+    "CancelMLTaskRunRequest": "glue:CancelMLTaskRunRequest",
+    "GetJobsResponse": "glue:GetJobsResponse",
+    "BatchGetCustomEntityTypesResponse": "glue:BatchGetCustomEntityTypesResponse",
+    "GetDatabaseRequest": "glue:GetDatabaseRequest",
+    "GetColumnStatisticsForTableRequest": "glue:GetColumnStatisticsForTableRequest",
+    "UpdateBlueprintRequest": "glue:UpdateBlueprintRequest",
+    "BatchCreatePartitionResponse": "glue:BatchCreatePartitionResponse",
+    "UpdateClassifierResponse": "glue:UpdateClassifierResponse",
+    "PutSchemaVersionMetadataResponse": "glue:PutSchemaVersionMetadataResponse",
+    "GetDevEndpointRequest": "glue:GetDevEndpointRequest",
+    "GetColumnStatisticsForPartitionRequest": "glue:GetColumnStatisticsForPartitionRequest",
+    "DeleteColumnStatisticsForPartitionResponse": "glue:DeleteColumnStatisticsForPartitionResponse",
+    "UpdateBlueprintResponse": "glue:UpdateBlueprintResponse",
+    "CreateScriptResponse": "glue:CreateScriptResponse",
+    "CreateMLTransformResponse": "glue:CreateMLTransformResponse",
+    "Aggregate": "glue:Aggregate",
+    "BatchGetPartitionRequest": "glue:BatchGetPartitionRequest",
+    "UntagResourceRequest": "glue:UntagResourceRequest",
+    "GetDataQualityRuleRecommendationRunResponse": "glue:GetDataQualityRuleRecommendationRunResponse",
+    "DeleteMLTransformResponse": "glue:DeleteMLTransformResponse",
+    "BatchCreatePartitionRequest": "glue:BatchCreatePartitionRequest",
+    "GetConnectionRequest": "glue:GetConnectionRequest",
+    "DeleteCustomEntityTypeRequest": "glue:DeleteCustomEntityTypeRequest",
+    "CreateJobRequest": "glue:CreateJobRequest",
+    "GetUserDefinedFunctionsResponse": "glue:GetUserDefinedFunctionsResponse",
+    "BatchGetDevEndpointsRequest": "glue:BatchGetDevEndpointsRequest",
+    "GetSchemaByDefinitionResponse": "glue:GetSchemaByDefinitionResponse",
+    "BatchDeleteConnectionResponse": "glue:BatchDeleteConnectionResponse",
+    "StopSessionResponse": "glue:StopSessionResponse",
+    "ListDataQualityRuleRecommendationRunsResponse": "glue:ListDataQualityRuleRecommendationRunsResponse",
+    "StartDataQualityRuleRecommendationRunRequest": "glue:StartDataQualityRuleRecommendationRunRequest",
+    "DeleteMLTransformRequest": "glue:DeleteMLTransformRequest",
+    "UpdateUserDefinedFunctionRequest": "glue:UpdateUserDefinedFunctionRequest",
+    "GetDataQualityRulesetResponse": "glue:GetDataQualityRulesetResponse",
+    "GetJobRunRequest": "glue:GetJobRunRequest",
+    "GetResourcePoliciesResponse": "glue:GetResourcePoliciesResponse",
+    "ListRegistriesResponse": "glue:ListRegistriesResponse",
+    "CreateCustomEntityTypeResponse": "glue:CreateCustomEntityTypeResponse",
+    "StartCrawlerScheduleResponse": "glue:StartCrawlerScheduleResponse",
+    "GetBlueprintRunsRequest": "glue:GetBlueprintRunsRequest",
+    "UpdateCrawlerRequest": "glue:UpdateCrawlerRequest",
+    "GetMLTransformResponse": "glue:GetMLTransformResponse",
+    "GetDataQualityRulesetEvaluationRunRequest": "glue:GetDataQualityRulesetEvaluationRunRequest",
+    "UpdateTableResponse": "glue:UpdateTableResponse",
+    "GetWorkflowRunPropertiesResponse": "glue:GetWorkflowRunPropertiesResponse",
+    "CancelDataQualityRuleRecommendationRunRequest": "glue:CancelDataQualityRuleRecommendationRunRequest",
+    "DeleteBlueprintResponse": "glue:DeleteBlueprintResponse",
+    "RunStatementRequest": "glue:RunStatementRequest",
+    "StartImportLabelsTaskRunResponse": "glue:StartImportLabelsTaskRunResponse",
+    "DeleteSessionRequest": "glue:DeleteSessionRequest",
+    "RemoveSchemaVersionMetadataInput": "glue:RemoveSchemaVersionMetadataInput",
+    "GetUserDefinedFunctionRequest": "glue:GetUserDefinedFunctionRequest",
+    "GetColumnStatisticsForTableResponse": "glue:GetColumnStatisticsForTableResponse",
+    "UpdateJobRequest": "glue:UpdateJobRequest",
+    "UpdateDataQualityRulesetResponse": "glue:UpdateDataQualityRulesetResponse",
+    "GetWorkflowResponse": "glue:GetWorkflowResponse",
+    "ListCustomEntityTypesRequest": "glue:ListCustomEntityTypesRequest",
+    "GetPartitionsRequest": "glue:GetPartitionsRequest",
+    "BatchDeleteTableResponse": "glue:BatchDeleteTableResponse",
+    "UpdateCrawlerScheduleRequest": "glue:UpdateCrawlerScheduleRequest",
+    "ListRegistriesInput": "glue:ListRegistriesInput",
+    "ResetJobBookmarkResponse": "glue:ResetJobBookmarkResponse",
+    "GetUnfilteredTableMetadataRequest": "glue:GetUnfilteredTableMetadataRequest",
+    "GetWorkflowRequest": "glue:GetWorkflowRequest",
+    "CancelDataQualityRulesetEvaluationRunRequest": "glue:CancelDataQualityRulesetEvaluationRunRequest",
+    "DeleteUserDefinedFunctionResponse": "glue:DeleteUserDefinedFunctionResponse",
+    "StartMLLabelingSetGenerationTaskRunRequest": "glue:StartMLLabelingSetGenerationTaskRunRequest",
+    "ListWorkflowsResponse": "glue:ListWorkflowsResponse",
+    "UpdateColumnStatisticsForTableRequest": "glue:UpdateColumnStatisticsForTableRequest",
+    "DeleteDataQualityRulesetResponse": "glue:DeleteDataQualityRulesetResponse",
+    "AdditionalPlanOptionsMap": {
+      "@id": "glue:AdditionalPlanOptionsMap",
+      "@type": "xsd:string"
     },
-
+    "GetJobRequest": "glue:GetJobRequest",
+    "PutDataCatalogEncryptionSettingsResponse": "glue:PutDataCatalogEncryptionSettingsResponse",
+    "StartWorkflowRunRequest": "glue:StartWorkflowRunRequest",
+    "GetPlanResponse": "glue:GetPlanResponse",
+    "GetWorkflowRunResponse": "glue:GetWorkflowRunResponse",
+    "RunStatementResponse": "glue:RunStatementResponse",
+    "ListDataQualityRulesetEvaluationRunsRequest": "glue:ListDataQualityRulesetEvaluationRunsRequest",
+    "StopTriggerRequest": "glue:StopTriggerRequest",
+    "StopWorkflowRunRequest": "glue:StopWorkflowRunRequest",
+    "GetCrawlerResponse": "glue:GetCrawlerResponse",
+    "StartDataQualityRulesetEvaluationRunRequest": "glue:StartDataQualityRulesetEvaluationRunRequest",
+    "Amazon Glue Job": "glue:Amazon Glue Job",
+    "BatchGetBlueprintsResponse": "glue:BatchGetBlueprintsResponse",
+    "CreateSchemaResponse": "glue:CreateSchemaResponse",
+    "GetDataflowGraphResponse": "glue:GetDataflowGraphResponse",
+    "ListStatementsResponse": "glue:ListStatementsResponse",
+    "GetStatementRequest": "glue:GetStatementRequest",
+    "BatchDeleteConnectionRequest": "glue:BatchDeleteConnectionRequest",
+    "UpdateDevEndpointResponse": "glue:UpdateDevEndpointResponse",
+    "CreateUserDefinedFunctionResponse": "glue:CreateUserDefinedFunctionResponse",
+    "RegisterSchemaVersionInput": "glue:RegisterSchemaVersionInput",
+    "DeleteUserDefinedFunctionRequest": "glue:DeleteUserDefinedFunctionRequest",
+    "CreateDevEndpointRequest": "glue:CreateDevEndpointRequest",
+    "UntagResourceResponse": "glue:UntagResourceResponse",
+    "DeleteCrawlerResponse": "glue:DeleteCrawlerResponse",
+    "GetJobBookmarkResponse": "glue:GetJobBookmarkResponse",
+    "UpdateWorkflowRequest": "glue:UpdateWorkflowRequest",
+    "BatchDeletePartitionResponse": "glue:BatchDeletePartitionResponse",
+    "DeleteDataQualityRulesetRequest": "glue:DeleteDataQualityRulesetRequest",
+    "ListSessionsRequest": "glue:ListSessionsRequest",
+    "GetClassifierRequest": "glue:GetClassifierRequest",
+    "ListSchemaVersionsResponse": "glue:ListSchemaVersionsResponse",
+    "DeleteSecurityConfigurationRequest": "glue:DeleteSecurityConfigurationRequest",
+    "UpdateSourceControlFromJobRequest": "glue:UpdateSourceControlFromJobRequest",
+    "BatchGetPartitionResponse": "glue:BatchGetPartitionResponse",
+    "CreateTriggerResponse": "glue:CreateTriggerResponse",
+    "StartJobRunRequest": "glue:StartJobRunRequest",
+    "DeleteTriggerRequest": "glue:DeleteTriggerRequest",
+    "DeleteWorkflowRequest": "glue:DeleteWorkflowRequest",
+    "GetCatalogImportStatusRequest": "glue:GetCatalogImportStatusRequest",
+    "StartCrawlerResponse": "glue:StartCrawlerResponse",
+    "DeleteTableVersionResponse": "glue:DeleteTableVersionResponse",
+    "CreateSecurityConfigurationRequest": "glue:CreateSecurityConfigurationRequest",
+    "GetTriggersResponse": "glue:GetTriggersResponse",
+    "DeletePartitionIndexRequest": "glue:DeletePartitionIndexRequest",
+    "BatchGetWorkflowsResponse": "glue:BatchGetWorkflowsResponse",
+    "GetCrawlerMetricsResponse": "glue:GetCrawlerMetricsResponse",
+    "UpdateCrawlerResponse": "glue:UpdateCrawlerResponse",
+    "ListCrawlersResponse": "glue:ListCrawlersResponse",
+    "Action": "glue:Action",
+    "ResumeWorkflowRunResponse": "glue:ResumeWorkflowRunResponse",
+    "GetCustomEntityTypeRequest": "glue:GetCustomEntityTypeRequest",
+    "GetSchemaByDefinitionInput": "glue:GetSchemaByDefinitionInput",
+    "DeleteResourcePolicyResponse": "glue:DeleteResourcePolicyResponse",
+    "StartMLLabelingSetGenerationTaskRunResponse": "glue:StartMLLabelingSetGenerationTaskRunResponse",
+    "UpdateMLTransformRequest": "glue:UpdateMLTransformRequest",
+    "PutResourcePolicyRequest": "glue:PutResourcePolicyRequest",
+    "QuerySchemaVersionMetadataInput": "glue:QuerySchemaVersionMetadataInput",
+    "GetDataQualityRulesetEvaluationRunResponse": "glue:GetDataQualityRulesetEvaluationRunResponse",
+    "GetUnfilteredTableMetadataResponse": "glue:GetUnfilteredTableMetadataResponse",
+    "PartitionValueList": {
+      "@id": "glue:PartitionValueList",
+      "@type": "xsd:string"
+    },
+    "GetSchemaResponse": "glue:GetSchemaResponse",
+    "StartDataQualityRuleRecommendationRunResponse": "glue:StartDataQualityRuleRecommendationRunResponse",
+    "BatchGetJobsResponse": "glue:BatchGetJobsResponse",
+    "GetResourcePolicyResponse": "glue:GetResourcePolicyResponse",
+    "ListJobsRequest": "glue:ListJobsRequest",
+    "StopWorkflowRunResponse": "glue:StopWorkflowRunResponse",
+    "StopSessionRequest": "glue:StopSessionRequest",
+    "GetCrawlersResponse": "glue:GetCrawlersResponse",
+    "ListTriggersResponse": "glue:ListTriggersResponse",
+    "UpdateRegistryInput": "glue:UpdateRegistryInput",
+    "ListSessionsResponse": "glue:ListSessionsResponse",
+    "GetPlanRequest": "glue:GetPlanRequest",
+    "BatchGetJobsRequest": "glue:BatchGetJobsRequest",
+    "ListDataQualityRuleRecommendationRunsRequest": "glue:ListDataQualityRuleRecommendationRunsRequest",
+    "StopTriggerResponse": "glue:StopTriggerResponse",
+    "DeleteResourcePolicyRequest": "glue:DeleteResourcePolicyRequest",
+    "GetUnfilteredPartitionsMetadataRequest": "glue:GetUnfilteredPartitionsMetadataRequest",
+    "CreateRegistryResponse": "glue:CreateRegistryResponse",
+    "DeleteWorkflowResponse": "glue:DeleteWorkflowResponse",
+    "GetSchemaInput": "glue:GetSchemaInput",
+    "CreatePartitionRequest": "glue:CreatePartitionRequest",
+    "GetSecurityConfigurationResponse": "glue:GetSecurityConfigurationResponse",
+    "CreateDatabaseResponse": "glue:CreateDatabaseResponse",
+    "ListJobsResponse": "glue:ListJobsResponse",
+    "UpdateDataQualityRulesetRequest": "glue:UpdateDataQualityRulesetRequest",
+    "GetUnfilteredPartitionsMetadataResponse": "glue:GetUnfilteredPartitionsMetadataResponse",
+    "GetDataQualityRuleRecommendationRunRequest": "glue:GetDataQualityRuleRecommendationRunRequest",
+    "ListCrawlsResponse": "glue:ListCrawlsResponse",
+    "GetTriggerResponse": "glue:GetTriggerResponse",
+    "CreateConnectionRequest": "glue:CreateConnectionRequest",
+    "CancelMLTaskRunResponse": "glue:CancelMLTaskRunResponse",
+    "GetTableVersionsRequest": "glue:GetTableVersionsRequest",
+    "ResumeWorkflowRunRequest": "glue:ResumeWorkflowRunRequest",
+    "TagResourceResponse": "glue:TagResourceResponse",
+    "GetWorkflowRunPropertiesRequest": "glue:GetWorkflowRunPropertiesRequest",
+    "BatchGetDataQualityResultRequest": "glue:BatchGetDataQualityResultRequest",
+    "StartBlueprintRunResponse": "glue:StartBlueprintRunResponse",
+    "ListDataQualityRulesetEvaluationRunsResponse": "glue:ListDataQualityRulesetEvaluationRunsResponse",
+    "ResetJobBookmarkRequest": "glue:ResetJobBookmarkRequest",
+    "DeleteColumnStatisticsForTableResponse": "glue:DeleteColumnStatisticsForTableResponse",
+    "NotificationProperty": {
+      "@id": "glue:NotificationProperty",
+      "@type": "xsd:string"
+    },
+    "CreateRegistryInput": "glue:CreateRegistryInput",
+    "BatchGetBlueprintsRequest": "glue:BatchGetBlueprintsRequest",
+    "CreateMLTransformRequest": "glue:CreateMLTransformRequest",
+    "CreateCustomEntityTypeRequest": "glue:CreateCustomEntityTypeRequest",
+    "GetUserDefinedFunctionResponse": "glue:GetUserDefinedFunctionResponse",
+    "CreateScriptRequest": "glue:CreateScriptRequest",
+    "BatchDeletePartitionRequest": "glue:BatchDeletePartitionRequest",
+    "GetJobRunResponse": "glue:GetJobRunResponse",
+    "DeleteSchemaVersionsInput": "glue:DeleteSchemaVersionsInput",
+    "DeleteCrawlerRequest": "glue:DeleteCrawlerRequest",
+    "ImportCatalogToGlueResponse": "glue:ImportCatalogToGlueResponse",
+    "GetConnectionsRequest": "glue:GetConnectionsRequest",
+    "DeleteTableResponse": "glue:DeleteTableResponse",
+    "GetTableVersionRequest": "glue:GetTableVersionRequest",
+    "DeleteClassifierRequest": "glue:DeleteClassifierRequest",
+    "CreateSecurityConfigurationResponse": "glue:CreateSecurityConfigurationResponse",
+    "CancelDataQualityRuleRecommendationRunResponse": "glue:CancelDataQualityRuleRecommendationRunResponse",
+    "CreateDevEndpointResponse": "glue:CreateDevEndpointResponse",
+    "GetMLTaskRunRequest": "glue:GetMLTaskRunRequest",
+    "UpdatePartitionResponse": "glue:UpdatePartitionResponse",
+    "UpdateJobFromSourceControlRequest": "glue:UpdateJobFromSourceControlRequest",
+    "GetJobResponse": "glue:GetJobResponse",
+    "UpdateDevEndpointRequest": "glue:UpdateDevEndpointRequest",
+    "DeleteDevEndpointResponse": "glue:DeleteDevEndpointResponse",
+    "BatchGetCrawlersResponse": "glue:BatchGetCrawlersResponse",
+    "ErrorByName": "glue:ErrorByName",
+    "StopCrawlerResponse": "glue:StopCrawlerResponse",
+    "PutWorkflowRunPropertiesRequest": "glue:PutWorkflowRunPropertiesRequest",
+    "StartExportLabelsTaskRunRequest": "glue:StartExportLabelsTaskRunRequest",
+    "ListMLTransformsResponse": "glue:ListMLTransformsResponse",
+    "ListDataQualityRulesetsRequest": "glue:ListDataQualityRulesetsRequest",
+    "UpdateConnectionRequest": "glue:UpdateConnectionRequest",
+    "UpdateWorkflowResponse": "glue:UpdateWorkflowResponse",
+    "ListSchemasResponse": "glue:ListSchemasResponse",
+    "GetPartitionIndexesResponse": "glue:GetPartitionIndexesResponse",
+    "GetMLTransformsResponse": "glue:GetMLTransformsResponse",
+    "StartJobRunResponse": "glue:StartJobRunResponse",
+    "GetSecurityConfigurationRequest": "glue:GetSecurityConfigurationRequest",
+    "ListDevEndpointsRequest": "glue:ListDevEndpointsRequest",
+    "RemoveSchemaVersionMetadataResponse": "glue:RemoveSchemaVersionMetadataResponse",
+    "GetResourcePoliciesRequest": "glue:GetResourcePoliciesRequest",
+    "GetBlueprintRunRequest": "glue:GetBlueprintRunRequest",
+    "StopCrawlerRequest": "glue:StopCrawlerRequest",
+    "ListBlueprintsRequest": "glue:ListBlueprintsRequest",
+    "GetCustomEntityTypeResponse": "glue:GetCustomEntityTypeResponse",
+    "ListSchemasInput": "glue:ListSchemasInput",
+    "DeleteRegistryInput": "glue:DeleteRegistryInput",
+    "UpdateJobFromSourceControlResponse": "glue:UpdateJobFromSourceControlResponse",
+    "CreateBlueprintRequest": "glue:CreateBlueprintRequest",
+    "GetDevEndpointsRequest": "glue:GetDevEndpointsRequest",
+    "GetCrawlerMetricsRequest": "glue:GetCrawlerMetricsRequest",
+    "GetDatabasesRequest": "glue:GetDatabasesRequest",
+    "UpdateUserDefinedFunctionResponse": "glue:UpdateUserDefinedFunctionResponse",
+    "BatchGetTriggersResponse": "glue:BatchGetTriggersResponse",
+    "CreateTableRequest": "glue:CreateTableRequest",
+    "BatchGetDataQualityResultResponse": "glue:BatchGetDataQualityResultResponse",
+    "DeleteDevEndpointRequest": "glue:DeleteDevEndpointRequest",
+    "CreateWorkflowRequest": "glue:CreateWorkflowRequest",
+    "CancelDataQualityRulesetEvaluationRunResponse": "glue:CancelDataQualityRulesetEvaluationRunResponse",
+    "BatchDeleteTableVersionResponse": "glue:BatchDeleteTableVersionResponse",
+    "CreateTableResponse": "glue:CreateTableResponse",
+    "BatchUpdatePartitionRequest": "glue:BatchUpdatePartitionRequest",
+    "UpdateTriggerResponse": "glue:UpdateTriggerResponse",
+    "BatchStopJobRunResponse": "glue:BatchStopJobRunResponse",
+    "StartDataQualityRulesetEvaluationRunResponse": "glue:StartDataQualityRulesetEvaluationRunResponse",
+    "UpdateCrawlerScheduleResponse": "glue:UpdateCrawlerScheduleResponse",
+    "UpdateColumnStatisticsForPartitionRequest": "glue:UpdateColumnStatisticsForPartitionRequest",
+    "CancelStatementRequest": "glue:CancelStatementRequest",
+    "QuerySchemaVersionMetadataResponse": "glue:QuerySchemaVersionMetadataResponse",
+    "StartTriggerResponse": "glue:StartTriggerResponse",
+    "BatchGetCustomEntityTypesRequest": "glue:BatchGetCustomEntityTypesRequest",
+    "PutDataCatalogEncryptionSettingsRequest": "glue:PutDataCatalogEncryptionSettingsRequest",
+    "GetMLTaskRunResponse": "glue:GetMLTaskRunResponse",
+    "CreateCrawlerResponse": "glue:CreateCrawlerResponse",
+    "UpdateColumnStatisticsForTableResponse": "glue:UpdateColumnStatisticsForTableResponse",
+    "StartMLEvaluationTaskRunRequest": "glue:StartMLEvaluationTaskRunRequest",
+    "UpdateTriggerRequest": "glue:UpdateTriggerRequest",
+    "GetPartitionIndexesRequest": "glue:GetPartitionIndexesRequest",
+    "GetBlueprintResponse": "glue:GetBlueprintResponse",
+    "GetTablesRequest": "glue:GetTablesRequest",
+    "GetPartitionsResponse": "glue:GetPartitionsResponse",
+    "GetClassifiersRequest": "glue:GetClassifiersRequest",
+    "StopCrawlerScheduleRequest": "glue:StopCrawlerScheduleRequest",
+    "GetSchemaVersionsDiffResponse": "glue:GetSchemaVersionsDiffResponse",
+    "SearchTablesRequest": "glue:SearchTablesRequest",
+    "GetMLTaskRunsResponse": "glue:GetMLTaskRunsResponse",
+    "BackfillError": "glue:BackfillError",
+    "CreatePartitionResponse": "glue:CreatePartitionResponse",
+    "StartMLEvaluationTaskRunResponse": "glue:StartMLEvaluationTaskRunResponse",
+    "DeleteTriggerResponse": "glue:DeleteTriggerResponse",
+    "PutWorkflowRunPropertiesResponse": "glue:PutWorkflowRunPropertiesResponse",
+    "DeleteSchemaResponse": "glue:DeleteSchemaResponse",
+    "GetClassifiersResponse": "glue:GetClassifiersResponse",
+    "DeleteTableRequest": "glue:DeleteTableRequest",
+    "GetBlueprintRequest": "glue:GetBlueprintRequest",
+    "ListDataQualityRulesetsResponse": "glue:ListDataQualityRulesetsResponse",
+    "CreateClassifierResponse": "glue:CreateClassifierResponse",
+    "GetTriggersRequest": "glue:GetTriggersRequest",
+    "GetJobRunsResponse": "glue:GetJobRunsResponse",
+    "GetRegistryInput": "glue:GetRegistryInput",
+    "GetSessionResponse": "glue:GetSessionResponse",
+    "GetSecurityConfigurationsRequest": "glue:GetSecurityConfigurationsRequest",
+    "AuditContext": {
+      "@id": "glue:AuditContext",
+      "@type": "xsd:string"
+    },
+    "GetTableVersionsResponse": "glue:GetTableVersionsResponse",
+    "DeleteConnectionResponse": "glue:DeleteConnectionResponse",
+    "GetResourcePolicyRequest": "glue:GetResourcePolicyRequest",
+    "GetDataflowGraphRequest": "glue:GetDataflowGraphRequest",
+    "GetTableVersionResponse": "glue:GetTableVersionResponse",
+    "DeleteConnectionRequest": "glue:DeleteConnectionRequest",
+    "DeleteColumnStatisticsForTableRequest": "glue:DeleteColumnStatisticsForTableRequest",
+    "CreateDatabaseRequest": "glue:CreateDatabaseRequest",
+    "CreateJobResponse": "glue:CreateJobResponse",
+    "GetDataQualityRulesetRequest": "glue:GetDataQualityRulesetRequest",
+    "GetStatementResponse": "glue:GetStatementResponse",
+    "UpdateSourceControlFromJobResponse": "glue:UpdateSourceControlFromJobResponse",
+    "GetUserDefinedFunctionsRequest": "glue:GetUserDefinedFunctionsRequest",
+    "GetTagsResponse": "glue:GetTagsResponse",
+    "CreateSessionRequest": "glue:CreateSessionRequest",
+    "BatchGetWorkflowsRequest": "glue:BatchGetWorkflowsRequest",
+    "GetCatalogImportStatusResponse": "glue:GetCatalogImportStatusResponse",
+    "DeleteJobRequest": "glue:DeleteJobRequest",
+    "CreateSchemaInput": "glue:CreateSchemaInput",
+    "GetConnectionResponse": "glue:GetConnectionResponse",
+    "CreateClassifierRequest": "glue:CreateClassifierRequest",
+    "GetJobRunsRequest": "glue:GetJobRunsRequest",
+    "ListDataQualityResultsRequest": "glue:ListDataQualityResultsRequest",
+    "StartBlueprintRunRequest": "glue:StartBlueprintRunRequest",
+    "GetBlueprintRunsResponse": "glue:GetBlueprintRunsResponse",
+    "GetMappingRequest": "glue:GetMappingRequest",
+    "GetTriggerRequest": "glue:GetTriggerRequest",
+    "GetSecurityConfigurationsResponse": "glue:GetSecurityConfigurationsResponse",
+    "GetDataQualityResultRequest": "glue:GetDataQualityResultRequest",
+    "GetJobsRequest": "glue:GetJobsRequest",
+    "GetUnfilteredPartitionMetadataResponse": "glue:GetUnfilteredPartitionMetadataResponse",
+    "StartImportLabelsTaskRunRequest": "glue:StartImportLabelsTaskRunRequest",
+    "ListStatementsRequest": "glue:ListStatementsRequest",
+    "GetMLTransformRequest": "glue:GetMLTransformRequest",
+    "ListBlueprintsResponse": "glue:ListBlueprintsResponse",
+    "GetDataQualityResultResponse": "glue:GetDataQualityResultResponse",
+    "DeleteClassifierResponse": "glue:DeleteClassifierResponse",
+    "CancelStatementResponse": "glue:CancelStatementResponse",
+    "DeleteCustomEntityTypeResponse": "glue:DeleteCustomEntityTypeResponse",
+    "DeleteSchemaInput": "glue:DeleteSchemaInput",
+    "TagResourceRequest": "glue:TagResourceRequest",
+    "BatchGetDevEndpointsResponse": "glue:BatchGetDevEndpointsResponse",
+    "CheckSchemaVersionValidityResponse": "glue:CheckSchemaVersionValidityResponse",
+    "UpdateJobResponse": "glue:UpdateJobResponse",
+    "GetRegistryResponse": "glue:GetRegistryResponse",
+    "DeleteTableVersionRequest": "glue:DeleteTableVersionRequest",
+    "GenericMap": "glue:GenericMap",
+    "GetPartitionRequest": "glue:GetPartitionRequest",
+    "ListSchemaVersionsInput": "glue:ListSchemaVersionsInput",
+    "GetDatabaseResponse": "glue:GetDatabaseResponse",
+    "PutResourcePolicyResponse": "glue:PutResourcePolicyResponse",
+    "CreatePartitionIndexResponse": "glue:CreatePartitionIndexResponse",
+    "GetConnectionsResponse": "glue:GetConnectionsResponse",
+    "CreateConnectionResponse": "glue:CreateConnectionResponse",
+    "ListCrawlsRequest": "glue:ListCrawlsRequest",
+    "GetDevEndpointResponse": "glue:GetDevEndpointResponse",
+    "PutSchemaVersionMetadataInput": "glue:PutSchemaVersionMetadataInput",
+    "GetTablesResponse": "glue:GetTablesResponse",
+    "StartExportLabelsTaskRunResponse": "glue:StartExportLabelsTaskRunResponse",
+    "UpdateClassifierRequest": "glue:UpdateClassifierRequest",
+    "CreateTriggerRequest": "glue:CreateTriggerRequest",
+    "BatchStopJobRunRequest": "glue:BatchStopJobRunRequest",
+    "GetWorkflowRunRequest": "glue:GetWorkflowRunRequest",
+    "DeletePartitionResponse": "glue:DeletePartitionResponse",
+    "DeleteSecurityConfigurationResponse": "glue:DeleteSecurityConfigurationResponse",
+    "GetDataCatalogEncryptionSettingsRequest": "glue:GetDataCatalogEncryptionSettingsRequest",
+    "UpdateSchemaInput": "glue:UpdateSchemaInput",
+    "UpdateMLTransformResponse": "glue:UpdateMLTransformResponse",
+    "GetTableResponse": "glue:GetTableResponse",
+    "DeleteJobResponse": "glue:DeleteJobResponse",
+    "UpdateTableRequest": "glue:UpdateTableRequest",
+    "GetSessionRequest": "glue:GetSessionRequest",
+    "ListCrawlersRequest": "glue:ListCrawlersRequest",
+    "GetMLTaskRunsRequest": "glue:GetMLTaskRunsRequest",
+    "BatchGetTriggersRequest": "glue:BatchGetTriggersRequest",
+    "ImportCatalogToGlueRequest": "glue:ImportCatalogToGlueRequest",
+    "BatchDeleteTableRequest": "glue:BatchDeleteTableRequest",
+    "GetColumnStatisticsForPartitionResponse": "glue:GetColumnStatisticsForPartitionResponse",
+    "BatchDeleteTableVersionRequest": "glue:BatchDeleteTableVersionRequest",
+    "DeletePartitionIndexResponse": "glue:DeletePartitionIndexResponse",
+    "DeleteSessionResponse": "glue:DeleteSessionResponse",
+    "GetClassifierResponse": "glue:GetClassifierResponse",
+    "GetSchemaVersionsDiffInput": "glue:GetSchemaVersionsDiffInput",
+    "StartTriggerRequest": "glue:StartTriggerRequest",
+    "DataCatalogEncryptionSettings": {
+      "@id": "glue:DataCatalogEncryptionSettings",
+      "@type": "xsd:string"
+    },
+    "JobName": {
+      "@id": "glue:JobName",
+      "@type": "xsd:string"
+    },
+    "RunId": {
+      "@id": "glue:RunId",
+      "@type": "xsd:string"
+    },
+    "BlueprintRun": {
+      "@id": "glue:BlueprintRun",
+      "@type": "xsd:string"
+    },
+    "Name": "schema:name",
+    "ResourceArn": {
+      "@id": "glue:ResourceArn",
+      "@type": "xsd:string"
+    },
+    "DataFormat": {
+      "@id": "glue:DataFormat",
+      "@type": "xsd:string"
+    },
+    "SchemaDefinition": {
+      "@id": "glue:SchemaDefinition",
+      "@type": "xsd:string"
+    },
+    "CatalogId": {
+      "@id": "glue:CatalogId",
+      "@type": "xsd:string"
+    },
+    "DatabaseName": {
+      "@id": "glue:DatabaseName",
+      "@type": "xsd:string"
+    },
+    "TableName": {
+      "@id": "glue:TableName",
+      "@type": "xsd:string"
+    },
+    "PartitionValues": {
+      "@id": "glue:PartitionValues",
+      "@type": "xsd:string"
+    },
+    "ColumnName": {
+      "@id": "glue:ColumnName",
+      "@type": "xsd:string"
+    },
+    "Errors": {
+      "@id": "glue:Errors",
+      "@type": "xsd:string"
+    },
+    "PartitionInput": {
+      "@id": "glue:PartitionInput",
+      "@type": "xsd:string"
+    },
+    "SchemaId": {
+      "@id": "glue:SchemaId",
+      "@type": "xsd:string"
+    },
+    "SchemaVersionId": {
+      "@id": "glue:SchemaVersionId",
+      "@type": "xsd:string"
+    },
+    "SchemaVersionNumber": {
+      "@id": "glue:SchemaVersionNumber",
+      "@type": "xsd:string"
+    },
+    "TransactionId": {
+      "@id": "glue:TransactionId",
+      "@type": "xsd:string"
+    },
+    "QueryAsOfTime": {
+      "@id": "glue:QueryAsOfTime",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "glue:NextToken",
+      "@type": "xsd:string"
+    },
+    "MaxResults": {
+      "@id": "glue:MaxResults",
+      "@type": "xsd:string"
+    },
+    "Filter": {
+      "@id": "glue:Filter",
+      "@type": "xsd:string"
+    },
+    "Sort": {
+      "@id": "glue:Sort",
+      "@type": "xsd:string"
+    },
+    "RegistryName": {
+      "@id": "glue:RegistryName",
+      "@type": "xsd:string"
+    },
+    "RegistryArn": {
+      "@id": "glue:RegistryArn",
+      "@type": "xsd:string"
+    },
+    "SchemaArn": {
+      "@id": "glue:SchemaArn",
+      "@type": "xsd:string"
+    },
+    "VersionNumber": {
+      "@id": "glue:VersionNumber",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "glue:Status",
+      "@type": "xsd:string"
+    },
+    "CreatedTime": {
+      "@id": "glue:CreatedTime",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "glue:Tags",
+      "@type": "xsd:string"
+    },
+    "Description": "schema:description",
+    "Ruleset": {
+      "@id": "glue:Ruleset",
+      "@type": "xsd:string"
+    },
+    "TargetTable": {
+      "@id": "glue:TargetTable",
+      "@type": "xsd:string"
+    },
+    "ClientToken": {
+      "@id": "glue:ClientToken",
+      "@type": "xsd:string"
+    },
+    "CustomEntityTypes": {
+      "@id": "glue:CustomEntityTypes",
+      "@type": "xsd:string"
+    },
+    "Partition": {
+      "@id": "glue:Partition",
+      "@type": "xsd:string"
+    },
+    "Results": {
+      "@id": "glue:Results",
+      "@type": "xsd:string"
+    },
+    "Inputs": {
+      "@id": "glue:Inputs",
+      "@type": "xsd:string"
+    },
+    "Database": {
+      "@id": "glue:Database",
+      "@type": "xsd:string"
+    },
+    "Table": {
+      "@id": "glue:Table",
+      "@type": "xsd:string"
+    },
+    "SchemaVersionErrors": {
+      "@id": "glue:SchemaVersionErrors",
+      "@type": "xsd:string"
+    },
+    "FunctionInput": {
+      "@id": "glue:FunctionInput",
+      "@type": "xsd:string"
+    },
+    "Role": {
+      "@id": "glue:Role",
+      "@type": "xsd:string"
+    },
+    "Targets": {
+      "@id": "glue:Targets",
+      "@type": "xsd:string"
+    },
+    "Schedule": {
+      "@id": "glue:Schedule",
+      "@type": "xsd:string"
+    },
+    "Classifiers": {
+      "@id": "glue:Classifiers",
+      "@type": "xsd:string"
+    },
+    "TablePrefix": {
+      "@id": "glue:TablePrefix",
+      "@type": "xsd:string"
+    },
+    "SchemaChangePolicy": {
+      "@id": "glue:SchemaChangePolicy",
+      "@type": "xsd:string"
+    },
+    "RecrawlPolicy": {
+      "@id": "glue:RecrawlPolicy",
+      "@type": "xsd:string"
+    },
+    "LineageConfiguration": {
+      "@id": "glue:LineageConfiguration",
+      "@type": "xsd:string"
+    },
+    "LakeFormationConfiguration": {
+      "@id": "glue:LakeFormationConfiguration",
+      "@type": "xsd:string"
+    },
+    "Configuration": {
+      "@id": "glue:Configuration",
+      "@type": "xsd:string"
+    },
+    "CrawlerSecurityConfiguration": {
+      "@id": "glue:CrawlerSecurityConfiguration",
+      "@type": "xsd:string"
+    },
+    "SchemaName": {
+      "@id": "glue:SchemaName",
+      "@type": "xsd:string"
+    },
+    "DevEndpoints": {
+      "@id": "glue:DevEndpoints",
+      "@type": "xsd:string"
+    },
+    "ConnectionName": {
+      "@id": "glue:ConnectionName",
+      "@type": "xsd:string"
+    },
+    "ConnectorName": {
+      "@id": "glue:ConnectorName",
+      "@type": "xsd:string"
+    },
+    "ConnectionType": {
+      "@id": "glue:ConnectionType",
+      "@type": "xsd:string"
+    },
+    "ConnectionTable": {
+      "@id": "glue:ConnectionTable",
+      "@type": "xsd:string"
+    },
+    "OutputSchemas": {
+      "@id": "glue:OutputSchemas",
+      "@type": "xsd:string"
+    },
+    "IncludeGraph": {
+      "@id": "glue:IncludeGraph",
+      "@type": "xsd:string"
+    },
+    "DevEndpointNames": {
+      "@id": "glue:DevEndpointNames",
+      "@type": "xsd:string"
+    },
+    "Mapping": {
+      "@id": "glue:Mapping",
+      "@type": "xsd:string"
+    },
+    "DatabaseInput": {
+      "@id": "glue:DatabaseInput",
+      "@type": "xsd:string"
+    },
+    "SupportedPermissionTypes": {
+      "@id": "glue:SupportedPermissionTypes",
+      "@type": "xsd:string"
+    },
+    "DatabaseList": {
+      "@id": "glue:DatabaseList",
+      "@type": "xsd:string"
+    },
+    "Column": {
+      "@id": "glue:Column",
+      "@type": "xsd:string"
+    },
+    "AggFunc": {
+      "@id": "glue:AggFunc",
+      "@type": "xsd:string"
+    },
+    "CrawlerName": {
+      "@id": "glue:CrawlerName",
+      "@type": "xsd:string"
+    },
+    "Runs": {
+      "@id": "glue:Runs",
+      "@type": "xsd:string"
+    },
+    "DependentJobName": {
+      "@id": "glue:DependentJobName",
+      "@type": "xsd:string"
+    },
+    "PartitionIndex": {
+      "@id": "glue:PartitionIndex",
+      "@type": "xsd:string"
+    },
+    "TableList": {
+      "@id": "glue:TableList",
+      "@type": "xsd:string"
+    },
+    "CrawlerNames": {
+      "@id": "glue:CrawlerNames",
+      "@type": "xsd:string"
+    },
+    "Session": {
+      "@id": "glue:Session",
+      "@type": "xsd:string"
+    },
+    "TransformId": {
+      "@id": "glue:TransformId",
+      "@type": "xsd:string"
+    },
+    "TaskRunId": {
+      "@id": "glue:TaskRunId",
+      "@type": "xsd:string"
+    },
+    "Jobs": {
+      "@id": "glue:Jobs",
+      "@type": "xsd:string"
+    },
+    "CustomEntityTypesNotFound": {
+      "@id": "glue:CustomEntityTypesNotFound",
+      "@type": "xsd:string"
+    },
+    "ColumnNames": {
+      "@id": "glue:ColumnNames",
+      "@type": "xsd:string"
+    },
+    "BlueprintLocation": {
+      "@id": "glue:BlueprintLocation",
+      "@type": "xsd:string"
+    },
+    "LatestVersion": {
+      "@id": "glue:LatestVersion",
+      "@type": "xsd:string"
+    },
+    "MetadataKey": {
+      "@id": "glue:MetadataKey",
+      "@type": "xsd:string"
+    },
+    "MetadataValue": {
+      "@id": "glue:MetadataValue",
+      "@type": "xsd:string"
+    },
+    "EndpointName": {
+      "@id": "glue:EndpointName",
+      "@type": "xsd:string"
+    },
+    "PythonScript": {
+      "@id": "glue:PythonScript",
+      "@type": "xsd:string"
+    },
+    "ScalaCode": {
+      "@id": "glue:ScalaCode",
+      "@type": "xsd:string"
+    },
+    "Groups": {
+      "@id": "glue:Groups",
+      "@type": "xsd:string"
+    },
+    "Aggs": {
+      "@id": "glue:Aggs",
+      "@type": "xsd:string"
+    },
+    "PartitionsToGet": {
+      "@id": "glue:PartitionsToGet",
+      "@type": "xsd:string"
+    },
+    "TagsToRemove": {
+      "@id": "glue:TagsToRemove",
+      "@type": "xsd:string"
+    },
+    "DataSource": {
+      "@id": "glue:DataSource",
+      "@type": "xsd:string"
+    },
+    "NumberOfWorkers": {
+      "@id": "glue:NumberOfWorkers",
+      "@type": "xsd:string"
+    },
+    "Timeout": {
+      "@id": "glue:Timeout",
+      "@type": "xsd:string"
+    },
+    "ErrorString": {
+      "@id": "glue:ErrorString",
+      "@type": "xsd:string"
+    },
+    "StartedOn": {
+      "@id": "glue:StartedOn",
+      "@type": "xsd:string"
+    },
+    "LastModifiedOn": {
+      "@id": "glue:LastModifiedOn",
+      "@type": "xsd:string"
+    },
+    "CompletedOn": {
+      "@id": "glue:CompletedOn",
+      "@type": "xsd:string"
+    },
+    "ExecutionTime": {
+      "@id": "glue:ExecutionTime",
+      "@type": "xsd:string"
+    },
+    "RecommendedRuleset": {
+      "@id": "glue:RecommendedRuleset",
+      "@type": "xsd:string"
+    },
+    "CreatedRulesetName": {
+      "@id": "glue:CreatedRulesetName",
+      "@type": "xsd:string"
+    },
+    "PartitionInputList": {
+      "@id": "glue:PartitionInputList",
+      "@type": "xsd:string"
+    },
+    "HidePassword": {
+      "@id": "glue:HidePassword",
+      "@type": "xsd:string"
+    },
+    "LogUri": {
+      "@id": "glue:LogUri",
+      "@type": "xsd:string"
+    },
+    "ExecutionProperty": {
+      "@id": "glue:ExecutionProperty",
+      "@type": "xsd:string"
+    },
+    "Command": {
+      "@id": "glue:Command",
+      "@type": "xsd:string"
+    },
+    "DefaultArguments": {
+      "@id": "glue:DefaultArguments",
+      "@type": "xsd:string"
+    },
+    "NonOverridableArguments": {
+      "@id": "glue:NonOverridableArguments",
+      "@type": "xsd:string"
+    },
+    "Connections": {
+      "@id": "glue:Connections",
+      "@type": "xsd:string"
+    },
+    "MaxRetries": {
+      "@id": "glue:MaxRetries",
+      "@type": "xsd:string"
+    },
+    "AllocatedCapacity": {
+      "@id": "glue:AllocatedCapacity",
+      "@type": "xsd:string"
+    },
+    "MaxCapacity": {
+      "@id": "glue:MaxCapacity",
+      "@type": "xsd:string"
+    },
+    "SecurityConfiguration": {
+      "@id": "glue:SecurityConfiguration",
+      "@type": "xsd:string"
+    },
+    "GlueVersion": {
+      "@id": "glue:GlueVersion",
+      "@type": "xsd:string"
+    },
+    "WorkerType": {
+      "@id": "glue:WorkerType",
+      "@type": "xsd:string"
+    },
+    "CodeGenConfigurationNodes": {
+      "@id": "glue:CodeGenConfigurationNodes",
+      "@type": "xsd:string"
+    },
+    "ExecutionClass": {
+      "@id": "glue:ExecutionClass",
+      "@type": "xsd:string"
+    },
+    "SourceControlDetails": {
+      "@id": "glue:SourceControlDetails",
+      "@type": "xsd:string"
+    },
+    "UserDefinedFunctions": {
+      "@id": "glue:UserDefinedFunctions",
+      "@type": "xsd:string"
+    },
+    "Succeeded": {
+      "@id": "glue:Succeeded",
+      "@type": "xsd:string"
+    },
+    "Id": {
+      "@id": "glue:Id",
+      "@type": "xsd:string"
+    },
+    "FunctionName": {
+      "@id": "glue:FunctionName",
+      "@type": "xsd:string"
+    },
+    "CreatedOn": {
+      "@id": "glue:CreatedOn",
+      "@type": "xsd:string"
+    },
+    "RecommendationRunId": {
+      "@id": "glue:RecommendationRunId",
+      "@type": "xsd:string"
+    },
+    "PredecessorsIncluded": {
+      "@id": "glue:PredecessorsIncluded",
+      "@type": "xsd:string"
+    },
+    "GetResourcePoliciesResponseList": {
+      "@id": "glue:GetResourcePoliciesResponseList",
+      "@type": "xsd:string"
+    },
+    "Registries": {
+      "@id": "glue:Registries",
+      "@type": "xsd:string"
+    },
+    "BlueprintName": {
+      "@id": "glue:BlueprintName",
+      "@type": "xsd:string"
+    },
+    "InputRecordTables": {
+      "@id": "glue:InputRecordTables",
+      "@type": "xsd:string"
+    },
+    "Parameters": {
+      "@id": "glue:Parameters",
+      "@type": "xsd:string"
+    },
+    "EvaluationMetrics": {
+      "@id": "glue:EvaluationMetrics",
+      "@type": "xsd:string"
+    },
+    "LabelCount": {
+      "@id": "glue:LabelCount",
+      "@type": "xsd:string"
+    },
+    "Schema": {
+      "@id": "glue:Schema",
+      "@type": "xsd:string"
+    },
+    "TransformEncryption": {
+      "@id": "glue:TransformEncryption",
+      "@type": "xsd:string"
+    },
+    "RunProperties": {
+      "@id": "glue:RunProperties",
+      "@type": "xsd:string"
+    },
+    "SessionId": {
+      "@id": "glue:SessionId",
+      "@type": "xsd:string"
+    },
+    "Code": {
+      "@id": "glue:Code",
+      "@type": "xsd:string"
+    },
+    "RequestOrigin": {
+      "@id": "glue:RequestOrigin",
+      "@type": "xsd:string"
+    },
+    "MetadataKeyValue": {
+      "@id": "glue:MetadataKeyValue",
+      "@type": "xsd:string"
+    },
+    "ColumnStatisticsList": {
+      "@id": "glue:ColumnStatisticsList",
+      "@type": "xsd:string"
+    },
+    "JobUpdate": {
+      "@id": "glue:JobUpdate",
+      "@type": "xsd:string"
+    },
+    "Workflow": {
+      "@id": "glue:Workflow",
+      "@type": "xsd:string"
+    },
+    "Expression": {
+      "@id": "glue:Expression",
+      "@type": "xsd:string"
+    },
+    "Segment": {
+      "@id": "glue:Segment",
+      "@type": "xsd:string"
+    },
+    "ExcludeColumnSchema": {
+      "@id": "glue:ExcludeColumnSchema",
+      "@type": "xsd:string"
+    },
+    "JobBookmarkEntry": {
+      "@id": "glue:JobBookmarkEntry",
+      "@type": "xsd:string"
+    },
+    "OutputS3Path": {
+      "@id": "glue:OutputS3Path",
+      "@type": "xsd:string"
+    },
+    "Workflows": {
+      "@id": "glue:Workflows",
+      "@type": "xsd:string"
+    },
+    "Run": {
+      "@id": "glue:Run",
+      "@type": "xsd:string"
+    },
     "Crawler": {
       "@id": "glue:Crawler",
-      "@context": {
-        "name": "schema:name",
-        "role": "glue:role",
-        "databaseName": "glue:databaseName",
-        "state": "glue:crawlerState",
-        "targets": "glue:crawlerTargets"
-      }
+      "@type": "xsd:string"
+    },
+    "AdditionalRunOptions": {
+      "@id": "glue:AdditionalRunOptions",
+      "@type": "xsd:string"
+    },
+    "RulesetNames": {
+      "@id": "glue:RulesetNames",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "role": {
+      "@id": "glue:role",
+      "@type": "xsd:string"
+    },
+    "command": {
+      "@id": "glue:command",
+      "@type": "xsd:string"
+    },
+    "scriptLocation": {
+      "@id": "glue:scriptLocation",
+      "@type": "xsd:string"
+    },
+    "pythonVersion": {
+      "@id": "glue:pythonVersion",
+      "@type": "xsd:string"
+    },
+    "glueVersion": {
+      "@id": "glue:glueVersion",
+      "@type": "xsd:string"
+    },
+    "workerType": {
+      "@id": "glue:workerType",
+      "@type": "xsd:string"
+    },
+    "numberOfWorkers": {
+      "@id": "glue:numberOfWorkers",
+      "@type": "xsd:integer"
+    },
+    "maxRetries": {
+      "@id": "glue:maxRetries",
+      "@type": "xsd:integer"
+    },
+    "timeout": {
+      "@id": "glue:timeout",
+      "@type": "xsd:integer"
+    },
+    "connections": {
+      "@id": "glue:connections",
+      "@type": "xsd:string"
+    },
+    "defaultArguments": {
+      "@id": "glue:defaultArguments",
+      "@type": "xsd:string"
+    },
+    "createdOn": {
+      "@id": "glue:createdOn",
+      "@type": "xsd:dateTime"
+    },
+    "lastModifiedOn": {
+      "@id": "glue:lastModifiedOn",
+      "@type": "xsd:dateTime"
+    },
+    "Blueprints": {
+      "@id": "glue:Blueprints",
+      "@type": "xsd:string"
+    },
+    "MissingBlueprints": {
+      "@id": "glue:MissingBlueprints",
+      "@type": "xsd:string"
+    },
+    "Compatibility": {
+      "@id": "glue:Compatibility",
+      "@type": "xsd:string"
+    },
+    "SchemaCheckpoint": {
+      "@id": "glue:SchemaCheckpoint",
+      "@type": "xsd:string"
+    },
+    "LatestSchemaVersion": {
+      "@id": "glue:LatestSchemaVersion",
+      "@type": "xsd:string"
+    },
+    "NextSchemaVersion": {
+      "@id": "glue:NextSchemaVersion",
+      "@type": "xsd:string"
+    },
+    "SchemaStatus": {
+      "@id": "glue:SchemaStatus",
+      "@type": "xsd:string"
+    },
+    "SchemaVersionStatus": {
+      "@id": "glue:SchemaVersionStatus",
+      "@type": "xsd:string"
+    },
+    "DagNodes": {
+      "@id": "glue:DagNodes",
+      "@type": "xsd:string"
+    },
+    "DagEdges": {
+      "@id": "glue:DagEdges",
+      "@type": "xsd:string"
+    },
+    "Statements": {
+      "@id": "glue:Statements",
+      "@type": "xsd:string"
+    },
+    "ConnectionNameList": {
+      "@id": "glue:ConnectionNameList",
+      "@type": "xsd:string"
+    },
+    "RoleArn": {
+      "@id": "glue:RoleArn",
+      "@type": "xsd:string"
+    },
+    "SecurityGroupIds": {
+      "@id": "glue:SecurityGroupIds",
+      "@type": "xsd:string"
+    },
+    "SubnetId": {
+      "@id": "glue:SubnetId",
+      "@type": "xsd:string"
+    },
+    "PublicKey": {
+      "@id": "glue:PublicKey",
+      "@type": "xsd:string"
+    },
+    "PublicKeys": {
+      "@id": "glue:PublicKeys",
+      "@type": "xsd:string"
+    },
+    "NumberOfNodes": {
+      "@id": "glue:NumberOfNodes",
+      "@type": "xsd:string"
+    },
+    "ExtraPythonLibsS3Path": {
+      "@id": "glue:ExtraPythonLibsS3Path",
+      "@type": "xsd:string"
+    },
+    "ExtraJarsS3Path": {
+      "@id": "glue:ExtraJarsS3Path",
+      "@type": "xsd:string"
+    },
+    "Arguments": {
+      "@id": "glue:Arguments",
+      "@type": "xsd:string"
+    },
+    "DefaultRunProperties": {
+      "@id": "glue:DefaultRunProperties",
+      "@type": "xsd:string"
+    },
+    "MaxConcurrentRuns": {
+      "@id": "glue:MaxConcurrentRuns",
+      "@type": "xsd:string"
+    },
+    "Schemas": {
+      "@id": "glue:Schemas",
+      "@type": "xsd:string"
+    },
+    "Provider": {
+      "@id": "glue:Provider",
+      "@type": "xsd:string"
+    },
+    "RepositoryName": {
+      "@id": "glue:RepositoryName",
+      "@type": "xsd:string"
+    },
+    "RepositoryOwner": {
+      "@id": "glue:RepositoryOwner",
+      "@type": "xsd:string"
+    },
+    "BranchName": {
+      "@id": "glue:BranchName",
+      "@type": "xsd:string"
+    },
+    "Folder": {
+      "@id": "glue:Folder",
+      "@type": "xsd:string"
+    },
+    "CommitId": {
+      "@id": "glue:CommitId",
+      "@type": "xsd:string"
+    },
+    "AuthStrategy": {
+      "@id": "glue:AuthStrategy",
+      "@type": "xsd:string"
+    },
+    "AuthToken": {
+      "@id": "glue:AuthToken",
+      "@type": "xsd:string"
+    },
+    "Partitions": {
+      "@id": "glue:Partitions",
+      "@type": "xsd:string"
+    },
+    "UnprocessedKeys": {
+      "@id": "glue:UnprocessedKeys",
+      "@type": "xsd:string"
+    },
+    "JobRunId": {
+      "@id": "glue:JobRunId",
+      "@type": "xsd:string"
+    },
+    "EncryptionConfiguration": {
+      "@id": "glue:EncryptionConfiguration",
+      "@type": "xsd:string"
+    },
+    "Triggers": {
+      "@id": "glue:Triggers",
+      "@type": "xsd:string"
+    },
+    "IndexName": {
+      "@id": "glue:IndexName",
+      "@type": "xsd:string"
+    },
+    "MissingWorkflows": {
+      "@id": "glue:MissingWorkflows",
+      "@type": "xsd:string"
+    },
+    "CrawlerMetricsList": {
+      "@id": "glue:CrawlerMetricsList",
+      "@type": "xsd:string"
+    },
+    "NodeIds": {
+      "@id": "glue:NodeIds",
+      "@type": "xsd:string"
+    },
+    "PolicyInJson": {
+      "@id": "glue:PolicyInJson",
+      "@type": "xsd:string"
+    },
+    "PolicyHashCondition": {
+      "@id": "glue:PolicyHashCondition",
+      "@type": "xsd:string"
+    },
+    "PolicyExistsCondition": {
+      "@id": "glue:PolicyExistsCondition",
+      "@type": "xsd:string"
+    },
+    "EnableHybrid": {
+      "@id": "glue:EnableHybrid",
+      "@type": "xsd:string"
+    },
+    "MetadataList": {
+      "@id": "glue:MetadataList",
+      "@type": "xsd:string"
+    },
+    "ResultIds": {
+      "@id": "glue:ResultIds",
+      "@type": "xsd:string"
+    },
+    "AuthorizedColumns": {
+      "@id": "glue:AuthorizedColumns",
+      "@type": "xsd:string"
+    },
+    "IsRegisteredWithLakeFormation": {
+      "@id": "glue:IsRegisteredWithLakeFormation",
+      "@type": "xsd:string"
+    },
+    "CellFilters": {
+      "@id": "glue:CellFilters",
+      "@type": "xsd:string"
+    },
+    "Values": {
+      "@id": "glue:Values",
+      "@type": "xsd:string"
+    },
+    "UpdatedTime": {
+      "@id": "glue:UpdatedTime",
+      "@type": "xsd:string"
+    },
+    "JobsNotFound": {
+      "@id": "glue:JobsNotFound",
+      "@type": "xsd:string"
+    },
+    "PolicyHash": {
+      "@id": "glue:PolicyHash",
+      "@type": "xsd:string"
+    },
+    "CreateTime": {
+      "@id": "glue:CreateTime",
+      "@type": "xsd:string"
+    },
+    "UpdateTime": {
+      "@id": "glue:UpdateTime",
+      "@type": "xsd:string"
+    },
+    "Crawlers": {
+      "@id": "glue:Crawlers",
+      "@type": "xsd:string"
+    },
+    "TriggerNames": {
+      "@id": "glue:TriggerNames",
+      "@type": "xsd:string"
+    },
+    "RegistryId": {
+      "@id": "glue:RegistryId",
+      "@type": "xsd:string"
+    },
+    "Ids": {
+      "@id": "glue:Ids",
+      "@type": "xsd:string"
+    },
+    "Sessions": {
+      "@id": "glue:Sessions",
+      "@type": "xsd:string"
+    },
+    "Source": {
+      "@id": "glue:Source",
+      "@type": "xsd:string"
+    },
+    "Sinks": {
+      "@id": "glue:Sinks",
+      "@type": "xsd:string"
+    },
+    "Location": {
+      "@id": "glue:Location",
+      "@type": "xsd:string"
+    },
+    "Language": {
+      "@id": "glue:Language",
+      "@type": "xsd:string"
+    },
+    "JobNames": {
+      "@id": "glue:JobNames",
+      "@type": "xsd:string"
+    },
+    "UnfilteredPartitions": {
+      "@id": "glue:UnfilteredPartitions",
+      "@type": "xsd:string"
+    },
+    "Crawls": {
+      "@id": "glue:Crawls",
+      "@type": "xsd:string"
+    },
+    "Trigger": {
+      "@id": "glue:Trigger",
+      "@type": "xsd:string"
+    },
+    "ConnectionInput": {
+      "@id": "glue:ConnectionInput",
+      "@type": "xsd:string"
+    },
+    "NotifyDelayAfter": {
+      "@id": "glue:NotifyDelayAfter",
+      "@type": "xsd:string"
+    },
+    "Names": {
+      "@id": "glue:Names",
+      "@type": "xsd:string"
+    },
+    "IncludeBlueprint": {
+      "@id": "glue:IncludeBlueprint",
+      "@type": "xsd:string"
+    },
+    "IncludeParameterSpec": {
+      "@id": "glue:IncludeParameterSpec",
+      "@type": "xsd:string"
+    },
+    "RegexString": {
+      "@id": "glue:RegexString",
+      "@type": "xsd:string"
+    },
+    "ContextWords": {
+      "@id": "glue:ContextWords",
+      "@type": "xsd:string"
+    },
+    "UserDefinedFunction": {
+      "@id": "glue:UserDefinedFunction",
+      "@type": "xsd:string"
+    },
+    "PartitionsToDelete": {
+      "@id": "glue:PartitionsToDelete",
+      "@type": "xsd:string"
+    },
+    "JobRun": {
+      "@id": "glue:JobRun",
+      "@type": "xsd:string"
+    },
+    "Versions": {
+      "@id": "glue:Versions",
+      "@type": "xsd:string"
+    },
+    "VersionId": {
+      "@id": "glue:VersionId",
+      "@type": "xsd:string"
+    },
+    "CreatedTimestamp": {
+      "@id": "glue:CreatedTimestamp",
+      "@type": "xsd:string"
+    },
+    "YarnEndpointAddress": {
+      "@id": "glue:YarnEndpointAddress",
+      "@type": "xsd:string"
+    },
+    "ZeppelinRemoteSparkInterpreterPort": {
+      "@id": "glue:ZeppelinRemoteSparkInterpreterPort",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZone": {
+      "@id": "glue:AvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "VpcId": {
+      "@id": "glue:VpcId",
+      "@type": "xsd:string"
+    },
+    "FailureReason": {
+      "@id": "glue:FailureReason",
+      "@type": "xsd:string"
+    },
+    "Job": {
+      "@id": "glue:Job",
+      "@type": "xsd:string"
+    },
+    "AddPublicKeys": {
+      "@id": "glue:AddPublicKeys",
+      "@type": "xsd:string"
+    },
+    "DeletePublicKeys": {
+      "@id": "glue:DeletePublicKeys",
+      "@type": "xsd:string"
+    },
+    "CustomLibraries": {
+      "@id": "glue:CustomLibraries",
+      "@type": "xsd:string"
+    },
+    "UpdateEtlLibraries": {
+      "@id": "glue:UpdateEtlLibraries",
+      "@type": "xsd:string"
+    },
+    "DeleteArguments": {
+      "@id": "glue:DeleteArguments",
+      "@type": "xsd:string"
+    },
+    "AddArguments": {
+      "@id": "glue:AddArguments",
+      "@type": "xsd:string"
+    },
+    "CrawlersNotFound": {
+      "@id": "glue:CrawlersNotFound",
+      "@type": "xsd:string"
+    },
+    "TransformIds": {
+      "@id": "glue:TransformIds",
+      "@type": "xsd:string"
+    },
+    "PartitionIndexDescriptorList": {
+      "@id": "glue:PartitionIndexDescriptorList",
+      "@type": "xsd:string"
+    },
+    "Transforms": {
+      "@id": "glue:Transforms",
+      "@type": "xsd:string"
+    },
+    "CrawlerNameList": {
+      "@id": "glue:CrawlerNameList",
+      "@type": "xsd:string"
+    },
+    "ResourceShareType": {
+      "@id": "glue:ResourceShareType",
+      "@type": "xsd:string"
+    },
+    "TriggersNotFound": {
+      "@id": "glue:TriggersNotFound",
+      "@type": "xsd:string"
+    },
+    "TableInput": {
+      "@id": "glue:TableInput",
+      "@type": "xsd:string"
+    },
+    "PartitionIndexes": {
+      "@id": "glue:PartitionIndexes",
+      "@type": "xsd:string"
+    },
+    "ResultsNotFound": {
+      "@id": "glue:ResultsNotFound",
+      "@type": "xsd:string"
+    },
+    "Entries": {
+      "@id": "glue:Entries",
+      "@type": "xsd:string"
+    },
+    "SuccessfulSubmissions": {
+      "@id": "glue:SuccessfulSubmissions",
+      "@type": "xsd:string"
+    },
+    "MetadataInfoMap": {
+      "@id": "glue:MetadataInfoMap",
+      "@type": "xsd:string"
+    },
+    "LogGroupName": {
+      "@id": "glue:LogGroupName",
+      "@type": "xsd:string"
+    },
+    "Properties": {
+      "@id": "glue:Properties",
+      "@type": "xsd:string"
+    },
+    "TriggerUpdate": {
+      "@id": "glue:TriggerUpdate",
+      "@type": "xsd:string"
+    },
+    "Blueprint": {
+      "@id": "glue:Blueprint",
+      "@type": "xsd:string"
+    },
+    "Diff": {
+      "@id": "glue:Diff",
+      "@type": "xsd:string"
+    },
+    "Filters": {
+      "@id": "glue:Filters",
+      "@type": "xsd:string"
+    },
+    "SearchText": {
+      "@id": "glue:SearchText",
+      "@type": "xsd:string"
+    },
+    "SortCriteria": {
+      "@id": "glue:SortCriteria",
+      "@type": "xsd:string"
+    },
+    "TaskRuns": {
+      "@id": "glue:TaskRuns",
+      "@type": "xsd:string"
+    },
+    "Rulesets": {
+      "@id": "glue:Rulesets",
+      "@type": "xsd:string"
+    },
+    "JobRuns": {
+      "@id": "glue:JobRuns",
+      "@type": "xsd:string"
+    },
+    "AdditionalAuditContext": {
+      "@id": "glue:AdditionalAuditContext",
+      "@type": "xsd:string"
+    },
+    "RequestedColumns": {
+      "@id": "glue:RequestedColumns",
+      "@type": "xsd:string"
+    },
+    "AllColumnsRequested": {
+      "@id": "glue:AllColumnsRequested",
+      "@type": "xsd:string"
+    },
+    "TableVersions": {
+      "@id": "glue:TableVersions",
+      "@type": "xsd:string"
+    },
+    "TableVersion": {
+      "@id": "glue:TableVersion",
+      "@type": "xsd:string"
+    },
+    "Statement": {
+      "@id": "glue:Statement",
+      "@type": "xsd:string"
+    },
+    "Pattern": {
+      "@id": "glue:Pattern",
+      "@type": "xsd:string"
+    },
+    "IdleTimeout": {
+      "@id": "glue:IdleTimeout",
+      "@type": "xsd:string"
+    },
+    "ImportStatus": {
+      "@id": "glue:ImportStatus",
+      "@type": "xsd:string"
+    },
+    "Connection": {
+      "@id": "glue:Connection",
+      "@type": "xsd:string"
+    },
+    "GrokClassifier": {
+      "@id": "glue:GrokClassifier",
+      "@type": "xsd:string"
+    },
+    "XMLClassifier": {
+      "@id": "glue:XMLClassifier",
+      "@type": "xsd:string"
+    },
+    "JsonClassifier": {
+      "@id": "glue:JsonClassifier",
+      "@type": "xsd:string"
+    },
+    "CsvClassifier": {
+      "@id": "glue:CsvClassifier",
+      "@type": "xsd:string"
+    },
+    "BlueprintRuns": {
+      "@id": "glue:BlueprintRuns",
+      "@type": "xsd:string"
+    },
+    "SecurityConfigurations": {
+      "@id": "glue:SecurityConfigurations",
+      "@type": "xsd:string"
+    },
+    "ResultId": {
+      "@id": "glue:ResultId",
+      "@type": "xsd:string"
+    },
+    "InputS3Path": {
+      "@id": "glue:InputS3Path",
+      "@type": "xsd:string"
+    },
+    "ReplaceAllLabels": {
+      "@id": "glue:ReplaceAllLabels",
+      "@type": "xsd:string"
+    },
+    "Score": {
+      "@id": "glue:Score",
+      "@type": "xsd:string"
+    },
+    "RulesetName": {
+      "@id": "glue:RulesetName",
+      "@type": "xsd:string"
+    },
+    "EvaluationContext": {
+      "@id": "glue:EvaluationContext",
+      "@type": "xsd:string"
+    },
+    "RulesetEvaluationRunId": {
+      "@id": "glue:RulesetEvaluationRunId",
+      "@type": "xsd:string"
+    },
+    "RuleResults": {
+      "@id": "glue:RuleResults",
+      "@type": "xsd:string"
+    },
+    "TagsToAdd": {
+      "@id": "glue:TagsToAdd",
+      "@type": "xsd:string"
+    },
+    "DevEndpointsNotFound": {
+      "@id": "glue:DevEndpointsNotFound",
+      "@type": "xsd:string"
+    },
+    "Valid": {
+      "@id": "glue:Valid",
+      "@type": "xsd:string"
+    },
+    "Error": {
+      "@id": "glue:Error",
+      "@type": "xsd:string"
+    },
+    "ConnectionList": {
+      "@id": "glue:ConnectionList",
+      "@type": "xsd:string"
+    },
+    "DevEndpoint": {
+      "@id": "glue:DevEndpoint",
+      "@type": "xsd:string"
+    },
+    "WorkflowName": {
+      "@id": "glue:WorkflowName",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "glue:Type",
+      "@type": "xsd:string"
+    },
+    "Predicate": {
+      "@id": "glue:Predicate",
+      "@type": "xsd:string"
+    },
+    "Actions": {
+      "@id": "glue:Actions",
+      "@type": "xsd:string"
+    },
+    "StartOnCreation": {
+      "@id": "glue:StartOnCreation",
+      "@type": "xsd:string"
+    },
+    "EventBatchingCondition": {
+      "@id": "glue:EventBatchingCondition",
+      "@type": "xsd:string"
+    },
+    "JobRunIds": {
+      "@id": "glue:JobRunIds",
+      "@type": "xsd:string"
+    },
+    "SkipArchive": {
+      "@id": "glue:SkipArchive",
+      "@type": "xsd:string"
+    },
+    "TablesToDelete": {
+      "@id": "glue:TablesToDelete",
+      "@type": "xsd:string"
+    },
+    "VersionIds": {
+      "@id": "glue:VersionIds",
+      "@type": "xsd:string"
+    },
+    "Classifier": {
+      "@id": "glue:Classifier",
+      "@type": "xsd:string"
+    },
+    "FirstSchemaVersionNumber": {
+      "@id": "glue:FirstSchemaVersionNumber",
+      "@type": "xsd:string"
+    },
+    "SecondSchemaVersionNumber": {
+      "@id": "glue:SecondSchemaVersionNumber",
+      "@type": "xsd:string"
+    },
+    "SchemaDiffType": {
+      "@id": "glue:SchemaDiffType",
+      "@type": "xsd:string"
     }
   }
 }

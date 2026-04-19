@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-workflow-run-properties-request-structure.json",
+  "name": "GetWorkflowRunPropertiesRequest",
+  "description": "GetWorkflowRunPropertiesRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow which was run."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID of the workflow run whose run properties should be returned."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RunId"
+  ]
+}

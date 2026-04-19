@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-delete-ml-transform-response-structure.json",
+  "name": "DeleteMLTransformResponse",
+  "description": "DeleteMLTransformResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the transform that was deleted."
+        }
+      ]
+    }
+  }
+}

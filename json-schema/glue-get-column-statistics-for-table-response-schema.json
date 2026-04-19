@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-column-statistics-for-table-response-schema.json",
+  "title": "GetColumnStatisticsForTableResponse",
+  "description": "GetColumnStatisticsForTableResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ColumnStatisticsList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnStatisticsList"
+        },
+        {
+          "description": "List of ColumnStatistics."
+        }
+      ]
+    },
+    "Errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ColumnErrors"
+        },
+        {
+          "description": "List of ColumnStatistics that failed to be retrieved."
+        }
+      ]
+    }
+  }
+}

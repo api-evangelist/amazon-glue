@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-ml-task-run-request-schema.json",
+  "title": "GetMLTaskRunRequest",
+  "description": "GetMLTaskRunRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "TransformId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the machine learning transform."
+        }
+      ]
+    },
+    "TaskRunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The unique identifier of the task run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "TransformId",
+    "TaskRunId"
+  ]
+}

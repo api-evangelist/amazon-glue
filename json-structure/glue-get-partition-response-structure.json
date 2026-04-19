@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-partition-response-structure.json",
+  "name": "GetPartitionResponse",
+  "description": "GetPartitionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Partition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Partition"
+        },
+        {
+          "description": "The requested information, in the form of a <code>Partition</code> object."
+        }
+      ]
+    }
+  }
+}

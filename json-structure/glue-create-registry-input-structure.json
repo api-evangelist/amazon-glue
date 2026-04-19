@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-create-registry-input-structure.json",
+  "name": "CreateRegistryInput",
+  "description": "CreateRegistryInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RegistryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaRegistryNameString"
+        },
+        {
+          "description": "Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DescriptionString"
+        },
+        {
+          "description": "A description of the registry. If description is not provided, there will not be any default value for this."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagsMap"
+        },
+        {
+          "description": "Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RegistryName"
+  ]
+}

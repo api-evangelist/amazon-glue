@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-data-quality-result-request-schema.json",
+  "title": "BatchGetDataQualityResultRequest",
+  "description": "BatchGetDataQualityResultRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ResultIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataQualityResultIds"
+        },
+        {
+          "description": "A list of unique result IDs for the data quality results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResultIds"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-reset-job-bookmark-response-structure.json",
+  "name": "ResetJobBookmarkResponse",
+  "description": "ResetJobBookmarkResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobBookmarkEntry": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobBookmarkEntry"
+        },
+        {
+          "description": "The reset bookmark entry."
+        }
+      ]
+    }
+  }
+}

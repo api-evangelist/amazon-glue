@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-put-workflow-run-properties-request-schema.json",
+  "title": "PutWorkflowRunPropertiesRequest",
+  "description": "PutWorkflowRunPropertiesRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "Name of the workflow which was run."
+        }
+      ]
+    },
+    "RunId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IdString"
+        },
+        {
+          "description": "The ID of the workflow run for which the run properties should be updated."
+        }
+      ]
+    },
+    "RunProperties": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkflowRunProperties"
+        },
+        {
+          "description": "The properties to put for the specified run."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "RunId",
+    "RunProperties"
+  ]
+}

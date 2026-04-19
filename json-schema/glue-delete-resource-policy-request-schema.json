@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-delete-resource-policy-request-schema.json",
+  "title": "DeleteResourcePolicyRequest",
+  "description": "DeleteResourcePolicyRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "PolicyHashCondition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HashString"
+        },
+        {
+          "description": "The hash value returned when this policy was set."
+        }
+      ]
+    },
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GlueResourceArn"
+        },
+        {
+          "description": "The ARN of the Glue resource for the resource policy to be deleted."
+        }
+      ]
+    }
+  }
+}

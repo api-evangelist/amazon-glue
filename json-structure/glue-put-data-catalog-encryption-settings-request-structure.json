@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-put-data-catalog-encryption-settings-request-structure.json",
+  "name": "PutDataCatalogEncryptionSettingsRequest",
+  "description": "PutDataCatalogEncryptionSettingsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DataCatalogEncryptionSettings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataCatalogEncryptionSettings"
+        },
+        {
+          "description": "The security configuration to set."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DataCatalogEncryptionSettings"
+  ]
+}

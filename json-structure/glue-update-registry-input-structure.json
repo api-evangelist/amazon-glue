@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-update-registry-input-structure.json",
+  "name": "UpdateRegistryInput",
+  "description": "UpdateRegistryInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "RegistryId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RegistryId"
+        },
+        {
+          "description": "This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN)."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DescriptionString"
+        },
+        {
+          "description": "A description of the registry. If description is not provided, this field will not be updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "RegistryId",
+    "Description"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-crawlers-response-schema.json",
+  "title": "BatchGetCrawlersResponse",
+  "description": "BatchGetCrawlersResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Crawlers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CrawlerList"
+        },
+        {
+          "description": "A list of crawler definitions."
+        }
+      ]
+    },
+    "CrawlersNotFound": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CrawlerNameList"
+        },
+        {
+          "description": "A list of names of crawlers that were not found."
+        }
+      ]
+    }
+  }
+}

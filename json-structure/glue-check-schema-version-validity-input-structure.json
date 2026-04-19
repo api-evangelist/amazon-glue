@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-check-schema-version-validity-input-structure.json",
+  "name": "CheckSchemaVersionValidityInput",
+  "description": "CheckSchemaVersionValidityInput schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "DataFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DataFormat"
+        },
+        {
+          "description": "The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported."
+        }
+      ]
+    },
+    "SchemaDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SchemaDefinitionString"
+        },
+        {
+          "description": "The definition of the schema that has to be validated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DataFormat",
+    "SchemaDefinition"
+  ]
+}

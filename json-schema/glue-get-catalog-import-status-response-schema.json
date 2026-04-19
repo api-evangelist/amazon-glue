@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-catalog-import-status-response-schema.json",
+  "title": "GetCatalogImportStatusResponse",
+  "description": "GetCatalogImportStatusResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "ImportStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogImportStatus"
+        },
+        {
+          "description": "The status of the specified catalog migration."
+        }
+      ]
+    }
+  }
+}

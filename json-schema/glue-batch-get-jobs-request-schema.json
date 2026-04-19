@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-batch-get-jobs-request-schema.json",
+  "title": "BatchGetJobsRequest",
+  "description": "BatchGetJobsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "JobNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobNameList"
+        },
+        {
+          "description": "A list of job names, which might be the names returned from the <code>ListJobs</code> operation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "JobNames"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-ml-transforms-request-structure.json",
+  "name": "GetMLTransformsRequest",
+  "description": "GetMLTransformsRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PaginationToken"
+        },
+        {
+          "description": "A paginated token to offset the results."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PageSize"
+        },
+        {
+          "description": "The maximum number of results to return."
+        }
+      ]
+    },
+    "Filter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransformFilterCriteria"
+        },
+        {
+          "description": "The filter transformation criteria."
+        }
+      ]
+    },
+    "Sort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransformSortCriteria"
+        },
+        {
+          "description": "The sorting criteria."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-user-defined-function-response-schema.json",
+  "title": "GetUserDefinedFunctionResponse",
+  "description": "GetUserDefinedFunctionResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "UserDefinedFunction": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserDefinedFunction"
+        },
+        {
+          "description": "The requested function definition."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-list-crawls-response-schema.json",
+  "title": "ListCrawlsResponse",
+  "description": "ListCrawlsResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "Crawls": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CrawlerHistoryList"
+        },
+        {
+          "description": "A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-structure/glue-get-tables-request-structure.json",
+  "name": "GetTablesRequest",
+  "description": "GetTablesRequest schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "CatalogId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogIdString"
+        },
+        {
+          "description": "The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default."
+        }
+      ]
+    },
+    "DatabaseName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NameString"
+        },
+        {
+          "description": "The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase."
+        }
+      ]
+    },
+    "Expression": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterString"
+        },
+        {
+          "description": "A regular expression pattern. If present, only those tables whose names match the pattern are returned."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, included if this is a continuation call."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CatalogGetterPageSize"
+        },
+        {
+          "description": "The maximum number of tables to return in a single response."
+        }
+      ]
+    },
+    "TransactionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TransactionIdString"
+        },
+        {
+          "description": "The transaction ID at which to read the table contents."
+        }
+      ]
+    },
+    "QueryAsOfTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "DatabaseName"
+  ]
+}

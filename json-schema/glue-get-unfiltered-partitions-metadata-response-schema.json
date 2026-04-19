@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-glue/refs/heads/main/json-schema/glue-get-unfiltered-partitions-metadata-response-schema.json",
+  "title": "GetUnfilteredPartitionsMetadataResponse",
+  "description": "GetUnfilteredPartitionsMetadataResponse schema from Amazon Glue API",
+  "type": "object",
+  "properties": {
+    "UnfilteredPartitions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UnfilteredPartitionList"
+        },
+        {
+          "description": "A list of requested partitions."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Token"
+        },
+        {
+          "description": "A continuation token, if the returned list of partitions does not include the last one."
+        }
+      ]
+    }
+  }
+}
