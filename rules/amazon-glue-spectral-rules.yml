@@ -1,59 +1,136 @@
+# amazon-glue — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - query-params-casing: pascal @ 100% (n=75)
+#   - operationid-casing: pascal @ 100% (n=202)
+#   - schema-names-casing: pascal @ 100% (n=1119)
+#   - schema-properties-casing: pascal @ 100% (n=2457)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - error-schema-defined: BackfillErrorCode
+#   - merge: kept 8 existing, added 7 measured, upgraded 0
+#   - added: servers-https-only, query-params-casing, operationid-casing, schema-names-casing, schema-properties-casing, security-schemes-defined, error-schema-defined
+extends:
+  - spectral:oas
 rules:
   info-title-format:
     description: API title must reference Amazon Glue
     severity: warn
-    given: "$.info.title"
+    given: $.info.title
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon Glue"
+        match: ^Amazon Glue
   info-description-required:
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
   operation-summary-required:
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: summary
       function: truthy
   operation-id-required:
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: operationId
       function: truthy
   operation-summary-company-prefix:
     severity: warn
-    given: "$.paths[*][get,post,put,patch,delete].summary"
+    given: $.paths[*][get,post,put,patch,delete].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Amazon Glue"
+        match: ^Amazon Glue
   response-success-required:
     severity: error
-    given: "$.paths[*][get,post,put,patch,delete].responses"
+    given: $.paths[*][get,post,put,patch,delete].responses
     then:
       function: schema
       functionOptions:
         schema:
           type: object
           anyOf:
-            - required: ["200"]
-            - required: ["201"]
-            - required: ["204"]
+          - required:
+            - '200'
+          - required:
+            - '201'
+          - required:
+            - '204'
   no-empty-descriptions:
     severity: error
-    given: "$..description"
+    given: $..description
     then:
       function: pattern
       functionOptions:
-        match: ".+"
+        match: .+
   microcks-operation-extension:
     severity: info
-    given: "$.paths[*][get,post,put,patch,delete]"
+    given: $.paths[*][get,post,put,patch,delete]
     then:
       field: x-microcks-operation
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  query-params-casing:
+    description: Query parameters should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: pascal
+  operationid-casing:
+    description: Operation IDs should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-properties-casing:
+    description: Schema properties should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  security-schemes-defined:
+    description: Security schemes should be defined in components.
+    severity: warn
+    given: $.components
+    then:
+      field: securitySchemes
+      function: truthy
+  error-schema-defined:
+    description: A shared error schema (BackfillErrorCode) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: BackfillErrorCode
       function: truthy
