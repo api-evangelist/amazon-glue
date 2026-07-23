@@ -1,0 +1,341 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateRegistry API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.UpdateRegistry'
+paths:
+  /#X-Amz-Target=AWSGlue.UpdateRegistry:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: UpdateRegistry
+      description: 'Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateRegistryResponse'
+              examples:
+                UpdateRegistry200Example:
+                  summary: Default UpdateRegistry 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                UpdateRegistry480Example:
+                  summary: Default UpdateRegistry 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                UpdateRegistry481Example:
+                  summary: Default UpdateRegistry 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                UpdateRegistry482Example:
+                  summary: Default UpdateRegistry 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: ConcurrentModificationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConcurrentModificationException'
+              examples:
+                UpdateRegistry483Example:
+                  summary: Default UpdateRegistry 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '484':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                UpdateRegistry484Example:
+                  summary: Default UpdateRegistry 484 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRegistryInput'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.UpdateRegistry
+      summary: Amazon Glue Update Registry
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.UpdateRegistry'
+components:
+  schemas:
+    ConcurrentModificationException: {}
+    GlueResourceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      minLength: 1
+      maxLength: 10240
+    InternalServiceException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    InvalidInputException: {}
+    RegistryId:
+      type: object
+      properties:
+        RegistryName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: 'Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. '
+        RegistryArn:
+          allOf:
+          - $ref: '#/components/schemas/GlueResourceArn'
+          - description: Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.
+      description: A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
+    EntityNotFoundException: {}
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    UpdateRegistryInput:
+      type: object
+      required:
+      - RegistryId
+      - Description
+      title: UpdateRegistryInput
+      properties:
+        RegistryId:
+          allOf:
+          - $ref: '#/components/schemas/RegistryId'
+          - description: This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of the registry. If description is not provided, this field will not be updated.
+    AccessDeniedException: {}
+    UpdateRegistryResponse:
+      type: object
+      properties:
+        RegistryName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the updated registry.
+        RegistryArn:
+          allOf:
+          - $ref: '#/components/schemas/GlueResourceArn'
+          - description: The Amazon Resource name (ARN) of the updated registry.
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

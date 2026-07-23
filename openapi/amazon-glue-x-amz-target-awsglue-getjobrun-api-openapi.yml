@@ -1,0 +1,495 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetJobRun API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetJobRun'
+paths:
+  /#X-Amz-Target=AWSGlue.GetJobRun:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetJobRun
+      description: Retrieves the metadata for a given job run.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetJobRunResponse'
+              examples:
+                GetJobRun200Example:
+                  summary: Default GetJobRun 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetJobRun480Example:
+                  summary: Default GetJobRun 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetJobRun481Example:
+                  summary: Default GetJobRun 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetJobRun482Example:
+                  summary: Default GetJobRun 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetJobRun483Example:
+                  summary: Default GetJobRun 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetJobRunRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetJobRun
+      summary: Amazon Glue Get Job Run
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetJobRun'
+components:
+  schemas:
+    InternalServiceException: {}
+    NullableInteger:
+      type: integer
+    ExecutionTime:
+      type: integer
+    EntityNotFoundException: {}
+    JobRunState:
+      type: string
+      enum:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+      - ERROR
+      - WAITING
+    JobRun:
+      type: object
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The ID of this job run.
+        Attempt:
+          allOf:
+          - $ref: '#/components/schemas/AttemptCount'
+          - description: The number of the attempt to run this job.
+        PreviousRunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.
+        TriggerName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the trigger that started this job run.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition being used in this run.
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time at which this job run was started.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The last time that this job run was modified.
+        CompletedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time that this job run completed.
+        JobRunState:
+          allOf:
+          - $ref: '#/components/schemas/JobRunState'
+          - description: The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.
+        Arguments:
+          allOf:
+          - $ref: '#/components/schemas/GenericMap'
+          - description: <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorString'
+          - description: An error message associated with this job run.
+        PredecessorRuns:
+          allOf:
+          - $ref: '#/components/schemas/PredecessorList'
+          - description: A list of predecessors to this job run.
+        AllocatedCapacity:
+          allOf:
+          - $ref: '#/components/schemas/IntegerValue'
+          - deprecated: true
+            description: <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.
+        ExecutionTime:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionTime'
+          - description: The amount of time (in seconds) that the job run consumed resources.
+        Timeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p> <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>
+        WorkerType:
+          allOf:
+          - $ref: '#/components/schemas/WorkerType'
+          - description: <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>
+        NumberOfWorkers:
+          allOf:
+          - $ref: '#/components/schemas/NullableInteger'
+          - description: The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the <code>SecurityConfiguration</code> structure to be used with this job run.
+        LogGroupName:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.
+        NotificationProperty:
+          allOf:
+          - $ref: '#/components/schemas/NotificationProperty'
+          - description: Specifies configuration properties of a job run notification.
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+        DPUSeconds:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: This field populates only for Auto Scaling job runs, and represents the total time each executor ran during the lifecycle of a job run in seconds, multiplied by a DPU factor (1 for <code>G.1X</code>, 2 for <code>G.2X</code>, or 0.25 for <code>G.025X</code> workers). This value may be different than the <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of Auto Scaling jobs, as the number of executors running at a given time may be less than the <code>MaxCapacity</code>. Therefore, it is possible that the value of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> * <code>MaxCapacity</code>.
+        ExecutionClass:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionClass'
+          - description: <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+      description: Contains information about a job run.
+    PredecessorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Predecessor'
+    GetJobRunResponse:
+      type: object
+      properties:
+        JobRun:
+          allOf:
+          - $ref: '#/components/schemas/JobRun'
+          - description: The requested job-run metadata.
+    OperationTimeoutException: {}
+    IntegerValue:
+      type: integer
+    ExecutionClass:
+      type: string
+      enum:
+      - FLEX
+      - STANDARD
+      maxLength: 16
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    GetJobRunRequest:
+      type: object
+      required:
+      - JobName
+      - RunId
+      title: GetJobRunRequest
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Name of the job definition being run.
+        RunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The ID of the job run.
+        PredecessorsIncluded:
+          allOf:
+          - $ref: '#/components/schemas/BooleanValue'
+          - description: True if a list of predecessor runs should be returned.
+    Timeout:
+      type: integer
+      minimum: 1
+    GenericMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
+    ErrorString:
+      type: string
+    IdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    AttemptCount:
+      type: integer
+    NotifyDelayAfter:
+      type: integer
+      minimum: 1
+    Predecessor:
+      type: object
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition used by the predecessor job run.
+        RunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The job-run ID of the predecessor job run.
+      description: A job run that was used in the predicate of a conditional trigger that triggered this job run.
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    BooleanValue:
+      type: boolean
+    NullableDouble:
+      type: number
+      format: double
+    GenericString:
+      type: string
+    NotificationProperty:
+      type: object
+      properties:
+        NotifyDelayAfter:
+          allOf:
+          - $ref: '#/components/schemas/NotifyDelayAfter'
+          - description: After a job run starts, the number of minutes to wait before sending a job run delay notification.
+      description: Specifies configuration properties of a notification.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    TimestampValue:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

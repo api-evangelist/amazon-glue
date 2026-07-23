@@ -1,0 +1,427 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListCrawls API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.ListCrawls'
+paths:
+  /#X-Amz-Target=AWSGlue.ListCrawls:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListCrawls
+      description: <p>Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.</p> <p>You may use this API to:</p> <ul> <li> <p>Retrive all the crawls of a specified crawler.</p> </li> <li> <p>Retrieve all the crawls of a specified crawler within a limited count.</p> </li> <li> <p>Retrieve all the crawls of a specified crawler in a specific time range.</p> </li> <li> <p>Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.</p> </li> </ul>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCrawlsResponse'
+              examples:
+                ListCrawls200Example:
+                  summary: Default ListCrawls 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                ListCrawls480Example:
+                  summary: Default ListCrawls 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                ListCrawls481Example:
+                  summary: Default ListCrawls 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                ListCrawls482Example:
+                  summary: Default ListCrawls 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListCrawlsRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.ListCrawls
+      summary: Amazon Glue List Crawls
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.ListCrawls'
+components:
+  schemas:
+    CrawlerHistoryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CrawlerHistory'
+    CrawlId:
+      type: string
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    CrawlsFilter:
+      type: object
+      properties:
+        FieldName:
+          allOf:
+          - $ref: '#/components/schemas/FieldName'
+          - description: '<p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p> <ul> <li> <p> <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.</p> </li> <li> <p> <code>STATE</code>: A string representing the state of the crawl.</p> </li> <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li> <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li> </ul>'
+        FilterOperator:
+          allOf:
+          - $ref: '#/components/schemas/FilterOperator'
+          - description: '<p>A defined comparator that operates on the value. The available operators are:</p> <ul> <li> <p> <code>GT</code>: Greater than.</p> </li> <li> <p> <code>GE</code>: Greater than or equal to.</p> </li> <li> <p> <code>LT</code>: Less than.</p> </li> <li> <p> <code>LE</code>: Less than or equal to.</p> </li> <li> <p> <code>EQ</code>: Equal to.</p> </li> <li> <p> <code>NE</code>: Not equal to.</p> </li> </ul>'
+        FieldValue:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: 'The value provided for comparison on the crawl field. '
+      description: A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.
+    EntityNotFoundException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    CrawlerHistory:
+      type: object
+      properties:
+        CrawlId:
+          allOf:
+          - $ref: '#/components/schemas/CrawlId'
+          - description: A UUID identifier for each crawl.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/CrawlerHistoryState'
+          - description: The state of the crawl.
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time on which the crawl started.
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time on which the crawl ended.
+        Summary:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: If an error occurred, the error message associated with the crawl.
+        LogGroup:
+          allOf:
+          - $ref: '#/components/schemas/LogGroup'
+          - description: The log group associated with the crawl.
+        LogStream:
+          allOf:
+          - $ref: '#/components/schemas/LogStream'
+          - description: The log stream associated with the crawl.
+        MessagePrefix:
+          allOf:
+          - $ref: '#/components/schemas/MessagePrefix'
+          - description: The prefix for a CloudWatch message about this crawl.
+        DPUHour:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeDouble'
+          - description: The number of data processing units (DPU) used in hours for the crawl.
+      description: Contains the information for a run of a crawler.
+    CrawlerHistoryState:
+      type: string
+      enum:
+      - RUNNING
+      - COMPLETED
+      - FAILED
+      - STOPPED
+    MessagePrefix:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    FilterOperator:
+      type: string
+      enum:
+      - GT
+      - GE
+      - LT
+      - LE
+      - EQ
+      - NE
+    OperationTimeoutException: {}
+    Token:
+      type: string
+    NonNegativeDouble:
+      type: number
+      format: double
+      minimum: 0
+    CrawlsFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CrawlsFilter'
+    ListCrawlsRequest:
+      type: object
+      required:
+      - CrawlerName
+      title: ListCrawlsRequest
+      properties:
+        CrawlerName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the crawler whose runs you want to retrieve.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return. The default is 20, and maximum is 100.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/CrawlsFilterList'
+          - description: Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code> objects.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if this is a continuation call.
+    LogStream:
+      type: string
+      pattern: '[^:*]*'
+      minLength: 1
+      maxLength: 512
+    FieldName:
+      type: string
+      enum:
+      - CRAWL_ID
+      - STATE
+      - START_TIME
+      - END_TIME
+      - DPU_HOUR
+    GenericString:
+      type: string
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    LogGroup:
+      type: string
+      pattern: '[\.\-_/#A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 512
+    ListCrawlsResponse:
+      type: object
+      properties:
+        Crawls:
+          allOf:
+          - $ref: '#/components/schemas/CrawlerHistoryList'
+          - description: A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet your criteria.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

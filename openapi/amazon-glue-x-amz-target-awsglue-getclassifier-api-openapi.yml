@@ -1,0 +1,483 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetClassifier API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetClassifier'
+paths:
+  /#X-Amz-Target=AWSGlue.GetClassifier:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetClassifier
+      description: Retrieve a classifier by name.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetClassifierResponse'
+              examples:
+                GetClassifier200Example:
+                  summary: Default GetClassifier 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetClassifier480Example:
+                  summary: Default GetClassifier 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetClassifier481Example:
+                  summary: Default GetClassifier 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetClassifierRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetClassifier
+      summary: Amazon Glue Get Classifier
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetClassifier'
+components:
+  schemas:
+    CsvClassifier:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the classifier.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was registered.
+        LastUpdated:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was last updated.
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/VersionId'
+          - description: The version of this classifier.
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/CsvColumnDelimiter'
+          - description: A custom symbol to denote what separates each column entry in the row.
+        QuoteSymbol:
+          allOf:
+          - $ref: '#/components/schemas/CsvQuoteSymbol'
+          - description: A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.
+        ContainsHeader:
+          allOf:
+          - $ref: '#/components/schemas/CsvHeaderOption'
+          - description: Indicates whether the CSV file contains a header.
+        Header:
+          allOf:
+          - $ref: '#/components/schemas/CsvHeader'
+          - description: A list of strings representing column names.
+        DisableValueTrimming:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.
+        AllowSingleColumn:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Enables the processing of files that contain only one column.
+        CustomDatatypeConfigured:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Enables the custom datatype to be configured.
+        CustomDatatypes:
+          allOf:
+          - $ref: '#/components/schemas/CustomDatatypes'
+          - description: A list of custom datatypes including "BINARY", "BOOLEAN", "DATE", "DECIMAL", "DOUBLE", "FLOAT", "INT", "LONG", "SHORT", "STRING", "TIMESTAMP".
+      description: A classifier for custom <code>CSV</code> content.
+    JsonPath:
+      type: string
+    EntityNotFoundException: {}
+    NullableBoolean:
+      type: boolean
+    GrokPattern:
+      type: string
+      minLength: 1
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\t]*'
+    OperationTimeoutException: {}
+    GrokClassifier:
+      type: object
+      required:
+      - Name
+      - Classification
+      - GrokPattern
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the classifier.
+        Classification:
+          allOf:
+          - $ref: '#/components/schemas/Classification'
+          - description: An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was registered.
+        LastUpdated:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was last updated.
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/VersionId'
+          - description: The version of this classifier.
+        GrokPattern:
+          allOf:
+          - $ref: '#/components/schemas/GrokPattern'
+          - description: The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+        CustomPatterns:
+          allOf:
+          - $ref: '#/components/schemas/CustomPatterns'
+          - description: Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.
+      description: A classifier that uses <code>grok</code> patterns.
+    VersionId:
+      type: integer
+    JsonClassifier:
+      type: object
+      required:
+      - Name
+      - JsonPath
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the classifier.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was registered.
+        LastUpdated:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was last updated.
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/VersionId'
+          - description: The version of this classifier.
+        JsonPath:
+          allOf:
+          - $ref: '#/components/schemas/JsonPath'
+          - description: A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.
+      description: A classifier for <code>JSON</code> content.
+    Classifier:
+      type: object
+      properties:
+        GrokClassifier:
+          allOf:
+          - $ref: '#/components/schemas/GrokClassifier'
+          - description: A classifier that uses <code>grok</code>.
+        XMLClassifier:
+          allOf:
+          - $ref: '#/components/schemas/XMLClassifier'
+          - description: A classifier for XML content.
+        JsonClassifier:
+          allOf:
+          - $ref: '#/components/schemas/JsonClassifier'
+          - description: A classifier for JSON content.
+        CsvClassifier:
+          allOf:
+          - $ref: '#/components/schemas/CsvClassifier'
+          - description: A classifier for comma-separated values (CSV).
+      description: <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
+    CsvHeaderOption:
+      type: string
+      enum:
+      - UNKNOWN
+      - PRESENT
+      - ABSENT
+    CsvQuoteSymbol:
+      type: string
+      pattern: '[^\r\n]'
+      minLength: 1
+      maxLength: 1
+    CustomDatatypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+    GetClassifierRequest:
+      type: object
+      required:
+      - Name
+      title: GetClassifierRequest
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Name of the classifier to retrieve.
+    CustomPatterns:
+      type: string
+      minLength: 0
+      maxLength: 16000
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    GetClassifierResponse:
+      type: object
+      properties:
+        Classifier:
+          allOf:
+          - $ref: '#/components/schemas/Classifier'
+          - description: The requested classifier.
+    CsvHeader:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+    Classification:
+      type: string
+    RowTag:
+      type: string
+    XMLClassifier:
+      type: object
+      required:
+      - Name
+      - Classification
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the classifier.
+        Classification:
+          allOf:
+          - $ref: '#/components/schemas/Classification'
+          - description: An identifier of the data format that the classifier matches.
+        CreationTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was registered.
+        LastUpdated:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that this classifier was last updated.
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/VersionId'
+          - description: The version of this classifier.
+        RowTag:
+          allOf:
+          - $ref: '#/components/schemas/RowTag'
+          - description: The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
+      description: A classifier for <code>XML</code> content.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+    CsvColumnDelimiter:
+      type: string
+      pattern: '[^\r\n]'
+      minLength: 1
+      maxLength: 1
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

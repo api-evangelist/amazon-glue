@@ -1,0 +1,426 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetPlan API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetPlan'
+paths:
+  /#X-Amz-Target=AWSGlue.GetPlan:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetPlan
+      description: Gets code to perform a specified mapping.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPlanResponse'
+              examples:
+                GetPlan200Example:
+                  summary: Default GetPlan 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetPlan480Example:
+                  summary: Default GetPlan 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetPlan481Example:
+                  summary: Default GetPlan 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetPlan482Example:
+                  summary: Default GetPlan 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPlanRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetPlan
+      summary: Amazon Glue Get Plan
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetPlan'
+components:
+  schemas:
+    SchemaPathString:
+      type: string
+    GetPlanRequest:
+      type: object
+      required:
+      - Mapping
+      - Source
+      title: GetPlanRequest
+      properties:
+        Mapping:
+          allOf:
+          - $ref: '#/components/schemas/MappingList'
+          - description: The list of mappings from a source table to target tables.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/CatalogEntry'
+          - description: The source table.
+        Sinks:
+          allOf:
+          - $ref: '#/components/schemas/CatalogEntries'
+          - description: The target tables.
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/Location'
+          - description: The parameters for the mapping.
+        Language:
+          allOf:
+          - $ref: '#/components/schemas/Language'
+          - description: The programming language of the code to perform the mapping.
+        AdditionalPlanOptionsMap:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalPlanOptionsMap'
+          - description: <p>A map to hold additional optional key-value parameters.</p> <p>Currently, these key-value pairs are supported:</p> <ul> <li> <p> <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li> </ul>
+    InternalServiceException: {}
+    CatalogEntries:
+      type: array
+      items:
+        $ref: '#/components/schemas/CatalogEntry'
+    Boolean:
+      type: boolean
+    GetPlanResponse:
+      type: object
+      properties:
+        PythonScript:
+          allOf:
+          - $ref: '#/components/schemas/PythonScript'
+          - description: A Python script to perform the mapping.
+        ScalaCode:
+          allOf:
+          - $ref: '#/components/schemas/ScalaCode'
+          - description: The Scala code to perform the mapping.
+    Language:
+      type: string
+      enum:
+      - PYTHON
+      - SCALA
+    ScalaCode:
+      type: string
+    CatalogEntry:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The database in which the table metadata resides.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the table in question.
+      description: Specifies a table definition in the Glue Data Catalog.
+    OperationTimeoutException: {}
+    Location:
+      type: object
+      properties:
+        Jdbc:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: A JDBC location.
+        S3:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: An Amazon Simple Storage Service (Amazon S3) location.
+        DynamoDB:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: An Amazon DynamoDB table location.
+      description: The location of resources.
+    CodeGenNodeArg:
+      type: object
+      required:
+      - Name
+      - Value
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenArgName'
+          - description: The name of the argument or property.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenArgValue'
+          - description: The value of the argument or property.
+        Param:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: True if the value is used as a parameter.
+      description: An argument or property of a node.
+    AdditionalPlanOptionsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
+    CodeGenArgName:
+      type: string
+    PythonScript:
+      type: string
+    MappingEntry:
+      type: object
+      properties:
+        SourceTable:
+          allOf:
+          - $ref: '#/components/schemas/TableName'
+          - description: The name of the source table.
+        SourcePath:
+          allOf:
+          - $ref: '#/components/schemas/SchemaPathString'
+          - description: The source path.
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/FieldType'
+          - description: The source type.
+        TargetTable:
+          allOf:
+          - $ref: '#/components/schemas/TableName'
+          - description: The target table.
+        TargetPath:
+          allOf:
+          - $ref: '#/components/schemas/SchemaPathString'
+          - description: The target path.
+        TargetType:
+          allOf:
+          - $ref: '#/components/schemas/FieldType'
+          - description: The target type.
+      description: Defines a mapping.
+    FieldType:
+      type: string
+    GenericString:
+      type: string
+    TableName:
+      type: string
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    CodeGenNodeArgs:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeGenNodeArg'
+      minItems: 0
+      maxItems: 50
+    MappingList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MappingEntry'
+    CodeGenArgValue:
+      type: string
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

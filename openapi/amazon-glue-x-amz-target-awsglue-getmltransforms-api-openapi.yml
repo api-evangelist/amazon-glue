@@ -1,0 +1,749 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetMLTransforms API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetMLTransforms'
+paths:
+  /#X-Amz-Target=AWSGlue.GetMLTransforms:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetMLTransforms
+      description: Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling <code>GetMLTransforms</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMLTransformsResponse'
+              examples:
+                GetMLTransforms200Example:
+                  summary: Default GetMLTransforms 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetMLTransforms480Example:
+                  summary: Default GetMLTransforms 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetMLTransforms481Example:
+                  summary: Default GetMLTransforms 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetMLTransforms482Example:
+                  summary: Default GetMLTransforms 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetMLTransforms483Example:
+                  summary: Default GetMLTransforms 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetMLTransformsRequest'
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetMLTransforms
+      summary: Amazon Glue Get M L Transforms
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetMLTransforms'
+components:
+  schemas:
+    TransformSchema:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaColumn'
+      maxItems: 100
+    ColumnNameString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InternalServiceException: {}
+    SortDirectionType:
+      type: string
+      enum:
+      - DESCENDING
+      - ASCENDING
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    ColumnTypeString:
+      type: string
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    FindMatchesMetrics:
+      type: object
+      properties:
+        AreaUnderPRCurve:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+        Precision:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+        Recall:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
+        F1:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/F1_score">F1 score</a> in Wikipedia.</p>
+        ConfusionMatrix:
+          allOf:
+          - $ref: '#/components/schemas/ConfusionMatrix'
+          - description: <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
+        ColumnImportances:
+          allOf:
+          - $ref: '#/components/schemas/ColumnImportanceList'
+          - description: A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.
+      description: The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.
+    TransformParameters:
+      type: object
+      required:
+      - TransformType
+      properties:
+        TransformType:
+          allOf:
+          - $ref: '#/components/schemas/TransformType'
+          - description: <p>The type of machine learning transform.</p> <p>For information about the types of machine learning transforms, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html">Creating Machine Learning Transforms</a>.</p>
+        FindMatchesParameters:
+          allOf:
+          - $ref: '#/components/schemas/FindMatchesParameters'
+          - description: The parameters for the find matches algorithm.
+      description: The algorithm-specific parameters that are associated with the machine learning transform.
+    LabelCount:
+      type: integer
+    NullableInteger:
+      type: integer
+    RoleString:
+      type: string
+    EntityNotFoundException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    NullableBoolean:
+      type: boolean
+    PaginationToken:
+      type: string
+    TransformType:
+      type: string
+      enum:
+      - FIND_MATCHES
+    TransformSortColumnType:
+      type: string
+      enum:
+      - NAME
+      - TRANSFORM_TYPE
+      - STATUS
+      - CREATED
+      - LAST_MODIFIED
+    ColumnImportanceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnImportance'
+      minItems: 0
+      maxItems: 100
+    OperationTimeoutException: {}
+    TransformStatusType:
+      type: string
+      enum:
+      - NOT_READY
+      - READY
+      - DELETING
+    GlueTables:
+      type: array
+      items:
+        $ref: '#/components/schemas/GlueTable'
+      minItems: 0
+      maxItems: 10
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    Timeout:
+      type: integer
+      minimum: 1
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ColumnImportance:
+      type: object
+      properties:
+        ColumnName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of a column.
+        Importance:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: The column importance score for the column, as a decimal.
+      description: <p>A structure containing the column name and column importance score for a column. </p> <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
+    FindMatchesParameters:
+      type: object
+      properties:
+        PrimaryKeyColumnName:
+          allOf:
+          - $ref: '#/components/schemas/ColumnNameString'
+          - description: The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.
+        PrecisionRecallTradeoff:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p> <p>The precision metric indicates how often your model is correct when it predicts a match. </p> <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
+        AccuracyCostTradeoff:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p> <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p> <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
+        EnforceProvidedLabels:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p> <p>Note that setting this value to true may increase the conflation execution time.</p>
+      description: The parameters to configure the find matches transform.
+    TransformSortCriteria:
+      type: object
+      required:
+      - Column
+      - SortDirection
+      properties:
+        Column:
+          allOf:
+          - $ref: '#/components/schemas/TransformSortColumnType'
+          - description: The column to be used in the sorting criteria that are associated with the machine learning transform.
+        SortDirection:
+          allOf:
+          - $ref: '#/components/schemas/SortDirectionType'
+          - description: The sort direction to be used in the sorting criteria that are associated with the machine learning transform.
+      description: The sorting criteria that are associated with the machine learning transform.
+    GlueTable:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A database name in the Glue Data Catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A table name in the Glue Data Catalog.
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A unique identifier for the Glue Data Catalog.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the Glue Data Catalog.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
+          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
+      description: The database and table in the Glue Data Catalog that is used for input or output data.
+    EvaluationMetrics:
+      type: object
+      required:
+      - TransformType
+      properties:
+        TransformType:
+          allOf:
+          - $ref: '#/components/schemas/TransformType'
+          - description: The type of machine learning transform.
+        FindMatchesMetrics:
+          allOf:
+          - $ref: '#/components/schemas/FindMatchesMetrics'
+          - description: The evaluation metrics for the find matches algorithm.
+      description: Evaluation metrics provide an estimate of the quality of your machine learning transform.
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    NullableDouble:
+      type: number
+      format: double
+    TransformList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MLTransform'
+    SchemaColumn:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/ColumnNameString'
+          - description: The name of the column.
+        DataType:
+          allOf:
+          - $ref: '#/components/schemas/ColumnTypeString'
+          - description: The type of data in the column.
+      description: A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.
+    ConfusionMatrix:
+      type: object
+      properties:
+        NumTruePositives:
+          allOf:
+          - $ref: '#/components/schemas/RecordsCount'
+          - description: The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.
+        NumFalsePositives:
+          allOf:
+          - $ref: '#/components/schemas/RecordsCount'
+          - description: The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.
+        NumTrueNegatives:
+          allOf:
+          - $ref: '#/components/schemas/RecordsCount'
+          - description: The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.
+        NumFalseNegatives:
+          allOf:
+          - $ref: '#/components/schemas/RecordsCount'
+          - description: The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.
+      description: <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
+    TransformFilterCriteria:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A unique transform name that is used to filter the machine learning transforms.
+        TransformType:
+          allOf:
+          - $ref: '#/components/schemas/TransformType'
+          - description: The type of machine learning transform that is used to filter the machine learning transforms.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/TransformStatusType'
+          - description: Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.
+        CreatedBefore:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time and date before which the transforms were created.
+        CreatedAfter:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time and date after which the transforms were created.
+        LastModifiedBefore:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Filter on transforms last modified before this date.
+        LastModifiedAfter:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Filter on transforms last modified after this date.
+        Schema:
+          allOf:
+          - $ref: '#/components/schemas/TransformSchema'
+          - description: Filters on datasets with a specific schema. The <code>Map&lt;Column, Type&gt;</code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.
+      description: The criteria used to filter the machine learning transforms.
+    TransformEncryption:
+      type: object
+      properties:
+        MlUserDataEncryption:
+          allOf:
+          - $ref: '#/components/schemas/MLUserDataEncryption'
+          - description: An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.
+        TaskRunSecurityConfigurationName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the security configuration.
+      description: <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p> <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
+    RecordsCount:
+      type: integer
+    GlueTableAdditionalOptions:
+      type: object
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DescriptionString'
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+    MLUserDataEncryption:
+      type: object
+      required:
+      - MlUserDataEncryptionMode
+      properties:
+        MlUserDataEncryptionMode:
+          allOf:
+          - $ref: '#/components/schemas/MLUserDataEncryptionModeString'
+          - description: '<p>The encryption mode applied to user data. Valid values are:</p> <ul> <li> <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li> </ul>'
+        KmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The ID for the customer-provided KMS key.
+      description: The encryption-at-rest settings of the transform that apply to accessing user data.
+    MLTransform:
+      type: object
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/TransformStatusType'
+          - description: The current status of the machine learning transform.
+        CreatedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp. The time and date that this machine learning transform was created.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp. The last point in time when this machine learning transform was modified.
+        InputRecordTables:
+          allOf:
+          - $ref: '#/components/schemas/GlueTables'
+          - description: A list of Glue table definitions used by the transform.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/TransformParameters'
+          - description: A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).
+        EvaluationMetrics:
+          allOf:
+          - $ref: '#/components/schemas/EvaluationMetrics'
+          - description: An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.
+        LabelCount:
+          allOf:
+          - $ref: '#/components/schemas/LabelCount'
+          - description: A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.
+        Schema:
+          allOf:
+          - $ref: '#/components/schemas/TransformSchema'
+          - description: A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.
+        Role:
+          allOf:
+          - $ref: '#/components/schemas/RoleString'
+          - description: <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p> <ul> <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li> <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li> </ul>
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li> </ul> <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
+        WorkerType:
+          allOf:
+          - $ref: '#/components/schemas/WorkerType'
+          - description: <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li> </ul>
+        NumberOfWorkers:
+          allOf:
+          - $ref: '#/components/schemas/NullableInteger'
+          - description: <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+        Timeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: The timeout in minutes of the machine learning transform.
+        MaxRetries:
+          allOf:
+          - $ref: '#/components/schemas/NullableInteger'
+          - description: The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.
+        TransformEncryption:
+          allOf:
+          - $ref: '#/components/schemas/TransformEncryption'
+          - description: The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
+      description: A structure for a machine learning transform.
+    InvalidInputException: {}
+    MLUserDataEncryptionModeString:
+      type: string
+      enum:
+      - DISABLED
+      - SSE-KMS
+    GenericBoundedDouble:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 1
+    GetMLTransformsResponse:
+      type: object
+      required:
+      - Transforms
+      properties:
+        Transforms:
+          allOf:
+          - $ref: '#/components/schemas/TransformList'
+          - description: A list of machine learning transforms.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A pagination token, if more results are available.
+    GetMLTransformsRequest:
+      type: object
+      title: GetMLTransformsRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A paginated token to offset the results.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/TransformFilterCriteria'
+          - description: The filter transformation criteria.
+        Sort:
+          allOf:
+          - $ref: '#/components/schemas/TransformSortCriteria'
+          - description: The sorting criteria.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

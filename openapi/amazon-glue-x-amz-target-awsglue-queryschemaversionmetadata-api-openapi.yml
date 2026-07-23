@@ -1,0 +1,422 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.QuerySchemaVersionMetadata API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.QuerySchemaVersionMetadata'
+paths:
+  /#X-Amz-Target=AWSGlue.QuerySchemaVersionMetadata:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: QuerySchemaVersionMetadata
+      description: 'Queries for the schema version metadata information. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuerySchemaVersionMetadataResponse'
+              examples:
+                QuerySchemaVersionMetadata200Example:
+                  summary: Default QuerySchemaVersionMetadata 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                QuerySchemaVersionMetadata480Example:
+                  summary: Default QuerySchemaVersionMetadata 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                QuerySchemaVersionMetadata481Example:
+                  summary: Default QuerySchemaVersionMetadata 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                QuerySchemaVersionMetadata482Example:
+                  summary: Default QuerySchemaVersionMetadata 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuerySchemaVersionMetadataInput'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.QuerySchemaVersionMetadata
+      summary: Amazon Glue Query Schema Version Metadata
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.QuerySchemaVersionMetadata'
+components:
+  schemas:
+    CreatedTimestamp:
+      type: string
+    MetadataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetadataKeyValuePair'
+    EntityNotFoundException: {}
+    SchemaId:
+      type: object
+      properties:
+        SchemaArn:
+          allOf:
+          - $ref: '#/components/schemas/GlueResourceArn'
+          - description: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        SchemaName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        RegistryName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema registry that contains the schema.
+      description: The unique ID of the schema in the Glue schema registry.
+    MetadataInfoMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MetadataInfo'
+    MetadataKeyString:
+      type: string
+      pattern: '[a-zA-Z0-9+-=._./@]+'
+      minLength: 1
+      maxLength: 128
+    OtherMetadataValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/OtherMetadataValueListItem'
+    SchemaVersionIdString:
+      type: string
+      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
+      minLength: 36
+      maxLength: 36
+    MetadataValueString:
+      type: string
+      pattern: '[a-zA-Z0-9+-=._./@]+'
+      minLength: 1
+      maxLength: 256
+    LatestSchemaVersionBoolean:
+      type: boolean
+    OtherMetadataValueListItem:
+      type: object
+      properties:
+        MetadataValue:
+          allOf:
+          - $ref: '#/components/schemas/MetadataValueString'
+          - description: The metadata key’s corresponding value for the other metadata belonging to the same metadata key.
+        CreatedTime:
+          allOf:
+          - $ref: '#/components/schemas/CreatedTimestamp'
+          - description: The time at which the entry was created.
+      description: A structure containing other metadata for a schema version belonging to the same metadata key.
+    AccessDeniedException: {}
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    QuerySchemaVersionMetadataInput:
+      type: object
+      title: QuerySchemaVersionMetadataInput
+      properties:
+        SchemaId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaId'
+          - description: A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).
+        SchemaVersionNumber:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionNumber'
+          - description: The version number of the schema.
+        SchemaVersionId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionIdString'
+          - description: The unique version ID of the schema version.
+        MetadataList:
+          allOf:
+          - $ref: '#/components/schemas/MetadataList'
+          - description: Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/QuerySchemaVersionMetadataMaxResults'
+          - description: Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryTokenString'
+          - description: A continuation token, if this is a continuation call.
+    SchemaRegistryTokenString:
+      type: string
+    GlueResourceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      minLength: 1
+      maxLength: 10240
+    QuerySchemaVersionMetadataResponse:
+      type: object
+      properties:
+        MetadataInfoMap:
+          allOf:
+          - $ref: '#/components/schemas/MetadataInfoMap'
+          - description: A map of a metadata key and associated values.
+        SchemaVersionId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionIdString'
+          - description: The unique version ID of the schema version.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryTokenString'
+          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
+    MetadataKeyValuePair:
+      type: object
+      properties:
+        MetadataKey:
+          allOf:
+          - $ref: '#/components/schemas/MetadataKeyString'
+          - description: A metadata key.
+        MetadataValue:
+          allOf:
+          - $ref: '#/components/schemas/MetadataValueString'
+          - description: A metadata key’s corresponding value.
+      description: A structure containing a key value pair for metadata.
+    InvalidInputException: {}
+    MetadataInfo:
+      type: object
+      properties:
+        MetadataValue:
+          allOf:
+          - $ref: '#/components/schemas/MetadataValueString'
+          - description: The metadata key’s corresponding value.
+        CreatedTime:
+          allOf:
+          - $ref: '#/components/schemas/CreatedTimestamp'
+          - description: The time at which the entry was created.
+        OtherMetadataValueList:
+          allOf:
+          - $ref: '#/components/schemas/OtherMetadataValueList'
+          - description: Other metadata belonging to the same metadata key.
+      description: A structure containing metadata information for a schema version.
+    SchemaVersionNumber:
+      type: object
+      properties:
+        LatestVersion:
+          allOf:
+          - $ref: '#/components/schemas/LatestSchemaVersionBoolean'
+          - description: The latest version available for the schema.
+        VersionNumber:
+          allOf:
+          - $ref: '#/components/schemas/VersionLongNumber'
+          - description: The version number of the schema.
+      description: A structure containing the schema version information.
+    VersionLongNumber:
+      type: integer
+      minimum: 1
+      maximum: 100000
+    QuerySchemaVersionMetadataMaxResults:
+      type: integer
+      minimum: 1
+      maximum: 50
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

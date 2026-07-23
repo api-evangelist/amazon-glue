@@ -1,0 +1,441 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetDataQualityResult API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.BatchGetDataQualityResult'
+paths:
+  /#X-Amz-Target=AWSGlue.BatchGetDataQualityResult:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetDataQualityResult
+      description: Retrieves a list of data quality results for the specified result IDs.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetDataQualityResultResponse'
+              examples:
+                BatchGetDataQualityResult200Example:
+                  summary: Default BatchGetDataQualityResult 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                BatchGetDataQualityResult480Example:
+                  summary: Default BatchGetDataQualityResult 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                BatchGetDataQualityResult481Example:
+                  summary: Default BatchGetDataQualityResult 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                BatchGetDataQualityResult482Example:
+                  summary: Default BatchGetDataQualityResult 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchGetDataQualityResultRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.BatchGetDataQualityResult
+      summary: Amazon Glue Batch Get Data Quality Result
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.BatchGetDataQualityResult'
+components:
+  schemas:
+    BatchGetDataQualityResultResponse:
+      type: object
+      required:
+      - Results
+      properties:
+        Results:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityResultsList'
+          - description: A list of <code>DataQualityResult</code> objects representing the data quality results.
+        ResultsNotFound:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityResultIds'
+          - description: A list of result IDs for which results were not found.
+    DataSource:
+      type: object
+      required:
+      - GlueTable
+      properties:
+        GlueTable:
+          allOf:
+          - $ref: '#/components/schemas/GlueTable'
+          - description: An Glue table.
+      description: A data source (an Glue table) for which you want data quality results.
+    InternalServiceException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    OperationTimeoutException: {}
+    DataQualityRuleResult:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the data quality rule.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of the data quality rule.
+        EvaluationMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: An evaluation message.
+        Result:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityRuleResultStatus'
+          - description: A pass or fail status for the rule.
+      description: Describes the result of the evaluation of a data quality rule.
+    DataQualityResultsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataQualityResult'
+    DataQualityResultIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/HashString'
+      minItems: 1
+      maxItems: 100
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DataQualityResult:
+      type: object
+      properties:
+        ResultId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: A unique result ID for the data quality result.
+        Score:
+          allOf:
+          - $ref: '#/components/schemas/GenericBoundedDouble'
+          - description: An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.
+        DataSource:
+          allOf:
+          - $ref: '#/components/schemas/DataSource'
+          - description: The table associated with the data quality result, if any.
+        RulesetName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the ruleset associated with the data quality result.
+        EvaluationContext:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when this data quality run started.
+        CompletedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when this data quality run completed.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The job name associated with the data quality result, if any.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The job run ID associated with the data quality result, if any.
+        RulesetEvaluationRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique run ID for the ruleset evaluation for this data quality result.
+        RuleResults:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityRuleResults'
+          - description: 'A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. '
+      description: Describes a data quality result.
+    GlueTable:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A database name in the Glue Data Catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A table name in the Glue Data Catalog.
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A unique identifier for the Glue Data Catalog.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the Glue Data Catalog.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
+          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
+      description: The database and table in the Glue Data Catalog that is used for input or output data.
+    BatchGetDataQualityResultRequest:
+      type: object
+      required:
+      - ResultIds
+      title: BatchGetDataQualityResultRequest
+      properties:
+        ResultIds:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityResultIds'
+          - description: A list of unique result IDs for the data quality results.
+    DataQualityRuleResultStatus:
+      type: string
+      enum:
+      - PASS
+      - FAIL
+      - ERROR
+    GenericString:
+      type: string
+    GlueTableAdditionalOptions:
+      type: object
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DescriptionString'
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DataQualityRuleResults:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataQualityRuleResult'
+      minItems: 1
+      maxItems: 2000
+    InvalidInputException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    GenericBoundedDouble:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 1
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

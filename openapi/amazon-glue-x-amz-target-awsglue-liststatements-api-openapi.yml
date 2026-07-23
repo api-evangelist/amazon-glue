@@ -1,0 +1,438 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListStatements API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.ListStatements'
+paths:
+  /#X-Amz-Target=AWSGlue.ListStatements:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListStatements
+      description: Lists statements for the session.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListStatementsResponse'
+              examples:
+                ListStatements200Example:
+                  summary: Default ListStatements 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                ListStatements480Example:
+                  summary: Default ListStatements 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                ListStatements481Example:
+                  summary: Default ListStatements 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                ListStatements482Example:
+                  summary: Default ListStatements 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                ListStatements483Example:
+                  summary: Default ListStatements 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '484':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                ListStatements484Example:
+                  summary: Default ListStatements 484 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '485':
+          description: IllegalSessionStateException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IllegalSessionStateException'
+              examples:
+                ListStatements485Example:
+                  summary: Default ListStatements 485 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListStatementsRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.ListStatements
+      summary: Amazon Glue List Statements
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.ListStatements'
+components:
+  schemas:
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    ListStatementsResponse:
+      type: object
+      properties:
+        Statements:
+          allOf:
+          - $ref: '#/components/schemas/StatementList'
+          - description: Returns the list of statements.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationToken'
+          - description: A continuation token, if not all statements have yet been returned.
+    StatementList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Statement'
+    OperationTimeoutException: {}
+    IntegerValue:
+      type: integer
+    StatementState:
+      type: string
+      enum:
+      - WAITING
+      - RUNNING
+      - AVAILABLE
+      - CANCELLING
+      - CANCELLED
+      - ERROR
+    OrchestrationToken:
+      type: string
+      maxLength: 400000
+    Statement:
+      type: object
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/IntegerValue'
+          - description: The ID of the statement.
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The execution code of the statement.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/StatementState'
+          - description: The state while request is actioned.
+        Output:
+          allOf:
+          - $ref: '#/components/schemas/StatementOutput'
+          - description: The output in JSON.
+        Progress:
+          allOf:
+          - $ref: '#/components/schemas/DoubleValue'
+          - description: The code execution progress.
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/LongValue'
+          - description: The unix time and date that the job definition was started.
+        CompletedOn:
+          allOf:
+          - $ref: '#/components/schemas/LongValue'
+          - description: The unix time and date that the job definition was completed.
+      description: The statement or request for a particular action to occur in a session.
+    LongValue:
+      type: integer
+    IllegalSessionStateException: {}
+    AccessDeniedException: {}
+    StatementOutput:
+      type: object
+      properties:
+        Data:
+          allOf:
+          - $ref: '#/components/schemas/StatementOutputData'
+          - description: The code execution output.
+        ExecutionCount:
+          allOf:
+          - $ref: '#/components/schemas/IntegerValue'
+          - description: The execution count of the output.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatementState'
+          - description: The status of the code execution output.
+        ErrorName:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The name of the error in the output.
+        ErrorValue:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The error value of the output.
+        Traceback:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationStringList'
+          - description: The traceback of the output.
+      description: The code execution output in JSON format.
+    DoubleValue:
+      type: number
+      format: double
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    GenericString:
+      type: string
+    OrchestrationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    StatementOutputData:
+      type: object
+      properties:
+        TextPlain:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The code execution output in text format.
+      description: The code execution output in JSON format.
+    ListStatementsRequest:
+      type: object
+      required:
+      - SessionId
+      title: ListStatementsRequest
+      properties:
+        SessionId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The Session ID of the statements.
+        RequestOrigin:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: The origin of the request to list statements.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationToken'
+          - description: A continuation token, if this is a continuation call.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

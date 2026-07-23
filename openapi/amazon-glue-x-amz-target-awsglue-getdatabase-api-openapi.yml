@@ -1,0 +1,468 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDatabase API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetDatabase'
+paths:
+  /#X-Amz-Target=AWSGlue.GetDatabase:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetDatabase
+      description: Retrieves the definition of a specified database.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDatabaseResponse'
+              examples:
+                GetDatabase200Example:
+                  summary: Default GetDatabase 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetDatabase480Example:
+                  summary: Default GetDatabase 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetDatabase481Example:
+                  summary: Default GetDatabase 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetDatabase482Example:
+                  summary: Default GetDatabase 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetDatabase483Example:
+                  summary: Default GetDatabase 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '484':
+          description: GlueEncryptionException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GlueEncryptionException'
+              examples:
+                GetDatabase484Example:
+                  summary: Default GetDatabase 484 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '485':
+          description: FederationSourceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FederationSourceException'
+              examples:
+                GetDatabase485Example:
+                  summary: Default GetDatabase 485 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetDatabaseRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetDatabase
+      summary: Amazon Glue Get Database
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetDatabase'
+components:
+  schemas:
+    FederationIdentifier:
+      type: string
+      minLength: 1
+      maxLength: 512
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PrincipalPermissionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrincipalPermissions'
+    PermissionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    InternalServiceException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    EntityNotFoundException: {}
+    OperationTimeoutException: {}
+    FederationSourceException: {}
+    ParametersMapValue:
+      type: string
+      maxLength: 512000
+    FederatedDatabase:
+      type: object
+      properties:
+        Identifier:
+          allOf:
+          - $ref: '#/components/schemas/FederationIdentifier'
+          - description: A unique identifier for the federated database.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the external metastore.
+      description: A database that points to an entity outside the Glue Data Catalog.
+    URI:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    PrincipalPermissions:
+      type: object
+      properties:
+        Principal:
+          allOf:
+          - $ref: '#/components/schemas/DataLakePrincipal'
+          - description: The principal who is granted permissions.
+        Permissions:
+          allOf:
+          - $ref: '#/components/schemas/PermissionList'
+          - description: The permissions that are granted to the principal.
+      description: Permissions granted to a principal.
+    Database:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of the database.
+        LocationUri:
+          allOf:
+          - $ref: '#/components/schemas/URI'
+          - description: The location of the database (for example, an HDFS path).
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersMap'
+          - description: These key-value pairs define parameters and properties of the database.
+        CreateTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time at which the metadata database was created in the catalog.
+        CreateTableDefaultPermissions:
+          allOf:
+          - $ref: '#/components/schemas/PrincipalPermissionsList'
+          - description: Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.
+        TargetDatabase:
+          allOf:
+          - $ref: '#/components/schemas/DatabaseIdentifier'
+          - description: A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides.
+        FederatedDatabase:
+          allOf:
+          - $ref: '#/components/schemas/FederatedDatabase'
+          - description: A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+      description: The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.
+    DatabaseIdentifier:
+      type: object
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database.
+      description: A structure that describes a target database for resource linking.
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DataLakePrincipal:
+      type: object
+      properties:
+        DataLakePrincipalIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/DataLakePrincipalString'
+          - description: An identifier for the Lake Formation principal.
+      description: The Lake Formation principal.
+    GetDatabaseResponse:
+      type: object
+      properties:
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/Database'
+          - description: The definition of the specified database in the Data Catalog.
+    ParametersMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParametersMapValue'
+    Permission:
+      type: string
+      enum:
+      - ALL
+      - SELECT
+      - ALTER
+      - DROP
+      - DELETE
+      - INSERT
+      - CREATE_DATABASE
+      - CREATE_TABLE
+      - DATA_LOCATION_ACCESS
+    GlueEncryptionException: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetDatabaseRequest:
+      type: object
+      required:
+      - Name
+      title: GetDatabaseRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
+    DataLakePrincipalString:
+      type: string
+      minLength: 1
+      maxLength: 255
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

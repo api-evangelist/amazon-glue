@@ -1,0 +1,362 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetBlueprintRun API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetBlueprintRun'
+paths:
+  /#X-Amz-Target=AWSGlue.GetBlueprintRun:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetBlueprintRun
+      description: Retrieves the details of a blueprint run.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBlueprintRunResponse'
+              examples:
+                GetBlueprintRun200Example:
+                  summary: Default GetBlueprintRun 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetBlueprintRun480Example:
+                  summary: Default GetBlueprintRun 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetBlueprintRun481Example:
+                  summary: Default GetBlueprintRun 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetBlueprintRun482Example:
+                  summary: Default GetBlueprintRun 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetBlueprintRunRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetBlueprintRun
+      summary: Amazon Glue Get Blueprint Run
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetBlueprintRun'
+components:
+  schemas:
+    InternalServiceException: {}
+    MessageString:
+      type: string
+    GetBlueprintRunResponse:
+      type: object
+      properties:
+        BlueprintRun:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintRun'
+          - description: Returns a <code>BlueprintRun</code> object.
+    OrchestrationIAMRoleArn:
+      type: string
+      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
+      minLength: 1
+      maxLength: 1024
+    EntityNotFoundException: {}
+    BlueprintParameters:
+      type: string
+      minLength: 1
+      maxLength: 131072
+    OperationTimeoutException: {}
+    BlueprintRunState:
+      type: string
+      enum:
+      - RUNNING
+      - SUCCEEDED
+      - FAILED
+      - ROLLING_BACK
+    BlueprintRun:
+      type: object
+      properties:
+        BlueprintName:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: The name of the blueprint.
+        RunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The run ID for this blueprint run.
+        WorkflowName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintRunState'
+          - description: <p>The state of the blueprint run. Possible values are:</p> <ul> <li> <p>Running — The blueprint run is in progress.</p> </li> <li> <p>Succeeded — The blueprint run completed successfully.</p> </li> <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li> <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li> </ul>
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time that the blueprint run started.
+        CompletedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time that the blueprint run completed.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/MessageString'
+          - description: Indicates any errors that are seen while running the blueprint.
+        RollbackErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/MessageString'
+          - description: If there are any errors while creating the entities of a workflow, we try to roll back the created entities until that point and delete them. This attribute indicates the errors seen while trying to delete the entities that are created.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintParameters'
+          - description: The blueprint parameters as a string. You will have to provide a value for each key that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationIAMRoleArn'
+          - description: The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.
+      description: The details of a blueprint run.
+    IdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    TimestampValue:
+      type: string
+      format: date-time
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetBlueprintRunRequest:
+      type: object
+      required:
+      - BlueprintName
+      - RunId
+      title: GetBlueprintRunRequest
+      properties:
+        BlueprintName:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: The name of the blueprint.
+        RunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The run ID for the blueprint run you want to retrieve.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

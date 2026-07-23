@@ -1,0 +1,400 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetBlueprints API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.BatchGetBlueprints'
+paths:
+  /#X-Amz-Target=AWSGlue.BatchGetBlueprints:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetBlueprints
+      description: Retrieves information about a list of blueprints.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetBlueprintsResponse'
+              examples:
+                BatchGetBlueprints200Example:
+                  summary: Default BatchGetBlueprints 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                BatchGetBlueprints480Example:
+                  summary: Default BatchGetBlueprints 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                BatchGetBlueprints481Example:
+                  summary: Default BatchGetBlueprints 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                BatchGetBlueprints482Example:
+                  summary: Default BatchGetBlueprints 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchGetBlueprintsRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.BatchGetBlueprints
+      summary: Amazon Glue Batch Get Blueprints
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.BatchGetBlueprints'
+components:
+  schemas:
+    InternalServiceException: {}
+    NullableBoolean:
+      type: boolean
+    Blueprints:
+      type: array
+      items:
+        $ref: '#/components/schemas/Blueprint'
+    OperationTimeoutException: {}
+    BatchGetBlueprintNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrchestrationNameString'
+      minItems: 1
+      maxItems: 25
+    BatchGetBlueprintsRequest:
+      type: object
+      required:
+      - Names
+      title: BatchGetBlueprintsRequest
+      properties:
+        Names:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetBlueprintNames'
+          - description: A list of blueprint names.
+        IncludeBlueprint:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the blueprint in the response.
+        IncludeParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.
+    Generic512CharString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    ErrorString:
+      type: string
+    BlueprintNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/OrchestrationNameString'
+    BatchGetBlueprintsResponse:
+      type: object
+      properties:
+        Blueprints:
+          allOf:
+          - $ref: '#/components/schemas/Blueprints'
+          - description: Returns a list of blueprint as a <code>Blueprints</code> object.
+        MissingBlueprints:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintNames'
+          - description: Returns a list of <code>BlueprintNames</code> that were not found.
+    BlueprintParameterSpec:
+      type: string
+      minLength: 1
+      maxLength: 131072
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    LastActiveDefinition:
+      type: object
+      properties:
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The description of the blueprint.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time the blueprint was last modified.
+        ParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintParameterSpec'
+          - description: A JSON string specifying the parameters for the blueprint.
+        BlueprintLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.
+        BlueprintServiceLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.
+      description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
+    GenericString:
+      type: string
+    BlueprintStatus:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - UPDATING
+      - FAILED
+    TimestampValue:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    Blueprint:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: The name of the blueprint.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The description of the blueprint.
+        CreatedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time the blueprint was registered.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time the blueprint was last modified.
+        ParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintParameterSpec'
+          - description: A JSON string that indicates the list of parameter specifications for the blueprint.
+        BlueprintLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies the path in Amazon S3 where the blueprint is published.
+        BlueprintServiceLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintStatus'
+          - description: <p>The status of the blueprint registration.</p> <ul> <li> <p>Creating — The blueprint registration is in progress.</p> </li> <li> <p>Active — The blueprint has been successfully registered.</p> </li> <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li> <li> <p>Failed — The blueprint registration failed.</p> </li> </ul>
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorString'
+          - description: An error message.
+        LastActiveDefinition:
+          allOf:
+          - $ref: '#/components/schemas/LastActiveDefinition'
+          - description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
+      description: The details of a blueprint.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

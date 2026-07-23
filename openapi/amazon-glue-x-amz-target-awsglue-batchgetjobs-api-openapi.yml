@@ -1,0 +1,3560 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetJobs API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.BatchGetJobs'
+paths:
+  /#X-Amz-Target=AWSGlue.BatchGetJobs:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetJobs
+      description: 'Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetJobsResponse'
+              examples:
+                BatchGetJobs200Example:
+                  summary: Default BatchGetJobs 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                BatchGetJobs480Example:
+                  summary: Default BatchGetJobs 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                BatchGetJobs481Example:
+                  summary: Default BatchGetJobs 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                BatchGetJobs482Example:
+                  summary: Default BatchGetJobs 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchGetJobsRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.BatchGetJobs
+      summary: Amazon Glue Batch Get Jobs
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.BatchGetJobs'
+components:
+  schemas:
+    DQDLString:
+      type: string
+      pattern: ([\u0020-\u007E\r\s\n])*
+      minLength: 1
+      maxLength: 65536
+    TwoInputs:
+      type: array
+      items:
+        $ref: '#/components/schemas/NodeId'
+      minItems: 2
+      maxItems: 2
+    JDBCConnectorSource:
+      type: object
+      required:
+      - Name
+      - ConnectionName
+      - ConnectorName
+      - ConnectionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection that is associated with the connector.
+        ConnectorName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of a connector that assists with accessing the data store in Glue Studio.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/JDBCConnectorOptions'
+          - description: Additional connection options for the connector.
+        ConnectionTable:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertyWithQuote'
+          - description: The name of the table in the data source.
+        Query:
+          allOf:
+          - $ref: '#/components/schemas/SqlQuery'
+          - description: The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the custom JDBC source.
+      description: Specifies a connector to a JDBC data source.
+    S3HudiCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Table
+      - Database
+      - AdditionalOptions
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options for the connector.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/CatalogSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+    BoxedNonNegativeLong:
+      type: integer
+      minimum: 0
+    ColumnTypeString:
+      type: string
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    S3CatalogDeltaSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Delta Lake data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        AdditionalDeltaOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Delta Lake source.
+      description: Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.
+    PostgreSQLCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+      description: Specifies a target that uses Postgres SQL.
+    SqlQuery:
+      type: string
+      x-pattern: \([\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\s]\)*
+    SqlAlias:
+      type: object
+      required:
+      - From
+      - Alias
+      properties:
+        From:
+          allOf:
+          - $ref: '#/components/schemas/NodeId'
+          - description: A table, or a column in a table.
+        Alias:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertyWithQuote'
+          - description: A temporary name given to a table, or a column in a table.
+      description: 'Represents a single entry in the list of values for <code>SqlAliases</code>. '
+    ParamType:
+      type: string
+      enum:
+      - str
+      - int
+      - float
+      - complex
+      - bool
+      - list
+      - 'null'
+    StreamingDataPreviewOptions:
+      type: object
+      properties:
+        PollingTime:
+          allOf:
+          - $ref: '#/components/schemas/PollingTime'
+          - description: The polling time in milliseconds.
+        RecordPollingLimit:
+          allOf:
+          - $ref: '#/components/schemas/PositiveLong'
+          - description: The limit to the number of records polled.
+      description: Specifies options related to data preview for viewing a sample of your data.
+    QuoteChar:
+      type: string
+      enum:
+      - quote
+      - quillemet
+      - single_quote
+      - disabled
+    S3JsonSource:
+      type: object
+      required:
+      - Name
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A list of the Amazon S3 paths to read from.
+        CompressionType:
+          allOf:
+          - $ref: '#/components/schemas/CompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        Exclusions:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: 'A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. '
+        GroupSize:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.
+        GroupFiles:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.
+        Recurse:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: If set to true, recursively reads files in all subdirectories under the specified paths.
+        MaxBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.
+        MaxFilesInBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectSourceAdditionalOptions'
+          - description: Specifies additional connection options.
+        JsonPath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A JsonPath string defining the JSON data.
+        Multiline:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the S3 JSON source.
+      description: Specifies a JSON data store stored in Amazon S3.
+    NullCheckBoxList:
+      type: object
+      properties:
+        IsEmpty:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Specifies that an empty string is considered as a null value.
+        IsNullString:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Specifies that a value spelling out the word 'null' is considered as a null value.
+        IsNegOne:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Specifies that an integer value of -1 is considered as a null value.
+      description: Represents whether certain values are recognized as null values for removal.
+    FilterValues:
+      type: array
+      items:
+        $ref: '#/components/schemas/FilterValue'
+    LimitedStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericLimitedString'
+    AthenaConnectorSource:
+      type: object
+      required:
+      - Name
+      - ConnectionName
+      - ConnectorName
+      - ConnectionType
+      - SchemaName
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection that is associated with the connector.
+        ConnectorName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of a connector that assists with accessing the data store in Glue Studio.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of connection, such as marketplace.athena or custom.athena, designating a connection to an Amazon Athena data store.
+        ConnectionTable:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertyWithQuote'
+          - description: The name of the table in the data source.
+        SchemaName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the custom Athena source.
+      description: Specifies a connector to an Amazon Athena data source.
+    S3CsvSource:
+      type: object
+      required:
+      - Name
+      - Paths
+      - Separator
+      - QuoteChar
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A list of the Amazon S3 paths to read from.
+        CompressionType:
+          allOf:
+          - $ref: '#/components/schemas/CompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        Exclusions:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: 'A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. '
+        GroupSize:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.
+        GroupFiles:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.
+        Recurse:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: If set to true, recursively reads files in all subdirectories under the specified paths.
+        MaxBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.
+        MaxFilesInBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectSourceAdditionalOptions'
+          - description: Specifies additional connection options.
+        Separator:
+          allOf:
+          - $ref: '#/components/schemas/Separator'
+          - description: 'Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.'
+        Escaper:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertyWithQuote'
+          - description: Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).
+        QuoteChar:
+          allOf:
+          - $ref: '#/components/schemas/QuoteChar'
+          - description: 'Specifies the character to use for quoting. The default is a double quote: <code>''"''</code>. Set this to <code>-1</code> to turn off quoting entirely.'
+        Multiline:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.
+        WithHeader:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.
+        WriteHeader:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: 'A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. '
+        SkipFirst:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.
+        OptimizePerformance:
+          allOf:
+          - $ref: '#/components/schemas/BooleanValue'
+          - description: A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the S3 CSV source.
+      description: Specifies a command-separated value (CSV) data store stored in Amazon S3.
+    DropFields:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: A JSON path to a variable in the data structure.
+      description: Specifies a transform that chooses the data property keys that you want to drop.
+    CompressionType:
+      type: string
+      enum:
+      - gzip
+      - bzip2
+    SelectFields:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: A JSON path to a variable in the data structure.
+      description: Specifies a transform that chooses the data property keys that you want to keep.
+    FilterExpressions:
+      type: array
+      items:
+        $ref: '#/components/schemas/FilterExpression'
+    BatchGetJobsResponse:
+      type: object
+      properties:
+        Jobs:
+          allOf:
+          - $ref: '#/components/schemas/JobList'
+          - description: A list of job definitions.
+        JobsNotFound:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: A list of names of jobs not found.
+    BooleanValue:
+      type: boolean
+    NullableDouble:
+      type: number
+      format: double
+    SourceControlAuthStrategy:
+      type: string
+      enum:
+      - PERSONAL_ACCESS_TOKEN
+      - AWS_SECRETS_MANAGER
+    CatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a data store in the Glue Data Catalog.
+    NullValueField:
+      type: object
+      required:
+      - Value
+      - Datatype
+      properties:
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The value of the null placeholder.
+        Datatype:
+          allOf:
+          - $ref: '#/components/schemas/Datatype'
+          - description: The datatype of the value.
+      description: Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.
+    RedshiftTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+        RedshiftTmpDir:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon S3 path where temporary data can be staged when copying out of the database.
+        TmpDirIAMRole:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The IAM role with permissions.
+        UpsertRedshiftOptions:
+          allOf:
+          - $ref: '#/components/schemas/UpsertRedshiftTargetOptions'
+          - description: The set of options to configure an upsert operation when writing to a Redshift target.
+      description: Specifies a target that uses Amazon Redshift.
+    GenericString:
+      type: string
+    DirectKinesisSource:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        WindowSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedPositiveInt'
+          - description: The amount of time to spend processing each micro batch.
+        DetectSchema:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to automatically determine the schema from the incoming data.
+        StreamingOptions:
+          allOf:
+          - $ref: '#/components/schemas/KinesisStreamingSourceOptions'
+          - description: Additional options for the Kinesis streaming data source.
+        DataPreviewOptions:
+          allOf:
+          - $ref: '#/components/schemas/StreamingDataPreviewOptions'
+          - description: Additional options for data preview.
+      description: Specifies a direct Amazon Kinesis data source.
+    AggFunction:
+      type: string
+      enum:
+      - avg
+      - countDistinct
+      - count
+      - first
+      - last
+      - kurtosis
+      - max
+      - min
+      - skewness
+      - stddev_samp
+      - stddev_pop
+      - sum
+      - sumDistinct
+      - var_samp
+      - var_pop
+    NodeId:
+      type: string
+      pattern: '[A-Za-z0-9_-]*'
+    Filter:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - LogicalOperator
+      - Filters
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        LogicalOperator:
+          allOf:
+          - $ref: '#/components/schemas/FilterLogicalOperator'
+          - description: The operator used to filter rows by comparing the key value to a specified value.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterExpressions'
+          - description: Specifies a filter expression.
+      description: Specifies a transform that splits a dataset into two, based on a filter condition.
+    GlueSchema:
+      type: object
+      properties:
+        Columns:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioSchemaColumnList'
+          - description: Specifies the column definitions that make up a Glue schema.
+      description: Specifies a user-defined schema when a schema cannot be determined by Glue.
+    MaskValue:
+      type: string
+      pattern: '[*A-Za-z0-9_-]*'
+      minLength: 0
+      maxLength: 256
+    BoxedNonNegativeInt:
+      type: integer
+      minimum: 0
+    JDBCConnectorTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - ConnectionName
+      - ConnectionTable
+      - ConnectorName
+      - ConnectionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection that is associated with the connector.
+        ConnectionTable:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertyWithQuote'
+          - description: The name of the table in the data target.
+        ConnectorName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of a connector that will be used.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data target.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Additional connection options for the connector.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the JDBC target.
+      description: Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+    GlueStudioSchemaColumn:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioColumnNameString'
+          - description: The name of the column in the Glue Studio schema.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ColumnTypeString'
+          - description: The hive type for this column in the Glue Studio schema.
+      description: Specifies a single column in a Glue schema definition.
+    TargetFormat:
+      type: string
+      enum:
+      - json
+      - csv
+      - avro
+      - orc
+      - parquet
+      - hudi
+      - delta
+    LimitedPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LimitedStringList'
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    MicrosoftSQLServerCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+      description: Specifies a target that uses Microsoft SQL.
+    S3DirectTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Path
+      - Format
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A single Amazon S3 path to write to.
+        Compression:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/TargetFormat'
+          - description: Specifies the data output format for the target.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/DirectSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a data target that writes to Amazon S3.
+    GlueRecordType:
+      type: string
+      enum:
+      - DATE
+      - STRING
+      - TIMESTAMP
+      - INT
+      - FLOAT
+      - LONG
+      - BIGDECIMAL
+      - BYTE
+      - SHORT
+      - DOUBLE
+    RoleString:
+      type: string
+    JoinType:
+      type: string
+      enum:
+      - equijoin
+      - left
+      - right
+      - outer
+      - leftsemi
+      - leftanti
+    S3DeltaDirectTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Path
+      - Compression
+      - Format
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon S3 path of your Delta Lake data source to write to.
+        Compression:
+          allOf:
+          - $ref: '#/components/schemas/DeltaTargetCompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/TargetFormat'
+          - description: Specifies the data output format for the target.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options for the connector.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/DirectSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a target that writes to a Delta Lake data source in Amazon S3.
+    DynamoDBCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a DynamoDB data source in the Glue Data Catalog.
+    Join:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - JoinType
+      - Columns
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/TwoInputs'
+          - description: The data inputs identified by their node names.
+        JoinType:
+          allOf:
+          - $ref: '#/components/schemas/JoinType'
+          - description: Specifies the type of join to be performed on the datasets.
+        Columns:
+          allOf:
+          - $ref: '#/components/schemas/JoinColumns'
+          - description: A list of the two columns to be joined.
+      description: Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.
+    DropNullFields:
+      type: object
+      required:
+      - Name
+      - Inputs
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        NullCheckBoxList:
+          allOf:
+          - $ref: '#/components/schemas/NullCheckBoxList'
+          - description: A structure that represents whether certain values are recognized as null values for removal.
+        NullTextList:
+          allOf:
+          - $ref: '#/components/schemas/NullValueFields'
+          - description: <p>A structure that specifies a list of NullValueField structures that represent a custom null value such as zero or other value being used as a null placeholder unique to the dataset.</p> <p>The <code>DropNullFields</code> transform removes custom null values only if both the value of the null placeholder and the datatype match the data.</p>
+      description: Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.
+    DynamicTransform:
+      type: object
+      required:
+      - Name
+      - TransformName
+      - Inputs
+      - FunctionName
+      - Path
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the name of the dynamic transform.
+        TransformName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the name of the dynamic transform as it appears in the Glue Studio visual editor.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: Specifies the inputs for the dynamic transform that are required.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/TransformConfigParameterList'
+          - description: Specifies the parameters of the dynamic transform.
+        FunctionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the name of the function of the dynamic transform.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the path of the dynamic transform source and config files.
+        Version:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: This field is not used and will be deprecated in future release.
+      description: Specifies the set of parameters needed to perform the dynamic transform.
+    SparkConnectorTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - ConnectionName
+      - ConnectorName
+      - ConnectionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of a connection for an Apache Spark connector.
+        ConnectorName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of an Apache Spark connector.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Additional connection options for the connector.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the custom spark target.
+      description: Specifies a target that uses an Apache Spark connector.
+    MicrosoftSQLServerCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a Microsoft SQL server data source in the Glue Data Catalog.
+    EnclosedInStringPropertiesMinOne:
+      type: array
+      items:
+        $ref: '#/components/schemas/EnclosedInStringProperty'
+    IntegerValue:
+      type: integer
+    ConnectionsList:
+      type: object
+      properties:
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationStringList'
+          - description: A list of connections used by the job.
+      description: Specifies the connections used by a job.
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    S3ParquetSource:
+      type: object
+      required:
+      - Name
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A list of the Amazon S3 paths to read from.
+        CompressionType:
+          allOf:
+          - $ref: '#/components/schemas/ParquetCompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        Exclusions:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: 'A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. '
+        GroupSize:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.
+        GroupFiles:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.
+        Recurse:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: If set to true, recursively reads files in all subdirectories under the specified paths.
+        MaxBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.
+        MaxFilesInBand:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectSourceAdditionalOptions'
+          - description: Specifies additional connection options.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the S3 Parquet source.
+      description: Specifies an Apache Parquet data store stored in Amazon S3.
+    DQResultsPublishingOptions:
+      type: object
+      properties:
+        EvaluationContext:
+          allOf:
+          - $ref: '#/components/schemas/GenericLimitedString'
+          - description: The context of the evaluation.
+        ResultsS3Prefix:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon S3 prefix prepended to the results.
+        CloudWatchMetricsEnabled:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Enable metrics for your data quality results.
+        ResultsPublishingEnabled:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Enable publishing for your data quality results.
+      description: Options to configure how your data quality evaluation results are published.
+    ExecutionProperty:
+      type: object
+      properties:
+        MaxConcurrentRuns:
+          allOf:
+          - $ref: '#/components/schemas/MaxConcurrentRuns'
+          - description: The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.
+      description: An execution property of a job.
+    CodeGenConfigurationNode:
+      type: object
+      properties:
+        AthenaConnectorSource:
+          allOf:
+          - $ref: '#/components/schemas/AthenaConnectorSource'
+          - description: Specifies a connector to an Amazon Athena data source.
+        JDBCConnectorSource:
+          allOf:
+          - $ref: '#/components/schemas/JDBCConnectorSource'
+          - description: Specifies a connector to a JDBC data source.
+        SparkConnectorSource:
+          allOf:
+          - $ref: '#/components/schemas/SparkConnectorSource'
+          - description: Specifies a connector to an Apache Spark data source.
+        CatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/CatalogSource'
+          - description: Specifies a data store in the Glue Data Catalog.
+        RedshiftSource:
+          allOf:
+          - $ref: '#/components/schemas/RedshiftSource'
+          - description: Specifies an Amazon Redshift data store.
+        S3CatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/S3CatalogSource'
+          - description: Specifies an Amazon S3 data store in the Glue Data Catalog.
+        S3CsvSource:
+          allOf:
+          - $ref: '#/components/schemas/S3CsvSource'
+          - description: Specifies a command-separated value (CSV) data store stored in Amazon S3.
+        S3JsonSource:
+          allOf:
+          - $ref: '#/components/schemas/S3JsonSource'
+          - description: Specifies a JSON data store stored in Amazon S3.
+        S3ParquetSource:
+          allOf:
+          - $ref: '#/components/schemas/S3ParquetSource'
+          - description: Specifies an Apache Parquet data store stored in Amazon S3.
+        RelationalCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/RelationalCatalogSource'
+          - description: Specifies a relational catalog data store in the Glue Data Catalog.
+        DynamoDBCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/DynamoDBCatalogSource'
+          - description: Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+        JDBCConnectorTarget:
+          allOf:
+          - $ref: '#/components/schemas/JDBCConnectorTarget'
+          - description: Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+        SparkConnectorTarget:
+          allOf:
+          - $ref: '#/components/schemas/SparkConnectorTarget'
+          - description: Specifies a target that uses an Apache Spark connector.
+        CatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/BasicCatalogTarget'
+          - description: Specifies a target that uses a Glue Data Catalog table.
+        RedshiftTarget:
+          allOf:
+          - $ref: '#/components/schemas/RedshiftTarget'
+          - description: Specifies a target that uses Amazon Redshift.
+        S3CatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3CatalogTarget'
+          - description: Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.
+        S3GlueParquetTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3GlueParquetTarget'
+          - description: Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+        S3DirectTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectTarget'
+          - description: Specifies a data target that writes to Amazon S3.
+        ApplyMapping:
+          allOf:
+          - $ref: '#/components/schemas/ApplyMapping'
+          - description: Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.
+        SelectFields:
+          allOf:
+          - $ref: '#/components/schemas/SelectFields'
+          - description: Specifies a transform that chooses the data property keys that you want to keep.
+        DropFields:
+          allOf:
+          - $ref: '#/components/schemas/DropFields'
+          - description: Specifies a transform that chooses the data property keys that you want to drop.
+        RenameField:
+          allOf:
+          - $ref: '#/components/schemas/RenameField'
+          - description: Specifies a transform that renames a single data property key.
+        Spigot:
+          allOf:
+          - $ref: '#/components/schemas/Spigot'
+          - description: Specifies a transform that writes samples of the data to an Amazon S3 bucket.
+        Join:
+          allOf:
+          - $ref: '#/components/schemas/Join'
+          - description: Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.
+        SplitFields:
+          allOf:
+          - $ref: '#/components/schemas/SplitFields'
+          - description: 'Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.'
+        SelectFromCollection:
+          allOf:
+          - $ref: '#/components/schemas/SelectFromCollection'
+          - description: 'Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> '
+        FillMissingValues:
+          allOf:
+          - $ref: '#/components/schemas/FillMissingValues'
+          - description: Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/Filter'
+          - description: Specifies a transform that splits a dataset into two, based on a filter condition.
+        CustomCode:
+          allOf:
+          - $ref: '#/components/schemas/CustomCode'
+          - description: Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.
+        SparkSQL:
+          allOf:
+          - $ref: '#/components/schemas/SparkSQL'
+          - description: Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.
+        DirectKinesisSource:
+          allOf:
+          - $ref: '#/components/schemas/DirectKinesisSource'
+          - description: Specifies a direct Amazon Kinesis data source.
+        DirectKafkaSource:
+          allOf:
+          - $ref: '#/components/schemas/DirectKafkaSource'
+          - description: Specifies an Apache Kafka data store.
+        CatalogKinesisSource:
+          allOf:
+          - $ref: '#/components/schemas/CatalogKinesisSource'
+          - description: Specifies a Kinesis data source in the Glue Data Catalog.
+        CatalogKafkaSource:
+          allOf:
+          - $ref: '#/components/schemas/CatalogKafkaSource'
+          - description: Specifies an Apache Kafka data store in the Data Catalog.
+        DropNullFields:
+          allOf:
+          - $ref: '#/components/schemas/DropNullFields'
+          - description: Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.
+        Merge:
+          allOf:
+          - $ref: '#/components/schemas/Merge'
+          - description: 'Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. '
+        Union:
+          allOf:
+          - $ref: '#/components/schemas/Union'
+          - description: Specifies a transform that combines the rows from two or more datasets into a single result.
+        PIIDetection:
+          allOf:
+          - $ref: '#/components/schemas/PIIDetection'
+          - description: Specifies a transform that identifies, removes or masks PII data.
+        Aggregate:
+          allOf:
+          - $ref: '#/components/schemas/Aggregate'
+          - description: Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.
+        DropDuplicates:
+          allOf:
+          - $ref: '#/components/schemas/DropDuplicates'
+          - description: Specifies a transform that removes rows of repeating data from a data set.
+        GovernedCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/GovernedCatalogTarget'
+          - description: Specifies a data target that writes to a goverened catalog.
+        GovernedCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/GovernedCatalogSource'
+          - description: Specifies a data source in a goverened Data Catalog.
+        MicrosoftSQLServerCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/MicrosoftSQLServerCatalogSource'
+          - description: Specifies a Microsoft SQL server data source in the Glue Data Catalog.
+        MySQLCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/MySQLCatalogSource'
+          - description: Specifies a MySQL data source in the Glue Data Catalog.
+        OracleSQLCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/OracleSQLCatalogSource'
+          - description: Specifies an Oracle data source in the Glue Data Catalog.
+        PostgreSQLCatalogSource:
+          allOf:
+          - $ref: '#/components/schemas/PostgreSQLCatalogSource'
+          - description: Specifies a PostgresSQL data source in the Glue Data Catalog.
+        MicrosoftSQLServerCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/MicrosoftSQLServerCatalogTarget'
+          - description: Specifies a target that uses Microsoft SQL.
+        MySQLCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/MySQLCatalogTarget'
+          - description: Specifies a target that uses MySQL.
+        OracleSQLCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/OracleSQLCatalogTarget'
+          - description: Specifies a target that uses Oracle SQL.
+        PostgreSQLCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/PostgreSQLCatalogTarget'
+          - description: Specifies a target that uses Postgres SQL.
+        DynamicTransform:
+          allOf:
+          - $ref: '#/components/schemas/DynamicTransform'
+          - description: Specifies a custom visual transform created by a user.
+        EvaluateDataQuality:
+          allOf:
+          - $ref: '#/components/schemas/EvaluateDataQuality'
+          - description: Specifies your data quality evaluation criteria.
+        S3CatalogHudiSource:
+          allOf:
+          - $ref: '#/components/schemas/S3CatalogHudiSource'
+          - description: Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.
+        CatalogHudiSource:
+          allOf:
+          - $ref: '#/components/schemas/CatalogHudiSource'
+          - description: Specifies a Hudi data source that is registered in the Glue Data Catalog.
+        S3HudiSource:
+          allOf:
+          - $ref: '#/components/schemas/S3HudiSource'
+          - description: Specifies a Hudi data source stored in Amazon S3.
+        S3HudiCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3HudiCatalogTarget'
+          - description: Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+        S3HudiDirectTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3HudiDirectTarget'
+          - description: Specifies a target that writes to a Hudi data source in Amazon S3.
+        DirectJDBCSource:
+          $ref: '#/components/schemas/DirectJDBCSource'
+        S3CatalogDeltaSource:
+          allOf:
+          - $ref: '#/components/schemas/S3CatalogDeltaSource'
+          - description: Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.
+        CatalogDeltaSource:
+          allOf:
+          - $ref: '#/components/schemas/CatalogDeltaSource'
+          - description: Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+        S3DeltaSource:
+          allOf:
+          - $ref: '#/components/schemas/S3DeltaSource'
+          - description: Specifies a Delta Lake data source stored in Amazon S3.
+        S3DeltaCatalogTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3DeltaCatalogTarget'
+          - description: Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+        S3DeltaDirectTarget:
+          allOf:
+          - $ref: '#/components/schemas/S3DeltaDirectTarget'
+          - description: Specifies a target that writes to a Delta Lake data source in Amazon S3.
+      description: ' <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only one of its member variables can be populated.'
+    Generic512CharString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    NonNegativeInt:
+      type: integer
+      minimum: 0
+    RenameField:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - SourcePath
+      - TargetPath
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        SourcePath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A JSON path to a variable in the data structure for the source data.
+        TargetPath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A JSON path to a variable in the data structure for the target data.
+      description: Specifies a transform that renames a single data property key.
+    MySQLCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+      description: Specifies a target that uses MySQL.
+    S3HudiSource:
+      type: object
+      required:
+      - Name
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Hudi source.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A list of the Amazon S3 paths to read from.
+        AdditionalHudiOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectSourceAdditionalOptions'
+          - description: Specifies additional options for the connector.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Hudi source.
+      description: Specifies a Hudi data source stored in Amazon S3.
+    FilterValueType:
+      type: string
+      enum:
+      - COLUMNEXTRACTED
+      - CONSTANT
+    JoinColumn:
+      type: object
+      required:
+      - From
+      - Keys
+      properties:
+        From:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The column to be joined.
+        Keys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: The key of the column to be joined.
+      description: Specifies a column to be joined.
+    CatalogDeltaSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Delta Lake data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        AdditionalDeltaOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Delta Lake source.
+      description: Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+    CatalogSchemaChangePolicy:
+      type: object
+      properties:
+        EnableUpdateCatalog:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to use the specified update behavior when the crawler finds a changed schema.
+        UpdateBehavior:
+          allOf:
+          - $ref: '#/components/schemas/UpdateCatalogBehavior'
+          - description: The update behavior when the crawler finds a changed schema.
+      description: A policy that specifies update behavior for the crawler.
+    AggregateOperations:
+      type: array
+      items:
+        $ref: '#/components/schemas/AggregateOperation'
+      minItems: 1
+      maxItems: 30
+    OrchestrationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    MaxRetries:
+      type: integer
+    CatalogHudiSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Hudi data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        AdditionalHudiOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Hudi source.
+      description: Specifies a Hudi data source that is registered in the Glue Data Catalog.
+    S3GlueParquetTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Path
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A single Amazon S3 path to write to.
+        Compression:
+          allOf:
+          - $ref: '#/components/schemas/ParquetCompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/DirectSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+    CatalogKafkaSource:
+      type: object
+      required:
+      - Name
+      - Table
+      - Database
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        WindowSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedPositiveInt'
+          - description: The amount of time to spend processing each micro batch.
+        DetectSchema:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to automatically determine the schema from the incoming data.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        StreamingOptions:
+          allOf:
+          - $ref: '#/components/schemas/KafkaStreamingSourceOptions'
+          - description: Specifies the streaming options.
+        DataPreviewOptions:
+          allOf:
+          - $ref: '#/components/schemas/StreamingDataPreviewOptions'
+          - description: Specifies options related to data preview for viewing a sample of your data.
+      description: Specifies an Apache Kafka data store in the Data Catalog.
+    JobCommand:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.
+        ScriptLocation:
+          allOf:
+          - $ref: '#/components/schemas/ScriptLocationString'
+          - description: Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.
+        PythonVersion:
+          allOf:
+          - $ref: '#/components/schemas/PythonVersionString'
+          - description: The Python version being used to run a Python shell job. Allowed values are 2 or 3.
+      description: Specifies code that runs when a job is run.
+    DQTransformOutput:
+      type: string
+      enum:
+      - PrimaryInput
+      - EvaluationResults
+    Spigot:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Path
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A path in Amazon S3 where the transform will write a subset of records from the dataset to a JSON file in an Amazon S3 bucket.
+        Topk:
+          allOf:
+          - $ref: '#/components/schemas/Topk'
+          - description: Specifies a number of records to write starting from the beginning of the dataset.
+        Prob:
+          allOf:
+          - $ref: '#/components/schemas/Prob'
+          - description: The probability (a decimal value with a maximum value of 1) of picking any given record. A value of 1 indicates that each row read from the dataset should be included in the sample output.
+      description: Specifies a transform that writes samples of the data to an Amazon S3 bucket.
+    SplitFields:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: A JSON path to a variable in the data structure.
+      description: 'Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.'
+    SourceControlDetails:
+      type: object
+      properties:
+        Provider:
+          allOf:
+          - $ref: '#/components/schemas/SourceControlProvider'
+          - description: The provider for the remote repository.
+        Repository:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The name of the remote repository that contains the job artifacts.
+        Owner:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The owner of the remote repository that contains the job artifacts.
+        Branch:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: An optional branch in the remote repository.
+        Folder:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: An optional folder in the remote repository.
+        LastCommitId:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The last commit ID for a commit in the remote repository.
+        AuthStrategy:
+          allOf:
+          - $ref: '#/components/schemas/SourceControlAuthStrategy'
+          - description: The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.
+        AuthToken:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The value of an authorization token.
+      description: The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.
+    FilterLogicalOperator:
+      type: string
+      enum:
+      - AND
+      - OR
+    HudiTargetCompressionType:
+      type: string
+      enum:
+      - gzip
+      - lzo
+      - uncompressed
+      - snappy
+    OracleSQLCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+      description: Specifies a target that uses Oracle SQL.
+    EnclosedInStringProperty:
+      type: string
+      x-pattern: \([\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF]\|[^\S\r\n"']\)*
+    UnionType:
+      type: string
+      enum:
+      - ALL
+      - DISTINCT
+    DQStopJobOnFailureTiming:
+      type: string
+      enum:
+      - Immediate
+      - AfterDataLoad
+    PiiType:
+      type: string
+      enum:
+      - RowAudit
+      - RowMasking
+      - ColumnAudit
+      - ColumnMasking
+    JoinColumns:
+      type: array
+      items:
+        $ref: '#/components/schemas/JoinColumn'
+      minItems: 2
+      maxItems: 2
+    PositiveLong:
+      type: integer
+      minimum: 1
+    CustomCode:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Code
+      - ClassName
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/ManyInputs'
+          - description: The data inputs identified by their node names.
+        Code:
+          allOf:
+          - $ref: '#/components/schemas/ExtendedString'
+          - description: The custom code that is used to perform the data transformation.
+        ClassName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name defined for the custom code node class.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the custom code transform.
+      description: Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.
+    S3DeltaSource:
+      type: object
+      required:
+      - Name
+      - Paths
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Delta Lake source.
+        Paths:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: A list of the Amazon S3 paths to read from.
+        AdditionalDeltaOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3DirectSourceAdditionalOptions'
+          - description: Specifies additional options for the connector.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Delta Lake source.
+      description: Specifies a Delta Lake data source stored in Amazon S3.
+    ExtendedString:
+      type: string
+      pattern: '[\s\S]*'
+    EnclosedInStringPropertyWithQuote:
+      type: string
+      x-pattern: \([\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF]\|[^\S\r\n]\)*
+    NodeName:
+      type: string
+      x-pattern: \([\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF]\|[^\r\n]\)*
+    Mappings:
+      type: array
+      items:
+        $ref: '#/components/schemas/Mapping'
+    GovernedCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Table
+      - Database
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/CatalogSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the governed catalog.
+      description: Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.
+    Union:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - UnionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/TwoInputs'
+          - description: The node ID inputs to the transform.
+        UnionType:
+          allOf:
+          - $ref: '#/components/schemas/UnionType'
+          - description: <p>Indicates the type of Union transform. </p> <p>Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame. The resulting union does not remove duplicate rows.</p> <p>Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.</p>
+      description: Specifies a transform that combines the rows from two or more datasets into a single result.
+    PythonVersionString:
+      type: string
+      pattern: ^([2-3]|3[.]9)$
+    JobList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Job'
+    ParquetCompressionType:
+      type: string
+      enum:
+      - snappy
+      - lzo
+      - gzip
+      - uncompressed
+      - none
+    UpdateCatalogBehavior:
+      type: string
+      enum:
+      - UPDATE_IN_DATABASE
+      - LOG
+    DQStopJobOnFailureOptions:
+      type: object
+      properties:
+        StopJobOnFailureTiming:
+          allOf:
+          - $ref: '#/components/schemas/DQStopJobOnFailureTiming'
+          - description: When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.
+      description: Options to configure how your job will stop if your data quality evaluation fails.
+    PIIDetection:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - PiiType
+      - EntityTypesToDetect
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The node ID inputs to the transform.
+        PiiType:
+          allOf:
+          - $ref: '#/components/schemas/PiiType'
+          - description: 'Indicates the type of PIIDetection transform. '
+        EntityTypesToDetect:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: '<p>Indicates the types of entities the PIIDetection transform will identify as PII data. </p> <p> PII type entities include: PERSON_NAME, DATE, USA_SNN, EMAIL, USA_ITIN, USA_PASSPORT_NUMBER, PHONE_NUMBER, BANK_ACCOUNT, IP_ADDRESS, MAC_ADDRESS, USA_CPT_CODE, USA_HCPCS_CODE, USA_NATIONAL_DRUG_CODE, USA_MEDICARE_BENEFICIARY_IDENTIFIER, USA_HEALTH_INSURANCE_CLAIM_NUMBER,CREDIT_CARD,USA_NATIONAL_PROVIDER_IDENTIFIER,USA_DEA_NUMBER,USA_DRIVING_LICENSE </p>'
+        OutputColumnName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: 'Indicates the output column name that will contain any entity type detected in that row. '
+        SampleFraction:
+          allOf:
+          - $ref: '#/components/schemas/BoxedDoubleFraction'
+          - description: 'Indicates the fraction of the data to sample when scanning for PII entities. '
+        ThresholdFraction:
+          allOf:
+          - $ref: '#/components/schemas/BoxedDoubleFraction'
+          - description: 'Indicates the fraction of the data that must be met in order for a column to be identified as PII data. '
+        MaskValue:
+          allOf:
+          - $ref: '#/components/schemas/MaskValue'
+          - description: 'Indicates the value that will replace the detected entity. '
+      description: Specifies a transform that identifies, removes or masks PII data.
+    KafkaStreamingSourceOptions:
+      type: object
+      properties:
+        BootstrapServers:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>. This option must be specified in the API call or defined in the table metadata in the Data Catalog.
+        SecurityProtocol:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The protocol used to communicate with brokers. The possible values are <code>"SSL"</code> or <code>"PLAINTEXT"</code>.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection.
+        TopicName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.
+        Assign:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The specific <code>TopicPartitions</code> to consume. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.
+        SubscribePattern:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A Java regex string that identifies the topic list to subscribe to. You must specify at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.
+        Classification:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: An optional classification.
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the delimiter character.
+        StartingOffsets:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The starting position in the Kafka topic to read data from. The possible values are <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.
+        EndingOffsets:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The end point when a batch query is ended. Possible values are either <code>"latest"</code> or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.
+        PollTimeoutMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The timeout in milliseconds to poll data from Kafka in Spark job executors. The default value is <code>512</code>.
+        NumRetries:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: The number of times to retry before failing to fetch Kafka offsets. The default value is <code>3</code>.
+        RetryIntervalMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The time in milliseconds to wait before retrying to fetch Kafka offsets. The default value is <code>10</code>.
+        MaxOffsetsPerTrigger:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The rate limit on the maximum number of offsets that are processed per trigger interval. The specified total number of offsets is proportionally split across <code>topicPartitions</code> of different volumes. The default value is null, which means that the consumer reads all offsets until the known latest offset.
+        MinPartitions:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: The desired minimum number of partitions to read from Kafka. The default value is null, which means that the number of spark partitions is equal to the number of Kafka partitions.
+        IncludeHeaders:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: 'Whether to include the Kafka headers. When the option is set to "true", the data output will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key: String, value: String)]</code>. The default value is "false". This option is available in Glue version 3.0 or later only.'
+        AddRecordTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the topic. The default value is 'false'. This option is supported in Glue version 4.0 or later.
+        EmitConsumerLagMetrics:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the topic and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.
+      description: Additional options for streaming.
+    GlueStudioSchemaColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GlueStudioSchemaColumn'
+    NullValueFields:
+      type: array
+      items:
+        $ref: '#/components/schemas/NullValueField'
+      minItems: 0
+      maxItems: 50
+    S3CatalogHudiSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Hudi data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        AdditionalHudiOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the Hudi source.
+      description: Specifies a Hudi data source that is registered in the Glue Data Catalog. The Hudi data source must be stored in Amazon S3.
+    SparkSQL:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - SqlQuery
+      - SqlAliases
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/ManyInputs'
+          - description: The data inputs identified by their node names. You can associate a table name with each input node to use in the SQL query. The name you choose must meet the Spark SQL naming restrictions.
+        SqlQuery:
+          allOf:
+          - $ref: '#/components/schemas/SqlQuery'
+          - description: A SQL query that must use Spark SQL syntax and return a single data set.
+        SqlAliases:
+          allOf:
+          - $ref: '#/components/schemas/SqlAliases'
+          - description: <p>A list of aliases. An alias allows you to specify what name to use in the SQL for a given input. For example, you have a datasource named "MyDataSource". If you specify <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your SQL you can do:</p> <p> <code>select * from SqlName</code> </p> <p>and that gets data from MyDataSource.</p>
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies the data schema for the SparkSQL transform.
+      description: Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.
+    Timeout:
+      type: integer
+      minimum: 1
+    FilterExpression:
+      type: object
+      required:
+      - Operation
+      - Values
+      properties:
+        Operation:
+          allOf:
+          - $ref: '#/components/schemas/FilterOperation'
+          - description: The type of operation to perform in the expression.
+        Negated:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether the expression is to be negated.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/FilterValues'
+          - description: A list of filter values.
+      description: Specifies a filter expression.
+    GenericLimitedString:
+      type: string
+      pattern: '[A-Za-z0-9_-]*'
+    UpsertRedshiftTargetOptions:
+      type: object
+      properties:
+        TableLocation:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The physical location of the Redshift table.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection to use to write to Redshift.
+        UpsertKeys:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringPropertiesMinOne'
+          - description: The keys used to determine whether to perform an update or insert.
+      description: The options to configure an upsert operation when writing to a Redshift target .
+    UriString:
+      type: string
+    JobNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+    Merge:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Source
+      - PrimaryKeys
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/TwoInputs'
+          - description: The data inputs identified by their node names.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/NodeId'
+          - description: The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.
+        PrimaryKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: The list of primary key fields to match records from the source and staging dynamic frames.
+      description: 'Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. '
+    FilterOperation:
+      type: string
+      enum:
+      - EQ
+      - LT
+      - GT
+      - LTE
+      - GTE
+      - REGEX
+      - ISNULL
+    SelectFromCollection:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Index
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Index:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeInt'
+          - description: The index for the DynamicFrame to be selected.
+      description: 'Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> '
+    RedshiftSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the Amazon Redshift data store.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database table to read from.
+        RedshiftTmpDir:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon S3 path where temporary data can be staged when copying out of the database.
+        TmpDirIAMRole:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The IAM role with permissions.
+      description: Specifies an Amazon Redshift data store.
+    JDBCConnectionType:
+      type: string
+      enum:
+      - sqlserver
+      - mysql
+      - oracle
+      - postgresql
+      - redshift
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    KinesisStreamingSourceOptions:
+      type: object
+      properties:
+        EndpointUrl:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The URL of the Kinesis endpoint.
+        StreamName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the Kinesis data stream.
+        Classification:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: An optional classification.
+        Delimiter:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the delimiter character.
+        StartingPosition:
+          allOf:
+          - $ref: '#/components/schemas/StartingPosition'
+          - description: The starting position in the Kinesis data stream to read data from. The possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or <code>"earliest"</code>. The default value is <code>"latest"</code>.
+        MaxFetchTimeInMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The maximum time spent in the job executor to fetch a record from the Kinesis data stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.
+        MaxFetchRecordsPerShard:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The maximum number of records to fetch per shard in the Kinesis data stream. The default value is <code>100000</code>.
+        MaxRecordPerRead:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The maximum number of records to fetch from the Kinesis data stream in each getRecords operation. The default value is <code>10000</code>.
+        AddIdleTimeBetweenReads:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Adds a time delay between two consecutive getRecords operations. The default value is <code>"False"</code>. This option is only configurable for Glue version 2.0 and above.
+        IdleTimeBetweenReadsInMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The minimum time delay between two consecutive getRecords operations, specified in ms. The default value is <code>1000</code>. This option is only configurable for Glue version 2.0 and above.
+        DescribeShardInterval:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The minimum time interval between two ListShards API calls for your script to consider resharding. The default value is <code>1s</code>.
+        NumRetries:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeInt'
+          - description: The maximum number of retries for Kinesis Data Streams API requests. The default value is <code>3</code>.
+        RetryIntervalMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The cool-off time period (specified in ms) before retrying the Kinesis Data Streams API call. The default value is <code>1000</code>.
+        MaxRetryIntervalMs:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The maximum cool-off time period (specified in ms) between two retries of a Kinesis Data Streams API call. The default value is <code>10000</code>.
+        AvoidEmptyBatches:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Avoids creating an empty microbatch job by checking for unread data in the Kinesis data stream before the batch is started. The default value is <code>"False"</code>.
+        StreamArn:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon Resource Name (ARN) of the Kinesis data stream.
+        RoleArn:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service (AWS STS). This role must have permissions for describe or read record operations for the Kinesis data stream. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.
+        RoleSessionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: An identifier for the session assuming the role using AWS STS. You must use this parameter when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.
+        AddRecordTimestamp:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: When this option is set to 'true', the data output will contain an additional column named "__src_timestamp" that indicates the time when the corresponding record received by the stream. The default value is 'false'. This option is supported in Glue version 4.0 or later.
+        EmitConsumerLagMetrics:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: When this option is set to 'true', for each batch, it will emit the metrics for the duration between the oldest record received by the stream and the time it arrives in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs". The default value is 'false'. This option is supported in Glue version 4.0 or later.
+      description: Additional options for the Amazon Kinesis streaming data source.
+    RelationalCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a Relational database data source in the Glue Data Catalog.
+    Mapping:
+      type: object
+      properties:
+        ToKey:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: After the apply mapping, what the name of the column should be. Can be the same as <code>FromPath</code>.
+        FromPath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: The table or column to be modified.
+        FromType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of the data to be modified.
+        ToType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The data type that the data is to be modified to.
+        Dropped:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: If true, then the column is removed.
+        Children:
+          allOf:
+          - $ref: '#/components/schemas/Mappings'
+          - description: '<p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent''s <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p> <p>For the children part, suppose you have the structure:</p> <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p> <p>You can specify a <code>Mapping</code> that looks like:</p> <p> <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct", "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType": "Double", "Dropped": false, }] }</code> </p>'
+      description: Specifies the mapping of data property keys.
+    FillMissingValues:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - ImputedPath
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        ImputedPath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A JSON path to a variable in the data structure for the dataset that is imputed.
+        FilledPath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: A JSON path to a variable in the data structure for the dataset that is filled.
+      description: Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.
+    SqlAliases:
+      type: array
+      items:
+        $ref: '#/components/schemas/SqlAlias'
+    TransformConfigParameter:
+      type: object
+      required:
+      - Name
+      - Type
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the name of the parameter in the config file of the dynamic transform.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ParamType'
+          - description: Specifies the parameter type in the config file of the dynamic transform.
+        ValidationRule:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the validation rule in the config file of the dynamic transform.
+        ValidationMessage:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the validation message in the config file of the dynamic transform.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: Specifies the value of the parameter in the config file of the dynamic transform.
+        ListType:
+          allOf:
+          - $ref: '#/components/schemas/ParamType'
+          - description: Specifies the list type of the parameter in the config file of the dynamic transform.
+        IsOptional:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Specifies whether the parameter is optional or not in the config file of the dynamic transform.
+      description: Specifies the parameters in the config file of the dynamic transform.
+    TimestampValue:
+      type: string
+      format: date-time
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    BoxedDoubleFraction:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 1
+    Datatype:
+      type: object
+      required:
+      - Id
+      - Label
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/GenericLimitedString'
+          - description: The datatype of the value.
+        Label:
+          allOf:
+          - $ref: '#/components/schemas/GenericLimitedString'
+          - description: A label assigned to the datatype.
+      description: A structure representing the datatype of the value.
+    JDBCConnectorOptions:
+      type: object
+      properties:
+        FilterPredicate:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: <p>Extra condition clause to filter data from source. For example:</p> <p> <code>BillingCity='Mountain View'</code> </p> <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
+        PartitionColumn:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.
+        LowerBound:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The minimum value of <code>partitionColumn</code> that is used to decide partition stride.
+        UpperBound:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The maximum value of <code>partitionColumn</code> that is used to decide partition stride.
+        NumPartitions:
+          allOf:
+          - $ref: '#/components/schemas/BoxedNonNegativeLong'
+          - description: The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.
+        JobBookmarkKeys:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: The name of the job bookmark keys on which to sort.
+        JobBookmarkKeysSortOrder:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies an ascending or descending sort order.
+        DataTypeMapping:
+          allOf:
+          - $ref: '#/components/schemas/JDBCDataTypeMapping'
+          - description: Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.
+      description: Additional connection options for the connector.
+    ScriptLocationString:
+      type: string
+      maxLength: 400000
+    S3CatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database table to read from.
+        PartitionPredicate:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3SourceAdditionalOptions'
+          - description: Specifies additional connection options.
+      description: Specifies an Amazon S3 data store in the Glue Data Catalog.
+    Separator:
+      type: string
+      enum:
+      - comma
+      - ctrla
+      - pipe
+      - semicolon
+      - tab
+    PollingTime:
+      type: integer
+      minimum: 10
+    CatalogKinesisSource:
+      type: object
+      required:
+      - Name
+      - Table
+      - Database
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        WindowSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedPositiveInt'
+          - description: The amount of time to spend processing each micro batch.
+        DetectSchema:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to automatically determine the schema from the incoming data.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        StreamingOptions:
+          allOf:
+          - $ref: '#/components/schemas/KinesisStreamingSourceOptions'
+          - description: Additional options for the Kinesis streaming data source.
+        DataPreviewOptions:
+          allOf:
+          - $ref: '#/components/schemas/StreamingDataPreviewOptions'
+          - description: Additional options for data preview.
+      description: Specifies a Kinesis data source in the Glue Data Catalog.
+    SourceControlProvider:
+      type: string
+      enum:
+      - GITHUB
+      - AWS_CODE_COMMIT
+    GovernedCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database table to read from.
+        PartitionPredicate:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/S3SourceAdditionalOptions'
+          - description: Specifies additional connection options.
+      description: Specifies the data store in the governed Glue Data Catalog.
+    InternalServiceException: {}
+    S3DeltaCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Table
+      - Database
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options for the connector.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/CatalogSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+    DirectKafkaSource:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data store.
+        StreamingOptions:
+          allOf:
+          - $ref: '#/components/schemas/KafkaStreamingSourceOptions'
+          - description: Specifies the streaming options.
+        WindowSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedPositiveInt'
+          - description: The amount of time to spend processing each micro batch.
+        DetectSchema:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to automatically determine the schema from the incoming data.
+        DataPreviewOptions:
+          allOf:
+          - $ref: '#/components/schemas/StreamingDataPreviewOptions'
+          - description: Specifies options related to data preview for viewing a sample of your data.
+      description: Specifies an Apache Kafka data store.
+    S3CatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Table
+      - Database
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to write to.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to write to.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/CatalogSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.
+    NullableInteger:
+      type: integer
+    ManyInputs:
+      type: array
+      items:
+        $ref: '#/components/schemas/NodeId'
+      minItems: 1
+    BoxedBoolean:
+      type: boolean
+    AggregateOperation:
+      type: object
+      required:
+      - Column
+      - AggFunc
+      properties:
+        Column:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: Specifies the column on the data set on which the aggregation function will be applied.
+        AggFunc:
+          allOf:
+          - $ref: '#/components/schemas/AggFunction'
+          - description: '<p>Specifies the aggregation function to apply.</p> <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>'
+      description: Specifies the set of parameters needed to perform aggregation in the aggregate transform.
+    DropDuplicates:
+      type: object
+      required:
+      - Name
+      - Inputs
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Columns:
+          allOf:
+          - $ref: '#/components/schemas/LimitedPathList'
+          - description: The name of the columns to be merged or removed if repeating.
+      description: 'Specifies a transform that removes rows of repeating data from a data set. '
+    MaxConcurrentRuns:
+      type: integer
+    OneInput:
+      type: array
+      items:
+        $ref: '#/components/schemas/NodeId'
+      minItems: 1
+      maxItems: 1
+    FilterValue:
+      type: object
+      required:
+      - Type
+      - Value
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/FilterValueType'
+          - description: The type of filter value.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperties'
+          - description: The value to be associated.
+      description: 'Represents a single entry in the list of values for a <code>FilterExpression</code>. '
+    OperationTimeoutException: {}
+    MySQLCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a MySQL data source in the Glue Data Catalog.
+    Prob:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 1
+    ExecutionClass:
+      type: string
+      enum:
+      - FLEX
+      - STANDARD
+      maxLength: 16
+    BatchGetJobsRequest:
+      type: object
+      required:
+      - JobNames
+      title: BatchGetJobsRequest
+      properties:
+        JobNames:
+          allOf:
+          - $ref: '#/components/schemas/JobNameList'
+          - description: A list of job names, which might be the names returned from the <code>ListJobs</code> operation.
+    BoxedLong:
+      type: integer
+    Topk:
+      type: integer
+      minimum: 0
+      maximum: 100
+    S3DirectSourceAdditionalOptions:
+      type: object
+      properties:
+        BoundedSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedLong'
+          - description: Sets the upper limit for the target size of the dataset in bytes that will be processed.
+        BoundedFiles:
+          allOf:
+          - $ref: '#/components/schemas/BoxedLong'
+          - description: Sets the upper limit for the target number of files that will be processed.
+        EnableSamplePath:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Sets option to enable a sample path.
+        SamplePath:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: If enabled, specifies the sample path.
+      description: Specifies additional connection options for the Amazon S3 data store.
+    GenericMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
+    JDBCDataTypeMapping:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GlueRecordType'
+    CodeGenConfigurationNodes:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/CodeGenConfigurationNode'
+    DirectJDBCSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      - ConnectionName
+      - ConnectionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the JDBC source connection.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database of the JDBC source connection.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The table of the JDBC source connection.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The connection name of the JDBC source.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/JDBCConnectionType'
+          - description: The connection type of the JDBC source.
+        RedshiftTmpDir:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The temp directory of the JDBC Redshift source.
+      description: Specifies the direct JDBC source connection.
+    S3HudiDirectTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Path
+      - Compression
+      - Format
+      - AdditionalOptions
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Path:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The Amazon S3 path of your Hudi data source to write to.
+        Compression:
+          allOf:
+          - $ref: '#/components/schemas/HudiTargetCompressionType'
+          - description: Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies native partitioning using a sequence of keys.
+        Format:
+          allOf:
+          - $ref: '#/components/schemas/TargetFormat'
+          - description: Specifies the data output format for the target.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Specifies additional connection options for the connector.
+        SchemaChangePolicy:
+          allOf:
+          - $ref: '#/components/schemas/DirectSchemaChangePolicy'
+          - description: A policy that specifies update behavior for the crawler.
+      description: Specifies a target that writes to a Hudi data source in Amazon S3.
+    Aggregate:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Groups
+      - Aggs
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: Specifies the fields and rows to use as inputs for the aggregate transform.
+        Groups:
+          allOf:
+          - $ref: '#/components/schemas/GlueStudioPathList'
+          - description: Specifies the fields to group by.
+        Aggs:
+          allOf:
+          - $ref: '#/components/schemas/AggregateOperations'
+          - description: 'Specifies the aggregate functions to be performed on specified fields. '
+      description: Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.
+    Job:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name you assign to this job definition.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of the job.
+        LogUri:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: This field is reserved for future use.
+        Role:
+          allOf:
+          - $ref: '#/components/schemas/RoleString'
+          - description: The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+        CreatedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The time and date that this job definition was created.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The last point in time when this job definition was modified.
+        ExecutionProperty:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionProperty'
+          - description: An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.
+        Command:
+          allOf:
+          - $ref: '#/components/schemas/JobCommand'
+          - description: The <code>JobCommand</code> that runs this job.
+        DefaultArguments:
+          allOf:
+          - $ref: '#/components/schemas/GenericMap'
+          - description: <p>The default arguments for this job, specified as name-value pairs.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+        NonOverridableArguments:
+          allOf:
+          - $ref: '#/components/schemas/GenericMap'
+          - description: Non-overridable arguments for this job, specified as name-value pairs.
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionsList'
+          - description: The connections used for this job.
+        MaxRetries:
+          allOf:
+          - $ref: '#/components/schemas/MaxRetries'
+          - description: The maximum number of times to retry this job after a JobRun fails.
+        AllocatedCapacity:
+          allOf:
+          - $ref: '#/components/schemas/IntegerValue'
+          - deprecated: true
+            description: <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p/>This property is deprecated, use MaxCapacity instead.
+        Timeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+        WorkerType:
+          allOf:
+          - $ref: '#/components/schemas/WorkerType'
+          - description: <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>
+        NumberOfWorkers:
+          allOf:
+          - $ref: '#/components/schemas/NullableInteger'
+          - description: The number of workers of a defined <code>workerType</code> that are allocated when a job runs.
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the <code>SecurityConfiguration</code> structure to be used with this job.
+        NotificationProperty:
+          allOf:
+          - $ref: '#/components/schemas/NotificationProperty'
+          - description: Specifies configuration properties of a job notification.
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p> <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+        CodeGenConfigurationNodes:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenConfigurationNodes'
+          - description: The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.
+        ExecutionClass:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionClass'
+          - description: <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+        SourceControlDetails:
+          allOf:
+          - $ref: '#/components/schemas/SourceControlDetails'
+          - description: The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.
+      description: Specifies a job definition.
+    AdditionalOptions:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/EnclosedInStringProperty'
+    StartingPosition:
+      type: string
+      enum:
+      - latest
+      - trim_horizon
+      - earliest
+    SparkConnectorSource:
+      type: object
+      required:
+      - Name
+      - ConnectionName
+      - ConnectorName
+      - ConnectionType
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the connection that is associated with the connector.
+        ConnectorName:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of a connector that assists with accessing the data store in Glue Studio.
+        ConnectionType:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The type of connection, such as marketplace.spark or custom.spark, designating a connection to an Apache Spark data store.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalOptions'
+          - description: Additional connection options for the connector.
+        OutputSchemas:
+          allOf:
+          - $ref: '#/components/schemas/GlueSchemas'
+          - description: Specifies data schema for the custom spark source.
+      description: Specifies a connector to an Apache Spark data source.
+    PostgreSQLCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies a PostgresSQL data source in the Glue Data Catalog.
+    GlueStudioPathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EnclosedInStringProperties'
+    EnclosedInStringProperties:
+      type: array
+      items:
+        $ref: '#/components/schemas/EnclosedInStringProperty'
+    NotifyDelayAfter:
+      type: integer
+      minimum: 1
+    TransformConfigParameterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TransformConfigParameter'
+    S3SourceAdditionalOptions:
+      type: object
+      properties:
+        BoundedSize:
+          allOf:
+          - $ref: '#/components/schemas/BoxedLong'
+          - description: Sets the upper limit for the target size of the dataset in bytes that will be processed.
+        BoundedFiles:
+          allOf:
+          - $ref: '#/components/schemas/BoxedLong'
+          - description: Sets the upper limit for the target number of files that will be processed.
+      description: Specifies additional connection options for the Amazon S3 data store.
+    BoxedPositiveInt:
+      type: integer
+      minimum: 0
+    EvaluateDataQuality:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Ruleset
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data quality evaluation.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The inputs of your data quality evaluation.
+        Ruleset:
+          allOf:
+          - $ref: '#/components/schemas/DQDLString'
+          - description: The ruleset for your data quality evaluation.
+        Output:
+          allOf:
+          - $ref: '#/components/schemas/DQTransformOutput'
+          - description: The output of your data quality evaluation.
+        PublishingOptions:
+          allOf:
+          - $ref: '#/components/schemas/DQResultsPublishingOptions'
+          - description: Options to configure how your results are published.
+        StopJobOnFailureOptions:
+          allOf:
+          - $ref: '#/components/schemas/DQStopJobOnFailureOptions'
+          - description: Options to configure how your job will stop if your data quality evaluation fails.
+      description: Specifies your data quality evaluation criteria.
+    NotificationProperty:
+      type: object
+      properties:
+        NotifyDelayAfter:
+          allOf:
+          - $ref: '#/components/schemas/NotifyDelayAfter'
+          - description: After a job run starts, the number of minutes to wait before sending a job run delay notification.
+      description: Specifies configuration properties of a notification.
+    OracleSQLCatalogSource:
+      type: object
+      required:
+      - Name
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the data source.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the database to read from.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The name of the table in the database to read from.
+      description: Specifies an Oracle data source in the Glue Data Catalog.
+    GlueStudioColumnNameString:
+      type: string
+      minLength: 0
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    BasicCatalogTarget:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Database
+      - Table
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of your data target.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The nodes that are inputs to the data target.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: The table that defines the schema of your output data. This table must already exist in the Data Catalog.
+      description: Specifies a target that uses a Glue Data Catalog table.
+    DirectSchemaChangePolicy:
+      type: object
+      properties:
+        EnableUpdateCatalog:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: Whether to use the specified update behavior when the crawler finds a changed schema.
+        UpdateBehavior:
+          allOf:
+          - $ref: '#/components/schemas/UpdateCatalogBehavior'
+          - description: The update behavior when the crawler finds a changed schema.
+        Table:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the table in the database that the schema change policy applies to.
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/EnclosedInStringProperty'
+          - description: Specifies the database that the schema change policy applies to.
+      description: A policy that specifies update behavior for the crawler.
+    DeltaTargetCompressionType:
+      type: string
+      enum:
+      - uncompressed
+      - snappy
+    GlueSchemas:
+      type: array
+      items:
+        $ref: '#/components/schemas/GlueSchema'
+    ApplyMapping:
+      type: object
+      required:
+      - Name
+      - Inputs
+      - Mapping
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeName'
+          - description: The name of the transform node.
+        Inputs:
+          allOf:
+          - $ref: '#/components/schemas/OneInput'
+          - description: The data inputs identified by their node names.
+        Mapping:
+          allOf:
+          - $ref: '#/components/schemas/Mappings'
+          - description: Specifies the mapping of data property keys in the data source to data property keys in the data target.
+      description: Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

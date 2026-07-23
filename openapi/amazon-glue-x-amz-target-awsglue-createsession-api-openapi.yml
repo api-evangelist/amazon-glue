@@ -1,0 +1,567 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateSession API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.CreateSession'
+paths:
+  /#X-Amz-Target=AWSGlue.CreateSession:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateSession
+      description: Creates a new session.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSessionResponse'
+              examples:
+                CreateSession200Example:
+                  summary: Default CreateSession 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                CreateSession480Example:
+                  summary: Default CreateSession 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: IdempotentParameterMismatchException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdempotentParameterMismatchException'
+              examples:
+                CreateSession481Example:
+                  summary: Default CreateSession 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                CreateSession482Example:
+                  summary: Default CreateSession 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                CreateSession483Example:
+                  summary: Default CreateSession 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '484':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                CreateSession484Example:
+                  summary: Default CreateSession 484 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '485':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                CreateSession485Example:
+                  summary: Default CreateSession 485 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '486':
+          description: AlreadyExistsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlreadyExistsException'
+              examples:
+                CreateSession486Example:
+                  summary: Default CreateSession 486 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '487':
+          description: ResourceNumberLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNumberLimitExceededException'
+              examples:
+                CreateSession487Example:
+                  summary: Default CreateSession 487 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSessionRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.CreateSession
+      summary: Amazon Glue Create Session
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.CreateSession'
+components:
+  schemas:
+    TagsMap:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    InternalServiceException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NullableInteger:
+      type: integer
+    OrchestrationArgumentsMap:
+      type: object
+      minProperties: 0
+      maxProperties: 75
+      additionalProperties:
+        $ref: '#/components/schemas/OrchestrationArgumentsValue'
+    PythonVersionString:
+      type: string
+      pattern: ^([2-3]|3[.]9)$
+    OrchestrationRoleArn:
+      type: string
+      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
+      minLength: 20
+      maxLength: 2048
+    SessionCommand:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
+        PythonVersion:
+          allOf:
+          - $ref: '#/components/schemas/PythonVersionString'
+          - description: Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.
+      description: The <code>SessionCommand</code> that runs the job.
+    ValidationException: {}
+    OperationTimeoutException: {}
+    CreateSessionRequest:
+      type: object
+      required:
+      - Id
+      - Role
+      - Command
+      title: CreateSessionRequest
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: 'The ID of the session request. '
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: 'The description of the session. '
+        Role:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationRoleArn'
+          - description: 'The IAM Role ARN '
+        Command:
+          allOf:
+          - $ref: '#/components/schemas/SessionCommand'
+          - description: 'The <code>SessionCommand</code> that runs the job. '
+        Timeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: ' The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. '
+        IdleTimeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: ' The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. '
+        DefaultArguments:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationArgumentsMap'
+          - description: 'A map array of key-value pairs. Max is 75 pairs. '
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionsList'
+          - description: 'The number of connections to use for the session. '
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: 'The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. '
+        NumberOfWorkers:
+          allOf:
+          - $ref: '#/components/schemas/NullableInteger'
+          - description: 'The number of workers of a defined <code>WorkerType</code> to use for the session. '
+        WorkerType:
+          allOf:
+          - $ref: '#/components/schemas/WorkerType'
+          - description: <p>The type of predefined worker that is allocated to use for the session. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: 'The name of the SecurityConfiguration structure to be used with the session '
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: 'The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: The map of key value pairs (tags) belonging to the session.
+        RequestOrigin:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: 'The origin of the request. '
+      description: Request to create a new session.
+    ConnectionsList:
+      type: object
+      properties:
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationStringList'
+          - description: A list of connections used by the job.
+      description: Specifies the connections used by a job.
+    AlreadyExistsException: {}
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    CreateSessionResponse:
+      type: object
+      properties:
+        Session:
+          allOf:
+          - $ref: '#/components/schemas/Session'
+          - description: Returns the session object in the response.
+    Session:
+      type: object
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The ID of the session.
+        CreatedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The time and date when the session was created.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/SessionStatus'
+          - description: 'The session status. '
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: The error message displayed during the session.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: The description of the session.
+        Role:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationRoleArn'
+          - description: The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.
+        Command:
+          allOf:
+          - $ref: '#/components/schemas/SessionCommand'
+          - description: The command object.See SessionCommand.
+        DefaultArguments:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationArgumentsMap'
+          - description: 'A map array of key-value pairs. Max is 75 pairs. '
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionsList'
+          - description: The number of connections used for the session.
+        Progress:
+          allOf:
+          - $ref: '#/components/schemas/DoubleValue'
+          - description: The code execution progress of the session.
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: 'The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. '
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the SecurityConfiguration structure to be used with the session.
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.
+      description: The period in which a remote Spark runtime environment is running.
+    Timeout:
+      type: integer
+      minimum: 1
+    OrchestrationArgumentsValue:
+      type: string
+      minLength: 0
+      maxLength: 4096
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    AccessDeniedException: {}
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    NullableDouble:
+      type: number
+      format: double
+    DoubleValue:
+      type: number
+      format: double
+    SessionStatus:
+      type: string
+      enum:
+      - PROVISIONING
+      - READY
+      - FAILED
+      - TIMEOUT
+      - STOPPING
+      - STOPPED
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    OrchestrationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    GenericString:
+      type: string
+    IdempotentParameterMismatchException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    TimestampValue:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    ResourceNumberLimitExceededException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

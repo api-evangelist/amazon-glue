@@ -1,0 +1,542 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetTriggers API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetTriggers'
+paths:
+  /#X-Amz-Target=AWSGlue.GetTriggers:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetTriggers
+      description: Gets all the triggers associated with a job.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTriggersResponse'
+              examples:
+                GetTriggers200Example:
+                  summary: Default GetTriggers 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetTriggers480Example:
+                  summary: Default GetTriggers 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetTriggers481Example:
+                  summary: Default GetTriggers 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetTriggers482Example:
+                  summary: Default GetTriggers 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetTriggers483Example:
+                  summary: Default GetTriggers 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetTriggersRequest'
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetTriggers
+      summary: Amazon Glue Get Triggers
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetTriggers'
+components:
+  schemas:
+    TriggerType:
+      type: string
+      enum:
+      - SCHEDULED
+      - CONDITIONAL
+      - ON_DEMAND
+      - EVENT
+    TriggerList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Trigger'
+    InternalServiceException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    Predicate:
+      type: object
+      properties:
+        Logical:
+          allOf:
+          - $ref: '#/components/schemas/Logical'
+          - description: An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.
+        Conditions:
+          allOf:
+          - $ref: '#/components/schemas/ConditionList'
+          - description: A list of the conditions that determine when the trigger will fire.
+      description: Defines the predicate of the trigger, which determines when it fires.
+    Logical:
+      type: string
+      enum:
+      - AND
+      - ANY
+    BatchWindow:
+      type: integer
+      minimum: 1
+      maximum: 900
+    JobRunState:
+      type: string
+      enum:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+      - ERROR
+      - WAITING
+    EntityNotFoundException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    CrawlState:
+      type: string
+      enum:
+      - RUNNING
+      - CANCELLING
+      - CANCELLED
+      - SUCCEEDED
+      - FAILED
+      - ERROR
+    OperationTimeoutException: {}
+    BatchSize:
+      type: integer
+      minimum: 1
+      maximum: 100
+    TriggerState:
+      type: string
+      enum:
+      - CREATING
+      - CREATED
+      - ACTIVATING
+      - ACTIVATED
+      - DEACTIVATING
+      - DEACTIVATED
+      - DELETING
+      - UPDATING
+    Timeout:
+      type: integer
+      minimum: 1
+    GenericMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
+    Trigger:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the trigger.
+        WorkflowName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the workflow associated with the trigger.
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: Reserved for future use.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/TriggerType'
+          - description: The type of trigger that this is.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/TriggerState'
+          - description: The current state of the trigger.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of this trigger.
+        Schedule:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: 'A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.'
+        Actions:
+          allOf:
+          - $ref: '#/components/schemas/ActionList'
+          - description: The actions initiated by this trigger.
+        Predicate:
+          allOf:
+          - $ref: '#/components/schemas/Predicate'
+          - description: The predicate of this trigger, which defines when it will fire.
+        EventBatchingCondition:
+          allOf:
+          - $ref: '#/components/schemas/EventBatchingCondition'
+          - description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+      description: Information about a specific trigger.
+    ConditionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Condition'
+    Condition:
+      type: object
+      properties:
+        LogicalOperator:
+          allOf:
+          - $ref: '#/components/schemas/LogicalOperator'
+          - description: A logical operator.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/JobRunState'
+          - description: The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.
+        CrawlerName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the crawler to which this condition applies.
+        CrawlState:
+          allOf:
+          - $ref: '#/components/schemas/CrawlState'
+          - description: The state of the crawler to which this condition applies.
+      description: Defines a condition under which a trigger fires.
+    IdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    NotifyDelayAfter:
+      type: integer
+      minimum: 1
+    ActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Action'
+    NotificationProperty:
+      type: object
+      properties:
+        NotifyDelayAfter:
+          allOf:
+          - $ref: '#/components/schemas/NotifyDelayAfter'
+          - description: After a job run starts, the number of minutes to wait before sending a job run delay notification.
+      description: Specifies configuration properties of a notification.
+    GenericString:
+      type: string
+    GetTriggersRequest:
+      type: object
+      title: GetTriggersRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if this is a continuation call.
+        DependentJobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum size of the response.
+    EventBatchingCondition:
+      type: object
+      required:
+      - BatchSize
+      properties:
+        BatchSize:
+          allOf:
+          - $ref: '#/components/schemas/BatchSize'
+          - description: Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.
+        BatchWindow:
+          allOf:
+          - $ref: '#/components/schemas/BatchWindow'
+          - description: Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.
+      description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    Action:
+      type: object
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of a job to be run.
+        Arguments:
+          allOf:
+          - $ref: '#/components/schemas/GenericMap'
+          - description: <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
+        Timeout:
+          allOf:
+          - $ref: '#/components/schemas/Timeout'
+          - description: The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the <code>SecurityConfiguration</code> structure to be used with this action.
+        NotificationProperty:
+          allOf:
+          - $ref: '#/components/schemas/NotificationProperty'
+          - description: Specifies configuration properties of a job run notification.
+        CrawlerName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the crawler to be used with this action.
+      description: Defines an action to be initiated by a trigger.
+    LogicalOperator:
+      type: string
+      enum:
+      - EQUALS
+    GetTriggersResponse:
+      type: object
+      properties:
+        Triggers:
+          allOf:
+          - $ref: '#/components/schemas/TriggerList'
+          - description: A list of triggers for the specified job.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if not all the requested triggers have yet been returned.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true

@@ -1,0 +1,439 @@
+openapi: 3.0.0
+info:
+  version: '2017-03-31'
+  x-release: v4
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetMLTaskRun API'
+  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: glue
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: https://glue.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Glue multi-region endpoint
+- url: http://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+- url: https://glue.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Glue endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=AWSGlue.GetMLTaskRun'
+paths:
+  /#X-Amz-Target=AWSGlue.GetMLTaskRun:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetMLTaskRun
+      description: Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMLTaskRunResponse'
+              examples:
+                GetMLTaskRun200Example:
+                  summary: Default GetMLTaskRun 200 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '480':
+          description: EntityNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityNotFoundException'
+              examples:
+                GetMLTaskRun480Example:
+                  summary: Default GetMLTaskRun 480 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '481':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                GetMLTaskRun481Example:
+                  summary: Default GetMLTaskRun 481 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '482':
+          description: OperationTimeoutException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OperationTimeoutException'
+              examples:
+                GetMLTaskRun482Example:
+                  summary: Default GetMLTaskRun 482 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+        '483':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+              examples:
+                GetMLTaskRun483Example:
+                  summary: Default GetMLTaskRun 483 response
+                  x-microcks-default: true
+                  value:
+                    JobRunId: jr_abc123
+                    State: SUCCEEDED
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetMLTaskRunRequest'
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - AWSGlue.GetMLTaskRun
+      summary: Amazon Glue Get M L Task Run
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=AWSGlue.GetMLTaskRun'
+components:
+  schemas:
+    InternalServiceException: {}
+    ExecutionTime:
+      type: integer
+    EntityNotFoundException: {}
+    GetMLTaskRunRequest:
+      type: object
+      required:
+      - TransformId
+      - TaskRunId
+      title: GetMLTaskRunRequest
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier of the machine learning transform.
+        TaskRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier of the task run.
+    OperationTimeoutException: {}
+    TaskRunProperties:
+      type: object
+      properties:
+        TaskType:
+          allOf:
+          - $ref: '#/components/schemas/TaskType'
+          - description: The type of task run.
+        ImportLabelsTaskRunProperties:
+          allOf:
+          - $ref: '#/components/schemas/ImportLabelsTaskRunProperties'
+          - description: The configuration properties for an importing labels task run.
+        ExportLabelsTaskRunProperties:
+          allOf:
+          - $ref: '#/components/schemas/ExportLabelsTaskRunProperties'
+          - description: The configuration properties for an exporting labels task run.
+        LabelingSetGenerationTaskRunProperties:
+          allOf:
+          - $ref: '#/components/schemas/LabelingSetGenerationTaskRunProperties'
+          - description: The configuration properties for a labeling set generation task run.
+        FindMatchesTaskRunProperties:
+          allOf:
+          - $ref: '#/components/schemas/FindMatchesTaskRunProperties'
+          - description: The configuration properties for a find matches task run.
+      description: The configuration properties for the task run.
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetMLTaskRunResponse:
+      type: object
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier of the task run.
+        TaskRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique run identifier associated with this run.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/TaskStatusType'
+          - description: The status for this task run.
+        LogGroupName:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The names of the log groups that are associated with the task run.
+        Properties:
+          allOf:
+          - $ref: '#/components/schemas/TaskRunProperties'
+          - description: The list of properties that are associated with the task run.
+        ErrorString:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: The error strings that are associated with the task run.
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when this task run started.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when this task run was last modified.
+        CompletedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time when this task run was completed.
+        ExecutionTime:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionTime'
+          - description: The amount of time (in seconds) that the task run consumed resources.
+    UriString:
+      type: string
+    TaskType:
+      type: string
+      enum:
+      - EVALUATION
+      - LABELING_SET_GENERATION
+      - IMPORT_LABELS
+      - EXPORT_LABELS
+      - FIND_MATCHES
+    ExportLabelsTaskRunProperties:
+      type: object
+      properties:
+        OutputS3Path:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.
+      description: Specifies configuration properties for an exporting labels task run.
+    ReplaceBoolean:
+      type: boolean
+    FindMatchesTaskRunProperties:
+      type: object
+      properties:
+        JobId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The job ID for the Find Matches task run.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name assigned to the job for the Find Matches task run.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The job run ID for the Find Matches task run.
+      description: Specifies configuration properties for a Find Matches task run.
+    LabelingSetGenerationTaskRunProperties:
+      type: object
+      properties:
+        OutputS3Path:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.
+      description: Specifies configuration properties for a labeling set generation task run.
+    GenericString:
+      type: string
+    TaskStatusType:
+      type: string
+      enum:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+    ImportLabelsTaskRunProperties:
+      type: object
+      properties:
+        InputS3Path:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.
+        Replace:
+          allOf:
+          - $ref: '#/components/schemas/ReplaceBoolean'
+          - description: Indicates whether to overwrite your existing labels.
+      description: Specifies configuration properties for an importing labels task run.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    Timestamp:
+      type: string
+      format: date-time
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/glue/
+x-hasEquivalentPaths: true
