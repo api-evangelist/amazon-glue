@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "1a52c5a7-f9df-421c-b761-b5f114e025b6",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetMLTransforms API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:42.000Z",
+    "updatedAt": "2026-07-28T10:30:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1a52c5a7-f9df-421c-b761-b5f114e025b6"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetMLTransforms",
+      "item": [
+        {
+          "name": "Amazon Glue Get M L Transforms",
+          "id": "a514bc8a-e48a-42a4-91fc-d485b13a32d7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetMLTransforms"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+            },
+            "description": "Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling <code>GetMLTransforms</code>."
+          },
+          "response": [
+            {
+              "id": "9df1711c-38ec-4ac6-98b4-69368170b296",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetMLTransforms"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Transforms\": [\n    {\n      \"TransformId\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"NOT_READY\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"InputRecordTables\": [\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"in3\": \"<string>\",\n            \"sint89c\": \"<string>\",\n            \"sint_1_\": \"<string>\",\n            \"veniam22d\": \"<string>\",\n            \"occaecat5_b\": \"<string>\",\n            \"voluptate_240\": \"<string>\",\n            \"irure84\": \"<string>\",\n            \"nostrud_4b\": \"<string>\",\n            \"sunt_f\": \"<string>\",\n            \"enim_31\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"ea_1e6\": \"<string>\",\n            \"officia0\": \"<string>\",\n            \"velit7d\": \"<string>\",\n            \"tempor_115\": \"<string>\",\n            \"anim_af9\": \"<string>\",\n            \"aliquip_7\": \"<string>\",\n            \"dolore_40\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"ea_b\": \"<string>\",\n            \"minima\": \"<string>\",\n            \"dolor_3\": \"<string>\",\n            \"ipsum_\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"ipsum_8f9\": \"<string>\",\n            \"esse1\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"nisie\": \"<string>\",\n            \"eiusmod4a4\": \"<string>\",\n            \"commodo077\": \"<string>\",\n            \"nostrud_90\": \"<string>\",\n            \"cillum_0e\": \"<string>\",\n            \"officia31\": \"<string>\",\n            \"nisi2\": \"<string>\",\n            \"officiab5d\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"quis_f\": \"<string>\",\n            \"irurea54\": \"<string>\",\n            \"inc\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"commodo_7\": \"<string>\",\n            \"labore32\": \"<string>\",\n            \"aute1\": \"<string>\",\n            \"eu8\": \"<string>\",\n            \"labore67\": \"<string>\",\n            \"nostrud2\": \"<string>\",\n            \"voluptatee\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"voluptate_e34\": \"<string>\",\n            \"in7\": \"<string>\",\n            \"culpa6\": \"<string>\",\n            \"consectetur_c8\": \"<string>\",\n            \"aliqua_e_1\": \"<string>\",\n            \"dolore_6\": \"<string>\",\n            \"elit_b\": \"<string>\",\n            \"ut247\": \"<string>\",\n            \"enima5\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"mollit1f\": \"<string>\",\n            \"aute9\": \"<string>\",\n            \"laboris_6e3\": \"<string>\",\n            \"esse42\": \"<string>\",\n            \"Excepteur_f\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"irurec\": \"<string>\",\n            \"velit208\": \"<string>\",\n            \"qui2\": \"<string>\"\n          }\n        }\n      ],\n      \"Parameters\": {\n        \"TransformType\": \"FIND_MATCHES\",\n        \"FindMatchesParameters\": {\n          \"PrimaryKeyColumnName\": \"<string>\",\n          \"PrecisionRecallTradeoff\": \"<double>\",\n          \"AccuracyCostTradeoff\": \"<double>\",\n          \"EnforceProvidedLabels\": \"<boolean>\"\n        }\n      },\n      \"EvaluationMetrics\": {\n        \"TransformType\": \"FIND_MATCHES\",\n        \"FindMatchesMetrics\": {\n          \"AreaUnderPRCurve\": \"<double>\",\n          \"Precision\": \"<double>\",\n          \"Recall\": \"<double>\",\n          \"F1\": \"<double>\",\n          \"ConfusionMatrix\": {\n            \"NumTruePositives\": \"<integer>\",\n            \"NumFalsePositives\": \"<integer>\",\n            \"NumTrueNegatives\": \"<integer>\",\n            \"NumFalseNegatives\": \"<integer>\"\n          },\n          \"ColumnImportances\": [\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            }\n          ]\n        }\n      },\n      \"LabelCount\": \"<integer>\",\n      \"Schema\": [\n        {\n          \"Name\": \"<string>\",\n          \"DataType\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"DataType\": \"<string>\"\n        }\n      ],\n      \"Role\": \"<string>\",\n      \"GlueVersion\": \"Ta1b.ALJL7pQX\",\n      \"MaxCapacity\": \"<double>\",\n      \"WorkerType\": \"Standard\",\n      \"NumberOfWorkers\": \"<integer>\",\n      \"Timeout\": \"<integer>\",\n      \"MaxRetries\": \"<integer>\",\n      \"TransformEncryption\": {\n        \"MlUserDataEncryption\": {\n          \"MlUserDataEncryptionMode\": \"SSE-KMS\",\n          \"KmsKeyId\": \"<string>\"\n        },\n        \"TaskRunSecurityConfigurationName\": \"<string>\"\n      }\n    },\n    {\n      \"TransformId\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"DELETING\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"InputRecordTables\": [\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"laborumac\": \"<string>\",\n            \"ullamco_87\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"dolore3\": \"<string>\",\n            \"dolor_6\": \"<string>\",\n            \"veniamaee\": \"<string>\",\n            \"sint3\": \"<string>\",\n            \"nostrud1\": \"<string>\",\n            \"labored9\": \"<string>\",\n            \"sint_4cc\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"anim_9\": \"<string>\",\n            \"Ut7d4\": \"<string>\",\n            \"exercitation46\": \"<string>\",\n            \"adc\": \"<string>\",\n            \"esse_3\": \"<string>\",\n            \"nonc6f\": \"<string>\",\n            \"pariatur_924\": \"<string>\",\n            \"eta_0\": \"<string>\",\n            \"culpa449\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"docb8\": \"<string>\",\n            \"Lorem0d4\": \"<string>\",\n            \"consectetur_4\": \"<string>\",\n            \"estbf\": \"<string>\",\n            \"esse661\": \"<string>\",\n            \"nostrud_f13\": \"<string>\",\n            \"sed_dce\": \"<string>\",\n            \"ea714\": \"<string>\",\n            \"Ut_c\": \"<string>\",\n            \"laboris_56\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"cupidatat_3d\": \"<string>\",\n            \"adipisicing_da\": \"<string>\",\n            \"aliquip_3\": \"<string>\",\n            \"officia5\": \"<string>\",\n            \"officia955\": \"<string>\",\n            \"consequat0\": \"<string>\",\n            \"in_2a\": \"<string>\",\n            \"tempor__a8\": \"<string>\",\n            \"mollit5fc\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"ea75d\": \"<string>\",\n            \"ex_e\": \"<string>\",\n            \"incididuntb9\": \"<string>\",\n            \"ad_6\": \"<string>\",\n            \"magna70\": \"<string>\",\n            \"ut662\": \"<string>\",\n            \"eta_\": \"<string>\",\n            \"suntb0\": \"<string>\",\n            \"minimbbe\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"laboris_6ef\": \"<string>\",\n            \"culpae48\": \"<string>\",\n            \"ut4\": \"<string>\",\n            \"qui_7\": \"<string>\",\n            \"do793\": \"<string>\",\n            \"consectetur_b8\": \"<string>\",\n            \"dolore_f\": \"<string>\",\n            \"ut_a\": \"<string>\",\n            \"nisi_071\": \"<string>\",\n            \"sunt82\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"dolore__\": \"<string>\",\n            \"qui_9\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"exercitation_9fb\": \"<string>\",\n            \"consequat_7a\": \"<string>\"\n          }\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"Loremf11\": \"<string>\",\n            \"deserunt_ca6\": \"<string>\",\n            \"officiaa47\": \"<string>\",\n            \"esseb16\": \"<string>\"\n          }\n        }\n      ],\n      \"Parameters\": {\n        \"TransformType\": \"FIND_MATCHES\",\n        \"FindMatchesParameters\": {\n          \"PrimaryKeyColumnName\": \"<string>\",\n          \"PrecisionRecallTradeoff\": \"<double>\",\n          \"AccuracyCostTradeoff\": \"<double>\",\n          \"EnforceProvidedLabels\": \"<boolean>\"\n        }\n      },\n      \"EvaluationMetrics\": {\n        \"TransformType\": \"FIND_MATCHES\",\n        \"FindMatchesMetrics\": {\n          \"AreaUnderPRCurve\": \"<double>\",\n          \"Precision\": \"<double>\",\n          \"Recall\": \"<double>\",\n          \"F1\": \"<double>\",\n          \"ConfusionMatrix\": {\n            \"NumTruePositives\": \"<integer>\",\n            \"NumFalsePositives\": \"<integer>\",\n            \"NumTrueNegatives\": \"<integer>\",\n            \"NumFalseNegatives\": \"<integer>\"\n          },\n          \"ColumnImportances\": [\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            },\n            {\n              \"ColumnName\": \"<string>\",\n              \"Importance\": \"<double>\"\n            }\n          ]\n        }\n      },\n      \"LabelCount\": \"<integer>\",\n      \"Schema\": [\n        {\n          \"Name\": \"<string>\",\n          \"DataType\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"DataType\": \"<string>\"\n        }\n      ],\n      \"Role\": \"<string>\",\n      \"GlueVersion\": \"V8hCavXF_O.l\",\n      \"MaxCapacity\": \"<double>\",\n      \"WorkerType\": \"G.1X\",\n      \"NumberOfWorkers\": \"<integer>\",\n      \"Timeout\": \"<integer>\",\n      \"MaxRetries\": \"<integer>\",\n      \"TransformEncryption\": {\n        \"MlUserDataEncryption\": {\n          \"MlUserDataEncryptionMode\": \"SSE-KMS\",\n          \"KmsKeyId\": \"<string>\"\n        },\n        \"TaskRunSecurityConfigurationName\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-9df1711c-38ec-4ac6-98b4-69368170b296"
+            },
+            {
+              "id": "44284eed-6700-45a2-8b3a-71738097c771",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetMLTransforms"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-44284eed-6700-45a2-8b3a-71738097c771"
+            },
+            {
+              "id": "8f5b4ed8-1982-4591-a062-bc614c1f3dda",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetMLTransforms"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-8f5b4ed8-1982-4591-a062-bc614c1f3dda"
+            },
+            {
+              "id": "c3f7dc08-8a50-4237-877a-e297534e80e3",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetMLTransforms"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-c3f7dc08-8a50-4237-877a-e297534e80e3"
+            },
+            {
+              "id": "31958f54-5216-4151-9b9b-aee39a2f0421",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetMLTransforms"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"TransformType\": \"FIND_MATCHES\",\n    \"Status\": \"DELETING\",\n    \"GlueVersion\": \"Y2.J\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"Schema\": [\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"DataType\": \"<string>\"\n      }\n    ]\n  },\n  \"Sort\": {\n    \"Column\": \"CREATED\",\n    \"SortDirection\": \"DESCENDING\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetMLTransforms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetMLTransforms"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-31958f54-5216-4151-9b9b-aee39a2f0421"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:43.000Z",
+          "updatedAt": "2026-07-28T10:30:43.000Z",
+          "uid": "35240-a514bc8a-e48a-42a4-91fc-d485b13a32d7"
+        }
+      ],
+      "id": "eb6e3476-181d-4a31-828d-33d086891067",
+      "createdAt": "2026-07-28T10:30:43.000Z",
+      "updatedAt": "2026-07-28T10:30:43.000Z",
+      "uid": "35240-eb6e3476-181d-4a31-828d-33d086891067"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

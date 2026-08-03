@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "b2e25300-0aa8-4bb5-ad58-61b14f2f9734",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetWorkflowRuns API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:35.000Z",
+    "updatedAt": "2026-07-28T10:32:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b2e25300-0aa8-4bb5-ad58-61b14f2f9734"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+      "item": [
+        {
+          "name": "Amazon Glue Get Workflow Runs",
+          "id": "a74d205c-8920-4bff-b6a9-b29b3fee6ef3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetWorkflowRuns"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+            },
+            "description": "Retrieves metadata for all runs of a given workflow."
+          },
+          "response": [
+            {
+              "id": "1e8d325a-427c-459b-8028-66d56023a882",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflowRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Runs\": [\n    {\n      \"Name\": \"<string>\",\n      \"WorkflowRunId\": \"<string>\",\n      \"PreviousRunId\": \"<string>\",\n      \"WorkflowRunProperties\": {\n        \"voluptateb5\": \"<string>\",\n        \"sed_59\": \"<string>\"\n      },\n      \"StartedOn\": \"<dateTime>\",\n      \"CompletedOn\": \"<dateTime>\",\n      \"Status\": \"STOPPED\",\n      \"ErrorMessage\": \"<string>\",\n      \"Statistics\": {\n        \"TotalActions\": \"<integer>\",\n        \"TimeoutActions\": \"<integer>\",\n        \"FailedActions\": \"<integer>\",\n        \"StoppedActions\": \"<integer>\",\n        \"SucceededActions\": \"<integer>\",\n        \"RunningActions\": \"<integer>\",\n        \"ErroredActions\": \"<integer>\",\n        \"WaitingActions\": \"<integer>\"\n      },\n      \"Graph\": {\n        \"Nodes\": [\n          {\n            \"Type\": \"CRAWLER\",\n            \"Name\": \"<string>\",\n            \"UniqueId\": \"<string>\",\n            \"TriggerDetails\": {\n              \"Trigger\": {\n                \"Name\": \"<string>\",\n                \"WorkflowName\": \"<string>\",\n                \"Id\": \"<string>\",\n                \"Type\": \"ON_DEMAND\",\n                \"State\": \"DELETING\",\n                \"Description\": \"<string>\",\n                \"Schedule\": \"<string>\",\n                \"Actions\": [\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"none\": \"<string>\",\n                      \"aute_73\": \"<string>\",\n                      \"mollit9\": \"<string>\"\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  },\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"dolor_d_\": \"<string>\"\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  }\n                ],\n                \"Predicate\": {\n                  \"Logical\": \"ANY\",\n                  \"Conditions\": [\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ]\n                },\n                \"EventBatchingCondition\": {\n                  \"BatchSize\": \"<integer>\",\n                  \"BatchWindow\": \"<integer>\"\n                }\n              }\n            },\n            \"JobDetails\": {\n              \"JobRuns\": [\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"STOPPED\",\n                  \"Arguments\": {\n                    \"amet_6\": \"<string>\",\n                    \"occaecat7bb\": \"<string>\"\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    },\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"Standard\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"LmqIxMzBz.DLtpej23\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                },\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"STOPPED\",\n                  \"Arguments\": {\n                    \"consectetur453\": \"<string>\",\n                    \"inc\": \"<string>\"\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    },\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.025X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"JM.r0JYQfnTK\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                }\n              ]\n            },\n            \"CrawlerDetails\": {\n              \"Crawls\": [\n                {\n                  \"State\": \"RUNNING\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"8\",\n                  \"LogStream\": \" \"\n                },\n                {\n                  \"State\": \"SUCCEEDED\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"Cc\",\n                  \"LogStream\": \"esi\"\n                }\n              ]\n            }\n          },\n          {\n            \"Type\": \"TRIGGER\",\n            \"Name\": \"<string>\",\n            \"UniqueId\": \"<string>\",\n            \"TriggerDetails\": {\n              \"Trigger\": {\n                \"Name\": \"<string>\",\n                \"WorkflowName\": \"<string>\",\n                \"Id\": \"<string>\",\n                \"Type\": \"SCHEDULED\",\n                \"State\": \"CREATING\",\n                \"Description\": \"<string>\",\n                \"Schedule\": \"<string>\",\n                \"Actions\": [\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"ea_1\": \"<string>\",\n                      \"cupidatat47d\": \"<string>\"\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  },\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"essec3\": \"<string>\"\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  }\n                ],\n                \"Predicate\": {\n                  \"Logical\": \"AND\",\n                  \"Conditions\": [\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ]\n                },\n                \"EventBatchingCondition\": {\n                  \"BatchSize\": \"<integer>\",\n                  \"BatchWindow\": \"<integer>\"\n                }\n              }\n            },\n            \"JobDetails\": {\n              \"JobRuns\": [\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"WAITING\",\n                  \"Arguments\": {\n                    \"occaecat_89\": \"<string>\",\n                    \"quis264\": \"<string>\"\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    },\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.025X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"eXfhwGjSUOD.XyoyFaV\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                },\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"TIMEOUT\",\n                  \"Arguments\": {\n                    \"ex39\": \"<string>\",\n                    \"dolore_8d\": \"<string>\"\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    },\n                    {\n                      \"JobName\": \"<string>\",\n                      \"RunId\": \"<string>\"\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.2X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"z9c.r\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"STANDARD\"\n                }\n              ]\n            },\n            \"CrawlerDetails\": {\n              \"Crawls\": [\n                {\n                  \"State\": \"ERROR\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"GlRScK\",\n                  \"LogStream\": \"l+\"\n                },\n                {\n                  \"State\": \"SUCCEEDED\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"heEbsq3kPc\",\n                  \"LogStream\": \"U~phYEX\"\n                }\n              ]\n            }\n          }\n        ],\n        \"Edges\": [\n          {\n            \"SourceId\": \"<string>\",\n            \"DestinationId\": \"<string>\"\n          },\n          {\n            \"SourceId\": \"<string>\",\n            \"DestinationId\": \"<string>\"\n          }\n        ]\n      },\n      \"StartingEventBatchCondition\": {\n        \"BatchSize\": \"<integer>\",\n        \"BatchWindow\": \"<integer>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:35.000Z",
+              "updatedAt": "2026-07-28T10:32:35.000Z",
+              "uid": "35240-1e8d325a-427c-459b-8028-66d56023a882"
+            },
+            {
+              "id": "4645ee81-dc01-4e7b-aa7b-9100b99b7929",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflowRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:35.000Z",
+              "updatedAt": "2026-07-28T10:32:35.000Z",
+              "uid": "35240-4645ee81-dc01-4e7b-aa7b-9100b99b7929"
+            },
+            {
+              "id": "3848ced9-e981-4eb0-83d8-d6463ba7945c",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflowRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:35.000Z",
+              "updatedAt": "2026-07-28T10:32:35.000Z",
+              "uid": "35240-3848ced9-e981-4eb0-83d8-d6463ba7945c"
+            },
+            {
+              "id": "02aac695-4a86-44cd-b98d-9fc302cff6a6",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflowRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:35.000Z",
+              "updatedAt": "2026-07-28T10:32:35.000Z",
+              "uid": "35240-02aac695-4a86-44cd-b98d-9fc302cff6a6"
+            },
+            {
+              "id": "ad2f5bea-5d71-46fb-8bb7-e8acd2f6de5f",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflowRuns"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetWorkflowRuns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflowRuns"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:35.000Z",
+              "updatedAt": "2026-07-28T10:32:35.000Z",
+              "uid": "35240-ad2f5bea-5d71-46fb-8bb7-e8acd2f6de5f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:35.000Z",
+          "updatedAt": "2026-07-28T10:32:35.000Z",
+          "uid": "35240-a74d205c-8920-4bff-b6a9-b29b3fee6ef3"
+        }
+      ],
+      "id": "d2956859-d23a-410d-a940-7d2fa699217e",
+      "createdAt": "2026-07-28T10:32:35.000Z",
+      "updatedAt": "2026-07-28T10:32:35.000Z",
+      "uid": "35240-d2956859-d23a-410d-a940-7d2fa699217e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

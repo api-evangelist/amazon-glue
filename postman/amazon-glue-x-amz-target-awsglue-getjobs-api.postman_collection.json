@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "8de3b2dd-3550-4f58-97f3-810829a98bdf",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetJobs API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:29:43.000Z",
+    "updatedAt": "2026-07-28T10:29:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8de3b2dd-3550-4f58-97f3-810829a98bdf"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetJobs",
+      "item": [
+        {
+          "name": "Amazon Glue Get Jobs",
+          "id": "0346abe7-70ce-434e-bd95-2bc933df6458",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetJobs"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetJobs"
+            },
+            "description": "Retrieves all current job definitions."
+          },
+          "response": [
+            {
+              "id": "122bdebe-2db7-46e2-a4da-ae6265c7e806",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetJobs"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetJobs"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Jobs\": [\n    {\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"LogUri\": \"<string>\",\n      \"Role\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"ExecutionProperty\": {\n        \"MaxConcurrentRuns\": \"<integer>\"\n      },\n      \"Command\": {\n        \"Name\": \"<string>\",\n        \"ScriptLocation\": \"<string>\",\n        \"PythonVersion\": \"3\"\n      },\n      \"DefaultArguments\": {\n        \"ut40\": \"<string>\",\n        \"tempor_5b7\": \"<string>\"\n      },\n      \"NonOverridableArguments\": {\n        \"pariatur_f79\": \"<string>\",\n        \"laboris954\": \"<string>\",\n        \"minim_1\": \"<string>\"\n      },\n      \"Connections\": {\n        \"Connections\": [\n          \"<string>\"\n        ]\n      },\n      \"MaxRetries\": \"<integer>\",\n      \"AllocatedCapacity\": \"<integer>\",\n      \"Timeout\": \"<integer>\",\n      \"MaxCapacity\": \"<double>\",\n      \"WorkerType\": \"G.1X\",\n      \"NumberOfWorkers\": \"<integer>\",\n      \"SecurityConfiguration\": \"<string>\",\n      \"NotificationProperty\": {\n        \"NotifyDelayAfter\": \"<integer>\"\n      },\n      \"GlueVersion\": \"Mxhd1IlL.rA\",\n      \"CodeGenConfigurationNodes\": {\n        \"eu_c\": {\n          \"AthenaConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"SchemaName\": \"<string>\",\n            \"ConnectionTable\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"JDBCConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"FilterPredicate\": \"<string>\",\n              \"PartitionColumn\": \"<string>\",\n              \"LowerBound\": \"<integer>\",\n              \"UpperBound\": \"<integer>\",\n              \"NumPartitions\": \"<integer>\",\n              \"JobBookmarkKeys\": [\n                \"<string>\"\n              ],\n              \"JobBookmarkKeysSortOrder\": \"<string>\",\n              \"DataTypeMapping\": {\n                \"dolor7\": \"BIGDECIMAL\",\n                \"commodo5\": \"BYTE\"\n              }\n            },\n            \"ConnectionTable\": \"<string>\",\n            \"Query\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"doloref\": \"<string>\",\n              \"aliqua_2\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"RedshiftSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"RedshiftTmpDir\": \"<string>\",\n            \"TmpDirIAMRole\": \"<string>\"\n          },\n          \"S3CatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"PartitionPredicate\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\"\n            }\n          },\n          \"S3CsvSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"Separator\": \"pipe\",\n            \"QuoteChar\": \"disabled\",\n            \"CompressionType\": \"bzip2\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"Escaper\": \"<string>\",\n            \"Multiline\": \"<boolean>\",\n            \"WithHeader\": \"<boolean>\",\n            \"WriteHeader\": \"<boolean>\",\n            \"SkipFirst\": \"<boolean>\",\n            \"OptimizePerformance\": \"<boolean>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3JsonSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"CompressionType\": \"gzip\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"JsonPath\": \"<string>\",\n            \"Multiline\": \"<boolean>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3ParquetSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"CompressionType\": \"lzo\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"RelationalCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"DynamoDBCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"JDBCConnectorTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"PLj0\"\n            ],\n            \"ConnectionName\": \"<string>\",\n            \"ConnectionTable\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"esse_b3e\": \"<string>\",\n              \"dolor_4\": \"<string>\",\n              \"Lorem_c\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkConnectorTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"-FWTjgN7cS\"\n            ],\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"sunt5\": \"<string>\",\n              \"occaecat2\": \"<string>\",\n              \"velit_\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"Q2n\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"RedshiftTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"O81Pe\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"RedshiftTmpDir\": \"<string>\",\n            \"TmpDirIAMRole\": \"<string>\",\n            \"UpsertRedshiftOptions\": {\n              \"TableLocation\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"UpsertKeys\": [\n                \"<string>\"\n              ]\n            }\n          },\n          \"S3CatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"aJ\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"S3GlueParquetTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"xk\"\n            ],\n            \"Path\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Compression\": \"gzip\",\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"S3DirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"8G7\"\n            ],\n            \"Path\": \"<string>\",\n            \"Format\": \"hudi\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Compression\": \"<string>\",\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"ApplyMapping\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"yoF\"\n            ],\n            \"Mapping\": [\n              {\n                \"ToKey\": \"<string>\",\n                \"FromPath\": [\n                  \"<string>\"\n                ],\n                \"FromType\": \"<string>\",\n                \"ToType\": \"<string>\",\n                \"Dropped\": \"<boolean>\",\n                \"Children\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Mappings detected>\",\n                  \"description\": \"<p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p> <p>For the children part, suppose you have the structure:</p> <p> <code>{ \\\"FromPath\\\": \\\"OuterStructure\\\", \\\"ToKey\\\": \\\"OuterStructure\\\", \\\"ToType\\\": \\\"Struct\\\", \\\"Dropped\\\": false, \\\"Chidlren\\\": [{ \\\"FromPath\\\": \\\"inner\\\", \\\"ToKey\\\": \\\"inner\\\", \\\"ToType\\\": \\\"Double\\\", \\\"Dropped\\\": false, }] }</code> </p> <p>You can specify a <code>Mapping</code> that looks like:</p> <p> <code>{ \\\"FromPath\\\": \\\"OuterStructure\\\", \\\"ToKey\\\": \\\"OuterStructure\\\", \\\"ToType\\\": \\\"Struct\\\", \\\"Dropped\\\": false, \\\"Chidlren\\\": [{ \\\"FromPath\\\": \\\"inner\\\", \\\"ToKey\\\": \\\"inner\\\", \\\"ToType\\\": \\\"Double\\\", \\\"Dropped\\\": false, }] }</code> </p>\"\n                }\n              }\n            ]\n          },\n          \"SelectFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"wF4g\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"DropFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"-w0kHR6\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"RenameField\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"vdX3QZk\"\n            ],\n            \"SourcePath\": [\n              \"<string>\"\n            ],\n            \"TargetPath\": [\n              \"<string>\"\n            ]\n          },\n          \"Spigot\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"sH\"\n            ],\n            \"Path\": \"<string>\",\n            \"Topk\": \"<integer>\",\n            \"Prob\": \"<double>\"\n          },\n          \"Join\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"fc\",\n              \"\"\n            ],\n            \"JoinType\": \"equijoin\",\n            \"Columns\": [\n              {\n                \"From\": \"<string>\",\n                \"Keys\": [\n                  [\n                    \"<string>\"\n                  ]\n                ]\n              },\n              {\n                \"From\": \"<string>\",\n                \"Keys\": [\n                  [\n                    \"<string>\"\n                  ]\n                ]\n              }\n            ]\n          },\n          \"SplitFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"JF4c1bi\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"SelectFromCollection\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"IwYA69vE\"\n            ],\n            \"Index\": \"<integer>\"\n          },\n          \"FillMissingValues\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"c\"\n            ],\n            \"ImputedPath\": \"<string>\",\n            \"FilledPath\": \"<string>\"\n          },\n          \"Filter\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"Nzc\"\n            ],\n            \"LogicalOperator\": \"OR\",\n            \"Filters\": [\n              {\n                \"Operation\": \"LTE\",\n                \"Values\": [\n                  {\n                    \"Type\": \"CONSTANT\",\n                    \"Value\": [\n                      \"<string>\"\n                    ]\n                  }\n                ],\n                \"Negated\": \"<boolean>\"\n              }\n            ]\n          },\n          \"CustomCode\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"RVav\"\n            ],\n            \"Code\": \"\u2007je\u2007\\f\u2000\",\n            \"ClassName\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkSQL\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"7jUTE\"\n            ],\n            \"SqlQuery\": \"<string>\",\n            \"SqlAliases\": [\n              {\n                \"From\": \"IDSkoP\",\n                \"Alias\": \"<string>\"\n              }\n            ],\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"DirectKinesisSource\": {\n            \"Name\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"EndpointUrl\": \"<string>\",\n              \"StreamName\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingPosition\": \"trim_horizon\",\n              \"MaxFetchTimeInMs\": \"<integer>\",\n              \"MaxFetchRecordsPerShard\": \"<integer>\",\n              \"MaxRecordPerRead\": \"<integer>\",\n              \"AddIdleTimeBetweenReads\": \"<boolean>\",\n              \"IdleTimeBetweenReadsInMs\": \"<integer>\",\n              \"DescribeShardInterval\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxRetryIntervalMs\": \"<integer>\",\n              \"AvoidEmptyBatches\": \"<boolean>\",\n              \"StreamArn\": \"<string>\",\n              \"RoleArn\": \"<string>\",\n              \"RoleSessionName\": \"<string>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"DirectKafkaSource\": {\n            \"Name\": \"<string>\",\n            \"StreamingOptions\": {\n              \"BootstrapServers\": \"<string>\",\n              \"SecurityProtocol\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"TopicName\": \"<string>\",\n              \"Assign\": \"<string>\",\n              \"SubscribePattern\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingOffsets\": \"<string>\",\n              \"EndingOffsets\": \"<string>\",\n              \"PollTimeoutMs\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxOffsetsPerTrigger\": \"<integer>\",\n              \"MinPartitions\": \"<integer>\",\n              \"IncludeHeaders\": \"<boolean>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"CatalogKinesisSource\": {\n            \"Name\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"EndpointUrl\": \"<string>\",\n              \"StreamName\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingPosition\": \"earliest\",\n              \"MaxFetchTimeInMs\": \"<integer>\",\n              \"MaxFetchRecordsPerShard\": \"<integer>\",\n              \"MaxRecordPerRead\": \"<integer>\",\n              \"AddIdleTimeBetweenReads\": \"<boolean>\",\n              \"IdleTimeBetweenReadsInMs\": \"<integer>\",\n              \"DescribeShardInterval\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxRetryIntervalMs\": \"<integer>\",\n              \"AvoidEmptyBatches\": \"<boolean>\",\n              \"StreamArn\": \"<string>\",\n              \"RoleArn\": \"<string>\",\n              \"RoleSessionName\": \"<string>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"CatalogKafkaSource\": {\n            \"Name\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"BootstrapServers\": \"<string>\",\n              \"SecurityProtocol\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"TopicName\": \"<string>\",\n              \"Assign\": \"<string>\",\n              \"SubscribePattern\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingOffsets\": \"<string>\",\n              \"EndingOffsets\": \"<string>\",\n              \"PollTimeoutMs\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxOffsetsPerTrigger\": \"<integer>\",\n              \"MinPartitions\": \"<integer>\",\n              \"IncludeHeaders\": \"<boolean>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"DropNullFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"p\"\n            ],\n            \"NullCheckBoxList\": {\n              \"IsEmpty\": \"<boolean>\",\n              \"IsNullString\": \"<boolean>\",\n              \"IsNegOne\": \"<boolean>\"\n            },\n            \"NullTextList\": [\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"Xtaa1\",\n                  \"Label\": \"k6yMN3FFq1\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"fgClhf\",\n                  \"Label\": \"VC8GwL26Bn\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"cSg\",\n                  \"Label\": \"wL\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"CyjQ-Nxb\",\n                  \"Label\": \"TZJwW6cKsO\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"DRTP7\",\n                  \"Label\": \"IvvRN\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"Xgo_8A\",\n                  \"Label\": \"9jevxcI\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"FRIY\",\n                  \"Label\": \"M\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"fPEwr\",\n                  \"Label\": \"OeEgqDVlq\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"1M4_UdaoS\",\n                  \"Label\": \"jm9mzd9ob\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"yQ\",\n                  \"Label\": \"KaBvyt\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"BK6ygnx\",\n                  \"Label\": \"Mc0OM5n\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"jCB\",\n                  \"Label\": \"DqFI2DuAwl\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"P8MC7QmiR\",\n                  \"Label\": \"X_D\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"CH5b\",\n                  \"Label\": \"0\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"AXWtaSD\",\n                  \"Label\": \"lVVHxFHj_\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"mMnNYq\",\n                  \"Label\": \"XhGFvvOx16\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"9Vow_n\",\n                  \"Label\": \"Q34ubz\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"\",\n                  \"Label\": \"kaoq3UjO5\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"vzc\",\n                  \"Label\": \"bpz2e8\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"dOh1nk8\",\n                  \"Label\": \"\"\n                }\n              }\n            ]\n          },\n          \"Merge\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"AQ\",\n              \"\"\n            ],\n            \"Source\": \"et\",\n            \"PrimaryKeys\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"Union\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\",\n              \"5\"\n            ],\n            \"UnionType\": \"DISTINCT\"\n          },\n          \"PIIDetection\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"WKJj_S2VkP\"\n            ],\n            \"PiiType\": \"RowAudit\",\n            \"EntityTypesToDetect\": [\n              \"<string>\"\n            ],\n            \"OutputColumnName\": \"<string>\",\n            \"SampleFraction\": \"<double>\",\n            \"ThresholdFraction\": \"<double>\",\n            \"MaskValue\": \"pgOX\"\n          },\n          \"Aggregate\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"4O9MIB\"\n            ],\n            \"Groups\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Aggs\": [\n              {\n                \"Column\": [\n                  \"<string>\"\n                ],\n                \"AggFunc\": \"avg\"\n              }\n            ]\n          },\n          \"DropDuplicates\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"_cVmEjrTt\"\n            ],\n            \"Columns\": [\n              [\n                \"WXCF\"\n              ]\n            ]\n          },\n          \"GovernedCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"1D3ZiIs\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"GovernedCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"PartitionPredicate\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\"\n            }\n          },\n          \"MicrosoftSQLServerCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MySQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"OracleSQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"PostgreSQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MicrosoftSQLServerCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"csqCbxTxEZ\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MySQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"f\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"OracleSQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"yJVk5T8s\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"PostgreSQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"N\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"DynamicTransform\": {\n            \"Name\": \"<string>\",\n            \"TransformName\": \"<string>\",\n            \"Inputs\": [\n              \"J3Q8cCNr_x\"\n            ],\n            \"FunctionName\": \"<string>\",\n            \"Path\": \"<string>\",\n            \"Parameters\": [\n              {\n                \"Name\": \"<string>\",\n                \"Type\": \"str\",\n                \"ValidationRule\": \"<string>\",\n                \"ValidationMessage\": \"<string>\",\n                \"Value\": [\n                  \"<string>\"\n                ],\n                \"ListType\": \"list\",\n                \"IsOptional\": \"<boolean>\"\n              }\n            ],\n            \"Version\": \"<string>\"\n          },\n          \"EvaluateDataQuality\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"CX\"\n            ],\n            \"Ruleset\": \" \",\n            \"Output\": \"PrimaryInput\",\n            \"PublishingOptions\": {\n              \"EvaluationContext\": \"w-QjChT\",\n              \"ResultsS3Prefix\": \"<string>\",\n              \"CloudWatchMetricsEnabled\": \"<boolean>\",\n              \"ResultsPublishingEnabled\": \"<boolean>\"\n            },\n            \"StopJobOnFailureOptions\": {\n              \"StopJobOnFailureTiming\": \"Immediate\"\n            }\n          },\n          \"S3CatalogHudiSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalHudiOptions\": {\n              \"in1f\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogHudiSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalHudiOptions\": {\n              \"nostrud_f1\": \"<string>\",\n              \"Ut0\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3HudiSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"AdditionalHudiOptions\": {\n              \"exercitation_0\": \"<string>\",\n              \"non_e32\": \"<string>\",\n              \"essea\": \"<string>\"\n            },\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3HudiCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"ixQlTTY\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"dolor_26c\": \"<string>\",\n              \"id5a\": \"<string>\",\n              \"dolore5\": \"<string>\"\n            },\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"S3HudiDirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"C\"\n            ],\n            \"Path\": \"<string>\",\n            \"Compression\": \"uncompressed\",\n            \"Format\": \"orc\",\n            \"AdditionalOptions\": {\n              \"id_c2\": \"<string>\"\n            },\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"DirectJDBCSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectionType\": \"oracle\",\n            \"RedshiftTmpDir\": \"<string>\"\n          },\n          \"S3CatalogDeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalDeltaOptions\": {\n              \"qui_b9\": \"<string>\",\n              \"sede\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogDeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalDeltaOptions\": {\n              \"amet_4\": \"<string>\",\n              \"adipisicing_2\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3DeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"AdditionalDeltaOptions\": {\n              \"ametd3\": \"<string>\",\n              \"in_8\": \"<string>\",\n              \"fugiat_37\": \"<string>\"\n            },\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3DeltaCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"b\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"AdditionalOptions\": {\n              \"quis_eed\": \"<string>\",\n              \"tempor12\": \"<string>\",\n              \"et_e\": \"<string>\",\n              \"Excepteur_7\": \"<string>\"\n            },\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\"\n            }\n          },\n          \"S3DeltaDirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"AAWV-_\"\n            ],\n            \"Path\": \"<string>\",\n            \"Compression\": \"uncompressed\",\n            \"Format\": \"csv\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"AdditionalOptions\": {\n              \"eu_1\": \"<string>\"\n            },\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          }\n        },\n        \"do_6\": {\n          \"AthenaConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"SchemaName\": \"<string>\",\n            \"ConnectionTable\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"JDBCConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"FilterPredicate\": \"<string>\",\n              \"PartitionColumn\": \"<string>\",\n              \"LowerBound\": \"<integer>\",\n              \"UpperBound\": \"<integer>\",\n              \"NumPartitions\": \"<integer>\",\n              \"JobBookmarkKeys\": [\n                \"<string>\"\n              ],\n              \"JobBookmarkKeysSortOrder\": \"<string>\",\n              \"DataTypeMapping\": {\n                \"nulla7f\": \"DATE\"\n              }\n            },\n            \"ConnectionTable\": \"<string>\",\n            \"Query\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkConnectorSource\": {\n            \"Name\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"nond\": \"<string>\",\n              \"consectetur_9f\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"RedshiftSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"RedshiftTmpDir\": \"<string>\",\n            \"TmpDirIAMRole\": \"<string>\"\n          },\n          \"S3CatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"PartitionPredicate\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\"\n            }\n          },\n          \"S3CsvSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"Separator\": \"tab\",\n            \"QuoteChar\": \"quillemet\",\n            \"CompressionType\": \"bzip2\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"Escaper\": \"<string>\",\n            \"Multiline\": \"<boolean>\",\n            \"WithHeader\": \"<boolean>\",\n            \"WriteHeader\": \"<boolean>\",\n            \"SkipFirst\": \"<boolean>\",\n            \"OptimizePerformance\": \"<boolean>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3JsonSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"CompressionType\": \"gzip\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"JsonPath\": \"<string>\",\n            \"Multiline\": \"<boolean>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3ParquetSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"CompressionType\": \"snappy\",\n            \"Exclusions\": [\n              \"<string>\"\n            ],\n            \"GroupSize\": \"<string>\",\n            \"GroupFiles\": \"<string>\",\n            \"Recurse\": \"<boolean>\",\n            \"MaxBand\": \"<integer>\",\n            \"MaxFilesInBand\": \"<integer>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"RelationalCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"DynamoDBCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"JDBCConnectorTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"f-L7T9Youk\"\n            ],\n            \"ConnectionName\": \"<string>\",\n            \"ConnectionTable\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"qui5_e\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkConnectorTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"DucB9uG\"\n            ],\n            \"ConnectionName\": \"<string>\",\n            \"ConnectorName\": \"<string>\",\n            \"ConnectionType\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"reprehenderit611\": \"<string>\",\n              \"in3a\": \"<string>\",\n              \"proident_3f\": \"<string>\",\n              \"amet4_5\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"RedshiftTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"RDvPiIXW\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"RedshiftTmpDir\": \"<string>\",\n            \"TmpDirIAMRole\": \"<string>\",\n            \"UpsertRedshiftOptions\": {\n              \"TableLocation\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"UpsertKeys\": [\n                \"<string>\"\n              ]\n            }\n          },\n          \"S3CatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"go\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\"\n            }\n          },\n          \"S3GlueParquetTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"Wi5l9lkn\"\n            ],\n            \"Path\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Compression\": \"lzo\",\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"S3DirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"ZyzK_0\"\n            ],\n            \"Path\": \"<string>\",\n            \"Format\": \"hudi\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Compression\": \"<string>\",\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"ApplyMapping\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"Mapping\": [\n              {\n                \"ToKey\": \"<string>\",\n                \"FromPath\": [\n                  \"<string>\"\n                ],\n                \"FromType\": \"<string>\",\n                \"ToType\": \"<string>\",\n                \"Dropped\": \"<boolean>\",\n                \"Children\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Mappings detected>\",\n                  \"description\": \"<p>Only applicable to nested data structures. If you want to change the parent structure, but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>, but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the <code>FromPath</code> from this structure.</p> <p>For the children part, suppose you have the structure:</p> <p> <code>{ \\\"FromPath\\\": \\\"OuterStructure\\\", \\\"ToKey\\\": \\\"OuterStructure\\\", \\\"ToType\\\": \\\"Struct\\\", \\\"Dropped\\\": false, \\\"Chidlren\\\": [{ \\\"FromPath\\\": \\\"inner\\\", \\\"ToKey\\\": \\\"inner\\\", \\\"ToType\\\": \\\"Double\\\", \\\"Dropped\\\": false, }] }</code> </p> <p>You can specify a <code>Mapping</code> that looks like:</p> <p> <code>{ \\\"FromPath\\\": \\\"OuterStructure\\\", \\\"ToKey\\\": \\\"OuterStructure\\\", \\\"ToType\\\": \\\"Struct\\\", \\\"Dropped\\\": false, \\\"Chidlren\\\": [{ \\\"FromPath\\\": \\\"inner\\\", \\\"ToKey\\\": \\\"inner\\\", \\\"ToType\\\": \\\"Double\\\", \\\"Dropped\\\": false, }] }</code> </p>\"\n                }\n              }\n            ]\n          },\n          \"SelectFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"rOlbAv\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"DropFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"551z\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"RenameField\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"fDY7R8\"\n            ],\n            \"SourcePath\": [\n              \"<string>\"\n            ],\n            \"TargetPath\": [\n              \"<string>\"\n            ]\n          },\n          \"Spigot\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"Path\": \"<string>\",\n            \"Topk\": \"<integer>\",\n            \"Prob\": \"<double>\"\n          },\n          \"Join\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\",\n              \"KMLJ_Ui\"\n            ],\n            \"JoinType\": \"leftsemi\",\n            \"Columns\": [\n              {\n                \"From\": \"<string>\",\n                \"Keys\": [\n                  [\n                    \"<string>\"\n                  ]\n                ]\n              },\n              {\n                \"From\": \"<string>\",\n                \"Keys\": [\n                  [\n                    \"<string>\"\n                  ]\n                ]\n              }\n            ]\n          },\n          \"SplitFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"9Mw\"\n            ],\n            \"Paths\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"SelectFromCollection\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"14pbt\"\n            ],\n            \"Index\": \"<integer>\"\n          },\n          \"FillMissingValues\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"vZCYiqf6\"\n            ],\n            \"ImputedPath\": \"<string>\",\n            \"FilledPath\": \"<string>\"\n          },\n          \"Filter\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"LogicalOperator\": \"AND\",\n            \"Filters\": [\n              {\n                \"Operation\": \"GT\",\n                \"Values\": [\n                  {\n                    \"Type\": \"COLUMNEXTRACTED\",\n                    \"Value\": [\n                      \"<string>\"\n                    ]\n                  }\n                ],\n                \"Negated\": \"<boolean>\"\n              }\n            ]\n          },\n          \"CustomCode\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"1esQJY\"\n            ],\n            \"Code\": \"e\\ty:+\",\n            \"ClassName\": \"<string>\",\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"SparkSQL\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"liwCS\"\n            ],\n            \"SqlQuery\": \"<string>\",\n            \"SqlAliases\": [\n              {\n                \"From\": \"F4lgpt-9P\",\n                \"Alias\": \"<string>\"\n              }\n            ],\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"DirectKinesisSource\": {\n            \"Name\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"EndpointUrl\": \"<string>\",\n              \"StreamName\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingPosition\": \"earliest\",\n              \"MaxFetchTimeInMs\": \"<integer>\",\n              \"MaxFetchRecordsPerShard\": \"<integer>\",\n              \"MaxRecordPerRead\": \"<integer>\",\n              \"AddIdleTimeBetweenReads\": \"<boolean>\",\n              \"IdleTimeBetweenReadsInMs\": \"<integer>\",\n              \"DescribeShardInterval\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxRetryIntervalMs\": \"<integer>\",\n              \"AvoidEmptyBatches\": \"<boolean>\",\n              \"StreamArn\": \"<string>\",\n              \"RoleArn\": \"<string>\",\n              \"RoleSessionName\": \"<string>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"DirectKafkaSource\": {\n            \"Name\": \"<string>\",\n            \"StreamingOptions\": {\n              \"BootstrapServers\": \"<string>\",\n              \"SecurityProtocol\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"TopicName\": \"<string>\",\n              \"Assign\": \"<string>\",\n              \"SubscribePattern\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingOffsets\": \"<string>\",\n              \"EndingOffsets\": \"<string>\",\n              \"PollTimeoutMs\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxOffsetsPerTrigger\": \"<integer>\",\n              \"MinPartitions\": \"<integer>\",\n              \"IncludeHeaders\": \"<boolean>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"CatalogKinesisSource\": {\n            \"Name\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"EndpointUrl\": \"<string>\",\n              \"StreamName\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingPosition\": \"trim_horizon\",\n              \"MaxFetchTimeInMs\": \"<integer>\",\n              \"MaxFetchRecordsPerShard\": \"<integer>\",\n              \"MaxRecordPerRead\": \"<integer>\",\n              \"AddIdleTimeBetweenReads\": \"<boolean>\",\n              \"IdleTimeBetweenReadsInMs\": \"<integer>\",\n              \"DescribeShardInterval\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxRetryIntervalMs\": \"<integer>\",\n              \"AvoidEmptyBatches\": \"<boolean>\",\n              \"StreamArn\": \"<string>\",\n              \"RoleArn\": \"<string>\",\n              \"RoleSessionName\": \"<string>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"CatalogKafkaSource\": {\n            \"Name\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"WindowSize\": \"<integer>\",\n            \"DetectSchema\": \"<boolean>\",\n            \"StreamingOptions\": {\n              \"BootstrapServers\": \"<string>\",\n              \"SecurityProtocol\": \"<string>\",\n              \"ConnectionName\": \"<string>\",\n              \"TopicName\": \"<string>\",\n              \"Assign\": \"<string>\",\n              \"SubscribePattern\": \"<string>\",\n              \"Classification\": \"<string>\",\n              \"Delimiter\": \"<string>\",\n              \"StartingOffsets\": \"<string>\",\n              \"EndingOffsets\": \"<string>\",\n              \"PollTimeoutMs\": \"<integer>\",\n              \"NumRetries\": \"<integer>\",\n              \"RetryIntervalMs\": \"<integer>\",\n              \"MaxOffsetsPerTrigger\": \"<integer>\",\n              \"MinPartitions\": \"<integer>\",\n              \"IncludeHeaders\": \"<boolean>\",\n              \"AddRecordTimestamp\": \"<string>\",\n              \"EmitConsumerLagMetrics\": \"<string>\"\n            },\n            \"DataPreviewOptions\": {\n              \"PollingTime\": \"<integer>\",\n              \"RecordPollingLimit\": \"<integer>\"\n            }\n          },\n          \"DropNullFields\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"-hfRkJv2H5\"\n            ],\n            \"NullCheckBoxList\": {\n              \"IsEmpty\": \"<boolean>\",\n              \"IsNullString\": \"<boolean>\",\n              \"IsNegOne\": \"<boolean>\"\n            },\n            \"NullTextList\": [\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"\",\n                  \"Label\": \"3VmSzP7j\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"4LaHHmPiNU\",\n                  \"Label\": \"d\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"gd1yvU\",\n                  \"Label\": \"bV4T2\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"SbOgr826B\",\n                  \"Label\": \"w-AS2\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"p\",\n                  \"Label\": \"Qdken\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"a\",\n                  \"Label\": \"6rYPNR\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"3zKQC\",\n                  \"Label\": \"2MJrI6Mg\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"cB4Iv\",\n                  \"Label\": \"ZJmv\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"i\",\n                  \"Label\": \"LMON-\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"FqSZ2M\",\n                  \"Label\": \"vpE5jKKDj\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"6v1k593J\",\n                  \"Label\": \"rJZuHI6\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"2fKC-C\",\n                  \"Label\": \"N8Spywj85\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"kDxpAsd\",\n                  \"Label\": \"ZHgFkb\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"1GU\",\n                  \"Label\": \"\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"i\",\n                  \"Label\": \"iom8qWpai\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"x\",\n                  \"Label\": \"xc\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"2\",\n                  \"Label\": \"IWbR\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"oR1rVhvBXX\",\n                  \"Label\": \"pTDGKqyFIQ\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"TvA\",\n                  \"Label\": \"x6SSNFdL\"\n                }\n              },\n              {\n                \"Value\": \"<string>\",\n                \"Datatype\": {\n                  \"Id\": \"WehQV\",\n                  \"Label\": \"or\"\n                }\n              }\n            ]\n          },\n          \"Merge\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"6bLeEbRww\",\n              \"L6A5zbOyN\"\n            ],\n            \"Source\": \"\",\n            \"PrimaryKeys\": [\n              [\n                \"<string>\"\n              ]\n            ]\n          },\n          \"Union\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"I\",\n              \"-xf0KahWs\"\n            ],\n            \"UnionType\": \"ALL\"\n          },\n          \"PIIDetection\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"i\"\n            ],\n            \"PiiType\": \"ColumnMasking\",\n            \"EntityTypesToDetect\": [\n              \"<string>\"\n            ],\n            \"OutputColumnName\": \"<string>\",\n            \"SampleFraction\": \"<double>\",\n            \"ThresholdFraction\": \"<double>\",\n            \"MaskValue\": \"eW\"\n          },\n          \"Aggregate\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"vP4\"\n            ],\n            \"Groups\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"Aggs\": [\n              {\n                \"Column\": [\n                  \"<string>\"\n                ],\n                \"AggFunc\": \"avg\"\n              }\n            ]\n          },\n          \"DropDuplicates\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"xKOX\"\n            ],\n            \"Columns\": [\n              [\n                \"Th\"\n              ]\n            ]\n          },\n          \"GovernedCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"GovernedCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"PartitionPredicate\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\"\n            }\n          },\n          \"MicrosoftSQLServerCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MySQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"OracleSQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"PostgreSQLCatalogSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MicrosoftSQLServerCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"s-ksy2j\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"MySQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"HJ\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"OracleSQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"iyFauH\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"PostgreSQLCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"jOSc\"\n            ],\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\"\n          },\n          \"DynamicTransform\": {\n            \"Name\": \"<string>\",\n            \"TransformName\": \"<string>\",\n            \"Inputs\": [\n              \"0EEnIGmY8y\"\n            ],\n            \"FunctionName\": \"<string>\",\n            \"Path\": \"<string>\",\n            \"Parameters\": [\n              {\n                \"Name\": \"<string>\",\n                \"Type\": \"float\",\n                \"ValidationRule\": \"<string>\",\n                \"ValidationMessage\": \"<string>\",\n                \"Value\": [\n                  \"<string>\"\n                ],\n                \"ListType\": \"bool\",\n                \"IsOptional\": \"<boolean>\"\n              }\n            ],\n            \"Version\": \"<string>\"\n          },\n          \"EvaluateDataQuality\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"\"\n            ],\n            \"Ruleset\": \" \",\n            \"Output\": \"PrimaryInput\",\n            \"PublishingOptions\": {\n              \"EvaluationContext\": \"HXBzTgkT5\",\n              \"ResultsS3Prefix\": \"<string>\",\n              \"CloudWatchMetricsEnabled\": \"<boolean>\",\n              \"ResultsPublishingEnabled\": \"<boolean>\"\n            },\n            \"StopJobOnFailureOptions\": {\n              \"StopJobOnFailureTiming\": \"Immediate\"\n            }\n          },\n          \"S3CatalogHudiSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalHudiOptions\": {\n              \"laborum1c_\": \"<string>\",\n              \"sit_c4f\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogHudiSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalHudiOptions\": {\n              \"magna52\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3HudiSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"AdditionalHudiOptions\": {\n              \"dolore_f9b\": \"<string>\",\n              \"laborum3d\": \"<string>\",\n              \"occaecatd7a\": \"<string>\"\n            },\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3HudiCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"Gn\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"AdditionalOptions\": {\n              \"exf1_\": \"<string>\"\n            },\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"S3HudiDirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"U\"\n            ],\n            \"Path\": \"<string>\",\n            \"Compression\": \"uncompressed\",\n            \"Format\": \"delta\",\n            \"AdditionalOptions\": {\n              \"ex_84\": \"<string>\",\n              \"est_b\": \"<string>\",\n              \"cillumb\": \"<string>\"\n            },\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          },\n          \"DirectJDBCSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"ConnectionName\": \"<string>\",\n            \"ConnectionType\": \"sqlserver\",\n            \"RedshiftTmpDir\": \"<string>\"\n          },\n          \"S3CatalogDeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalDeltaOptions\": {\n              \"minim_1\": \"<string>\",\n              \"commodofa\": \"<string>\",\n              \"reprehenderit9\": \"<string>\",\n              \"esse0b\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"CatalogDeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"Table\": \"<string>\",\n            \"AdditionalDeltaOptions\": {\n              \"nostrud_2\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3DeltaSource\": {\n            \"Name\": \"<string>\",\n            \"Paths\": [\n              \"<string>\"\n            ],\n            \"AdditionalDeltaOptions\": {\n              \"do_f\": \"<string>\",\n              \"deserunt_a98\": \"<string>\",\n              \"consectetur_34\": \"<string>\"\n            },\n            \"AdditionalOptions\": {\n              \"BoundedSize\": \"<integer>\",\n              \"BoundedFiles\": \"<integer>\",\n              \"EnableSamplePath\": \"<boolean>\",\n              \"SamplePath\": \"<string>\"\n            },\n            \"OutputSchemas\": [\n              {\n                \"Columns\": [\n                  {\n                    \"Name\": \"<string>\",\n                    \"Type\": \"<string>\"\n                  }\n                ]\n              }\n            ]\n          },\n          \"S3DeltaCatalogTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"uJae\"\n            ],\n            \"Table\": \"<string>\",\n            \"Database\": \"<string>\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"AdditionalOptions\": {\n              \"ad_18\": \"<string>\"\n            },\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"UPDATE_IN_DATABASE\"\n            }\n          },\n          \"S3DeltaDirectTarget\": {\n            \"Name\": \"<string>\",\n            \"Inputs\": [\n              \"NMKD_\"\n            ],\n            \"Path\": \"<string>\",\n            \"Compression\": \"uncompressed\",\n            \"Format\": \"json\",\n            \"PartitionKeys\": [\n              [\n                \"<string>\"\n              ]\n            ],\n            \"AdditionalOptions\": {\n              \"incididunt00b\": \"<string>\",\n              \"magna4d\": \"<string>\"\n            },\n            \"SchemaChangePolicy\": {\n              \"EnableUpdateCatalog\": \"<boolean>\",\n              \"UpdateBehavior\": \"LOG\",\n              \"Table\": \"<string>\",\n              \"Database\": \"<string>\"\n            }\n          }\n        }\n      },\n      \"ExecutionClass\": \"STANDARD\",\n      \"SourceControlDetails\": {\n        \"Provider\": \"GITHUB\",\n        \"Repository\": \"<string>\",\n        \"Owner\": \"<string>\",\n        \"Branch\": \"<string>\",\n        \"Folder\": \"<string>\",\n        \"LastCommitId\": \"<string>\",\n        \"AuthStrategy\": \"PERSONAL_ACCESS_TOKEN\",\n        \"AuthToken\": \"<string>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:29:43.000Z",
+              "updatedAt": "2026-07-28T10:29:43.000Z",
+              "uid": "35240-122bdebe-2db7-46e2-a4da-ae6265c7e806"
+            },
+            {
+              "id": "f82d16af-5d8a-478a-801c-6aa73c45b918",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetJobs"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetJobs"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:43.000Z",
+              "updatedAt": "2026-07-28T10:29:43.000Z",
+              "uid": "35240-f82d16af-5d8a-478a-801c-6aa73c45b918"
+            },
+            {
+              "id": "69f20116-ef56-412a-98a1-494fff61dc1a",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetJobs"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetJobs"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:43.000Z",
+              "updatedAt": "2026-07-28T10:29:43.000Z",
+              "uid": "35240-69f20116-ef56-412a-98a1-494fff61dc1a"
+            },
+            {
+              "id": "a0009b59-02f3-40cf-a364-8435c6ea285c",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetJobs"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetJobs"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:43.000Z",
+              "updatedAt": "2026-07-28T10:29:43.000Z",
+              "uid": "35240-a0009b59-02f3-40cf-a364-8435c6ea285c"
+            },
+            {
+              "id": "782edcda-2b9e-4d33-a988-71c47127ba6e",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetJobs"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetJobs",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetJobs"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:43.000Z",
+              "updatedAt": "2026-07-28T10:29:43.000Z",
+              "uid": "35240-782edcda-2b9e-4d33-a988-71c47127ba6e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:29:43.000Z",
+          "updatedAt": "2026-07-28T10:29:43.000Z",
+          "uid": "35240-0346abe7-70ce-434e-bd95-2bc933df6458"
+        }
+      ],
+      "id": "f213d4ad-ab51-42ba-b80c-2fd8c1160700",
+      "createdAt": "2026-07-28T10:29:43.000Z",
+      "updatedAt": "2026-07-28T10:29:43.000Z",
+      "uid": "35240-f213d4ad-ab51-42ba-b80c-2fd8c1160700"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

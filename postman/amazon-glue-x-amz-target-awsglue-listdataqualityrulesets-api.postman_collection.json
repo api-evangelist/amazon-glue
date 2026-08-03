@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "8547fa09-7e9b-4a5a-929b-79b123426728",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListDataQualityRulesets API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:45.000Z",
+    "updatedAt": "2026-07-28T10:32:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8547fa09-7e9b-4a5a-929b-79b123426728"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+      "item": [
+        {
+          "name": "Amazon Glue List Data Quality Rulesets",
+          "id": "c3489d3c-bc65-43c9-b7af-c0453dfcbc23",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.ListDataQualityRulesets"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+            },
+            "description": "Returns a paginated list of rulesets for the specified list of Glue tables."
+          },
+          "response": [
+            {
+              "id": "512f1935-1861-4eac-890f-55a115311ad0",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityRulesets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Rulesets\": [\n    {\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"TargetTable\": {\n        \"TableName\": \"<string>\",\n        \"DatabaseName\": \"<string>\"\n      },\n      \"RecommendationRunId\": \"<string>\",\n      \"RuleCount\": \"<integer>\"\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"TargetTable\": {\n        \"TableName\": \"<string>\",\n        \"DatabaseName\": \"<string>\"\n      },\n      \"RecommendationRunId\": \"<string>\",\n      \"RuleCount\": \"<integer>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:46.000Z",
+              "updatedAt": "2026-07-28T10:32:46.000Z",
+              "uid": "35240-512f1935-1861-4eac-890f-55a115311ad0"
+            },
+            {
+              "id": "c4417d13-f35e-412a-b421-08d7cc8cd646",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityRulesets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:46.000Z",
+              "updatedAt": "2026-07-28T10:32:46.000Z",
+              "uid": "35240-c4417d13-f35e-412a-b421-08d7cc8cd646"
+            },
+            {
+              "id": "d5dddb47-dcd3-47f8-8995-511d03595447",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityRulesets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:46.000Z",
+              "updatedAt": "2026-07-28T10:32:46.000Z",
+              "uid": "35240-d5dddb47-dcd3-47f8-8995-511d03595447"
+            },
+            {
+              "id": "a9b9f566-4474-4db4-b549-713548588d92",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityRulesets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:46.000Z",
+              "updatedAt": "2026-07-28T10:32:46.000Z",
+              "uid": "35240-a9b9f566-4474-4db4-b549-713548588d92"
+            },
+            {
+              "id": "7834cfa1-a9bb-4b99-82a1-8cf27e6be7bd",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityRulesets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Filter\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"CreatedBefore\": \"<dateTime>\",\n    \"CreatedAfter\": \"<dateTime>\",\n    \"LastModifiedBefore\": \"<dateTime>\",\n    \"LastModifiedAfter\": \"<dateTime>\",\n    \"TargetTable\": {\n      \"TableName\": \"<string>\",\n      \"DatabaseName\": \"<string>\"\n    }\n  },\n  \"Tags\": {\n    \"nulla_62\": \"<string>\",\n    \"Ut_9\": \"<string>\",\n    \"occaecat_0e\": \"<string>\",\n    \"ea_05\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"ea877\": \"<string>\",\n    \"dolor__\": \"<string>\",\n    \"aliquip3\": \"<string>\",\n    \"consequat_162\": \"<string>\",\n    \"aliqua__79\": \"<string>\",\n    \"ipsum_f\": \"<string>\",\n    \"do_528\": \"<string>\",\n    \"ut3b\": \"<string>\",\n    \"fugiat_2dc\": \"<string>\",\n    \"veniam_\": \"<string>\",\n    \"pariatur_86\": \"<string>\",\n    \"esse3\": \"<string>\",\n    \"minim26\": \"<string>\",\n    \"occaecat_2\": \"<string>\",\n    \"do_8\": \"<string>\",\n    \"nisia8\": \"<string>\",\n    \"in_c_b\": \"<string>\",\n    \"Excepteur1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityRulesets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityRulesets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:46.000Z",
+              "updatedAt": "2026-07-28T10:32:46.000Z",
+              "uid": "35240-7834cfa1-a9bb-4b99-82a1-8cf27e6be7bd"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:46.000Z",
+          "updatedAt": "2026-07-28T10:32:46.000Z",
+          "uid": "35240-c3489d3c-bc65-43c9-b7af-c0453dfcbc23"
+        }
+      ],
+      "id": "a47fa494-133e-4e99-8280-ecde1fc4321e",
+      "createdAt": "2026-07-28T10:32:46.000Z",
+      "updatedAt": "2026-07-28T10:32:46.000Z",
+      "uid": "35240-a47fa494-133e-4e99-8280-ecde1fc4321e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,926 @@
+{
+  "info": {
+    "_postman_id": "3216222f-1653-42e2-b11c-dce81852a0f4",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUnfilteredTableMetadata API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:40.000Z",
+    "updatedAt": "2026-07-28T10:31:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3216222f-1653-42e2-b11c-dce81852a0f4"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+      "item": [
+        {
+          "name": "Amazon Glue Get Unfiltered Table Metadata",
+          "id": "a8a6fe22-af8a-4c3d-b6bb-03144adc3e61",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetUnfilteredTableMetadata"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+            },
+            "description": "<p>Retrieves table metadata from the Data Catalog that contains unfiltered metadata.</p> <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.</p>"
+          },
+          "response": [
+            {
+              "id": "dcc4c9f8-b68c-41f7-8575-be560acd791f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Table\": {\n    \"Name\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"Owner\": \"<string>\",\n    \"CreateTime\": \"<dateTime>\",\n    \"UpdateTime\": \"<dateTime>\",\n    \"LastAccessTime\": \"<dateTime>\",\n    \"LastAnalyzedTime\": \"<dateTime>\",\n    \"Retention\": \"<integer>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"in_\": \"<string>\",\n            \"ex_367\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"fugiat_0\": \"<string>\",\n            \"proidente\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"sinta7\": \"<string>\",\n          \"nisi5ba\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"commodo593\": \"<string>\",\n        \"laborum8\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et74\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws-cn:glue:\",\n          \"SchemaName\": \"EcYuv\",\n          \"RegistryName\": \"F\"\n        },\n        \"SchemaVersionId\": \"43172788-13a2-1230-66d7-7dbfaa766689\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"PartitionKeys\": [\n      {\n        \"Name\": \"<string>\",\n        \"Type\": \"<string>\",\n        \"Comment\": \"<string>\",\n        \"Parameters\": {\n          \"ut1_\": \"<string>\",\n          \"occaecat_b\": \"<string>\"\n        }\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Type\": \"<string>\",\n        \"Comment\": \"<string>\",\n        \"Parameters\": {\n          \"velit58\": \"<string>\"\n        }\n      }\n    ],\n    \"ViewOriginalText\": \"<string>\",\n    \"ViewExpandedText\": \"<string>\",\n    \"TableType\": \"<string>\",\n    \"Parameters\": {\n      \"et11\": \"<string>\",\n      \"culpa__27\": \"<string>\"\n    },\n    \"CreatedBy\": \"<string>\",\n    \"IsRegisteredWithLakeFormation\": \"<boolean>\",\n    \"TargetTable\": {\n      \"CatalogId\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"Name\": \"<string>\"\n    },\n    \"CatalogId\": \"<string>\",\n    \"VersionId\": \"<string>\",\n    \"FederatedTable\": {\n      \"Identifier\": \"<string>\",\n      \"DatabaseIdentifier\": \"<string>\",\n      \"ConnectionName\": \"<string>\"\n    }\n  },\n  \"AuthorizedColumns\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"IsRegisteredWithLakeFormation\": \"<boolean>\",\n  \"CellFilters\": [\n    {\n      \"ColumnName\": \"<string>\",\n      \"RowFilterExpression\": \"<string>\"\n    },\n    {\n      \"ColumnName\": \"<string>\",\n      \"RowFilterExpression\": \"<string>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-dcc4c9f8-b68c-41f7-8575-be560acd791f"
+            },
+            {
+              "id": "4b0e877b-3810-4519-a2c1-b466a7316518",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-4b0e877b-3810-4519-a2c1-b466a7316518"
+            },
+            {
+              "id": "fcec89f2-5a45-426a-b80a-b703c91cad94",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-fcec89f2-5a45-426a-b80a-b703c91cad94"
+            },
+            {
+              "id": "fb0a0cde-a788-44dd-b56e-f48c32e5c308",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-fb0a0cde-a788-44dd-b56e-f48c32e5c308"
+            },
+            {
+              "id": "71c66c79-748f-41c8-9cb3-387d541a31a6",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-71c66c79-748f-41c8-9cb3-387d541a31a6"
+            },
+            {
+              "id": "629dd173-8fc5-47f0-9562-9a7baed15c57",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-629dd173-8fc5-47f0-9562-9a7baed15c57"
+            },
+            {
+              "id": "f42df86f-264e-4d5e-ab43-5cd9550688b5",
+              "name": "PermissionTypeMismatchException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-f42df86f-264e-4d5e-ab43-5cd9550688b5"
+            },
+            {
+              "id": "0e512263-439c-4e83-af0f-ab00325004eb",
+              "name": "FederationSourceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-0e512263-439c-4e83-af0f-ab00325004eb"
+            },
+            {
+              "id": "9816a2ba-da9c-4c77-9652-d42ce4ed101f",
+              "name": "FederationSourceRetryableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredTableMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredTableMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:40.000Z",
+              "updatedAt": "2026-07-28T10:31:40.000Z",
+              "uid": "35240-9816a2ba-da9c-4c77-9652-d42ce4ed101f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:31:40.000Z",
+          "updatedAt": "2026-07-28T10:31:40.000Z",
+          "uid": "35240-a8a6fe22-af8a-4c3d-b6bb-03144adc3e61"
+        }
+      ],
+      "id": "9d3221c1-f8c6-4d4a-8cce-6ac4e717f08b",
+      "createdAt": "2026-07-28T10:31:40.000Z",
+      "updatedAt": "2026-07-28T10:31:40.000Z",
+      "uid": "35240-9d3221c1-f8c6-4d4a-8cce-6ac4e717f08b"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

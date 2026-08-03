@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "9a2f433a-0f1d-4944-a4cc-10809e62d3d0",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetTriggers API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:37.000Z",
+    "updatedAt": "2026-07-28T10:31:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9a2f433a-0f1d-4944-a4cc-10809e62d3d0"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetTriggers",
+      "item": [
+        {
+          "name": "Amazon Glue Get Triggers",
+          "id": "301eaa17-e78f-4a61-848a-39633307a151",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetTriggers"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+            },
+            "description": "Gets all the triggers associated with a job."
+          },
+          "response": [
+            {
+              "id": "e2a7a09b-cb22-4a85-8ea5-faec9bd21313",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetTriggers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Triggers\": [\n    {\n      \"Name\": \"<string>\",\n      \"WorkflowName\": \"<string>\",\n      \"Id\": \"<string>\",\n      \"Type\": \"CONDITIONAL\",\n      \"State\": \"DEACTIVATING\",\n      \"Description\": \"<string>\",\n      \"Schedule\": \"<string>\",\n      \"Actions\": [\n        {\n          \"JobName\": \"<string>\",\n          \"Arguments\": {\n            \"do_a\": \"<string>\",\n            \"deseruntb5\": \"<string>\",\n            \"irure_738\": \"<string>\"\n          },\n          \"Timeout\": \"<integer>\",\n          \"SecurityConfiguration\": \"<string>\",\n          \"NotificationProperty\": {\n            \"NotifyDelayAfter\": \"<integer>\"\n          },\n          \"CrawlerName\": \"<string>\"\n        },\n        {\n          \"JobName\": \"<string>\",\n          \"Arguments\": {\n            \"ullamco4e\": \"<string>\"\n          },\n          \"Timeout\": \"<integer>\",\n          \"SecurityConfiguration\": \"<string>\",\n          \"NotificationProperty\": {\n            \"NotifyDelayAfter\": \"<integer>\"\n          },\n          \"CrawlerName\": \"<string>\"\n        }\n      ],\n      \"Predicate\": {\n        \"Logical\": \"AND\",\n        \"Conditions\": [\n          {\n            \"LogicalOperator\": \"EQUALS\",\n            \"JobName\": \"<string>\",\n            \"State\": \"SUCCEEDED\",\n            \"CrawlerName\": \"<string>\",\n            \"CrawlState\": \"SUCCEEDED\"\n          },\n          {\n            \"LogicalOperator\": \"EQUALS\",\n            \"JobName\": \"<string>\",\n            \"State\": \"SUCCEEDED\",\n            \"CrawlerName\": \"<string>\",\n            \"CrawlState\": \"FAILED\"\n          }\n        ]\n      },\n      \"EventBatchingCondition\": {\n        \"BatchSize\": \"<integer>\",\n        \"BatchWindow\": \"<integer>\"\n      }\n    },\n    {\n      \"Name\": \"<string>\",\n      \"WorkflowName\": \"<string>\",\n      \"Id\": \"<string>\",\n      \"Type\": \"EVENT\",\n      \"State\": \"DELETING\",\n      \"Description\": \"<string>\",\n      \"Schedule\": \"<string>\",\n      \"Actions\": [\n        {\n          \"JobName\": \"<string>\",\n          \"Arguments\": {\n            \"enim5_7\": \"<string>\",\n            \"ullamco_9\": \"<string>\"\n          },\n          \"Timeout\": \"<integer>\",\n          \"SecurityConfiguration\": \"<string>\",\n          \"NotificationProperty\": {\n            \"NotifyDelayAfter\": \"<integer>\"\n          },\n          \"CrawlerName\": \"<string>\"\n        },\n        {\n          \"JobName\": \"<string>\",\n          \"Arguments\": {\n            \"id_cf\": \"<string>\"\n          },\n          \"Timeout\": \"<integer>\",\n          \"SecurityConfiguration\": \"<string>\",\n          \"NotificationProperty\": {\n            \"NotifyDelayAfter\": \"<integer>\"\n          },\n          \"CrawlerName\": \"<string>\"\n        }\n      ],\n      \"Predicate\": {\n        \"Logical\": \"AND\",\n        \"Conditions\": [\n          {\n            \"LogicalOperator\": \"EQUALS\",\n            \"JobName\": \"<string>\",\n            \"State\": \"SUCCEEDED\",\n            \"CrawlerName\": \"<string>\",\n            \"CrawlState\": \"ERROR\"\n          },\n          {\n            \"LogicalOperator\": \"EQUALS\",\n            \"JobName\": \"<string>\",\n            \"State\": \"SUCCEEDED\",\n            \"CrawlerName\": \"<string>\",\n            \"CrawlState\": \"ERROR\"\n          }\n        ]\n      },\n      \"EventBatchingCondition\": {\n        \"BatchSize\": \"<integer>\",\n        \"BatchWindow\": \"<integer>\"\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:31:37.000Z",
+              "updatedAt": "2026-07-28T10:31:37.000Z",
+              "uid": "35240-e2a7a09b-cb22-4a85-8ea5-faec9bd21313"
+            },
+            {
+              "id": "c84d28bc-30f8-4825-b4d0-4ec926d0a7b4",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetTriggers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:37.000Z",
+              "updatedAt": "2026-07-28T10:31:37.000Z",
+              "uid": "35240-c84d28bc-30f8-4825-b4d0-4ec926d0a7b4"
+            },
+            {
+              "id": "4b4d373c-cbe5-4031-880b-fc3016c4ff69",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetTriggers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:37.000Z",
+              "updatedAt": "2026-07-28T10:31:37.000Z",
+              "uid": "35240-4b4d373c-cbe5-4031-880b-fc3016c4ff69"
+            },
+            {
+              "id": "40d06ec7-9594-48e0-8b7b-fbed62f6673a",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetTriggers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:37.000Z",
+              "updatedAt": "2026-07-28T10:31:37.000Z",
+              "uid": "35240-40d06ec7-9594-48e0-8b7b-fbed62f6673a"
+            },
+            {
+              "id": "8d3d262e-3a4c-4943-b779-58626cae6b05",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetTriggers"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"DependentJobName\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetTriggers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetTriggers"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:37.000Z",
+              "updatedAt": "2026-07-28T10:31:37.000Z",
+              "uid": "35240-8d3d262e-3a4c-4943-b779-58626cae6b05"
+            }
+          ],
+          "createdAt": "2026-07-28T10:31:37.000Z",
+          "updatedAt": "2026-07-28T10:31:37.000Z",
+          "uid": "35240-301eaa17-e78f-4a61-848a-39633307a151"
+        }
+      ],
+      "id": "4cd6aa0b-909b-4d36-90a2-cfb527a3a8f8",
+      "createdAt": "2026-07-28T10:31:37.000Z",
+      "updatedAt": "2026-07-28T10:31:37.000Z",
+      "uid": "35240-4cd6aa0b-909b-4d36-90a2-cfb527a3a8f8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

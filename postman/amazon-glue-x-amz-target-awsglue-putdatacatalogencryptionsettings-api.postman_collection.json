@@ -1,0 +1,486 @@
+{
+  "info": {
+    "_postman_id": "394e1826-359b-4cc0-a3d7-73c7901249f8",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.PutDataCatalogEncryptionSettings API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:56.000Z",
+    "updatedAt": "2026-07-28T10:32:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-394e1826-359b-4cc0-a3d7-73c7901249f8"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+      "item": [
+        {
+          "name": "Amazon Glue Put Data Catalog Encryption Settings",
+          "id": "91cda4e9-5a18-44c5-af25-b219a23450a8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.PutDataCatalogEncryptionSettings"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DataCatalogEncryptionSettings\": {\n    \"EncryptionAtRest\": {\n      \"CatalogEncryptionMode\": \"DISABLED\",\n      \"SseAwsKmsKeyId\": \"<string>\"\n    },\n    \"ConnectionPasswordEncryption\": {\n      \"ReturnConnectionPasswordEncrypted\": \"<boolean>\",\n      \"AwsKmsKeyId\": \"<string>\"\n    }\n  },\n  \"CatalogId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings"
+            },
+            "description": "Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter."
+          },
+          "response": [
+            {
+              "id": "1b5f4f24-fdb4-4ec5-93cc-95d588aceb5d",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.PutDataCatalogEncryptionSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataCatalogEncryptionSettings\": {\n    \"EncryptionAtRest\": {\n      \"CatalogEncryptionMode\": \"DISABLED\",\n      \"SseAwsKmsKeyId\": \"<string>\"\n    },\n    \"ConnectionPasswordEncryption\": {\n      \"ReturnConnectionPasswordEncrypted\": \"<boolean>\",\n      \"AwsKmsKeyId\": \"<string>\"\n    }\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:57.000Z",
+              "updatedAt": "2026-07-28T10:32:57.000Z",
+              "uid": "35240-1b5f4f24-fdb4-4ec5-93cc-95d588aceb5d"
+            },
+            {
+              "id": "4bd69a04-3fd7-4796-b567-3c7deea7ca2e",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.PutDataCatalogEncryptionSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataCatalogEncryptionSettings\": {\n    \"EncryptionAtRest\": {\n      \"CatalogEncryptionMode\": \"DISABLED\",\n      \"SseAwsKmsKeyId\": \"<string>\"\n    },\n    \"ConnectionPasswordEncryption\": {\n      \"ReturnConnectionPasswordEncrypted\": \"<boolean>\",\n      \"AwsKmsKeyId\": \"<string>\"\n    }\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:57.000Z",
+              "updatedAt": "2026-07-28T10:32:57.000Z",
+              "uid": "35240-4bd69a04-3fd7-4796-b567-3c7deea7ca2e"
+            },
+            {
+              "id": "8d1cf87e-0fdf-4e8b-a047-899f31bc2e41",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.PutDataCatalogEncryptionSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataCatalogEncryptionSettings\": {\n    \"EncryptionAtRest\": {\n      \"CatalogEncryptionMode\": \"DISABLED\",\n      \"SseAwsKmsKeyId\": \"<string>\"\n    },\n    \"ConnectionPasswordEncryption\": {\n      \"ReturnConnectionPasswordEncrypted\": \"<boolean>\",\n      \"AwsKmsKeyId\": \"<string>\"\n    }\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:57.000Z",
+              "updatedAt": "2026-07-28T10:32:57.000Z",
+              "uid": "35240-8d1cf87e-0fdf-4e8b-a047-899f31bc2e41"
+            },
+            {
+              "id": "66c35423-d767-4c0f-a882-35a8b0de2742",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.PutDataCatalogEncryptionSettings"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataCatalogEncryptionSettings\": {\n    \"EncryptionAtRest\": {\n      \"CatalogEncryptionMode\": \"DISABLED\",\n      \"SseAwsKmsKeyId\": \"<string>\"\n    },\n    \"ConnectionPasswordEncryption\": {\n      \"ReturnConnectionPasswordEncrypted\": \"<boolean>\",\n      \"AwsKmsKeyId\": \"<string>\"\n    }\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.PutDataCatalogEncryptionSettings"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:57.000Z",
+              "updatedAt": "2026-07-28T10:32:57.000Z",
+              "uid": "35240-66c35423-d767-4c0f-a882-35a8b0de2742"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:56.000Z",
+          "updatedAt": "2026-07-28T10:32:56.000Z",
+          "uid": "35240-91cda4e9-5a18-44c5-af25-b219a23450a8"
+        }
+      ],
+      "id": "7082eb72-9dee-46bd-a642-270f51e842a6",
+      "createdAt": "2026-07-28T10:32:56.000Z",
+      "updatedAt": "2026-07-28T10:32:56.000Z",
+      "uid": "35240-7082eb72-9dee-46bd-a642-270f51e842a6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

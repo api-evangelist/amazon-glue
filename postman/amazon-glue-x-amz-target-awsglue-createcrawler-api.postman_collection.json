@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "97b6a0aa-b492-434e-a138-eed8a38402f1",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateCrawler API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:36.000Z",
+    "updatedAt": "2026-07-28T10:27:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-97b6a0aa-b492-434e-a138-eed8a38402f1"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.CreateCrawler",
+      "item": [
+        {
+          "name": "Amazon Glue Create Crawler",
+          "id": "f766d761-862a-4b13-8c92-7a3d5bfaf93d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.CreateCrawler"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+            },
+            "description": "Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field."
+          },
+          "response": [
+            {
+              "id": "ee583efe-0377-423e-8a28-7922f9212c04",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:37.000Z",
+              "updatedAt": "2026-07-28T10:27:37.000Z",
+              "uid": "35240-ee583efe-0377-423e-8a28-7922f9212c04"
+            },
+            {
+              "id": "24f32cfa-e8fc-4acf-a78d-598d2e03d4fd",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:37.000Z",
+              "updatedAt": "2026-07-28T10:27:37.000Z",
+              "uid": "35240-24f32cfa-e8fc-4acf-a78d-598d2e03d4fd"
+            },
+            {
+              "id": "deebd3da-160f-4147-b018-297ef96f07d9",
+              "name": "AlreadyExistsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:37.000Z",
+              "updatedAt": "2026-07-28T10:27:37.000Z",
+              "uid": "35240-deebd3da-160f-4147-b018-297ef96f07d9"
+            },
+            {
+              "id": "426e3322-b372-47d7-8456-f309a2a19a98",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:37.000Z",
+              "updatedAt": "2026-07-28T10:27:37.000Z",
+              "uid": "35240-426e3322-b372-47d7-8456-f309a2a19a98"
+            },
+            {
+              "id": "2ff5eea4-96a5-451c-ad69-e3f8827fa2fa",
+              "name": "ResourceNumberLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Targets\": {\n    \"S3Targets\": [\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"SampleSize\": \"<integer>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"JdbcTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"RAWTYPES\"\n        ]\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"Exclusions\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"EnableAdditionalMetadata\": [\n          \"COMMENTS\",\n          \"COMMENTS\"\n        ]\n      }\n    ],\n    \"MongoDBTargets\": [\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      },\n      {\n        \"ConnectionName\": \"<string>\",\n        \"Path\": \"<string>\",\n        \"ScanAll\": \"<boolean>\"\n      }\n    ],\n    \"DynamoDBTargets\": [\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      },\n      {\n        \"Path\": \"<string>\",\n        \"scanAll\": \"<boolean>\",\n        \"scanRate\": \"<double>\"\n      }\n    ],\n    \"CatalogTargets\": [\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      },\n      {\n        \"DatabaseName\": \"<string>\",\n        \"Tables\": [\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"EventQueueArn\": \"<string>\",\n        \"DlqEventQueueArn\": \"<string>\"\n      }\n    ],\n    \"DeltaTargets\": [\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      },\n      {\n        \"DeltaTables\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"ConnectionName\": \"<string>\",\n        \"WriteManifest\": \"<boolean>\",\n        \"CreateNativeDeltaTable\": \"<boolean>\"\n      }\n    ]\n  },\n  \"DatabaseName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Schedule\": \"<string>\",\n  \"Classifiers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"TablePrefix\": \"<string>\",\n  \"SchemaChangePolicy\": {\n    \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n    \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n  },\n  \"RecrawlPolicy\": {\n    \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n  },\n  \"LineageConfiguration\": {\n    \"CrawlerLineageSettings\": \"DISABLE\"\n  },\n  \"LakeFormationConfiguration\": {\n    \"UseLakeFormationCredentials\": \"<boolean>\",\n    \"AccountId\": \"<string>\"\n  },\n  \"Configuration\": \"<string>\",\n  \"CrawlerSecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"est_1\": \"<string>\",\n    \"ipsum_0\": \"<string>\",\n    \"adipisicing0\": \"<string>\",\n    \"irure2f\": \"<string>\",\n    \"aute_72\": \"<string>\",\n    \"fugiat_77\": \"<string>\",\n    \"eu4\": \"<string>\",\n    \"deserunta\": \"<string>\",\n    \"deserunt_c\": \"<string>\",\n    \"do44\": \"<string>\",\n    \"est_3d\": \"<string>\",\n    \"mollit_5\": \"<string>\",\n    \"tempor__\": \"<string>\",\n    \"quis980\": \"<string>\",\n    \"cupidatat_98f\": \"<string>\",\n    \"enim748\": \"<string>\",\n    \"commodo245\": \"<string>\",\n    \"sitaa4\": \"<string>\",\n    \"reprehenderit_8\": \"<string>\",\n    \"aute7a\": \"<string>\",\n    \"exercitationa\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:37.000Z",
+              "updatedAt": "2026-07-28T10:27:37.000Z",
+              "uid": "35240-2ff5eea4-96a5-451c-ad69-e3f8827fa2fa"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:37.000Z",
+          "updatedAt": "2026-07-28T10:27:37.000Z",
+          "uid": "35240-f766d761-862a-4b13-8c92-7a3d5bfaf93d"
+        }
+      ],
+      "id": "198ca812-b370-4355-9256-be689fdc3ba1",
+      "createdAt": "2026-07-28T10:27:37.000Z",
+      "updatedAt": "2026-07-28T10:27:37.000Z",
+      "uid": "35240-198ca812-b370-4355-9256-be689fdc3ba1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

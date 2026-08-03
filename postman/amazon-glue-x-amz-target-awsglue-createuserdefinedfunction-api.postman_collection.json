@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "b5ba96f7-27bd-437a-893b-a9a4026e29f6",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateUserDefinedFunction API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:53.000Z",
+    "updatedAt": "2026-07-28T10:27:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b5ba96f7-27bd-437a-893b-a9a4026e29f6"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+      "item": [
+        {
+          "name": "Amazon Glue Create User Defined Function",
+          "id": "b41defe9-18eb-4306-829a-56aa150266b6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.CreateUserDefinedFunction"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+            },
+            "description": "Creates a new function definition in the Data Catalog."
+          },
+          "response": [
+            {
+              "id": "108d4017-dd05-48b8-8ba5-4d674f8e5e9c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-108d4017-dd05-48b8-8ba5-4d674f8e5e9c"
+            },
+            {
+              "id": "bcf55af0-8cb6-4dfb-b68b-00b45c700fad",
+              "name": "AlreadyExistsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-bcf55af0-8cb6-4dfb-b68b-00b45c700fad"
+            },
+            {
+              "id": "c7d33f8a-5f59-4177-ab8c-e5e5e71b4887",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-c7d33f8a-5f59-4177-ab8c-e5e5e71b4887"
+            },
+            {
+              "id": "f856dd0d-7c50-49e6-85a0-06c38e289392",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-f856dd0d-7c50-49e6-85a0-06c38e289392"
+            },
+            {
+              "id": "b96382ca-2b34-479d-9b62-06503834a11d",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-b96382ca-2b34-479d-9b62-06503834a11d"
+            },
+            {
+              "id": "c8726428-fa79-4f64-a18f-5f040bb75075",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-c8726428-fa79-4f64-a18f-5f040bb75075"
+            },
+            {
+              "id": "580a58fa-ace4-4b1c-b868-0f4aceed595d",
+              "name": "ResourceNumberLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-580a58fa-ace4-4b1c-b868-0f4aceed595d"
+            },
+            {
+              "id": "ab34312b-b26c-4379-b840-874e8884eb45",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateUserDefinedFunction"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"FunctionInput\": {\n    \"FunctionName\": \"<string>\",\n    \"ClassName\": \"<string>\",\n    \"OwnerName\": \"<string>\",\n    \"OwnerType\": \"ROLE\",\n    \"ResourceUris\": [\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"ARCHIVE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"JAR\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      },\n      {\n        \"ResourceType\": \"FILE\",\n        \"Uri\": \"<string>\"\n      }\n    ]\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateUserDefinedFunction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateUserDefinedFunction"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:53.000Z",
+              "updatedAt": "2026-07-28T10:27:53.000Z",
+              "uid": "35240-ab34312b-b26c-4379-b840-874e8884eb45"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:53.000Z",
+          "updatedAt": "2026-07-28T10:27:53.000Z",
+          "uid": "35240-b41defe9-18eb-4306-829a-56aa150266b6"
+        }
+      ],
+      "id": "fc490b44-9cfe-401c-b186-52f45ad958c7",
+      "createdAt": "2026-07-28T10:27:53.000Z",
+      "updatedAt": "2026-07-28T10:27:53.000Z",
+      "uid": "35240-fc490b44-9cfe-401c-b186-52f45ad958c7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

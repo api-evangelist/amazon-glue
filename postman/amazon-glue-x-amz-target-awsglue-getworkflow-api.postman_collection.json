@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "55700c10-caab-42d1-a2b8-6e9884391523",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetWorkflow API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:19.000Z",
+    "updatedAt": "2026-07-28T10:32:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-55700c10-caab-42d1-a2b8-6e9884391523"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetWorkflow",
+      "item": [
+        {
+          "name": "Amazon Glue Get Workflow",
+          "id": "8f245fe2-6797-4f3c-83b1-a0bf0f4d66be",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetWorkflow"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+            },
+            "description": "Retrieves resource metadata for a workflow."
+          },
+          "response": [
+            {
+              "id": "0899179f-7f56-4fe6-997e-6c30cb81a97e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflow"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Workflow\": {\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"DefaultRunProperties\": {\n      \"sint_f4\": \"<string>\"\n    },\n    \"CreatedOn\": \"<dateTime>\",\n    \"LastModifiedOn\": \"<dateTime>\",\n    \"LastRun\": {\n      \"Name\": \"<string>\",\n      \"WorkflowRunId\": \"<string>\",\n      \"PreviousRunId\": \"<string>\",\n      \"WorkflowRunProperties\": {\n        \"Ut_282\": \"<string>\",\n        \"Lorem81e\": \"<string>\"\n      },\n      \"StartedOn\": \"<dateTime>\",\n      \"CompletedOn\": \"<dateTime>\",\n      \"Status\": \"STOPPED\",\n      \"ErrorMessage\": \"<string>\",\n      \"Statistics\": {\n        \"TotalActions\": \"<integer>\",\n        \"TimeoutActions\": \"<integer>\",\n        \"FailedActions\": \"<integer>\",\n        \"StoppedActions\": \"<integer>\",\n        \"SucceededActions\": \"<integer>\",\n        \"RunningActions\": \"<integer>\",\n        \"ErroredActions\": \"<integer>\",\n        \"WaitingActions\": \"<integer>\"\n      },\n      \"Graph\": {\n        \"Nodes\": [\n          {\n            \"Type\": \"CRAWLER\",\n            \"Name\": \"<string>\",\n            \"UniqueId\": \"<string>\",\n            \"TriggerDetails\": {\n              \"Trigger\": {\n                \"Name\": \"<string>\",\n                \"WorkflowName\": \"<string>\",\n                \"Id\": \"<string>\",\n                \"Type\": \"ON_DEMAND\",\n                \"State\": \"CREATED\",\n                \"Description\": \"<string>\",\n                \"Schedule\": \"<string>\",\n                \"Actions\": [\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"cupidatat8b\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"est_d9e\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  },\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"nisi9\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"sed_da0\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  }\n                ],\n                \"Predicate\": {\n                  \"Logical\": \"AND\",\n                  \"Conditions\": [\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ]\n                },\n                \"EventBatchingCondition\": {\n                  \"BatchSize\": \"<integer>\",\n                  \"BatchWindow\": \"<integer>\"\n                }\n              }\n            },\n            \"JobDetails\": {\n              \"JobRuns\": [\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"TIMEOUT\",\n                  \"Arguments\": {\n                    \"dolor_20\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.025X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"L.dQG\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                },\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"SUCCEEDED\",\n                  \"Arguments\": {\n                    \"labore2e7\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.2X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"UJleQf.1HE\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                }\n              ]\n            },\n            \"CrawlerDetails\": {\n              \"Crawls\": [\n                {\n                  \"State\": \"ERROR\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"dK5wn\",\n                  \"LogStream\": \"d^IfZr}+4#\"\n                },\n                {\n                  \"State\": \"SUCCEEDED\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"LKhNQl6wcK\",\n                  \"LogStream\": \"(\"\n                }\n              ]\n            }\n          },\n          {\n            \"Type\": \"CRAWLER\",\n            \"Name\": \"<string>\",\n            \"UniqueId\": \"<string>\",\n            \"TriggerDetails\": {\n              \"Trigger\": {\n                \"Name\": \"<string>\",\n                \"WorkflowName\": \"<string>\",\n                \"Id\": \"<string>\",\n                \"Type\": \"CONDITIONAL\",\n                \"State\": \"DELETING\",\n                \"Description\": \"<string>\",\n                \"Schedule\": \"<string>\",\n                \"Actions\": [\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"aute_5\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  },\n                  {\n                    \"JobName\": \"<string>\",\n                    \"Arguments\": {\n                      \"exercitation84\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"qui3e3\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"Timeout\": \"<integer>\",\n                    \"SecurityConfiguration\": \"<string>\",\n                    \"NotificationProperty\": {\n                      \"NotifyDelayAfter\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    \"CrawlerName\": \"<string>\"\n                  }\n                ],\n                \"Predicate\": {\n                  \"Logical\": \"AND\",\n                  \"Conditions\": [\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"LogicalOperator\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"State\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlerName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"CrawlState\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ]\n                },\n                \"EventBatchingCondition\": {\n                  \"BatchSize\": \"<integer>\",\n                  \"BatchWindow\": \"<integer>\"\n                }\n              }\n            },\n            \"JobDetails\": {\n              \"JobRuns\": [\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"STOPPING\",\n                  \"Arguments\": {\n                    \"euc1\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"Excepteur25\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.025X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"Yah.MX0Ge\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                },\n                {\n                  \"Id\": \"<string>\",\n                  \"Attempt\": \"<integer>\",\n                  \"PreviousRunId\": \"<string>\",\n                  \"TriggerName\": \"<string>\",\n                  \"JobName\": \"<string>\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"LastModifiedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"JobRunState\": \"SUCCEEDED\",\n                  \"Arguments\": {\n                    \"id_f_\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"ErrorMessage\": \"<string>\",\n                  \"PredecessorRuns\": [\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    },\n                    {\n                      \"JobName\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      },\n                      \"RunId\": {\n                        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                      }\n                    }\n                  ],\n                  \"AllocatedCapacity\": \"<integer>\",\n                  \"ExecutionTime\": \"<integer>\",\n                  \"Timeout\": \"<integer>\",\n                  \"MaxCapacity\": \"<double>\",\n                  \"WorkerType\": \"G.1X\",\n                  \"NumberOfWorkers\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"LogGroupName\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"GlueVersion\": \"hlwo.nk\",\n                  \"DPUSeconds\": \"<double>\",\n                  \"ExecutionClass\": \"FLEX\"\n                }\n              ]\n            },\n            \"CrawlerDetails\": {\n              \"Crawls\": [\n                {\n                  \"State\": \"CANCELLED\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"/T.RnBCU/N\",\n                  \"LogStream\": \" \"\n                },\n                {\n                  \"State\": \"FAILED\",\n                  \"StartedOn\": \"<dateTime>\",\n                  \"CompletedOn\": \"<dateTime>\",\n                  \"ErrorMessage\": \"<string>\",\n                  \"LogGroup\": \"EpEs.D\",\n                  \"LogStream\": \"=\"\n                }\n              ]\n            }\n          }\n        ],\n        \"Edges\": [\n          {\n            \"SourceId\": \"<string>\",\n            \"DestinationId\": \"<string>\"\n          },\n          {\n            \"SourceId\": \"<string>\",\n            \"DestinationId\": \"<string>\"\n          }\n        ]\n      },\n      \"StartingEventBatchCondition\": {\n        \"BatchSize\": \"<integer>\",\n        \"BatchWindow\": \"<integer>\"\n      }\n    },\n    \"Graph\": {\n      \"Nodes\": [\n        {\n          \"Type\": \"JOB\",\n          \"Name\": \"<string>\",\n          \"UniqueId\": \"<string>\",\n          \"TriggerDetails\": {\n            \"Trigger\": {\n              \"Name\": \"<string>\",\n              \"WorkflowName\": \"<string>\",\n              \"Id\": \"<string>\",\n              \"Type\": \"CONDITIONAL\",\n              \"State\": \"DEACTIVATING\",\n              \"Description\": \"<string>\",\n              \"Schedule\": \"<string>\",\n              \"Actions\": [\n                {\n                  \"JobName\": \"<string>\",\n                  \"Arguments\": {\n                    \"aliqua_43c\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"Timeout\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"CrawlerName\": \"<string>\"\n                },\n                {\n                  \"JobName\": \"<string>\",\n                  \"Arguments\": {\n                    \"fugiat1\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"magna59\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"et_f\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"Timeout\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"CrawlerName\": \"<string>\"\n                }\n              ],\n              \"Predicate\": {\n                \"Logical\": \"ANY\",\n                \"Conditions\": [\n                  {\n                    \"LogicalOperator\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"State\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlerName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlState\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"LogicalOperator\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"State\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlerName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlState\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"EventBatchingCondition\": {\n                \"BatchSize\": \"<integer>\",\n                \"BatchWindow\": \"<integer>\"\n              }\n            }\n          },\n          \"JobDetails\": {\n            \"JobRuns\": [\n              {\n                \"Id\": \"<string>\",\n                \"Attempt\": \"<integer>\",\n                \"PreviousRunId\": \"<string>\",\n                \"TriggerName\": \"<string>\",\n                \"JobName\": \"<string>\",\n                \"StartedOn\": \"<dateTime>\",\n                \"LastModifiedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"JobRunState\": \"TIMEOUT\",\n                \"Arguments\": {\n                  \"eiusmod_9d\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"quis___3\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"utf\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ErrorMessage\": \"<string>\",\n                \"PredecessorRuns\": [\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"AllocatedCapacity\": \"<integer>\",\n                \"ExecutionTime\": \"<integer>\",\n                \"Timeout\": \"<integer>\",\n                \"MaxCapacity\": \"<double>\",\n                \"WorkerType\": \"G.2X\",\n                \"NumberOfWorkers\": \"<integer>\",\n                \"SecurityConfiguration\": \"<string>\",\n                \"LogGroupName\": \"<string>\",\n                \"NotificationProperty\": {\n                  \"NotifyDelayAfter\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"GlueVersion\": \"IXJp4Z99.9Iu9LAzqR\",\n                \"DPUSeconds\": \"<double>\",\n                \"ExecutionClass\": \"STANDARD\"\n              },\n              {\n                \"Id\": \"<string>\",\n                \"Attempt\": \"<integer>\",\n                \"PreviousRunId\": \"<string>\",\n                \"TriggerName\": \"<string>\",\n                \"JobName\": \"<string>\",\n                \"StartedOn\": \"<dateTime>\",\n                \"LastModifiedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"JobRunState\": \"STOPPING\",\n                \"Arguments\": {\n                  \"velit__\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ErrorMessage\": \"<string>\",\n                \"PredecessorRuns\": [\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"AllocatedCapacity\": \"<integer>\",\n                \"ExecutionTime\": \"<integer>\",\n                \"Timeout\": \"<integer>\",\n                \"MaxCapacity\": \"<double>\",\n                \"WorkerType\": \"Standard\",\n                \"NumberOfWorkers\": \"<integer>\",\n                \"SecurityConfiguration\": \"<string>\",\n                \"LogGroupName\": \"<string>\",\n                \"NotificationProperty\": {\n                  \"NotifyDelayAfter\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"GlueVersion\": \"u.rVTJPd1\",\n                \"DPUSeconds\": \"<double>\",\n                \"ExecutionClass\": \"STANDARD\"\n              }\n            ]\n          },\n          \"CrawlerDetails\": {\n            \"Crawls\": [\n              {\n                \"State\": \"SUCCEEDED\",\n                \"StartedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"ErrorMessage\": \"<string>\",\n                \"LogGroup\": \"XgFo_0D7IzC\",\n                \"LogStream\": \" \"\n              },\n              {\n                \"State\": \"SUCCEEDED\",\n                \"StartedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"ErrorMessage\": \"<string>\",\n                \"LogGroup\": \"wJ\",\n                \"LogStream\": \"oj3?dI(gz\"\n              }\n            ]\n          }\n        },\n        {\n          \"Type\": \"JOB\",\n          \"Name\": \"<string>\",\n          \"UniqueId\": \"<string>\",\n          \"TriggerDetails\": {\n            \"Trigger\": {\n              \"Name\": \"<string>\",\n              \"WorkflowName\": \"<string>\",\n              \"Id\": \"<string>\",\n              \"Type\": \"ON_DEMAND\",\n              \"State\": \"UPDATING\",\n              \"Description\": \"<string>\",\n              \"Schedule\": \"<string>\",\n              \"Actions\": [\n                {\n                  \"JobName\": \"<string>\",\n                  \"Arguments\": {\n                    \"veniama\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"deserunt_af8\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"nostrud_d0b\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"Timeout\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"CrawlerName\": \"<string>\"\n                },\n                {\n                  \"JobName\": \"<string>\",\n                  \"Arguments\": {\n                    \"dolor8\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"animaa\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"Duis4\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"Timeout\": \"<integer>\",\n                  \"SecurityConfiguration\": \"<string>\",\n                  \"NotificationProperty\": {\n                    \"NotifyDelayAfter\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"CrawlerName\": \"<string>\"\n                }\n              ],\n              \"Predicate\": {\n                \"Logical\": \"ANY\",\n                \"Conditions\": [\n                  {\n                    \"LogicalOperator\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"State\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlerName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlState\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"LogicalOperator\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"State\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlerName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"CrawlState\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"EventBatchingCondition\": {\n                \"BatchSize\": \"<integer>\",\n                \"BatchWindow\": \"<integer>\"\n              }\n            }\n          },\n          \"JobDetails\": {\n            \"JobRuns\": [\n              {\n                \"Id\": \"<string>\",\n                \"Attempt\": \"<integer>\",\n                \"PreviousRunId\": \"<string>\",\n                \"TriggerName\": \"<string>\",\n                \"JobName\": \"<string>\",\n                \"StartedOn\": \"<dateTime>\",\n                \"LastModifiedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"JobRunState\": \"STARTING\",\n                \"Arguments\": {\n                  \"nulla7fd\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"ameta1\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"deserunt_7\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"velitf_\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ErrorMessage\": \"<string>\",\n                \"PredecessorRuns\": [\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"AllocatedCapacity\": \"<integer>\",\n                \"ExecutionTime\": \"<integer>\",\n                \"Timeout\": \"<integer>\",\n                \"MaxCapacity\": \"<double>\",\n                \"WorkerType\": \"G.1X\",\n                \"NumberOfWorkers\": \"<integer>\",\n                \"SecurityConfiguration\": \"<string>\",\n                \"LogGroupName\": \"<string>\",\n                \"NotificationProperty\": {\n                  \"NotifyDelayAfter\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"GlueVersion\": \"Ohi70zit.__8EFBhxzN\",\n                \"DPUSeconds\": \"<double>\",\n                \"ExecutionClass\": \"STANDARD\"\n              },\n              {\n                \"Id\": \"<string>\",\n                \"Attempt\": \"<integer>\",\n                \"PreviousRunId\": \"<string>\",\n                \"TriggerName\": \"<string>\",\n                \"JobName\": \"<string>\",\n                \"StartedOn\": \"<dateTime>\",\n                \"LastModifiedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"JobRunState\": \"RUNNING\",\n                \"Arguments\": {\n                  \"exercitationa2\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  },\n                  \"consequat18d\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"ErrorMessage\": \"<string>\",\n                \"PredecessorRuns\": [\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"JobName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"RunId\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"AllocatedCapacity\": \"<integer>\",\n                \"ExecutionTime\": \"<integer>\",\n                \"Timeout\": \"<integer>\",\n                \"MaxCapacity\": \"<double>\",\n                \"WorkerType\": \"G.1X\",\n                \"NumberOfWorkers\": \"<integer>\",\n                \"SecurityConfiguration\": \"<string>\",\n                \"LogGroupName\": \"<string>\",\n                \"NotificationProperty\": {\n                  \"NotifyDelayAfter\": {\n                    \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                  }\n                },\n                \"GlueVersion\": \"rZoiOlt.qtAYsFrufY\",\n                \"DPUSeconds\": \"<double>\",\n                \"ExecutionClass\": \"STANDARD\"\n              }\n            ]\n          },\n          \"CrawlerDetails\": {\n            \"Crawls\": [\n              {\n                \"State\": \"FAILED\",\n                \"StartedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"ErrorMessage\": \"<string>\",\n                \"LogGroup\": \"YD\",\n                \"LogStream\": \"G\"\n              },\n              {\n                \"State\": \"CANCELLED\",\n                \"StartedOn\": \"<dateTime>\",\n                \"CompletedOn\": \"<dateTime>\",\n                \"ErrorMessage\": \"<string>\",\n                \"LogGroup\": \"Hi\",\n                \"LogStream\": \"BZRW\"\n              }\n            ]\n          }\n        }\n      ],\n      \"Edges\": [\n        {\n          \"SourceId\": \"<string>\",\n          \"DestinationId\": \"<string>\"\n        },\n        {\n          \"SourceId\": \"<string>\",\n          \"DestinationId\": \"<string>\"\n        }\n      ]\n    },\n    \"MaxConcurrentRuns\": \"<integer>\",\n    \"BlueprintDetails\": {\n      \"BlueprintName\": \"17w_LX1cBGg\",\n      \"RunId\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T10:32:19.000Z",
+              "updatedAt": "2026-07-28T10:32:19.000Z",
+              "uid": "35240-0899179f-7f56-4fe6-997e-6c30cb81a97e"
+            },
+            {
+              "id": "bab7cf9a-dadf-4f75-ba26-746f3ae44302",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflow"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:19.000Z",
+              "updatedAt": "2026-07-28T10:32:19.000Z",
+              "uid": "35240-bab7cf9a-dadf-4f75-ba26-746f3ae44302"
+            },
+            {
+              "id": "267354aa-c25d-4a94-95d9-7b7429b798c2",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflow"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:19.000Z",
+              "updatedAt": "2026-07-28T10:32:19.000Z",
+              "uid": "35240-267354aa-c25d-4a94-95d9-7b7429b798c2"
+            },
+            {
+              "id": "0256870c-7d69-45ac-be72-a6160d9c2039",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflow"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:19.000Z",
+              "updatedAt": "2026-07-28T10:32:19.000Z",
+              "uid": "35240-0256870c-7d69-45ac-be72-a6160d9c2039"
+            },
+            {
+              "id": "b40304f6-a971-4d60-8c60-36659dff5159",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetWorkflow"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"IncludeGraph\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetWorkflow",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetWorkflow"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:19.000Z",
+              "updatedAt": "2026-07-28T10:32:19.000Z",
+              "uid": "35240-b40304f6-a971-4d60-8c60-36659dff5159"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:19.000Z",
+          "updatedAt": "2026-07-28T10:32:19.000Z",
+          "uid": "35240-8f245fe2-6797-4f3c-83b1-a0bf0f4d66be"
+        }
+      ],
+      "id": "ad8597b8-a8b6-4059-9cc6-01d3b0f6e931",
+      "createdAt": "2026-07-28T10:32:19.000Z",
+      "updatedAt": "2026-07-28T10:32:19.000Z",
+      "uid": "35240-ad8597b8-a8b6-4059-9cc6-01d3b0f6e931"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "info": {
+    "_postman_id": "e174ee82-556d-4a1c-9d45-2c2a6dfc45f0",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListDataQualityResults API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:42.000Z",
+    "updatedAt": "2026-07-28T10:32:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e174ee82-556d-4a1c-9d45-2c2a6dfc45f0"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.ListDataQualityResults",
+      "item": [
+        {
+          "name": "Amazon Glue List Data Quality Results",
+          "id": "bf7f6b0c-4fcc-420d-91a0-d8912997222a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.ListDataQualityResults"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Filter\": {\n    \"DataSource\": {\n      \"GlueTable\": {\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CatalogId\": \"<string>\",\n        \"ConnectionName\": \"<string>\",\n        \"AdditionalOptions\": {\n          \"elit525\": \"<string>\",\n          \"sunt7\": \"<string>\",\n          \"Duis940\": \"<string>\",\n          \"do_b\": \"<string>\",\n          \"commodo_3e\": \"<string>\",\n          \"laborum0\": \"<string>\",\n          \"sint_2\": \"<string>\",\n          \"nisi_8ce\": \"<string>\",\n          \"pariatur_30\": \"<string>\"\n        }\n      }\n    },\n    \"JobName\": \"<string>\",\n    \"JobRunId\": \"<string>\",\n    \"StartedAfter\": \"<dateTime>\",\n    \"StartedBefore\": \"<dateTime>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityResults",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.ListDataQualityResults"
+            },
+            "description": "Returns all data quality execution results for your account."
+          },
+          "response": [
+            {
+              "id": "e412dfde-ca66-4c84-a597-7930b87ffe2a",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityResults"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filter\": {\n    \"DataSource\": {\n      \"GlueTable\": {\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CatalogId\": \"<string>\",\n        \"ConnectionName\": \"<string>\",\n        \"AdditionalOptions\": {\n          \"elit525\": \"<string>\",\n          \"sunt7\": \"<string>\",\n          \"Duis940\": \"<string>\",\n          \"do_b\": \"<string>\",\n          \"commodo_3e\": \"<string>\",\n          \"laborum0\": \"<string>\",\n          \"sint_2\": \"<string>\",\n          \"nisi_8ce\": \"<string>\",\n          \"pariatur_30\": \"<string>\"\n        }\n      }\n    },\n    \"JobName\": \"<string>\",\n    \"JobRunId\": \"<string>\",\n    \"StartedAfter\": \"<dateTime>\",\n    \"StartedBefore\": \"<dateTime>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityResults",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityResults"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Results\": [\n    {\n      \"ResultId\": \"<string>\",\n      \"DataSource\": {\n        \"GlueTable\": {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"id4\": \"<string>\",\n            \"enim_0\": \"<string>\"\n          }\n        }\n      },\n      \"JobName\": \"<string>\",\n      \"JobRunId\": \"<string>\",\n      \"StartedOn\": \"<dateTime>\"\n    },\n    {\n      \"ResultId\": \"<string>\",\n      \"DataSource\": {\n        \"GlueTable\": {\n          \"DatabaseName\": \"<string>\",\n          \"TableName\": \"<string>\",\n          \"CatalogId\": \"<string>\",\n          \"ConnectionName\": \"<string>\",\n          \"AdditionalOptions\": {\n            \"sit2e\": \"<string>\",\n            \"minim_4\": \"<string>\"\n          }\n        }\n      },\n      \"JobName\": \"<string>\",\n      \"JobRunId\": \"<string>\",\n      \"StartedOn\": \"<dateTime>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:43.000Z",
+              "updatedAt": "2026-07-28T10:32:43.000Z",
+              "uid": "35240-e412dfde-ca66-4c84-a597-7930b87ffe2a"
+            },
+            {
+              "id": "5fe01e1d-2bce-407f-a071-c9b5db7d89d4",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityResults"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filter\": {\n    \"DataSource\": {\n      \"GlueTable\": {\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CatalogId\": \"<string>\",\n        \"ConnectionName\": \"<string>\",\n        \"AdditionalOptions\": {\n          \"elit525\": \"<string>\",\n          \"sunt7\": \"<string>\",\n          \"Duis940\": \"<string>\",\n          \"do_b\": \"<string>\",\n          \"commodo_3e\": \"<string>\",\n          \"laborum0\": \"<string>\",\n          \"sint_2\": \"<string>\",\n          \"nisi_8ce\": \"<string>\",\n          \"pariatur_30\": \"<string>\"\n        }\n      }\n    },\n    \"JobName\": \"<string>\",\n    \"JobRunId\": \"<string>\",\n    \"StartedAfter\": \"<dateTime>\",\n    \"StartedBefore\": \"<dateTime>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityResults",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityResults"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:43.000Z",
+              "updatedAt": "2026-07-28T10:32:43.000Z",
+              "uid": "35240-5fe01e1d-2bce-407f-a071-c9b5db7d89d4"
+            },
+            {
+              "id": "029d3457-a620-4e7f-b3e5-0069bf3a0cb6",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityResults"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filter\": {\n    \"DataSource\": {\n      \"GlueTable\": {\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CatalogId\": \"<string>\",\n        \"ConnectionName\": \"<string>\",\n        \"AdditionalOptions\": {\n          \"elit525\": \"<string>\",\n          \"sunt7\": \"<string>\",\n          \"Duis940\": \"<string>\",\n          \"do_b\": \"<string>\",\n          \"commodo_3e\": \"<string>\",\n          \"laborum0\": \"<string>\",\n          \"sint_2\": \"<string>\",\n          \"nisi_8ce\": \"<string>\",\n          \"pariatur_30\": \"<string>\"\n        }\n      }\n    },\n    \"JobName\": \"<string>\",\n    \"JobRunId\": \"<string>\",\n    \"StartedAfter\": \"<dateTime>\",\n    \"StartedBefore\": \"<dateTime>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityResults",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityResults"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:43.000Z",
+              "updatedAt": "2026-07-28T10:32:43.000Z",
+              "uid": "35240-029d3457-a620-4e7f-b3e5-0069bf3a0cb6"
+            },
+            {
+              "id": "5f53413f-61f5-4ef2-be4b-a90a03bc7ca3",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListDataQualityResults"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Filter\": {\n    \"DataSource\": {\n      \"GlueTable\": {\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CatalogId\": \"<string>\",\n        \"ConnectionName\": \"<string>\",\n        \"AdditionalOptions\": {\n          \"elit525\": \"<string>\",\n          \"sunt7\": \"<string>\",\n          \"Duis940\": \"<string>\",\n          \"do_b\": \"<string>\",\n          \"commodo_3e\": \"<string>\",\n          \"laborum0\": \"<string>\",\n          \"sint_2\": \"<string>\",\n          \"nisi_8ce\": \"<string>\",\n          \"pariatur_30\": \"<string>\"\n        }\n      }\n    },\n    \"JobName\": \"<string>\",\n    \"JobRunId\": \"<string>\",\n    \"StartedAfter\": \"<dateTime>\",\n    \"StartedBefore\": \"<dateTime>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListDataQualityResults",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListDataQualityResults"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:43.000Z",
+              "updatedAt": "2026-07-28T10:32:43.000Z",
+              "uid": "35240-5f53413f-61f5-4ef2-be4b-a90a03bc7ca3"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:43.000Z",
+          "updatedAt": "2026-07-28T10:32:43.000Z",
+          "uid": "35240-bf7f6b0c-4fcc-420d-91a0-d8912997222a"
+        }
+      ],
+      "id": "9dd9b5af-f9f5-4290-87bf-69601e66b4aa",
+      "createdAt": "2026-07-28T10:32:43.000Z",
+      "updatedAt": "2026-07-28T10:32:43.000Z",
+      "uid": "35240-9dd9b5af-f9f5-4290-87bf-69601e66b4aa"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "95a1d725-954e-4949-b3cf-2319214cacba",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateSchema API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:47.000Z",
+    "updatedAt": "2026-07-28T10:27:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-95a1d725-954e-4949-b3cf-2319214cacba"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.CreateSchema",
+      "item": [
+        {
+          "name": "Amazon Glue Create Schema",
+          "id": "68a7de53-5fd7-41b5-98f9-beb39bdeedcd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.CreateSchema"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+            },
+            "description": "<p>Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.</p> <p>When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode \"DISABLED\" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the <code>RegisterSchemaVersion</code> API is used.</p> <p>When this API is called without a <code>RegistryId</code>, this will create an entry for a \"default-registry\" in the registry database tables, if it is not already present.</p>"
+          },
+          "response": [
+            {
+              "id": "2e0b446c-65b1-425b-afb7-527d6dd75ec8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"RegistryName\": \"ueO\",\n  \"RegistryArn\": \"arn:aws-us-gov:glue:n(}NPk3\",\n  \"SchemaName\": \"#y#sX_YIiN-\",\n  \"SchemaArn\": \"arn:aws:glue:\",\n  \"Description\": \"<string>\",\n  \"DataFormat\": \"AVRO\",\n  \"Compatibility\": \"FORWARD_ALL\",\n  \"SchemaCheckpoint\": \"<integer>\",\n  \"LatestSchemaVersion\": \"<integer>\",\n  \"NextSchemaVersion\": \"<integer>\",\n  \"SchemaStatus\": \"DELETING\",\n  \"Tags\": {\n    \"dolor0\": \"<string>\",\n    \"deserunt33e\": \"<string>\",\n    \"commodo_b0a\": \"<string>\",\n    \"in_e8\": \"<string>\",\n    \"ine\": \"<string>\",\n    \"magna35\": \"<string>\",\n    \"non9\": \"<string>\",\n    \"Duis5\": \"<string>\",\n    \"irure_72\": \"<string>\",\n    \"anim_dd3\": \"<string>\",\n    \"sunt2f\": \"<string>\",\n    \"voluptate_3e8\": \"<string>\",\n    \"reprehenderit_043\": \"<string>\",\n    \"incididunt_a0e\": \"<string>\",\n    \"aliquip47\": \"<string>\",\n    \"quidf5\": \"<string>\",\n    \"sed_7\": \"<string>\",\n    \"esse_3da\": \"<string>\",\n    \"est_12\": \"<string>\",\n    \"officia_c8\": \"<string>\",\n    \"reprehenderit_4\": \"<string>\",\n    \"nulla_c\": \"<string>\",\n    \"ete\": \"<string>\",\n    \"laboris_59\": \"<string>\",\n    \"dolorda9\": \"<string>\",\n    \"consectetur_47\": \"<string>\",\n    \"irure_7\": \"<string>\",\n    \"cillum_211\": \"<string>\",\n    \"ea_a50\": \"<string>\",\n    \"in32d\": \"<string>\",\n    \"consectetur_d\": \"<string>\",\n    \"do9\": \"<string>\",\n    \"in9\": \"<string>\",\n    \"non_94\": \"<string>\"\n  },\n  \"SchemaVersionId\": \"2d0f16ca-0e43-89cf-fa7e-7ec2acc13c93\",\n  \"SchemaVersionStatus\": \"PENDING\"\n}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-2e0b446c-65b1-425b-afb7-527d6dd75ec8"
+            },
+            {
+              "id": "47f7e02b-2b4d-4de1-b96a-ec9a473e58ad",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-47f7e02b-2b4d-4de1-b96a-ec9a473e58ad"
+            },
+            {
+              "id": "bc3672cb-1f7e-499f-9f29-2390e4b37254",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-bc3672cb-1f7e-499f-9f29-2390e4b37254"
+            },
+            {
+              "id": "44403cbe-b85e-42d6-9099-d026fe982373",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-44403cbe-b85e-42d6-9099-d026fe982373"
+            },
+            {
+              "id": "f19a7872-332f-43d9-8ace-0fd90da6f828",
+              "name": "AlreadyExistsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-f19a7872-332f-43d9-8ace-0fd90da6f828"
+            },
+            {
+              "id": "7bed862a-cbef-467b-8ea4-29f5707e5e9b",
+              "name": "ResourceNumberLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-7bed862a-cbef-467b-8ea4-29f5707e5e9b"
+            },
+            {
+              "id": "e979d1ae-5ed1-49a0-accb-d3036f7d9f9b",
+              "name": "ConcurrentModificationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-e979d1ae-5ed1-49a0-accb-d3036f7d9f9b"
+            },
+            {
+              "id": "a2eb53c1-c595-4e99-8651-694469874af0",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreateSchema"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SchemaName\": \"0\",\n  \"DataFormat\": \"JSON\",\n  \"RegistryId\": {\n    \"RegistryName\": \"9\",\n    \"RegistryArn\": \"arn:aws:glue:'Tf#@^\"\n  },\n  \"Compatibility\": \"FORWARD\",\n  \"Description\": \"<string>\",\n  \"Tags\": {\n    \"Lorem_56c\": \"<string>\",\n    \"reprehenderit_ec\": \"<string>\",\n    \"elit41\": \"<string>\",\n    \"officia_3\": \"<string>\",\n    \"nostrud_97e\": \"<string>\",\n    \"sint_8e\": \"<string>\",\n    \"elit55c\": \"<string>\",\n    \"commodo_91\": \"<string>\",\n    \"dolore6\": \"<string>\",\n    \"consectetur9dc\": \"<string>\",\n    \"Ute\": \"<string>\",\n    \"ex8\": \"<string>\",\n    \"nulla_6\": \"<string>\",\n    \"minim3\": \"<string>\",\n    \"anim06\": \"<string>\",\n    \"sunt_63d\": \"<string>\",\n    \"minimd5\": \"<string>\",\n    \"tempor_8c_\": \"<string>\",\n    \"Excepteur_\": \"<string>\",\n    \"incididunt9d\": \"<string>\",\n    \"reprehenderit_648\": \"<string>\",\n    \"proident_b98\": \"<string>\",\n    \"irure92\": \"<string>\",\n    \"minim0\": \"<string>\",\n    \"officia_006\": \"<string>\",\n    \"elit92\": \"<string>\",\n    \"proidentd\": \"<string>\",\n    \"elit_1\": \"<string>\",\n    \"Excepteur08\": \"<string>\",\n    \"dolor_8ad\": \"<string>\",\n    \"dolored54\": \"<string>\",\n    \"temporf9\": \"<string>\",\n    \"Duis_3\": \"<string>\",\n    \"dolor_d\": \"<string>\",\n    \"in9b6\": \"<string>\",\n    \"dolore_4d\": \"<string>\"\n  },\n  \"SchemaDefinition\": \"X,zMzdn0o{D^cu<I\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreateSchema",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateSchema"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:48.000Z",
+              "updatedAt": "2026-07-28T10:27:48.000Z",
+              "uid": "35240-a2eb53c1-c595-4e99-8651-694469874af0"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:47.000Z",
+          "updatedAt": "2026-07-28T10:27:47.000Z",
+          "uid": "35240-68a7de53-5fd7-41b5-98f9-beb39bdeedcd"
+        }
+      ],
+      "id": "ca016860-0793-4c39-a725-48925374f881",
+      "createdAt": "2026-07-28T10:27:47.000Z",
+      "updatedAt": "2026-07-28T10:27:47.000Z",
+      "uid": "35240-ca016860-0793-4c39-a725-48925374f881"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

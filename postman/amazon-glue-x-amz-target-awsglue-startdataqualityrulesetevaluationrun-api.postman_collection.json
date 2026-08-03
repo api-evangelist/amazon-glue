@@ -1,0 +1,662 @@
+{
+  "info": {
+    "_postman_id": "19483818-0a4c-426c-a103-f0f11f83cc42",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.StartDataQualityRulesetEvaluationRun API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:24.000Z",
+    "updatedAt": "2026-07-28T10:33:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-19483818-0a4c-426c-a103-f0f11f83cc42"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+      "item": [
+        {
+          "name": "Amazon Glue Start Data Quality Ruleset Evaluation Run",
+          "id": "9bddde65-b069-4bb8-94f8-dbac5fd8a01b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+            },
+            "description": "Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the <code>GetDataQualityResult</code> API."
+          },
+          "response": [
+            {
+              "id": "a811d5fa-3fc2-4bcc-a7f9-05ab0b27893f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"RunId\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-a811d5fa-3fc2-4bcc-a7f9-05ab0b27893f"
+            },
+            {
+              "id": "3dc28d60-0f03-411a-83de-4c4a511c6438",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-3dc28d60-0f03-411a-83de-4c4a511c6438"
+            },
+            {
+              "id": "64ab9940-e0bb-4782-b75e-bd9a9ed2f8f8",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-64ab9940-e0bb-4782-b75e-bd9a9ed2f8f8"
+            },
+            {
+              "id": "7e1951e3-b53f-4db9-a225-2e7707a952a0",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-7e1951e3-b53f-4db9-a225-2e7707a952a0"
+            },
+            {
+              "id": "9d2fab76-3c42-45d0-a74e-98bcbbc2538f",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-9d2fab76-3c42-45d0-a74e-98bcbbc2538f"
+            },
+            {
+              "id": "0900f3fe-3e28-4520-a402-94505a2925a2",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.StartDataQualityRulesetEvaluationRun"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DataSource\": {\n    \"GlueTable\": {\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CatalogId\": \"<string>\",\n      \"ConnectionName\": \"<string>\",\n      \"AdditionalOptions\": {\n        \"ex_e91\": \"<string>\",\n        \"sunt637\": \"<string>\"\n      }\n    }\n  },\n  \"Role\": \"<string>\",\n  \"RulesetNames\": [\n    \"<string>\"\n  ],\n  \"NumberOfWorkers\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"ClientToken\": \"<string>\",\n  \"AdditionalRunOptions\": {\n    \"CloudWatchMetricsEnabled\": \"<boolean>\",\n    \"ResultsS3Prefix\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.StartDataQualityRulesetEvaluationRun"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-0900f3fe-3e28-4520-a402-94505a2925a2"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:24.000Z",
+          "updatedAt": "2026-07-28T10:33:24.000Z",
+          "uid": "35240-9bddde65-b069-4bb8-94f8-dbac5fd8a01b"
+        }
+      ],
+      "id": "c070b3c0-7fce-4731-8067-0141a43d23e6",
+      "createdAt": "2026-07-28T10:33:24.000Z",
+      "updatedAt": "2026-07-28T10:33:24.000Z",
+      "uid": "35240-c070b3c0-7fce-4731-8067-0141a43d23e6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

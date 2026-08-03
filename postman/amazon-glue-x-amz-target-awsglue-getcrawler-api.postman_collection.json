@@ -1,0 +1,398 @@
+{
+  "info": {
+    "_postman_id": "70407c2f-265d-420f-a59c-54e90c0fba44",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetCrawler API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:29:17.000Z",
+    "updatedAt": "2026-07-28T10:29:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-70407c2f-265d-420f-a59c-54e90c0fba44"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetCrawler",
+      "item": [
+        {
+          "name": "Amazon Glue Get Crawler",
+          "id": "43c49e00-cbf3-4a22-ae2c-45d6de66031b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetCrawler"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetCrawler",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetCrawler"
+            },
+            "description": "Retrieves metadata for a specified crawler."
+          },
+          "response": [
+            {
+              "id": "a9e7dccb-6a8a-4da0-ac7c-49bb8c5ed7f9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetCrawler"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Crawler\": {\n    \"Name\": \"<string>\",\n    \"Role\": \"<string>\",\n    \"Targets\": {\n      \"S3Targets\": [\n        {\n          \"Path\": \"<string>\",\n          \"Exclusions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"SampleSize\": \"<integer>\",\n          \"EventQueueArn\": \"<string>\",\n          \"DlqEventQueueArn\": \"<string>\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"Exclusions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"SampleSize\": \"<integer>\",\n          \"EventQueueArn\": \"<string>\",\n          \"DlqEventQueueArn\": \"<string>\"\n        }\n      ],\n      \"JdbcTargets\": [\n        {\n          \"ConnectionName\": \"<string>\",\n          \"Path\": \"<string>\",\n          \"Exclusions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"EnableAdditionalMetadata\": [\n            \"RAWTYPES\",\n            \"COMMENTS\"\n          ]\n        },\n        {\n          \"ConnectionName\": \"<string>\",\n          \"Path\": \"<string>\",\n          \"Exclusions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"EnableAdditionalMetadata\": [\n            \"COMMENTS\",\n            \"RAWTYPES\"\n          ]\n        }\n      ],\n      \"MongoDBTargets\": [\n        {\n          \"ConnectionName\": \"<string>\",\n          \"Path\": \"<string>\",\n          \"ScanAll\": \"<boolean>\"\n        },\n        {\n          \"ConnectionName\": \"<string>\",\n          \"Path\": \"<string>\",\n          \"ScanAll\": \"<boolean>\"\n        }\n      ],\n      \"DynamoDBTargets\": [\n        {\n          \"Path\": \"<string>\",\n          \"scanAll\": \"<boolean>\",\n          \"scanRate\": \"<double>\"\n        },\n        {\n          \"Path\": \"<string>\",\n          \"scanAll\": \"<boolean>\",\n          \"scanRate\": \"<double>\"\n        }\n      ],\n      \"CatalogTargets\": [\n        {\n          \"DatabaseName\": \"<string>\",\n          \"Tables\": [\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"EventQueueArn\": \"<string>\",\n          \"DlqEventQueueArn\": \"<string>\"\n        },\n        {\n          \"DatabaseName\": \"<string>\",\n          \"Tables\": [\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"EventQueueArn\": \"<string>\",\n          \"DlqEventQueueArn\": \"<string>\"\n        }\n      ],\n      \"DeltaTargets\": [\n        {\n          \"DeltaTables\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"WriteManifest\": \"<boolean>\",\n          \"CreateNativeDeltaTable\": \"<boolean>\"\n        },\n        {\n          \"DeltaTables\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"ConnectionName\": \"<string>\",\n          \"WriteManifest\": \"<boolean>\",\n          \"CreateNativeDeltaTable\": \"<boolean>\"\n        }\n      ]\n    },\n    \"DatabaseName\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"Classifiers\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"RecrawlPolicy\": {\n      \"RecrawlBehavior\": \"CRAWL_NEW_FOLDERS_ONLY\"\n    },\n    \"SchemaChangePolicy\": {\n      \"UpdateBehavior\": \"UPDATE_IN_DATABASE\",\n      \"DeleteBehavior\": \"DEPRECATE_IN_DATABASE\"\n    },\n    \"LineageConfiguration\": {\n      \"CrawlerLineageSettings\": \"ENABLE\"\n    },\n    \"State\": \"READY\",\n    \"TablePrefix\": \"<string>\",\n    \"Schedule\": {\n      \"ScheduleExpression\": \"<string>\",\n      \"State\": \"SCHEDULED\"\n    },\n    \"CrawlElapsedTime\": \"<integer>\",\n    \"CreationTime\": \"<dateTime>\",\n    \"LastUpdated\": \"<dateTime>\",\n    \"LastCrawl\": {\n      \"Status\": \"FAILED\",\n      \"ErrorMessage\": \"<string>\",\n      \"LogGroup\": \".R\",\n      \"LogStream\": \"cl>^83` \",\n      \"MessagePrefix\": \"<string>\",\n      \"StartTime\": \"<dateTime>\"\n    },\n    \"Version\": \"<integer>\",\n    \"Configuration\": \"<string>\",\n    \"CrawlerSecurityConfiguration\": \"<string>\",\n    \"LakeFormationConfiguration\": {\n      \"UseLakeFormationCredentials\": \"<boolean>\",\n      \"AccountId\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T10:29:18.000Z",
+              "updatedAt": "2026-07-28T10:29:18.000Z",
+              "uid": "35240-a9e7dccb-6a8a-4da0-ac7c-49bb8c5ed7f9"
+            },
+            {
+              "id": "d223539d-7649-4191-b7ef-78aba1515dd3",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:18.000Z",
+              "updatedAt": "2026-07-28T10:29:18.000Z",
+              "uid": "35240-d223539d-7649-4191-b7ef-78aba1515dd3"
+            },
+            {
+              "id": "6b1b1eb6-2598-4eb7-993e-70b309a45a77",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetCrawler"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetCrawler",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetCrawler"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:18.000Z",
+              "updatedAt": "2026-07-28T10:29:18.000Z",
+              "uid": "35240-6b1b1eb6-2598-4eb7-993e-70b309a45a77"
+            }
+          ],
+          "createdAt": "2026-07-28T10:29:18.000Z",
+          "updatedAt": "2026-07-28T10:29:18.000Z",
+          "uid": "35240-43c49e00-cbf3-4a22-ae2c-45d6de66031b"
+        }
+      ],
+      "id": "644850e9-a85c-4a3e-a240-d9236a86df20",
+      "createdAt": "2026-07-28T10:29:18.000Z",
+      "updatedAt": "2026-07-28T10:29:18.000Z",
+      "uid": "35240-644850e9-a85c-4a3e-a240-d9236a86df20"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

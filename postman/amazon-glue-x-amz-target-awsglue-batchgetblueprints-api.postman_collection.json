@@ -1,0 +1,486 @@
+{
+  "info": {
+    "_postman_id": "b984338e-fbae-4d05-bbe3-6081b7eef275",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetBlueprints API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:26:24.000Z",
+    "updatedAt": "2026-07-28T10:26:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b984338e-fbae-4d05-bbe3-6081b7eef275"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+      "item": [
+        {
+          "name": "Amazon Glue Batch Get Blueprints",
+          "id": "6520703f-00b3-42c2-9c4f-b70f6336acb2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.BatchGetBlueprints"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Names\": [\n    \"J\"\n  ],\n  \"IncludeBlueprint\": \"<boolean>\",\n  \"IncludeParameterSpec\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.BatchGetBlueprints"
+            },
+            "description": "Retrieves information about a list of blueprints."
+          },
+          "response": [
+            {
+              "id": "6f6eb676-abb2-4d71-a927-7935dd0b6a01",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetBlueprints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Names\": [\n    \"J\"\n  ],\n  \"IncludeBlueprint\": \"<boolean>\",\n  \"IncludeParameterSpec\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetBlueprints"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Blueprints\": [\n    {\n      \"Name\": \"76th-b1yH9\",\n      \"Description\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"ParameterSpec\": \"<string>\",\n      \"BlueprintLocation\": \"<string>\",\n      \"BlueprintServiceLocation\": \"<string>\",\n      \"Status\": \"CREATING\",\n      \"ErrorMessage\": \"<string>\",\n      \"LastActiveDefinition\": {\n        \"Description\": \"<string>\",\n        \"LastModifiedOn\": \"<dateTime>\",\n        \"ParameterSpec\": \"<string>\",\n        \"BlueprintLocation\": \"<string>\",\n        \"BlueprintServiceLocation\": \"<string>\"\n      }\n    },\n    {\n      \"Name\": \"BHuo\",\n      \"Description\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"LastModifiedOn\": \"<dateTime>\",\n      \"ParameterSpec\": \"<string>\",\n      \"BlueprintLocation\": \"<string>\",\n      \"BlueprintServiceLocation\": \"<string>\",\n      \"Status\": \"FAILED\",\n      \"ErrorMessage\": \"<string>\",\n      \"LastActiveDefinition\": {\n        \"Description\": \"<string>\",\n        \"LastModifiedOn\": \"<dateTime>\",\n        \"ParameterSpec\": \"<string>\",\n        \"BlueprintLocation\": \"<string>\",\n        \"BlueprintServiceLocation\": \"<string>\"\n      }\n    }\n  ],\n  \"MissingBlueprints\": [\n    \"OkNHu4H3w\",\n    \"k8hRno\"\n  ]\n}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-6f6eb676-abb2-4d71-a927-7935dd0b6a01"
+            },
+            {
+              "id": "b55d631b-cc20-4c49-885d-4621223e9c45",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetBlueprints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Names\": [\n    \"J\"\n  ],\n  \"IncludeBlueprint\": \"<boolean>\",\n  \"IncludeParameterSpec\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetBlueprints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-b55d631b-cc20-4c49-885d-4621223e9c45"
+            },
+            {
+              "id": "13a3c84e-3f89-441c-89ba-b1e3e7961c9a",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetBlueprints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Names\": [\n    \"J\"\n  ],\n  \"IncludeBlueprint\": \"<boolean>\",\n  \"IncludeParameterSpec\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetBlueprints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-13a3c84e-3f89-441c-89ba-b1e3e7961c9a"
+            },
+            {
+              "id": "ba37eedb-1514-40b1-b1d0-24c421db141c",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetBlueprints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Names\": [\n    \"J\"\n  ],\n  \"IncludeBlueprint\": \"<boolean>\",\n  \"IncludeParameterSpec\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetBlueprints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetBlueprints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:25.000Z",
+              "updatedAt": "2026-07-28T10:26:25.000Z",
+              "uid": "35240-ba37eedb-1514-40b1-b1d0-24c421db141c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:26:25.000Z",
+          "updatedAt": "2026-07-28T10:26:25.000Z",
+          "uid": "35240-6520703f-00b3-42c2-9c4f-b70f6336acb2"
+        }
+      ],
+      "id": "ad8112ce-0260-4f84-a415-dfda073cb2ff",
+      "createdAt": "2026-07-28T10:26:25.000Z",
+      "updatedAt": "2026-07-28T10:26:25.000Z",
+      "uid": "35240-ad8112ce-0260-4f84-a415-dfda073cb2ff"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

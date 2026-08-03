@@ -1,0 +1,746 @@
+{
+  "info": {
+    "_postman_id": "8a1f0a8b-74cf-4a2d-beac-017962c9198b",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUserDefinedFunctions API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:55.000Z",
+    "updatedAt": "2026-07-28T10:31:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8a1f0a8b-74cf-4a2d-beac-017962c9198b"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+      "item": [
+        {
+          "name": "Amazon Glue Get User Defined Functions",
+          "id": "a0de8188-5673-4358-a4c2-ca9131769da5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetUserDefinedFunctions"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+            },
+            "description": "Retrieves multiple function definitions from the Data Catalog."
+          },
+          "response": [
+            {
+              "id": "2c079c66-2ca2-4bc6-a598-92537c8b4e80",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"UserDefinedFunctions\": [\n    {\n      \"FunctionName\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"ClassName\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"OwnerType\": \"USER\",\n      \"CreateTime\": \"<dateTime>\",\n      \"ResourceUris\": [\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        }\n      ],\n      \"CatalogId\": \"<string>\"\n    },\n    {\n      \"FunctionName\": \"<string>\",\n      \"DatabaseName\": \"<string>\",\n      \"ClassName\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"OwnerType\": \"ROLE\",\n      \"CreateTime\": \"<dateTime>\",\n      \"ResourceUris\": [\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"ARCHIVE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"FILE\",\n          \"Uri\": \"<string>\"\n        },\n        {\n          \"ResourceType\": \"JAR\",\n          \"Uri\": \"<string>\"\n        }\n      ],\n      \"CatalogId\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-2c079c66-2ca2-4bc6-a598-92537c8b4e80"
+            },
+            {
+              "id": "e6108277-dc36-4d4c-a7fd-16fbf7116341",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-e6108277-dc36-4d4c-a7fd-16fbf7116341"
+            },
+            {
+              "id": "0629a009-bcee-4ba4-8d8b-0e028339507a",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-0629a009-bcee-4ba4-8d8b-0e028339507a"
+            },
+            {
+              "id": "fb679dcc-f3a9-44d5-ad6a-a0c54db56ab7",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-fb679dcc-f3a9-44d5-ad6a-a0c54db56ab7"
+            },
+            {
+              "id": "3ea9fa14-9edd-421e-b2f7-07645fc3bad6",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-3ea9fa14-9edd-421e-b2f7-07645fc3bad6"
+            },
+            {
+              "id": "1f2be0ec-3b97-4573-b0a8-a0e124c3d36d",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUserDefinedFunctions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Pattern\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUserDefinedFunctions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUserDefinedFunctions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:56.000Z",
+              "updatedAt": "2026-07-28T10:31:56.000Z",
+              "uid": "35240-1f2be0ec-3b97-4573-b0a8-a0e124c3d36d"
+            }
+          ],
+          "createdAt": "2026-07-28T10:31:56.000Z",
+          "updatedAt": "2026-07-28T10:31:56.000Z",
+          "uid": "35240-a0de8188-5673-4358-a4c2-ca9131769da5"
+        }
+      ],
+      "id": "b73aece8-c385-479f-bcfc-8a339e3405ca",
+      "createdAt": "2026-07-28T10:31:56.000Z",
+      "updatedAt": "2026-07-28T10:31:56.000Z",
+      "uid": "35240-b73aece8-c385-479f-bcfc-8a339e3405ca"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

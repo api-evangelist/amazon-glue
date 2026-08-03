@@ -1,0 +1,1046 @@
+{
+  "info": {
+    "_postman_id": "441aec7d-af7b-46d1-aa8d-dbad9c13cc61",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUnfilteredPartitionsMetadata API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:39.000Z",
+    "updatedAt": "2026-07-28T10:31:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-441aec7d-af7b-46d1-aa8d-dbad9c13cc61"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+      "item": [
+        {
+          "name": "Amazon Glue Get Unfiltered Partitions Metadata",
+          "id": "2c4eae72-45fa-4300-806a-8e9b6a62ed28",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+            },
+            "description": "<p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p> <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.</p>"
+          },
+          "response": [
+            {
+              "id": "813c1fb5-7459-43c5-a839-98a95b71bd4c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"UnfilteredPartitions\": [\n    {\n      \"Partition\": {\n        \"Values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CreationTime\": \"<dateTime>\",\n        \"LastAccessTime\": \"<dateTime>\",\n        \"StorageDescriptor\": {\n          \"Columns\": [\n            {\n              \"Name\": \"<string>\",\n              \"Type\": \"<string>\",\n              \"Comment\": \"<string>\",\n              \"Parameters\": {\n                \"ut_6\": \"<string>\",\n                \"velitb10\": \"<string>\",\n                \"reprehenderit_81\": \"<string>\"\n              }\n            },\n            {\n              \"Name\": \"<string>\",\n              \"Type\": \"<string>\",\n              \"Comment\": \"<string>\",\n              \"Parameters\": {\n                \"fugiat__a1\": \"<string>\",\n                \"dolor61c\": \"<string>\",\n                \"et__\": \"<string>\",\n                \"officia_d4\": \"<string>\"\n              }\n            }\n          ],\n          \"Location\": \"<string>\",\n          \"AdditionalLocations\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"InputFormat\": \"<string>\",\n          \"OutputFormat\": \"<string>\",\n          \"Compressed\": \"<boolean>\",\n          \"NumberOfBuckets\": \"<integer>\",\n          \"SerdeInfo\": {\n            \"Name\": \"<string>\",\n            \"SerializationLibrary\": \"<string>\",\n            \"Parameters\": {\n              \"cupidatat60\": \"<string>\"\n            }\n          },\n          \"BucketColumns\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SortColumns\": [\n            {\n              \"Column\": \"<string>\",\n              \"SortOrder\": \"<integer>\"\n            },\n            {\n              \"Column\": \"<string>\",\n              \"SortOrder\": \"<integer>\"\n            }\n          ],\n          \"Parameters\": {\n            \"ad_69f\": \"<string>\",\n            \"commodob7\": \"<string>\"\n          },\n          \"SkewedInfo\": {\n            \"SkewedColumnNames\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SkewedColumnValues\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SkewedColumnValueLocationMaps\": {\n              \"Excepteur_c76\": \"<string>\"\n            }\n          },\n          \"StoredAsSubDirectories\": \"<boolean>\",\n          \"SchemaReference\": {\n            \"SchemaId\": {\n              \"SchemaArn\": \"arn:aws:glue:eOC\",\n              \"SchemaName\": \"Abf\",\n              \"RegistryName\": \"K1EliP$Jsl\"\n            },\n            \"SchemaVersionId\": \"2ead0981-9a42-c8cb-4c4a-1977f832fbc8\",\n            \"SchemaVersionNumber\": \"<integer>\"\n          }\n        },\n        \"Parameters\": {\n          \"dolor_4c\": \"<string>\",\n          \"labore_e0\": \"<string>\",\n          \"ex_c3\": \"<string>\",\n          \"cillum_679\": \"<string>\",\n          \"enimdcc\": \"<string>\"\n        },\n        \"LastAnalyzedTime\": \"<dateTime>\",\n        \"CatalogId\": \"<string>\"\n      },\n      \"AuthorizedColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"IsRegisteredWithLakeFormation\": \"<boolean>\"\n    },\n    {\n      \"Partition\": {\n        \"Values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"DatabaseName\": \"<string>\",\n        \"TableName\": \"<string>\",\n        \"CreationTime\": \"<dateTime>\",\n        \"LastAccessTime\": \"<dateTime>\",\n        \"StorageDescriptor\": {\n          \"Columns\": [\n            {\n              \"Name\": \"<string>\",\n              \"Type\": \"<string>\",\n              \"Comment\": \"<string>\",\n              \"Parameters\": {\n                \"Lorem__18\": \"<string>\",\n                \"commodo_a8\": \"<string>\"\n              }\n            },\n            {\n              \"Name\": \"<string>\",\n              \"Type\": \"<string>\",\n              \"Comment\": \"<string>\",\n              \"Parameters\": {\n                \"fugiat_4\": \"<string>\",\n                \"magnae84\": \"<string>\"\n              }\n            }\n          ],\n          \"Location\": \"<string>\",\n          \"AdditionalLocations\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"InputFormat\": \"<string>\",\n          \"OutputFormat\": \"<string>\",\n          \"Compressed\": \"<boolean>\",\n          \"NumberOfBuckets\": \"<integer>\",\n          \"SerdeInfo\": {\n            \"Name\": \"<string>\",\n            \"SerializationLibrary\": \"<string>\",\n            \"Parameters\": {\n              \"deserunt2a\": \"<string>\",\n              \"reprehenderit_e\": \"<string>\",\n              \"officia3\": \"<string>\"\n            }\n          },\n          \"BucketColumns\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SortColumns\": [\n            {\n              \"Column\": \"<string>\",\n              \"SortOrder\": \"<integer>\"\n            },\n            {\n              \"Column\": \"<string>\",\n              \"SortOrder\": \"<integer>\"\n            }\n          ],\n          \"Parameters\": {\n            \"cillumcf\": \"<string>\"\n          },\n          \"SkewedInfo\": {\n            \"SkewedColumnNames\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SkewedColumnValues\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"SkewedColumnValueLocationMaps\": {\n              \"voluptatefb2\": \"<string>\",\n              \"consequat10_\": \"<string>\"\n            }\n          },\n          \"StoredAsSubDirectories\": \"<boolean>\",\n          \"SchemaReference\": {\n            \"SchemaId\": {\n              \"SchemaArn\": \"arn:aws:glue:68fFCt\",\n              \"SchemaName\": \"P\",\n              \"RegistryName\": \".UUoNA48\"\n            },\n            \"SchemaVersionId\": \"9a3b4c7d-fe1d-3ea0-ac7e-1fd40c095528\",\n            \"SchemaVersionNumber\": \"<integer>\"\n          }\n        },\n        \"Parameters\": {\n          \"adipisicing_f\": \"<string>\",\n          \"doloreb65\": \"<string>\"\n        },\n        \"LastAnalyzedTime\": \"<dateTime>\",\n        \"CatalogId\": \"<string>\"\n      },\n      \"AuthorizedColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"IsRegisteredWithLakeFormation\": \"<boolean>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-813c1fb5-7459-43c5-a839-98a95b71bd4c"
+            },
+            {
+              "id": "dc68cba9-a3df-44ef-a9a5-ae8238c5804f",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-dc68cba9-a3df-44ef-a9a5-ae8238c5804f"
+            },
+            {
+              "id": "9fd25982-087d-48d2-b6f7-ec8d0f78280b",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-9fd25982-087d-48d2-b6f7-ec8d0f78280b"
+            },
+            {
+              "id": "8555b1a9-6a91-48a2-8a82-9306259f3dcb",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-8555b1a9-6a91-48a2-8a82-9306259f3dcb"
+            },
+            {
+              "id": "36bc72a3-85e0-43f0-a2a6-1358b3e6c902",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-36bc72a3-85e0-43f0-a2a6-1358b3e6c902"
+            },
+            {
+              "id": "332403d5-0dd8-4068-accd-a202e14f2bdb",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-332403d5-0dd8-4068-accd-a202e14f2bdb"
+            },
+            {
+              "id": "296bcc5e-cad4-4a69-a9b9-f038eefc91b2",
+              "name": "PermissionTypeMismatchException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-296bcc5e-cad4-4a69-a9b9-f038eefc91b2"
+            },
+            {
+              "id": "ef979781-07ea-4f64-b4ca-025917eab6fd",
+              "name": "FederationSourceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-ef979781-07ea-4f64-b4ca-025917eab6fd"
+            },
+            {
+              "id": "36b3fc85-077c-4fc7-827f-9eeb396ffc99",
+              "name": "FederationSourceRetryableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetUnfilteredPartitionsMetadata"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"CatalogId\": \"<string>\",\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"SupportedPermissionTypes\": [\n    \"COLUMN_PERMISSION\"\n  ],\n  \"Expression\": \"<string>\",\n  \"AuditContext\": {\n    \"AdditionalAuditContext\": \"<string>\",\n    \"RequestedColumns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"AllColumnsRequested\": \"<boolean>\"\n  },\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetUnfilteredPartitionsMetadata"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:39.000Z",
+              "updatedAt": "2026-07-28T10:31:39.000Z",
+              "uid": "35240-36b3fc85-077c-4fc7-827f-9eeb396ffc99"
+            }
+          ],
+          "createdAt": "2026-07-28T10:31:39.000Z",
+          "updatedAt": "2026-07-28T10:31:39.000Z",
+          "uid": "35240-2c4eae72-45fa-4300-806a-8e9b6a62ed28"
+        }
+      ],
+      "id": "ce4e6cb1-59a6-4ada-8052-db2f9d0736f2",
+      "createdAt": "2026-07-28T10:31:39.000Z",
+      "updatedAt": "2026-07-28T10:31:39.000Z",
+      "uid": "35240-ce4e6cb1-59a6-4ada-8052-db2f9d0736f2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

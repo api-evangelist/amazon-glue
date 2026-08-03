@@ -1,0 +1,1146 @@
+{
+  "info": {
+    "_postman_id": "43b3a33f-af0a-464c-9427-de842183ccbc",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetPartitions API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:46.000Z",
+    "updatedAt": "2026-07-28T10:30:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-43b3a33f-af0a-464c-9427-de842183ccbc"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetPartitions",
+      "item": [
+        {
+          "name": "Amazon Glue Get Partitions",
+          "id": "f0905e7d-6162-4382-8983-df679df4f39a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetPartitions"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+            },
+            "description": "Retrieves information about the partitions in a table."
+          },
+          "response": [
+            {
+              "id": "5c9318f8-862c-42f5-a4c9-883449f241c9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Partitions\": [\n    {\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastAccessTime\": \"<dateTime>\",\n      \"StorageDescriptor\": {\n        \"Columns\": [\n          {\n            \"Name\": \"<string>\",\n            \"Type\": \"<string>\",\n            \"Comment\": \"<string>\",\n            \"Parameters\": {\n              \"Duis_ec\": \"<string>\"\n            }\n          },\n          {\n            \"Name\": \"<string>\",\n            \"Type\": \"<string>\",\n            \"Comment\": \"<string>\",\n            \"Parameters\": {\n              \"enim47\": \"<string>\"\n            }\n          }\n        ],\n        \"Location\": \"<string>\",\n        \"AdditionalLocations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"InputFormat\": \"<string>\",\n        \"OutputFormat\": \"<string>\",\n        \"Compressed\": \"<boolean>\",\n        \"NumberOfBuckets\": \"<integer>\",\n        \"SerdeInfo\": {\n          \"Name\": \"<string>\",\n          \"SerializationLibrary\": \"<string>\",\n          \"Parameters\": {\n            \"reprehenderit__a\": \"<string>\",\n            \"in_f_b\": \"<string>\"\n          }\n        },\n        \"BucketColumns\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SortColumns\": [\n          {\n            \"Column\": \"<string>\",\n            \"SortOrder\": \"<integer>\"\n          },\n          {\n            \"Column\": \"<string>\",\n            \"SortOrder\": \"<integer>\"\n          }\n        ],\n        \"Parameters\": {\n          \"quis_be6\": \"<string>\",\n          \"laboris4_\": \"<string>\"\n        },\n        \"SkewedInfo\": {\n          \"SkewedColumnNames\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SkewedColumnValues\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SkewedColumnValueLocationMaps\": {\n            \"in_24f\": \"<string>\",\n            \"anim_f7\": \"<string>\",\n            \"mollit_9b\": \"<string>\",\n            \"nulla_79\": \"<string>\",\n            \"deserunt4c\": \"<string>\"\n          }\n        },\n        \"StoredAsSubDirectories\": \"<boolean>\",\n        \"SchemaReference\": {\n          \"SchemaId\": {\n            \"SchemaArn\": \"arn:aws-us-gov:glue:_WBOQ)y\",\n            \"SchemaName\": \"G3myT\",\n            \"RegistryName\": \"Qwzu2\"\n          },\n          \"SchemaVersionId\": \"cfde7104-2350-4175-61a1-edaba6eb76f0\",\n          \"SchemaVersionNumber\": \"<integer>\"\n        }\n      },\n      \"Parameters\": {\n        \"minim_5f\": \"<string>\",\n        \"pariatur_b5\": \"<string>\"\n      },\n      \"LastAnalyzedTime\": \"<dateTime>\",\n      \"CatalogId\": \"<string>\"\n    },\n    {\n      \"Values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"DatabaseName\": \"<string>\",\n      \"TableName\": \"<string>\",\n      \"CreationTime\": \"<dateTime>\",\n      \"LastAccessTime\": \"<dateTime>\",\n      \"StorageDescriptor\": {\n        \"Columns\": [\n          {\n            \"Name\": \"<string>\",\n            \"Type\": \"<string>\",\n            \"Comment\": \"<string>\",\n            \"Parameters\": {\n              \"in0f\": \"<string>\"\n            }\n          },\n          {\n            \"Name\": \"<string>\",\n            \"Type\": \"<string>\",\n            \"Comment\": \"<string>\",\n            \"Parameters\": {\n              \"enim0\": \"<string>\",\n              \"dolore_e0f\": \"<string>\",\n              \"Excepteure\": \"<string>\"\n            }\n          }\n        ],\n        \"Location\": \"<string>\",\n        \"AdditionalLocations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"InputFormat\": \"<string>\",\n        \"OutputFormat\": \"<string>\",\n        \"Compressed\": \"<boolean>\",\n        \"NumberOfBuckets\": \"<integer>\",\n        \"SerdeInfo\": {\n          \"Name\": \"<string>\",\n          \"SerializationLibrary\": \"<string>\",\n          \"Parameters\": {\n            \"ullamco_f4\": \"<string>\"\n          }\n        },\n        \"BucketColumns\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SortColumns\": [\n          {\n            \"Column\": \"<string>\",\n            \"SortOrder\": \"<integer>\"\n          },\n          {\n            \"Column\": \"<string>\",\n            \"SortOrder\": \"<integer>\"\n          }\n        ],\n        \"Parameters\": {\n          \"ut_a4\": \"<string>\",\n          \"aliquip_280\": \"<string>\",\n          \"aliquipd\": \"<string>\"\n        },\n        \"SkewedInfo\": {\n          \"SkewedColumnNames\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SkewedColumnValues\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"SkewedColumnValueLocationMaps\": {\n            \"ullamco2\": \"<string>\",\n            \"temporc32\": \"<string>\",\n            \"ad6\": \"<string>\"\n          }\n        },\n        \"StoredAsSubDirectories\": \"<boolean>\",\n        \"SchemaReference\": {\n          \"SchemaId\": {\n            \"SchemaArn\": \"arn:aws:glue:(%\",\n            \"SchemaName\": \"qffX\",\n            \"RegistryName\": \"kf2kLp\"\n          },\n          \"SchemaVersionId\": \"8e7bb303-82c5-1c2b-26db-70639439892b\",\n          \"SchemaVersionNumber\": \"<integer>\"\n        }\n      },\n      \"Parameters\": {\n        \"velitf0\": \"<string>\",\n        \"qui_0\": \"<string>\"\n      },\n      \"LastAnalyzedTime\": \"<dateTime>\",\n      \"CatalogId\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-5c9318f8-862c-42f5-a4c9-883449f241c9"
+            },
+            {
+              "id": "82d76e47-3de4-49cb-b5eb-4fb9cb768116",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-82d76e47-3de4-49cb-b5eb-4fb9cb768116"
+            },
+            {
+              "id": "a590d57c-344d-42a6-b567-10a8c650167c",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-a590d57c-344d-42a6-b567-10a8c650167c"
+            },
+            {
+              "id": "30b126de-fd6b-49ac-adb5-71f2d6634e99",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-30b126de-fd6b-49ac-adb5-71f2d6634e99"
+            },
+            {
+              "id": "5a0ae469-83e8-45db-8128-751c90b913e1",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-5a0ae469-83e8-45db-8128-751c90b913e1"
+            },
+            {
+              "id": "e97a75f3-8101-4469-ae0e-d7de2276d2d1",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-e97a75f3-8101-4469-ae0e-d7de2276d2d1"
+            },
+            {
+              "id": "e5afb118-0948-4b0b-a34c-2f68d63b1588",
+              "name": "InvalidStateException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-e5afb118-0948-4b0b-a34c-2f68d63b1588"
+            },
+            {
+              "id": "93c6be30-259e-41cc-96c4-561fb9891e64",
+              "name": "ResourceNotReadyException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-93c6be30-259e-41cc-96c4-561fb9891e64"
+            },
+            {
+              "id": "e1fa5b0b-9e9a-4454-9e18-6577321501a2",
+              "name": "FederationSourceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-e1fa5b0b-9e9a-4454-9e18-6577321501a2"
+            },
+            {
+              "id": "e158c240-7690-4d2c-af5e-b89d7765e587",
+              "name": "FederationSourceRetryableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetPartitions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"CatalogId\": \"<string>\",\n  \"Expression\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"Segment\": {\n    \"SegmentNumber\": \"<integer>\",\n    \"TotalSegments\": \"<integer>\"\n  },\n  \"MaxResults\": \"<integer>\",\n  \"ExcludeColumnSchema\": \"<boolean>\",\n  \"TransactionId\": \"PpLN\",\n  \"QueryAsOfTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.GetPartitions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetPartitions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:46.000Z",
+              "updatedAt": "2026-07-28T10:30:46.000Z",
+              "uid": "35240-e158c240-7690-4d2c-af5e-b89d7765e587"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:46.000Z",
+          "updatedAt": "2026-07-28T10:30:46.000Z",
+          "uid": "35240-f0905e7d-6162-4382-8983-df679df4f39a"
+        }
+      ],
+      "id": "d93177b7-b67e-4381-8c38-090033559528",
+      "createdAt": "2026-07-28T10:30:46.000Z",
+      "updatedAt": "2026-07-28T10:30:46.000Z",
+      "uid": "35240-d93177b7-b67e-4381-8c38-090033559528"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

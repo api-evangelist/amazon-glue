@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "e942b790-cb71-44be-870e-6f26f5103b71",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetDevEndpoints API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:26:30.000Z",
+    "updatedAt": "2026-07-28T10:26:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e942b790-cb71-44be-870e-6f26f5103b71"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+      "item": [
+        {
+          "name": "Amazon Glue Batch Get Dev Endpoints",
+          "id": "39cf61c0-f65e-408a-9be5-436c98c1c91f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.BatchGetDevEndpoints"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+            },
+            "description": "Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags."
+          },
+          "response": [
+            {
+              "id": "b5075811-47cd-4a1e-bcdc-6f615109f537",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetDevEndpoints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"DevEndpoints\": [\n    {\n      \"EndpointName\": \"<string>\",\n      \"RoleArn\": \"arn:aws:iam::934956607566:role/`JeghdZ\",\n      \"SecurityGroupIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SubnetId\": \"<string>\",\n      \"YarnEndpointAddress\": \"<string>\",\n      \"PrivateAddress\": \"<string>\",\n      \"ZeppelinRemoteSparkInterpreterPort\": \"<integer>\",\n      \"PublicAddress\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"WorkerType\": \"G.1X\",\n      \"GlueVersion\": \"2q5JAkp2Hd.ATp\",\n      \"NumberOfWorkers\": \"<integer>\",\n      \"NumberOfNodes\": \"<integer>\",\n      \"AvailabilityZone\": \"<string>\",\n      \"VpcId\": \"<string>\",\n      \"ExtraPythonLibsS3Path\": \"<string>\",\n      \"ExtraJarsS3Path\": \"<string>\",\n      \"FailureReason\": \"<string>\",\n      \"LastUpdateStatus\": \"<string>\",\n      \"CreatedTimestamp\": \"<dateTime>\",\n      \"LastModifiedTimestamp\": \"<dateTime>\",\n      \"PublicKey\": \"<string>\",\n      \"PublicKeys\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SecurityConfiguration\": \"<string>\",\n      \"Arguments\": {\n        \"laborise2\": \"<string>\",\n        \"veniam_4\": \"<string>\",\n        \"sunt06d\": \"<string>\",\n        \"laboris8\": \"<string>\",\n        \"dolore0\": \"<string>\",\n        \"consequat__a8\": \"<string>\",\n        \"ex8\": \"<string>\",\n        \"dolore_ab\": \"<string>\",\n        \"labore_8\": \"<string>\",\n        \"labore4_\": \"<string>\",\n        \"aliquad\": \"<string>\",\n        \"ad_ae6\": \"<string>\",\n        \"pariatura8c\": \"<string>\",\n        \"do5\": \"<string>\",\n        \"ullamco_3f\": \"<string>\",\n        \"sit_2\": \"<string>\",\n        \"laborum_3\": \"<string>\",\n        \"in4\": \"<string>\",\n        \"do8_e\": \"<string>\",\n        \"ut7\": \"<string>\",\n        \"irure_9d\": \"<string>\",\n        \"id_92\": \"<string>\",\n        \"officia6\": \"<string>\",\n        \"nulla_d\": \"<string>\",\n        \"laboree21\": \"<string>\",\n        \"enim_430\": \"<string>\",\n        \"dolore_3\": \"<string>\",\n        \"incididunt_e\": \"<string>\",\n        \"exercitation_a\": \"<string>\",\n        \"cillum2\": \"<string>\",\n        \"nisi_5\": \"<string>\",\n        \"exercitation_82\": \"<string>\"\n      }\n    },\n    {\n      \"EndpointName\": \"<string>\",\n      \"RoleArn\": \"arn:aws:iam::970818377618:role/7/NS$)\\\\C,\",\n      \"SecurityGroupIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SubnetId\": \"<string>\",\n      \"YarnEndpointAddress\": \"<string>\",\n      \"PrivateAddress\": \"<string>\",\n      \"ZeppelinRemoteSparkInterpreterPort\": \"<integer>\",\n      \"PublicAddress\": \"<string>\",\n      \"Status\": \"<string>\",\n      \"WorkerType\": \"G.1X\",\n      \"GlueVersion\": \"g8MQ6wfFFPp.h3\",\n      \"NumberOfWorkers\": \"<integer>\",\n      \"NumberOfNodes\": \"<integer>\",\n      \"AvailabilityZone\": \"<string>\",\n      \"VpcId\": \"<string>\",\n      \"ExtraPythonLibsS3Path\": \"<string>\",\n      \"ExtraJarsS3Path\": \"<string>\",\n      \"FailureReason\": \"<string>\",\n      \"LastUpdateStatus\": \"<string>\",\n      \"CreatedTimestamp\": \"<dateTime>\",\n      \"LastModifiedTimestamp\": \"<dateTime>\",\n      \"PublicKey\": \"<string>\",\n      \"PublicKeys\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SecurityConfiguration\": \"<string>\",\n      \"Arguments\": {\n        \"esse4\": \"<string>\",\n        \"dolor_5_2\": \"<string>\"\n      }\n    }\n  ],\n  \"DevEndpointsNotFound\": [\n    \"<string>\"\n  ]\n}",
+              "createdAt": "2026-07-28T10:26:30.000Z",
+              "updatedAt": "2026-07-28T10:26:30.000Z",
+              "uid": "35240-b5075811-47cd-4a1e-bcdc-6f615109f537"
+            },
+            {
+              "id": "7decf8ea-c6da-4da2-9df0-d8c57390f2ad",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetDevEndpoints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:30.000Z",
+              "updatedAt": "2026-07-28T10:26:30.000Z",
+              "uid": "35240-7decf8ea-c6da-4da2-9df0-d8c57390f2ad"
+            },
+            {
+              "id": "7cff0074-24d0-4c24-b639-41a03634e481",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetDevEndpoints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:30.000Z",
+              "updatedAt": "2026-07-28T10:26:30.000Z",
+              "uid": "35240-7cff0074-24d0-4c24-b639-41a03634e481"
+            },
+            {
+              "id": "5291d7e9-5400-4d63-8c02-965281c6fb74",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetDevEndpoints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:30.000Z",
+              "updatedAt": "2026-07-28T10:26:30.000Z",
+              "uid": "35240-5291d7e9-5400-4d63-8c02-965281c6fb74"
+            },
+            {
+              "id": "fcc7c622-b0fa-410b-8e4a-a85ca0bfb9f0",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.BatchGetDevEndpoints"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DevEndpointNames\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.BatchGetDevEndpoints",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.BatchGetDevEndpoints"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:26:30.000Z",
+              "updatedAt": "2026-07-28T10:26:30.000Z",
+              "uid": "35240-fcc7c622-b0fa-410b-8e4a-a85ca0bfb9f0"
+            }
+          ],
+          "createdAt": "2026-07-28T10:26:30.000Z",
+          "updatedAt": "2026-07-28T10:26:30.000Z",
+          "uid": "35240-39cf61c0-f65e-408a-9be5-436c98c1c91f"
+        }
+      ],
+      "id": "522e2e11-c713-4978-ba7e-de3478d81690",
+      "createdAt": "2026-07-28T10:26:30.000Z",
+      "updatedAt": "2026-07-28T10:26:30.000Z",
+      "uid": "35240-522e2e11-c713-4978-ba7e-de3478d81690"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

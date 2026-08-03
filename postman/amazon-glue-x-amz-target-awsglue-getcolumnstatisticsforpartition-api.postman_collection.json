@@ -1,0 +1,662 @@
+{
+  "info": {
+    "_postman_id": "ac4984ba-a62e-4d94-95e0-dfd53074d081",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetColumnStatisticsForPartition API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:29:11.000Z",
+    "updatedAt": "2026-07-28T10:29:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ac4984ba-a62e-4d94-95e0-dfd53074d081"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+      "item": [
+        {
+          "name": "Amazon Glue Get Column Statistics for Partition",
+          "id": "b9e3e2ef-01e3-4f50-97b3-b97a7d06bd2a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.GetColumnStatisticsForPartition"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+            },
+            "description": "<p>Retrieves partition statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.</p>"
+          },
+          "response": [
+            {
+              "id": "e9d44e30-57ba-45f7-99ca-ecd5b5e593d0",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ColumnStatisticsList\": [\n    {\n      \"ColumnName\": \"<string>\",\n      \"ColumnType\": \"<string>\",\n      \"AnalyzedTime\": \"<dateTime>\",\n      \"StatisticsData\": {\n        \"Type\": \"BOOLEAN\",\n        \"BooleanColumnStatisticsData\": {\n          \"NumberOfTrues\": \"<integer>\",\n          \"NumberOfFalses\": \"<integer>\",\n          \"NumberOfNulls\": \"<integer>\"\n        },\n        \"DateColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<dateTime>\",\n          \"MaximumValue\": \"<dateTime>\"\n        },\n        \"DecimalColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": {\n            \"UnscaledValue\": \"<string>\",\n            \"Scale\": \"<integer>\"\n          },\n          \"MaximumValue\": {\n            \"UnscaledValue\": \"<string>\",\n            \"Scale\": \"<integer>\"\n          }\n        },\n        \"DoubleColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<double>\",\n          \"MaximumValue\": \"<double>\"\n        },\n        \"LongColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<integer>\",\n          \"MaximumValue\": \"<integer>\"\n        },\n        \"StringColumnStatisticsData\": {\n          \"MaximumLength\": \"<integer>\",\n          \"AverageLength\": \"<double>\",\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\"\n        },\n        \"BinaryColumnStatisticsData\": {\n          \"MaximumLength\": \"<integer>\",\n          \"AverageLength\": \"<double>\",\n          \"NumberOfNulls\": \"<integer>\"\n        }\n      }\n    },\n    {\n      \"ColumnName\": \"<string>\",\n      \"ColumnType\": \"<string>\",\n      \"AnalyzedTime\": \"<dateTime>\",\n      \"StatisticsData\": {\n        \"Type\": \"STRING\",\n        \"BooleanColumnStatisticsData\": {\n          \"NumberOfTrues\": \"<integer>\",\n          \"NumberOfFalses\": \"<integer>\",\n          \"NumberOfNulls\": \"<integer>\"\n        },\n        \"DateColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<dateTime>\",\n          \"MaximumValue\": \"<dateTime>\"\n        },\n        \"DecimalColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": {\n            \"UnscaledValue\": \"<string>\",\n            \"Scale\": \"<integer>\"\n          },\n          \"MaximumValue\": {\n            \"UnscaledValue\": \"<string>\",\n            \"Scale\": \"<integer>\"\n          }\n        },\n        \"DoubleColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<double>\",\n          \"MaximumValue\": \"<double>\"\n        },\n        \"LongColumnStatisticsData\": {\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\",\n          \"MinimumValue\": \"<integer>\",\n          \"MaximumValue\": \"<integer>\"\n        },\n        \"StringColumnStatisticsData\": {\n          \"MaximumLength\": \"<integer>\",\n          \"AverageLength\": \"<double>\",\n          \"NumberOfNulls\": \"<integer>\",\n          \"NumberOfDistinctValues\": \"<integer>\"\n        },\n        \"BinaryColumnStatisticsData\": {\n          \"MaximumLength\": \"<integer>\",\n          \"AverageLength\": \"<double>\",\n          \"NumberOfNulls\": \"<integer>\"\n        }\n      }\n    }\n  ],\n  \"Errors\": [\n    {\n      \"ColumnName\": \"<string>\",\n      \"Error\": {\n        \"ErrorCode\": \"<string>\",\n        \"ErrorMessage\": \"<string>\"\n      }\n    },\n    {\n      \"ColumnName\": \"<string>\",\n      \"Error\": {\n        \"ErrorCode\": \"<string>\",\n        \"ErrorMessage\": \"<string>\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-e9d44e30-57ba-45f7-99ca-ecd5b5e593d0"
+            },
+            {
+              "id": "e343bc6c-cb2a-49cc-9398-7f6d2343c932",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-e343bc6c-cb2a-49cc-9398-7f6d2343c932"
+            },
+            {
+              "id": "eafa65b0-bb5d-4768-b142-cdf4a6e376e2",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-eafa65b0-bb5d-4768-b142-cdf4a6e376e2"
+            },
+            {
+              "id": "13e3e3ab-4132-42d3-baa4-a56a3ddbec4f",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-13e3e3ab-4132-42d3-baa4-a56a3ddbec4f"
+            },
+            {
+              "id": "ff0f1162-446a-4aab-9dd5-da23faee5828",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-ff0f1162-446a-4aab-9dd5-da23faee5828"
+            },
+            {
+              "id": "666a39f5-e1ae-444c-a107-58940322a423",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.GetColumnStatisticsForPartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionValues\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"ColumnNames\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.GetColumnStatisticsForPartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:29:12.000Z",
+              "updatedAt": "2026-07-28T10:29:12.000Z",
+              "uid": "35240-666a39f5-e1ae-444c-a107-58940322a423"
+            }
+          ],
+          "createdAt": "2026-07-28T10:29:12.000Z",
+          "updatedAt": "2026-07-28T10:29:12.000Z",
+          "uid": "35240-b9e3e2ef-01e3-4f50-97b3-b97a7d06bd2a"
+        }
+      ],
+      "id": "02b8fa63-966a-42c4-babf-ae7972ffe651",
+      "createdAt": "2026-07-28T10:29:11.000Z",
+      "updatedAt": "2026-07-28T10:29:11.000Z",
+      "uid": "35240-02b8fa63-966a-42c4-babf-ae7972ffe651"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

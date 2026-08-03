@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "120ad698-40bf-4666-8921-3d8f5823cd55",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreatePartition API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:44.000Z",
+    "updatedAt": "2026-07-28T10:27:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-120ad698-40bf-4666-8921-3d8f5823cd55"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.CreatePartition",
+      "item": [
+        {
+          "name": "Amazon Glue Create Partition",
+          "id": "e2be149d-9878-48ee-8a6e-cf323a0f6b25",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.CreatePartition"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+            },
+            "description": "Creates a new partition."
+          },
+          "response": [
+            {
+              "id": "ac54b96a-0778-4119-a180-a0613581bdca",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-ac54b96a-0778-4119-a180-a0613581bdca"
+            },
+            {
+              "id": "2819df14-9855-432e-9a6a-2f32f45d44ad",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-2819df14-9855-432e-9a6a-2f32f45d44ad"
+            },
+            {
+              "id": "c3b9f1a2-9819-4f45-a262-510aa2a28c9f",
+              "name": "AlreadyExistsException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-c3b9f1a2-9819-4f45-a262-510aa2a28c9f"
+            },
+            {
+              "id": "1bf30696-d75b-4a96-9b4c-8d96749af7eb",
+              "name": "ResourceNumberLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-1bf30696-d75b-4a96-9b4c-8d96749af7eb"
+            },
+            {
+              "id": "4adc7820-54f7-4862-ba5b-c186b7ca2f46",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-4adc7820-54f7-4862-ba5b-c186b7ca2f46"
+            },
+            {
+              "id": "d372c287-371d-4881-b3a7-2727fb3a8f2a",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-d372c287-371d-4881-b3a7-2727fb3a8f2a"
+            },
+            {
+              "id": "a557fd9e-0907-42d7-bf0a-24928fbdb1ba",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-a557fd9e-0907-42d7-bf0a-24928fbdb1ba"
+            },
+            {
+              "id": "fcf24c9b-8554-457a-9020-38d0fb7e999b",
+              "name": "GlueEncryptionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.CreatePartition"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"PartitionInput\": {\n    \"Values\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"LastAccessTime\": \"<dateTime>\",\n    \"StorageDescriptor\": {\n      \"Columns\": [\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"irure8b4\": \"<string>\",\n            \"laboris86b\": \"<string>\"\n          }\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Type\": \"<string>\",\n          \"Comment\": \"<string>\",\n          \"Parameters\": {\n            \"nostrud_651\": \"<string>\",\n            \"dolorbc0\": \"<string>\"\n          }\n        }\n      ],\n      \"Location\": \"<string>\",\n      \"AdditionalLocations\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"InputFormat\": \"<string>\",\n      \"OutputFormat\": \"<string>\",\n      \"Compressed\": \"<boolean>\",\n      \"NumberOfBuckets\": \"<integer>\",\n      \"SerdeInfo\": {\n        \"Name\": \"<string>\",\n        \"SerializationLibrary\": \"<string>\",\n        \"Parameters\": {\n          \"aute_1e\": \"<string>\",\n          \"exb9f\": \"<string>\"\n        }\n      },\n      \"BucketColumns\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"SortColumns\": [\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        },\n        {\n          \"Column\": \"<string>\",\n          \"SortOrder\": \"<integer>\"\n        }\n      ],\n      \"Parameters\": {\n        \"in_2bb\": \"<string>\"\n      },\n      \"SkewedInfo\": {\n        \"SkewedColumnNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValues\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"SkewedColumnValueLocationMaps\": {\n          \"et_5d\": \"<string>\"\n        }\n      },\n      \"StoredAsSubDirectories\": \"<boolean>\",\n      \"SchemaReference\": {\n        \"SchemaId\": {\n          \"SchemaArn\": \"arn:aws:glue:\",\n          \"SchemaName\": \"vlsKTSu-GP3\",\n          \"RegistryName\": \"Aca\"\n        },\n        \"SchemaVersionId\": \"d0d42ef0-7e7e-81d6-7a96-3d426fa38736\",\n        \"SchemaVersionNumber\": \"<integer>\"\n      }\n    },\n    \"Parameters\": {\n      \"aliqua_50\": \"<string>\"\n    },\n    \"LastAnalyzedTime\": \"<dateTime>\"\n  },\n  \"CatalogId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=AWSGlue.CreatePartition",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreatePartition"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:27:45.000Z",
+              "updatedAt": "2026-07-28T10:27:45.000Z",
+              "uid": "35240-fcf24c9b-8554-457a-9020-38d0fb7e999b"
+            }
+          ],
+          "createdAt": "2026-07-28T10:27:45.000Z",
+          "updatedAt": "2026-07-28T10:27:45.000Z",
+          "uid": "35240-e2be149d-9878-48ee-8a6e-cf323a0f6b25"
+        }
+      ],
+      "id": "406be0d9-2672-4b72-b29e-dff3c45e6e29",
+      "createdAt": "2026-07-28T10:27:45.000Z",
+      "updatedAt": "2026-07-28T10:27:45.000Z",
+      "uid": "35240-406be0d9-2672-4b72-b29e-dff3c45e6e29"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}

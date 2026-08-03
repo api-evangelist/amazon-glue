@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "924f43a1-4c88-4ebb-a6d0-1db258ec1d81",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListSessions API",
+    "description": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:52.000Z",
+    "updatedAt": "2026-07-28T10:32:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-924f43a1-4c88-4ebb-a6d0-1db258ec1d81"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=AWSGlue.ListSessions",
+      "item": [
+        {
+          "name": "Amazon Glue List Sessions",
+          "id": "0c0add89-abd0-4f47-99cd-a8f0bf322e9f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "AWSGlue.ListSessions"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "X-Amz-Target=AWSGlue.ListSessions"
+            },
+            "description": "Retrieve a list of sessions."
+          },
+          "response": [
+            {
+              "id": "410b23b9-c3c1-4c8b-95b6-b7cceda20d19",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListSessions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListSessions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"Sessions\": [\n    {\n      \"Id\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"Status\": \"FAILED\",\n      \"ErrorMessage\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Role\": \"arn:aws0 ELGoZKFA:iam:::role/2W{13\",\n      \"Command\": {\n        \"Name\": \"<string>\",\n        \"PythonVersion\": \"3\"\n      },\n      \"DefaultArguments\": {\n        \"fugiat__d\": \"<string>\",\n        \"elit__7\": \"<string>\",\n        \"laboris_f7\": \"<string>\",\n        \"amet_d0\": \"<string>\",\n        \"sint_\": \"<string>\",\n        \"nulla_0\": \"<string>\",\n        \"officia_0\": \"<string>\",\n        \"ea2b\": \"<string>\",\n        \"ad_2a\": \"<string>\",\n        \"pariatur_c7\": \"<string>\",\n        \"fugiat_c2f\": \"<string>\",\n        \"eiusmod__7\": \"<string>\",\n        \"sit_9b_\": \"<string>\",\n        \"cillum_76\": \"<string>\",\n        \"eu_5_4\": \"<string>\",\n        \"quis8f1\": \"<string>\",\n        \"magna_a1\": \"<string>\",\n        \"pariaturc2\": \"<string>\",\n        \"elit244\": \"<string>\",\n        \"ullamco2\": \"<string>\",\n        \"sint__\": \"<string>\",\n        \"Excepteur_234\": \"<string>\",\n        \"ex_a6\": \"<string>\",\n        \"veniame\": \"<string>\",\n        \"in1\": \"<string>\",\n        \"commodo_79\": \"<string>\",\n        \"mollit_5e\": \"<string>\",\n        \"quis8\": \"<string>\",\n        \"commodo_6\": \"<string>\"\n      },\n      \"Connections\": {\n        \"Connections\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"Progress\": \"<double>\",\n      \"MaxCapacity\": \"<double>\",\n      \"SecurityConfiguration\": \"<string>\",\n      \"GlueVersion\": \"A2KIGM.7JGhve80\"\n    },\n    {\n      \"Id\": \"<string>\",\n      \"CreatedOn\": \"<dateTime>\",\n      \"Status\": \"READY\",\n      \"ErrorMessage\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Role\": \"arn:awsm0#$zwc:iam::6383:role/8az!xk]`\",\n      \"Command\": {\n        \"Name\": \"<string>\",\n        \"PythonVersion\": \"3.9\"\n      },\n      \"DefaultArguments\": {\n        \"cupidatat_7\": \"<string>\",\n        \"laborumae4\": \"<string>\",\n        \"sit_4\": \"<string>\",\n        \"voluptate_99a\": \"<string>\",\n        \"dolor_eb4\": \"<string>\",\n        \"aliqua_d5\": \"<string>\",\n        \"reprehenderit5\": \"<string>\",\n        \"laborum8_\": \"<string>\",\n        \"incididuntf67\": \"<string>\",\n        \"esse_9c3\": \"<string>\",\n        \"reprehenderit_97e\": \"<string>\"\n      },\n      \"Connections\": {\n        \"Connections\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"Progress\": \"<double>\",\n      \"MaxCapacity\": \"<double>\",\n      \"SecurityConfiguration\": \"<string>\",\n      \"GlueVersion\": \"fHfc.n\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:53.000Z",
+              "updatedAt": "2026-07-28T10:32:53.000Z",
+              "uid": "35240-410b23b9-c3c1-4c8b-95b6-b7cceda20d19"
+            },
+            {
+              "id": "221a8be7-e134-493a-a381-dc8a0e424f6c",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListSessions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListSessions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:53.000Z",
+              "updatedAt": "2026-07-28T10:32:53.000Z",
+              "uid": "35240-221a8be7-e134-493a-a381-dc8a0e424f6c"
+            },
+            {
+              "id": "5e594e03-cdc8-46ae-95b8-53f6aabda2ec",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListSessions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListSessions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:53.000Z",
+              "updatedAt": "2026-07-28T10:32:53.000Z",
+              "uid": "35240-5e594e03-cdc8-46ae-95b8-53f6aabda2ec"
+            },
+            {
+              "id": "388351e7-0ffe-4d89-b358-2e725e4af2e7",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListSessions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListSessions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:53.000Z",
+              "updatedAt": "2026-07-28T10:32:53.000Z",
+              "uid": "35240-388351e7-0ffe-4d89-b358-2e725e4af2e7"
+            },
+            {
+              "id": "a0f63a40-75c1-4c55-8872-63de2edc955f",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "AWSGlue.ListSessions"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"Tags\": {\n    \"voluptatec7\": \"<string>\",\n    \"dolor_31\": \"<string>\",\n    \"ullamcof\": \"<string>\",\n    \"voluptate_39\": \"<string>\",\n    \"officia_56_\": \"<string>\"\n  },\n  \"RequestOrigin\": \"3utu_S\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxResults=<string>&NextToken=<string>#X-Amz-Target=AWSGlue.ListSessions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.ListSessions"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:53.000Z",
+              "updatedAt": "2026-07-28T10:32:53.000Z",
+              "uid": "35240-a0f63a40-75c1-4c55-8872-63de2edc955f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:53.000Z",
+          "updatedAt": "2026-07-28T10:32:53.000Z",
+          "uid": "35240-0c0add89-abd0-4f47-99cd-a8f0bf322e9f"
+        }
+      ],
+      "id": "10b5add7-8bc4-4e5c-9731-a89feae44ecf",
+      "createdAt": "2026-07-28T10:32:53.000Z",
+      "updatedAt": "2026-07-28T10:32:53.000Z",
+      "uid": "35240-10b5add7-8bc4-4e5c-9731-a89feae44ecf"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://glue.{{region}}.amazonaws.com"
+    }
+  ]
+}
