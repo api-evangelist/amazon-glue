@@ -1,0 +1,1011 @@
+{
+  "item": [
+    {
+      "id": "6b0e453c-bc3a-4104-a8d4-7066294cfe86",
+      "name": "#X Amz Target=AWSGlue.CreateJob",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4761ad66-6a13-4e15-8dc6-90f0e146a320",
+          "name": "Amazon Glue Create Job",
+          "request": {
+            "name": "Amazon Glue Create Job",
+            "description": {
+              "content": "Creates a new job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.CreateJob",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\",\n    \"key_11\": \"<string>\",\n    \"key_12\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da2fb0b0-3243-49c6-bd64-c383a212a89a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5cf84323-851f-45c3-9dcb-b0936113c77a",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47cf0a7f-e7a2-4733-9dcf-6eff01836ae3",
+              "name": "IdempotentParameterMismatchException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a67e1e0a-d652-4868-92e8-5b22babb684b",
+              "name": "AlreadyExistsException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27962ed2-1db7-4590-84ed-6308416e3e30",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d8d3cf3-4b86-4b8b-8b83-52ca2d0a27fd",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "933436ad-bbf3-40b9-8754-635af29bae24",
+              "name": "ResourceNumberLimitExceededException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 485,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41449de9-d612-4fee-ad4c-1d062e033321",
+              "name": "ConcurrentModificationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.CreateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"Role\": \"<string>\",\n  \"Command\": {\n    \"Name\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.\"\n    },\n    \"ScriptLocation\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.\"\n    },\n    \"PythonVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The Python version being used to run a Python shell job. Allowed values are 2 or 3.\"\n    }\n  },\n  \"Description\": \"<string>\",\n  \"LogUri\": \"<string>\",\n  \"ExecutionProperty\": {\n    \"MaxConcurrentRuns\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.\"\n    }\n  },\n  \"DefaultArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"NonOverridableArguments\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"Connections\": {\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"A list of connections used by the job.\"\n    }\n  },\n  \"MaxRetries\": \"<integer>\",\n  \"AllocatedCapacity\": \"<integer>\",\n  \"Timeout\": \"<integer>\",\n  \"MaxCapacity\": \"<double>\",\n  \"SecurityConfiguration\": \"<string>\",\n  \"Tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\",\n    \"key_4\": \"<string>\",\n    \"key_5\": \"<string>\",\n    \"key_6\": \"<string>\",\n    \"key_7\": \"<string>\",\n    \"key_8\": \"<string>\",\n    \"key_9\": \"<string>\",\n    \"key_10\": \"<string>\"\n  },\n  \"NotificationProperty\": {\n    \"NotifyDelayAfter\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"After a job run starts, the number of minutes to wait before sending a job run delay notification.\"\n    }\n  },\n  \"GlueVersion\": \"<string>\",\n  \"NumberOfWorkers\": \"<integer>\",\n  \"WorkerType\": \"<string>\",\n  \"CodeGenConfigurationNodes\": {\n    \"key_0\": {\n      \"AthenaConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CsvSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3JsonSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3ParquetSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RelationalCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamoDBCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"JDBCConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkConnectorTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RedshiftTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3GlueParquetTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ApplyMapping\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"RenameField\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Spigot\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Join\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SplitFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SelectFromCollection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"FillMissingValues\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Filter\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CustomCode\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"SparkSQL\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKinesisSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogKafkaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropNullFields\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Merge\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Union\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PIIDetection\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"Aggregate\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DropDuplicates\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"GovernedCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MicrosoftSQLServerCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"MySQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"OracleSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"PostgreSQLCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DynamicTransform\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"EvaluateDataQuality\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogHudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3HudiDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"DirectJDBCSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"CatalogDeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaSource\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaCatalogTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"S3DeltaDirectTarget\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    }\n  },\n  \"ExecutionClass\": \"<string>\",\n  \"SourceControlDetails\": {\n    \"Provider\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The provider for the remote repository.\"\n    },\n    \"Repository\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the remote repository that contains the job artifacts.\"\n    },\n    \"Owner\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The owner of the remote repository that contains the job artifacts.\"\n    },\n    \"Branch\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional branch in the remote repository.\"\n    },\n    \"Folder\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An optional folder in the remote repository.\"\n    },\n    \"LastCommitId\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The last commit ID for a commit in the remote repository.\"\n    },\n    \"AuthStrategy\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.\"\n    },\n    \"AuthToken\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The value of an authorization token.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 486,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://glue.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d983c9bc-408a-45f9-9cc3-34043e260dfe",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateJob API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

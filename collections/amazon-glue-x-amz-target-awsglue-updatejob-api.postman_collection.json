@@ -1,0 +1,799 @@
+{
+  "item": [
+    {
+      "id": "3b2e5d20-ddad-4c8a-bb97-9e8dd4b6a997",
+      "name": "#X Amz Target=AWSGlue.UpdateJob",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "261339ed-e3d2-440f-bb99-dd275374b81c",
+          "name": "Amazon Glue Update Job",
+          "request": {
+            "name": "Amazon Glue Update Job",
+            "description": {
+              "content": "Updates an existing job definition. The previous job definition is completely overwritten by this information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c87bc521-f836-47ac-b9f9-0ad653bf6501",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c994329e-5b42-43d2-92a7-0b89ef9efdab",
+              "name": "InvalidInputException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff6ad0e9-ec77-410d-b06e-edfbbb2e02c5",
+              "name": "EntityNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "265cbf8a-538d-4c22-8bde-df8614e25ce9",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "341804e0-1c14-4fc9-aa06-f0f4d955eac5",
+              "name": "OperationTimeoutException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a6fbbdc-00ec-4704-a5fb-91bbfefc46ac",
+              "name": "ConcurrentModificationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=AWSGlue.UpdateJob",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobName\": \"<string>\",\n  \"JobUpdate\": {\n    \"Description\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Description of the job being defined.\"\n    },\n    \"LogUri\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"This field is reserved for future use.\"\n    },\n    \"Role\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).\"\n    },\n    \"ExecutionProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.\"\n    },\n    \"Command\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The <code>JobCommand</code> that runs this job (required).\"\n    },\n    \"DefaultArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The default arguments for this job.</p> <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p> <p>For information about how to specify and consume your own Job arguments, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html\\\">Calling Glue APIs in Python</a> topic in the developer guide.</p> <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html\\\">Special Parameters Used by Glue</a> topic in the developer guide.</p>\"\n    },\n    \"NonOverridableArguments\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Non-overridable arguments for this job, specified as name-value pairs.\"\n    },\n    \"Connections\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The connections used for this job.\"\n    },\n    \"MaxRetries\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The maximum number of times to retry this job if it fails.\"\n    },\n    \"AllocatedCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"deprecated\": true,\n      \"description\": \"<p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p> <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p>This property is deprecated, use MaxCapacity instead.\"\n    },\n    \"Timeout\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).\"\n    },\n    \"MaxCapacity\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\\\"https://aws.amazon.com/glue/pricing/\\\">Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\\\"pythonshell\\\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\\\"glueetl\\\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\\\"gluestreaming\\\"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>\"\n    },\n    \"WorkerType\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li> </ul>\"\n    },\n    \"NumberOfWorkers\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The number of workers of a defined <code>workerType</code> that are allocated when a job runs.\"\n    },\n    \"SecurityConfiguration\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The name of the <code>SecurityConfiguration</code> structure to be used with this job.\"\n    },\n    \"NotificationProperty\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"Specifies the configuration properties of a job notification.\"\n    },\n    \"GlueVersion\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p> <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href=\\\"https://docs.aws.amazon.com/glue/latest/dg/add-job.html\\\">Glue version</a> in the developer guide.</p>\"\n    },\n    \"CodeGenConfigurationNodes\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.\"\n    },\n    \"ExecutionClass\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"<p>Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p> <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p> <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>\"\n    },\n    \"SourceControlDetails\": {\n      \"value\": \"<Error: Too many levels of nesting to fake this schema>\",\n      \"description\": \"The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobRunId\": \"jr_abc123\",\n  \"State\": \"SUCCEEDED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://glue.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "84bf4881-cefc-4f4a-bafa-4b1df9e605cf",
+    "name": "AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateJob API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}
