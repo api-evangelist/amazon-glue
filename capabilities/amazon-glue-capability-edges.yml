@@ -1,0 +1,422 @@
+slug: amazon-glue
+provider: Amazon Glue
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 42
+edges:
+- tag: '#X Amz Target=AWSGlue.GetDataQualityResult'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdataqualityresult-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.92
+  evidence: GetDataQualityResult  Amazon Glue Get Data Quality Result; schemas DataQualityRuleResult,
+    DataQualityRuleResultStatus
+  reason: Operation retrieves the outcome of data quality rule evaluation against tables — squarely Data
+    Quality Management.
+- tag: '#X Amz Target=AWSGlue.GetDataQualityRuleset'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdataqualityruleset-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.92
+  evidence: GetDataQualityRuleset  Amazon Glue Get Data Quality Ruleset; schemas DataQualityTargetTable,
+    DataQualityRulesetString
+  reason: Manages rulesets that define data quality expectations for target tables — Data Quality Management.
+- tag: '#X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdataqualityrulesetevaluationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.92
+  evidence: GetDataQualityRulesetEvaluationRun  Amazon Glue Get Data Quality Ruleset Evaluation Run; schema
+    DataQualityResultIdList
+  reason: Retrieves execution of a data quality ruleset evaluation against a data source — data quality
+    monitoring.
+- tag: '#X Amz Target=AWSGlue.BatchGetDataQualityResult'
+  spec_file: amazon-glue-x-amz-target-awsglue-batchgetdataqualityresult-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: 'BatchGetDataQualityResult ... schemas: DataQualityResult, DataQualityRuleResult, DataQualityRuleResultStatus'
+  reason: Operation retrieves results of data-quality rule evaluations over Glue tables — squarely data
+    quality monitoring and remediation reporting.
+- tag: '#X Amz Target=AWSGlue.CreateDataQualityRuleset'
+  spec_file: amazon-glue-x-amz-target-awsglue-createdataqualityruleset-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: CreateDataQualityRuleset ... DataQualityRulesetString, DataQualityTargetTable
+  reason: Operation creates data quality rulesets evaluated against target tables — plainly Data Quality
+    Management.
+- tag: '#X Amz Target=AWSGlue.GetDataQualityRuleRecommendationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdataqualityrulerecommendationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: GetDataQualityRuleRecommendationRun  Amazon Glue Get Data Quality Rule Recommendation Run;
+    schema DataQualityRulesetString
+  reason: Retrieves a run that profiles a data source and recommends data quality rules — data quality
+    profiling and remediation tooling.
+- tag: '#X Amz Target=AWSGlue.StartDataQualityRulesetEvaluationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-startdataqualityrulesetevaluationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.9
+  evidence: 'StartDataQualityRulesetEvaluationRun ... schemas: RulesetNames, DataQualityEvaluationRunAdditionalRunOptions'
+  reason: Evaluating data quality rulesets against data sources is data quality monitoring and remediation
+    support.
+- tag: '#X Amz Target=AWSGlue.CancelDataQualityRulesetEvaluationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-canceldataqualityrulesetevaluationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.88
+  evidence: CancelDataQualityRulesetEvaluationRun  Amazon Glue Cancel Data Quality Ruleset Evaluation
+    Run
+  reason: Manages execution of data-quality ruleset evaluation runs — explicitly data quality monitoring
+    and assessment.
+- tag: '#X Amz Target=AWSGlue.StartDataQualityRuleRecommendationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-startdataqualityrulerecommendationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.88
+  evidence: StartDataQualityRuleRecommendationRun  Amazon Glue Start Data Quality Rule Recommendation
+    Run
+  reason: Operation recommends data quality rules over a Glue table data source, which is squarely data
+    quality profiling/monitoring.
+- tag: '#X Amz Target=AWSGlue.CancelDataQualityRuleRecommendationRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-canceldataqualityrulerecommendationrun-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: CancelDataQualityRuleRecommendationRun ... CancelDataQualityRuleRecommendationRunRequest
+  reason: Controls a run that profiles data and recommends data-quality rules — data quality profiling/monitoring
+    capability.
+- tag: '#X Amz Target=AWSGlue.DeleteDataQualityRuleset'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletedataqualityruleset-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: DeleteDataQualityRuleset  Amazon Glue Delete Data Quality Ruleset
+  reason: The operation manages data quality rulesets, which is explicitly data quality monitoring/remediation
+    tooling.
+- tag: '#X Amz Target=AWSGlue.ListDataQualityResults'
+  spec_file: amazon-glue-x-amz-target-awsglue-listdataqualityresults-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: ListDataQualityResults  Amazon Glue List Data Quality Results ... DataQualityResultDescription,
+    DataQualityResultFilterCriteria
+  reason: Operation and schema names explicitly concern data quality evaluation results over Glue tables,
+    which is Data Quality Management (monitoring, profiling, remediation).
+- tag: '#X Amz Target=AWSGlue.ListDataQualityRuleRecommendationRuns'
+  spec_file: amazon-glue-x-amz-target-awsglue-listdataqualityrulerecommendationruns-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: ListDataQualityRuleRecommendationRuns ... DataQualityRuleRecommendationRunDescription, DataSource,
+    GlueTable
+  reason: Lists runs that recommend data quality rules for a data source — squarely data quality profiling
+    and rule management, i.e. Data Quality Management.
+- tag: '#X Amz Target=AWSGlue.UpdateDataQualityRuleset'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatedataqualityruleset-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.85
+  evidence: UpdateDataQualityRuleset — "Amazon Glue Update Data Quality Ruleset"; schema DataQualityRulesetString
+  reason: The operation manages rulesets used to evaluate data quality, which is squarely Data Quality
+    Management within Information & Data Management.
+- tag: '#X Amz Target=AWSGlue.GetTable'
+  spec_file: amazon-glue-x-amz-target-awsglue-gettable-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.8
+  evidence: 'GetTable  Amazon Glue Get Table — schemas StorageDescriptor, SerDeInfo, SchemaId, ViewTextString;
+    vendor: "includes a Data Catalog for unified metadata management"'
+  reason: Reads table definitions (columns, storage descriptor, serde, schema version) from the Glue Data
+    Catalog — metadata/schema management of data assets, squarely Information & Data Management. Which
+    L2 (governance vs data architecture) is ambiguous, so L2 left null.
+- tag: '#X Amz Target=AWSGlue.GetTableVersion'
+  spec_file: amazon-glue-x-amz-target-awsglue-gettableversion-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.8
+  evidence: GetTableVersion  Amazon Glue Get Table Version — schemas TableVersion, StorageDescriptor,
+    SchemaId
+  reason: Retrieves a versioned catalog table definition; this is data-asset metadata/schema stewardship
+    in the Glue Data Catalog, so Information & Data Management at L1. No single L2 is clearly named by
+    the operation.
+- tag: '#X Amz Target=AWSGlue.GetTableVersions'
+  spec_file: amazon-glue-x-amz-target-awsglue-gettableversions-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.8
+  evidence: GetTableVersions  Amazon Glue Get Table Versions — schemas GetTableVersionsResponse, TableVersion,
+    StorageDescriptor
+  reason: Lists versions of a Data Catalog table definition — metadata/schema lineage of data assets,
+    i.e. Information & Data Management. L2 abstained as the surface is generic metadata retrieval.
+- tag: '#X Amz Target=AWSGlue.GetTables'
+  spec_file: amazon-glue-x-amz-target-awsglue-gettables-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.8
+  evidence: GetTables  Amazon Glue Get Tables — schemas GetTablesRequest, FilterString, StorageDescriptor,
+    SchemaId
+  reason: Lists table metadata definitions in the Data Catalog; this is catalogue/metadata management
+    of data assets rather than any business-domain object. L1 only, as the specific L2 is not evidenced.
+- tag: '#X Amz Target=AWSGlue.ListDataQualityRulesets'
+  spec_file: amazon-glue-x-amz-target-awsglue-listdataqualityrulesets-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.78
+  evidence: ListDataQualityRulesets  Amazon Glue List Data Quality Rulesets; DataQualityRulesetFilterCriteria,
+    DataQualityTargetTable
+  reason: Manages the inventory of data-quality rulesets applied to target tables — squarely data quality
+    rule definition/monitoring, an Information & Data Management capability.
+- tag: '#X Amz Target=AWSGlue.DeleteClassifier'
+  spec_file: amazon-glue-x-amz-target-awsglue-deleteclassifier-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: POST /#X-Amz-Target=AWSGlue.DeleteClassifier  DeleteClassifier — "includes a Data Catalog
+    for unified metadata management"
+  reason: Glue classifiers are metadata artefacts used by crawlers to infer schemas for the Data Catalog,
+    so the operation sits in Information & Data Management; the single delete operation is too thin to
+    pick a specific L2.
+- tag: '#X Amz Target=AWSGlue.DeleteColumnStatisticsForPartition'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletecolumnstatisticsforpartition-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: DeleteColumnStatisticsForPartition  Amazon Glue Delete Column Statistics for Partition
+  reason: Column statistics on catalogued partitions are data-catalog metadata, i.e. Information & Data
+    Management; no single L2 is clearly named by one delete call.
+- tag: '#X Amz Target=AWSGlue.DeleteColumnStatisticsForTable'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletecolumnstatisticsfortable-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: DeleteColumnStatisticsForTable  Amazon Glue Delete Column Statistics for Table
+  reason: Maintenance of table-level statistics in the Glue Data Catalog is data/metadata management;
+    evidence is insufficient for a specific sub-capability.
+- tag: '#X Amz Target=AWSGlue.DeleteCrawler'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletecrawler-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: 'DeleteCrawler  Amazon Glue Delete Crawler — schemas: CrawlerRunningException, SchedulerTransitioningException'
+  reason: Crawlers discover source schemas and populate the Data Catalog, which is metadata/data management
+    work; one delete operation does not pin an L2.
+- tag: '#X Amz Target=AWSGlue.DeleteDatabase'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletedatabase-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: DeleteDatabase  Amazon Glue Delete Database — "a Data Catalog for unified metadata management"
+  reason: A Glue 'database' is a Data Catalog metadata container, so this is Information & Data Management
+    rather than any business-domain capability; L2 not determinable.
+- tag: '#X Amz Target=AWSGlue.DeletePartition'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletepartition-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: 'DeletePartition  Amazon Glue Delete Partition — schemas: CatalogIdString, DeletePartitionRequest'
+  reason: Partitions are Data Catalog metadata objects; the operation is metadata maintenance within Information
+    & Data Management, with no clear L2.
+- tag: '#X Amz Target=AWSGlue.ListDataQualityRulesetEvaluationRuns'
+  spec_file: amazon-glue-x-amz-target-awsglue-listdataqualityrulesetevaluationruns-api-openapi.yml
+  capability_id: BC-610.30
+  capability_id_l1: BC-610
+  capability_name: Data Quality Management
+  confidence: 0.75
+  evidence: ListDataQualityRulesetEvaluationRuns  Amazon Glue List Data Quality Ruleset Evaluation Runs;
+    schemas DataQualityRulesetEvaluationRunFilter, DataQualityRulesetEvaluationRunDescription
+  reason: Operation lists runs that evaluate data-quality rulesets against data sources/tables — this
+    is data quality monitoring and profiling of data assets, i.e. Data Quality Management within Information
+    & Data Management.
+- tag: '#X Amz Target=AWSGlue.StartMLEvaluationTaskRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-startmlevaluationtaskrun-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.75
+  evidence: 'StartMLEvaluationTaskRun ... schemas: MLTransformNotReadyException'
+  reason: Evaluating an ML transform is model lifecycle/MLOps activity, mapping to Artificial Intelligence
+    Management.
+- tag: '#X Amz Target=AWSGlue.StartMLLabelingSetGenerationTaskRun'
+  spec_file: amazon-glue-x-amz-target-awsglue-startmllabelingsetgenerationtaskrun-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.75
+  evidence: StartMLLabelingSetGenerationTaskRun  Amazon Glue Start M L Labeling Set Generation Task Run
+  reason: Generating labeling sets for ML transforms is part of the ML model lifecycle within data management.
+- tag: '#X Amz Target=AWSGlue.UpdateTable'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatetable-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.75
+  evidence: UpdateTable; schemas TableInput, StorageDescriptor, SerDeInfo, SchemaId, ViewTextString
+  reason: Updates a table definition in the Glue Data Catalog — the vendor's "Data Catalog for unified
+    metadata management", i.e. Information & Data Management.
+- tag: '#X Amz Target=AWSGlue.BatchGetJobs'
+  spec_file: amazon-glue-x-amz-target-awsglue-batchgetjobs-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: 'BatchGetJobs ... schemas: S3DirectTarget, DirectJDBCSource, RedshiftSource, FilterOperation,
+    DropNullFields, FillMissingValues, CodeGenConfigurationNode'
+  reason: Retrieves definitions of ETL jobs including sources, targets and transformation nodes — data
+    pipeline/integration management within Information & Data Management. No single L2 cleanly covers
+    ETL pipeline definition.
+- tag: '#X Amz Target=AWSGlue.CreateCrawler'
+  spec_file: amazon-glue-x-amz-target-awsglue-createcrawler-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: CreateCrawler ... SchemaChangePolicy, LineageConfiguration, CrawlerLineageSettings, JdbcMetadataEntry,
+    DeltaTargetList
+  reason: Creates a crawler that discovers data sources and populates catalog metadata with schema-change
+    and lineage settings — metadata/data management. Ambiguous between data governance and data architecture
+    sub-capabilities.
+- tag: '#X Amz Target=AWSGlue.CreateJob'
+  spec_file: amazon-glue-x-amz-target-awsglue-createjob-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: CreateJob ... DirectJDBCSource, RedshiftSource, S3DirectTarget, FilterOperation, CodeGenConfigurationNode
+  reason: Creates an ETL job defining sources, transforms and targets — core data integration/pipeline
+    work under Information & Data Management; no listed L2 cleanly covers ETL pipelines.
+- tag: '#X Amz Target=AWSGlue.CreateSchema'
+  spec_file: amazon-glue-x-amz-target-awsglue-createschema-api-openapi.yml
+  capability_id: BC-610.40
+  capability_id_l1: BC-610
+  capability_name: Data Architecture Management
+  confidence: 0.7
+  evidence: CreateSchema  Amazon Glue Create Schema; schemas SchemaDefinitionString, Compatibility, SchemaVersionStatus,
+    RegistryId
+  reason: Registers versioned data schemas with compatibility rules in the schema registry — logical data
+    structure definition, i.e. Data Architecture Management under Information & Data Management.
+- tag: '#X Amz Target=AWSGlue.CreateTable'
+  spec_file: amazon-glue-x-amz-target-awsglue-createtable-api-openapi.yml
+  capability_id: BC-610.40
+  capability_id_l1: BC-610
+  capability_name: Data Architecture Management
+  confidence: 0.7
+  evidence: CreateTable  Amazon Glue Create Table; schemas TableInput, StorageDescriptor, SchemaId, ViewTextString
+  reason: Creates table metadata definitions in the Glue Data Catalog, the vendor's 'Data Catalog for
+    unified metadata management'. This is logical/physical data structure definition — Data Architecture
+    Management under Information & Data Management.
+- tag: '#X Amz Target=AWSGlue.DeleteJob'
+  spec_file: amazon-glue-x-amz-target-awsglue-deletejob-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: 'DeleteJob  Amazon Glue Delete Job — vendor: "prepare, move, and integrate data from multiple
+    sources"'
+  reason: Glue jobs are ETL/data-integration pipelines, placing the operation in Information & Data Management;
+    a lone delete call does not identify a sub-capability.
+- tag: '#X Amz Target=AWSGlue.GetCrawlers'
+  spec_file: amazon-glue-x-amz-target-awsglue-getcrawlers-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: GetCrawlers  Amazon Glue Get Crawlers; schemas SchemaChangePolicy, CrawlerLineageSettings,
+    LastCrawlInfo, DatabaseName
+  reason: Glue crawlers scan data stores and populate the Data Catalog metadata (schema change policy,
+    lineage settings) — an information & data management capability. Which L2 (governance vs architecture)
+    is not clearly determined, so only L1 is asserted.
+- tag: '#X Amz Target=AWSGlue.GetDatabase'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdatabase-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: GetDatabase  Amazon Glue Get Database; schemas Database, FederatedDatabase, DataLakePrincipal,
+    PrincipalPermissionsList
+  reason: Reads Data Catalog database metadata definitions (federation, principal permissions) — metadata/data
+    asset management under Information & Data Management; L2 not clearly determined.
+- tag: '#X Amz Target=AWSGlue.GetDatabases'
+  spec_file: amazon-glue-x-amz-target-awsglue-getdatabases-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: GetDatabases  Amazon Glue Get Databases; schemas Database, DatabaseIdentifier, ResourceShareType
+  reason: Lists catalog database metadata entries in the Glue Data Catalog — cataloguing of data assets,
+    an Information & Data Management capability.
+- tag: '#X Amz Target=AWSGlue.UpdateDatabase'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatedatabase-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: UpdateDatabase with schemas DatabaseInput, CatalogIdString, DataLakePrincipal, PrincipalPermissions
+  reason: Maintains a Glue Data Catalog database definition (metadata container plus principal permissions)
+    — catalog/metadata management under Information & Data Management. Evidence spans governance and architecture
+    aspects, so L1 only.
+- tag: '#X Amz Target=AWSGlue.UpdateJob'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatejob-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: UpdateJob; schemas RedshiftSource, S3DirectTarget, DirectJDBCSource, CodeGenConfigurationNode,
+    FillMissingValues
+  reason: Defines an ETL job's source/target/transform graph — data integration pipeline definition, i.e.
+    Information & Data Management. No single L2 is clearly named by the evidence.
+- tag: '#X Amz Target=AWSGlue.UpdateMLTransform'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatemltransform-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: UpdateMLTransform; schemas TransformParameters, FindMatchesParameters, TransformType, GlueVersionString
+  reason: Manages the configuration of a machine-learning transform (FindMatches record matching), i.e.
+    ML model lifecycle management within the data platform.
+- tag: '#X Amz Target=AWSGlue.UpdatePartition'
+  spec_file: amazon-glue-x-amz-target-awsglue-updatepartition-api-openapi.yml
+  capability_id: BC-610
+  capability_id_l1: BC-610
+  capability_name: Information & Data Management
+  confidence: 0.7
+  evidence: UpdatePartition; schemas PartitionInput, StorageDescriptor, SerDeInfo, SchemaId
+  reason: Updates partition metadata in the Glue Data Catalog — technical metadata/catalog management
+    under Information & Data Management.
