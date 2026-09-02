@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDevEndpoints API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDevEndpoints #X Amz Target=AWSGlue.GetDevEndpoints #X Amz Target=AWSGlue.GetDevEndpoints API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -224,47 +224,54 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDevEndpoints'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InternalServiceException: {}
-    NullableInteger:
-      type: integer
-    EntityNotFoundException: {}
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
     DevEndpointList:
       type: array
       items:
         $ref: '#/components/schemas/DevEndpoint'
-    OperationTimeoutException: {}
-    GetDevEndpointsRequest:
-      type: object
-      title: GetDevEndpointsRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum size of information to return.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: A continuation token, if this is a continuation call.
-    IntegerValue:
-      type: integer
-    WorkerType:
-      type: string
-      enum:
-      - Standard
-      - G.1X
-      - G.2X
-      - G.025X
-    MapValue:
-      type: object
-      minProperties: 0
-      maxProperties: 100
-      additionalProperties:
-        $ref: '#/components/schemas/GenericString'
     DevEndpoint:
       type: object
       properties:
@@ -369,6 +376,20 @@ components:
           - $ref: '#/components/schemas/MapValue'
           - description: '<p>A map of arguments used to configure the <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>'
       description: A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    PublicKeysList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+      maxItems: 5
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     GetDevEndpointsResponse:
       type: object
       properties:
@@ -380,77 +401,56 @@ components:
           allOf:
           - $ref: '#/components/schemas/GenericString'
           - description: A continuation token, if not all <code>DevEndpoint</code> definitions have yet been returned.
-    PublicKeysList:
+    OperationTimeoutException: {}
+    GenericString:
+      type: string
+    MapValue:
+      type: object
+      minProperties: 0
+      maxProperties: 100
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
+    InvalidInputException: {}
+    StringList:
       type: array
       items:
         $ref: '#/components/schemas/GenericString'
-      maxItems: 5
+    NullableInteger:
+      type: integer
+    IntegerValue:
+      type: integer
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    InternalServiceException: {}
+    EntityNotFoundException: {}
     GlueVersionString:
       type: string
       pattern: ^\w+\.\w+$
       minLength: 1
       maxLength: 255
-    GenericString:
-      type: string
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericString'
-    TimestampValue:
-      type: string
-      format: date-time
-    InvalidInputException: {}
     RoleArn:
       type: string
       pattern: arn:aws:iam::\d{12}:role/.*
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    GetDevEndpointsRequest:
+      type: object
+      title: GetDevEndpointsRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum size of information to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if this is a continuation call.
+    TimestampValue:
+      type: string
+      format: date-time
   securitySchemes:
     hmac:
       type: apiKey

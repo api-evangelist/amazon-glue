@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDatabase API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDatabase #X Amz Target=AWSGlue.GetDatabase #X Amz Target=AWSGlue.GetDatabase API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -238,32 +238,71 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDatabase'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    FederationIdentifier:
-      type: string
-      minLength: 1
-      maxLength: 512
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    PrincipalPermissionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PrincipalPermissions'
-    PermissionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Permission'
-    InternalServiceException: {}
+    ParametersMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParametersMapValue'
     DescriptionString:
       type: string
       minLength: 0
       maxLength: 2048
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    EntityNotFoundException: {}
-    OperationTimeoutException: {}
-    FederationSourceException: {}
-    ParametersMapValue:
+    GetDatabaseResponse:
+      type: object
+      properties:
+        Database:
+          allOf:
+          - $ref: '#/components/schemas/Database'
+          - description: The definition of the specified database in the Data Catalog.
+    URI:
       type: string
-      maxLength: 512000
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     FederatedDatabase:
       type: object
       properties:
@@ -276,23 +315,73 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the connection to the external metastore.
       description: A database that points to an entity outside the Glue Data Catalog.
-    URI:
-      type: string
-      minLength: 1
-      maxLength: 1024
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    PrincipalPermissions:
+    DataLakePrincipal:
       type: object
       properties:
-        Principal:
+        DataLakePrincipalIdentifier:
           allOf:
-          - $ref: '#/components/schemas/DataLakePrincipal'
-          - description: The principal who is granted permissions.
-        Permissions:
+          - $ref: '#/components/schemas/DataLakePrincipalString'
+          - description: An identifier for the Lake Formation principal.
+      description: The Lake Formation principal.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetDatabaseRequest:
+      type: object
+      required:
+      - Name
+      title: GetDatabaseRequest
+      properties:
+        CatalogId:
           allOf:
-          - $ref: '#/components/schemas/PermissionList'
-          - description: The permissions that are granted to the principal.
-      description: Permissions granted to a principal.
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
+    GlueEncryptionException: {}
+    FederationSourceException: {}
+    DatabaseIdentifier:
+      type: object
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database.
+      description: A structure that describes a target database for resource linking.
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OperationTimeoutException: {}
+    Permission:
+      type: string
+      enum:
+      - ALL
+      - SELECT
+      - ALTER
+      - DROP
+      - DELETE
+      - INSERT
+      - CREATE_DATABASE
+      - CREATE_TABLE
+      - DATA_LOCATION_ACCESS
+    Timestamp:
+      type: string
+      format: date-time
+    PrincipalPermissionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrincipalPermissions'
+    InvalidInputException: {}
     Database:
       type: object
       required:
@@ -335,125 +424,36 @@ components:
           - $ref: '#/components/schemas/FederatedDatabase'
           - description: A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
       description: The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.
-    DatabaseIdentifier:
-      type: object
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog in which the database resides.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database.
-      description: A structure that describes a target database for resource linking.
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    DataLakePrincipal:
-      type: object
-      properties:
-        DataLakePrincipalIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/DataLakePrincipalString'
-          - description: An identifier for the Lake Formation principal.
-      description: The Lake Formation principal.
-    GetDatabaseResponse:
-      type: object
-      properties:
-        Database:
-          allOf:
-          - $ref: '#/components/schemas/Database'
-          - description: The definition of the specified database in the Data Catalog.
-    ParametersMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParametersMapValue'
-    Permission:
-      type: string
-      enum:
-      - ALL
-      - SELECT
-      - ALTER
-      - DROP
-      - DELETE
-      - INSERT
-      - CREATE_DATABASE
-      - CREATE_TABLE
-      - DATA_LOCATION_ACCESS
-    GlueEncryptionException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GetDatabaseRequest:
-      type: object
-      required:
-      - Name
-      title: GetDatabaseRequest
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
     DataLakePrincipalString:
       type: string
       minLength: 1
       maxLength: 255
-    Timestamp:
+    FederationIdentifier:
       type: string
-      format: date-time
-    InvalidInputException: {}
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+      minLength: 1
+      maxLength: 512
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PrincipalPermissions:
+      type: object
+      properties:
+        Principal:
+          allOf:
+          - $ref: '#/components/schemas/DataLakePrincipal'
+          - description: The principal who is granted permissions.
+        Permissions:
+          allOf:
+          - $ref: '#/components/schemas/PermissionList'
+          - description: The permissions that are granted to the principal.
+      description: Permissions granted to a principal.
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    PermissionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    ParametersMapValue:
+      type: string
+      maxLength: 512000
   securitySchemes:
     hmac:
       type: apiKey

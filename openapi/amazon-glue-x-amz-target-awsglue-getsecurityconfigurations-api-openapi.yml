@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetSecurityConfigurations API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetSecurityConfigurations #X Amz Target=AWSGlue.GetSecurityConfigurations #X Amz Target=AWSGlue.GetSecurityConfigurations API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -225,9 +225,6 @@ paths:
       - '#X Amz Target=AWSGlue.GetSecurityConfigurations'
 components:
   schemas:
-    KmsKeyArn:
-      type: string
-      pattern: arn:aws:kms:.*
     JobBookmarksEncryption:
       type: object
       properties:
@@ -240,6 +237,95 @@ components:
           - $ref: '#/components/schemas/KmsKeyArn'
           - description: The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
       description: Specifies how job bookmark data should be encrypted.
+    KmsKeyArn:
+      type: string
+      pattern: arn:aws:kms:.*
+    GetSecurityConfigurationsResponse:
+      type: object
+      properties:
+        SecurityConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/SecurityConfigurationList'
+          - description: A list of security configurations.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if there are more security configurations to return.
+    GetSecurityConfigurationsRequest:
+      type: object
+      title: GetSecurityConfigurationsRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if this is a continuation call.
+    S3Encryption:
+      type: object
+      properties:
+        S3EncryptionMode:
+          allOf:
+          - $ref: '#/components/schemas/S3EncryptionMode'
+          - description: The encryption mode to use for Amazon S3 data.
+        KmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KmsKeyArn'
+          - description: The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
+      description: Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    CloudWatchEncryptionMode:
+      type: string
+      enum:
+      - DISABLED
+      - SSE-KMS
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EncryptionConfiguration:
+      type: object
+      properties:
+        S3Encryption:
+          allOf:
+          - $ref: '#/components/schemas/S3EncryptionList'
+          - description: The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
+        CloudWatchEncryption:
+          allOf:
+          - $ref: '#/components/schemas/CloudWatchEncryption'
+          - description: The encryption configuration for Amazon CloudWatch.
+        JobBookmarksEncryption:
+          allOf:
+          - $ref: '#/components/schemas/JobBookmarksEncryption'
+          - description: The encryption configuration for job bookmarks.
+      description: Specifies an encryption configuration.
+    JobBookmarksEncryptionMode:
+      type: string
+      enum:
+      - DISABLED
+      - CSE-KMS
+    OperationTimeoutException: {}
+    CloudWatchEncryption:
+      type: object
+      properties:
+        CloudWatchEncryptionMode:
+          allOf:
+          - $ref: '#/components/schemas/CloudWatchEncryptionMode'
+          - description: The encryption mode to use for CloudWatch data.
+        KmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/KmsKeyArn'
+          - description: The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
+      description: Specifies how Amazon CloudWatch data should be encrypted.
+    GenericString:
+      type: string
+    InvalidInputException: {}
     SecurityConfiguration:
       type: object
       properties:
@@ -266,128 +352,18 @@ components:
       - DISABLED
       - SSE-KMS
       - SSE-S3
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    OperationTimeoutException: {}
-    GetSecurityConfigurationsRequest:
-      type: object
-      title: GetSecurityConfigurationsRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum number of results to return.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: A continuation token, if this is a continuation call.
-    GetSecurityConfigurationsResponse:
-      type: object
-      properties:
-        SecurityConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/SecurityConfigurationList'
-          - description: A list of security configurations.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: A continuation token, if there are more security configurations to return.
-    EncryptionConfiguration:
-      type: object
-      properties:
-        S3Encryption:
-          allOf:
-          - $ref: '#/components/schemas/S3EncryptionList'
-          - description: The encryption configuration for Amazon Simple Storage Service (Amazon S3) data.
-        CloudWatchEncryption:
-          allOf:
-          - $ref: '#/components/schemas/CloudWatchEncryption'
-          - description: The encryption configuration for Amazon CloudWatch.
-        JobBookmarksEncryption:
-          allOf:
-          - $ref: '#/components/schemas/JobBookmarksEncryption'
-          - description: The encryption configuration for job bookmarks.
-      description: Specifies an encryption configuration.
-    S3Encryption:
-      type: object
-      properties:
-        S3EncryptionMode:
-          allOf:
-          - $ref: '#/components/schemas/S3EncryptionMode'
-          - description: The encryption mode to use for Amazon S3 data.
-        KmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/KmsKeyArn'
-          - description: The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
-      description: Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
-    CloudWatchEncryptionMode:
-      type: string
-      enum:
-      - DISABLED
-      - SSE-KMS
     S3EncryptionList:
       type: array
       items:
         $ref: '#/components/schemas/S3Encryption'
-    JobBookmarksEncryptionMode:
-      type: string
-      enum:
-      - DISABLED
-      - CSE-KMS
-    GenericString:
-      type: string
+    InternalServiceException: {}
+    EntityNotFoundException: {}
     TimestampValue:
       type: string
       format: date-time
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InvalidInputException: {}
-    CloudWatchEncryption:
-      type: object
-      properties:
-        CloudWatchEncryptionMode:
-          allOf:
-          - $ref: '#/components/schemas/CloudWatchEncryptionMode'
-          - description: The encryption mode to use for CloudWatch data.
-        KmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/KmsKeyArn'
-          - description: The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.
-      description: Specifies how Amazon CloudWatch data should be encrypted.
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -398,8 +374,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

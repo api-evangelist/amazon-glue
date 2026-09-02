@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchDeletePartition API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchDeletePartition #X Amz Target=AWSGlue.BatchDeletePartition #X Amz Target=AWSGlue.BatchDeletePartition API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -212,7 +212,62 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.BatchDeletePartition'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    BatchDeletePartitionResponse:
+      type: object
+      properties:
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/PartitionErrors'
+          - description: The errors encountered when trying to delete the requested partitions.
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     BatchDeletePartitionRequest:
       type: object
       required:
@@ -237,71 +292,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/BatchDeletePartitionValueList'
           - description: A list of <code>PartitionInput</code> structures that define the partitions to be deleted.
-    InternalServiceException: {}
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    EntityNotFoundException: {}
-    PartitionValueList:
-      type: object
-      required:
-      - Values
-      properties:
-        Values:
-          allOf:
-          - $ref: '#/components/schemas/ValueStringList'
-          - description: The list of values.
-      description: Contains a list of values defining partitions.
-    ErrorDetail:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The code associated with this error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A message describing the error.
-      description: Contains details about an error.
-    ValueString:
-      type: string
-      maxLength: 1024
-    OperationTimeoutException: {}
-    PartitionErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/PartitionError'
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    BatchDeletePartitionResponse:
-      type: object
-      properties:
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/PartitionErrors'
-          - description: The errors encountered when trying to delete the requested partitions.
-    ValueStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ValueString'
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InvalidInputException: {}
     BatchDeletePartitionValueList:
       type: array
       items:
         $ref: '#/components/schemas/PartitionValueList'
       minItems: 0
       maxItems: 25
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ValueStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ValueString'
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     PartitionError:
       type: object
       properties:
@@ -314,49 +324,39 @@ components:
           - $ref: '#/components/schemas/ErrorDetail'
           - description: The details about the partition error.
       description: Contains information about a partition error.
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    ErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The code associated with this error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A message describing the error.
+      description: Contains details about an error.
+    OperationTimeoutException: {}
+    PartitionErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/PartitionError'
+    PartitionValueList:
+      type: object
+      required:
+      - Values
+      properties:
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/ValueStringList'
+          - description: The list of values.
+      description: Contains a list of values defining partitions.
+    InvalidInputException: {}
+    ValueString:
+      type: string
+      maxLength: 1024
+    InternalServiceException: {}
+    EntityNotFoundException: {}
   securitySchemes:
     hmac:
       type: apiKey

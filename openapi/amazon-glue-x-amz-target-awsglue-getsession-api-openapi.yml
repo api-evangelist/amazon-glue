@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetSession API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetSession #X Amz Target=AWSGlue.GetSession #X Amz Target=AWSGlue.GetSession API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -226,48 +226,57 @@ paths:
       - '#X Amz Target=AWSGlue.GetSession'
 components:
   schemas:
-    InternalServiceException: {}
+    OrchestrationArgumentsValue:
+      type: string
+      minLength: 0
+      maxLength: 4096
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    DoubleValue:
+      type: number
+      format: double
+    GetSessionRequest:
+      type: object
+      required:
+      - Id
+      title: GetSessionRequest
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: 'The ID of the session. '
+        RequestOrigin:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationNameString'
+          - description: 'The origin of the request. '
     DescriptionString:
       type: string
       minLength: 0
       maxLength: 2048
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    PythonVersionString:
+      type: string
+      pattern: ^([2-3]|3[.]9)$
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OrchestrationRoleArn:
+      type: string
+      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
+      minLength: 20
+      maxLength: 2048
     OrchestrationArgumentsMap:
       type: object
       minProperties: 0
       maxProperties: 75
       additionalProperties:
         $ref: '#/components/schemas/OrchestrationArgumentsValue'
-    EntityNotFoundException: {}
-    PythonVersionString:
-      type: string
-      pattern: ^([2-3]|3[.]9)$
-    OrchestrationRoleArn:
-      type: string
-      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
-      minLength: 20
-      maxLength: 2048
-    SessionCommand:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
-        PythonVersion:
-          allOf:
-          - $ref: '#/components/schemas/PythonVersionString'
-          - description: Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.
-      description: The <code>SessionCommand</code> that runs the job.
-    OperationTimeoutException: {}
-    ConnectionsList:
-      type: object
-      properties:
-        Connections:
-          allOf:
-          - $ref: '#/components/schemas/OrchestrationStringList'
-          - description: A list of connections used by the job.
-      description: Specifies the connections used by a job.
     Session:
       type: object
       properties:
@@ -324,15 +333,44 @@ components:
           - $ref: '#/components/schemas/GlueVersionString'
           - description: The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.
       description: The period in which a remote Spark runtime environment is running.
-    OrchestrationArgumentsValue:
-      type: string
-      minLength: 0
-      maxLength: 4096
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    DoubleValue:
-      type: number
-      format: double
+    SessionCommand:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
+        PythonVersion:
+          allOf:
+          - $ref: '#/components/schemas/PythonVersionString'
+          - description: Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.
+      description: The <code>SessionCommand</code> that runs the job.
     AccessDeniedException: {}
+    OperationTimeoutException: {}
+    GetSessionResponse:
+      type: object
+      properties:
+        Session:
+          allOf:
+          - $ref: '#/components/schemas/Session'
+          - description: The session object is returned in the response.
+    GenericString:
+      type: string
+    ConnectionsList:
+      type: object
+      properties:
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationStringList'
+          - description: A list of connections used by the job.
+      description: Specifies the connections used by a job.
+    InvalidInputException: {}
+    OrchestrationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    InternalServiceException: {}
+    EntityNotFoundException: {}
     NullableDouble:
       type: number
       format: double
@@ -341,20 +379,6 @@ components:
       pattern: ^\w+\.\w+$
       minLength: 1
       maxLength: 255
-    GetSessionRequest:
-      type: object
-      required:
-      - Id
-      title: GetSessionRequest
-      properties:
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: 'The ID of the session. '
-        RequestOrigin:
-          allOf:
-          - $ref: '#/components/schemas/OrchestrationNameString'
-          - description: 'The origin of the request. '
     SessionStatus:
       type: string
       enum:
@@ -364,60 +388,12 @@ components:
       - TIMEOUT
       - STOPPING
       - STOPPED
-    OrchestrationNameString:
-      type: string
-      pattern: '[\.\-_A-Za-z0-9]+'
-      minLength: 1
-      maxLength: 128
-    OrchestrationStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericString'
-    GenericString:
-      type: string
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     TimestampValue:
       type: string
       format: date-time
-    InvalidInputException: {}
-    GetSessionResponse:
-      type: object
-      properties:
-        Session:
-          allOf:
-          - $ref: '#/components/schemas/Session'
-          - description: The session object is returned in the response.
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -428,8 +404,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

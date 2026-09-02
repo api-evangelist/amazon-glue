@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -212,7 +212,59 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NullableBoolean:
+      type: boolean
+    ExecutionTime:
+      type: integer
     DataSource:
       type: object
       required:
@@ -223,7 +275,58 @@ components:
           - $ref: '#/components/schemas/GlueTable'
           - description: An Glue table.
       description: A data source (an Glue table) for which you want data quality results.
-    InternalServiceException: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DataQualityResultIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HashString'
+      minItems: 1
+      maxItems: 10
+    GlueTable:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A database name in the Glue Data Catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A table name in the Glue Data Catalog.
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A unique identifier for the Glue Data Catalog.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the Glue Data Catalog.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
+          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
+      description: The database and table in the Glue Data Catalog that is used for input or output data.
+    UriString:
+      type: string
+    DataQualityEvaluationRunAdditionalRunOptions:
+      type: object
+      properties:
+        CloudWatchMetricsEnabled:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Whether or not to enable CloudWatch metrics.
+        ResultsS3Prefix:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: Prefix for Amazon S3 to store results.
+      description: Additional run options you can specify for an evaluation run.
     GetDataQualityRulesetEvaluationRunResponse:
       type: object
       properties:
@@ -283,66 +386,16 @@ components:
           allOf:
           - $ref: '#/components/schemas/DataQualityResultIdList'
           - description: A list of result IDs for the data quality results for the run.
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    NullableInteger:
-      type: integer
-    RoleString:
-      type: string
-    ExecutionTime:
-      type: integer
-    EntityNotFoundException: {}
-    NullableBoolean:
-      type: boolean
     OperationTimeoutException: {}
-    RulesetNames:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-      minItems: 1
-      maxItems: 10
+    GenericString:
+      type: string
     Timeout:
       type: integer
       minimum: 1
-    HashString:
+    Timestamp:
       type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    UriString:
-      type: string
-    GlueTable:
-      type: object
-      required:
-      - DatabaseName
-      - TableName
-      properties:
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A database name in the Glue Data Catalog.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A table name in the Glue Data Catalog.
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A unique identifier for the Glue Data Catalog.
-        ConnectionName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the connection to the Glue Data Catalog.
-        AdditionalOptions:
-          allOf:
-          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
-          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
-      description: The database and table in the Glue Data Catalog that is used for input or output data.
-    GenericString:
-      type: string
+      format: date-time
+    InvalidInputException: {}
     TaskStatusType:
       type: string
       enum:
@@ -353,33 +406,29 @@ components:
       - SUCCEEDED
       - FAILED
       - TIMEOUT
+    NullableInteger:
+      type: integer
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    RoleString:
+      type: string
+    RulesetNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+      minItems: 1
+      maxItems: 10
+    InternalServiceException: {}
+    EntityNotFoundException: {}
     GlueTableAdditionalOptions:
       type: object
       minProperties: 1
       maxProperties: 10
       additionalProperties:
         $ref: '#/components/schemas/DescriptionString'
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InvalidInputException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    DataQualityEvaluationRunAdditionalRunOptions:
-      type: object
-      properties:
-        CloudWatchMetricsEnabled:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Whether or not to enable CloudWatch metrics.
-        ResultsS3Prefix:
-          allOf:
-          - $ref: '#/components/schemas/UriString'
-          - description: Prefix for Amazon S3 to store results.
-      description: Additional run options you can specify for an evaluation run.
     GetDataQualityRulesetEvaluationRunRequest:
       type: object
       required:
@@ -390,55 +439,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/HashString'
           - description: The unique run identifier associated with this run.
-    DataQualityResultIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/HashString'
-      minItems: 1
-      maxItems: 10
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

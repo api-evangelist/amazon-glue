@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetMapping API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetMapping #X Amz Target=AWSGlue.GetMapping #X Amz Target=AWSGlue.GetMapping API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -212,17 +212,92 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetMapping'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    SchemaPathString:
+    Boolean:
+      type: boolean
+    FieldType:
       type: string
-    InternalServiceException: {}
     CatalogEntries:
       type: array
       items:
         $ref: '#/components/schemas/CatalogEntry'
-    Boolean:
-      type: boolean
-    EntityNotFoundException: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetMappingRequest:
+      type: object
+      required:
+      - Source
+      title: GetMappingRequest
+      properties:
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/CatalogEntry'
+          - description: Specifies the source table.
+        Sinks:
+          allOf:
+          - $ref: '#/components/schemas/CatalogEntries'
+          - description: A list of target tables.
+        Location:
+          allOf:
+          - $ref: '#/components/schemas/Location'
+          - description: Parameters for the mapping.
+    SchemaPathString:
+      type: string
+    CodeGenNodeArgs:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeGenNodeArg'
+      minItems: 0
+      maxItems: 50
+    OperationTimeoutException: {}
+    TableName:
+      type: string
     CatalogEntry:
       type: object
       required:
@@ -238,53 +313,9 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the table in question.
       description: Specifies a table definition in the Glue Data Catalog.
-    OperationTimeoutException: {}
-    Location:
-      type: object
-      properties:
-        Jdbc:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenNodeArgs'
-          - description: A JDBC location.
-        S3:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenNodeArgs'
-          - description: An Amazon Simple Storage Service (Amazon S3) location.
-        DynamoDB:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenNodeArgs'
-          - description: An Amazon DynamoDB table location.
-      description: The location of resources.
-    CodeGenNodeArg:
-      type: object
-      required:
-      - Name
-      - Value
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenArgName'
-          - description: The name of the argument or property.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenArgValue'
-          - description: The value of the argument or property.
-        Param:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: True if the value is used as a parameter.
-      description: An argument or property of a node.
-    GetMappingResponse:
-      type: object
-      required:
-      - Mapping
-      properties:
-        Mapping:
-          allOf:
-          - $ref: '#/components/schemas/MappingList'
-          - description: A list of mappings to the specified targets.
     CodeGenArgName:
       type: string
+    InvalidInputException: {}
     MappingEntry:
       type: object
       properties:
@@ -313,89 +344,58 @@ components:
           - $ref: '#/components/schemas/FieldType'
           - description: The target type.
       description: Defines a mapping.
-    FieldType:
-      type: string
-    TableName:
-      type: string
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InvalidInputException: {}
-    CodeGenNodeArgs:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeGenNodeArg'
-      minItems: 0
-      maxItems: 50
-    GetMappingRequest:
+    CodeGenNodeArg:
       type: object
       required:
-      - Source
-      title: GetMappingRequest
+      - Name
+      - Value
       properties:
-        Source:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/CatalogEntry'
-          - description: Specifies the source table.
-        Sinks:
+          - $ref: '#/components/schemas/CodeGenArgName'
+          - description: The name of the argument or property.
+        Value:
           allOf:
-          - $ref: '#/components/schemas/CatalogEntries'
-          - description: A list of target tables.
-        Location:
+          - $ref: '#/components/schemas/CodeGenArgValue'
+          - description: The value of the argument or property.
+        Param:
           allOf:
-          - $ref: '#/components/schemas/Location'
-          - description: Parameters for the mapping.
+          - $ref: '#/components/schemas/Boolean'
+          - description: True if the value is used as a parameter.
+      description: An argument or property of a node.
+    EntityNotFoundException: {}
+    InternalServiceException: {}
+    GetMappingResponse:
+      type: object
+      required:
+      - Mapping
+      properties:
+        Mapping:
+          allOf:
+          - $ref: '#/components/schemas/MappingList'
+          - description: A list of mappings to the specified targets.
     MappingList:
       type: array
       items:
         $ref: '#/components/schemas/MappingEntry'
+    Location:
+      type: object
+      properties:
+        Jdbc:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: A JDBC location.
+        S3:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: An Amazon Simple Storage Service (Amazon S3) location.
+        DynamoDB:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenNodeArgs'
+          - description: An Amazon DynamoDB table location.
+      description: The location of resources.
     CodeGenArgValue:
       type: string
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

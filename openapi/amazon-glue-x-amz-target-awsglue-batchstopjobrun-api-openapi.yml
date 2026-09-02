@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchStopJobRun API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchStopJobRun #X Amz Target=AWSGlue.BatchStopJobRun #X Amz Target=AWSGlue.BatchStopJobRun API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -199,67 +199,60 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.BatchStopJobRun'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InternalServiceException: {}
     DescriptionString:
       type: string
       minLength: 0
       maxLength: 2048
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    BatchStopJobRunSuccessfulSubmissionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmission'
-    ErrorDetail:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The code associated with this error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A message describing the error.
-      description: Contains details about an error.
-    BatchStopJobRunSuccessfulSubmission:
-      type: object
-      properties:
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the job definition used in the job run that was stopped.
-        JobRunId:
-          allOf:
-          - $ref: '#/components/schemas/IdString'
-          - description: The <code>JobRunId</code> of the job run that was stopped.
-      description: Records a successful request to stop a specified <code>JobRun</code>.
-    OperationTimeoutException: {}
-    BatchStopJobRunErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchStopJobRunError'
     IdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    BatchStopJobRunError:
-      type: object
-      properties:
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the job definition that is used in the job run in question.
-        JobRunId:
-          allOf:
-          - $ref: '#/components/schemas/IdString'
-          - description: The <code>JobRunId</code> of the job run in question.
-        ErrorDetail:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetail'
-          - description: Specifies details about the error that was encountered.
-      description: Records an error that occurred when attempting to stop a specified job run.
     BatchStopJobRunJobRunIdList:
       type: array
       items:
@@ -286,6 +279,31 @@ components:
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    BatchStopJobRunSuccessfulSubmission:
+      type: object
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition used in the job run that was stopped.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The <code>JobRunId</code> of the job run that was stopped.
+      description: Records a successful request to stop a specified <code>JobRun</code>.
+    ErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The code associated with this error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A message describing the error.
+      description: Contains details about an error.
+    OperationTimeoutException: {}
     BatchStopJobRunResponse:
       type: object
       properties:
@@ -298,49 +316,31 @@ components:
           - $ref: '#/components/schemas/BatchStopJobRunErrorList'
           - description: A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.
     InvalidInputException: {}
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    BatchStopJobRunErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchStopJobRunError'
+    InternalServiceException: {}
+    BatchStopJobRunSuccessfulSubmissionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmission'
+    BatchStopJobRunError:
+      type: object
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition that is used in the job run in question.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The <code>JobRunId</code> of the job run in question.
+        ErrorDetail:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetail'
+          - description: Specifies details about the error that was encountered.
+      description: Records an error that occurred when attempting to stop a specified job run.
   securitySchemes:
     hmac:
       type: apiKey

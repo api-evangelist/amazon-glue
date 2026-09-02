@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListCustomEntityTypes API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListCustomEntityTypes #X Amz Target=AWSGlue.ListCustomEntityTypes #X Amz Target=AWSGlue.ListCustomEntityTypes API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -211,97 +211,14 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListCustomEntityTypes'
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    CustomEntityTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/CustomEntityType'
-    InternalServiceException: {}
-    OperationTimeoutException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     ContextWords:
       type: array
       items:
         $ref: '#/components/schemas/NameString'
       minItems: 1
       maxItems: 20
-    ListCustomEntityTypesRequest:
-      type: object
-      title: ListCustomEntityTypesRequest
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: A paginated token to offset the results.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum number of results to return.
-    InvalidInputException: {}
-    ListCustomEntityTypesResponse:
-      type: object
-      properties:
-        CustomEntityTypes:
-          allOf:
-          - $ref: '#/components/schemas/CustomEntityTypes'
-          - description: A list of <code>CustomEntityType</code> objects representing custom patterns.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: A pagination token, if more results are available.
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    PaginationToken:
-      type: string
+    OperationTimeoutException: {}
     CustomEntityType:
       type: object
       required:
@@ -321,6 +238,89 @@ components:
           - $ref: '#/components/schemas/ContextWords'
           - description: <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p> <p>If no context words are passed only a regular expression is checked.</p>
       description: An object representing a custom pattern for detecting sensitive data across the columns and rows of your structured data.
+    InternalServiceException: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PaginationToken:
+      type: string
+    ListCustomEntityTypesRequest:
+      type: object
+      title: ListCustomEntityTypesRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A paginated token to offset the results.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return.
+    ListCustomEntityTypesResponse:
+      type: object
+      properties:
+        CustomEntityTypes:
+          allOf:
+          - $ref: '#/components/schemas/CustomEntityTypes'
+          - description: A list of <code>CustomEntityType</code> objects representing custom patterns.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A pagination token, if more results are available.
+    InvalidInputException: {}
+    CustomEntityTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/CustomEntityType'
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

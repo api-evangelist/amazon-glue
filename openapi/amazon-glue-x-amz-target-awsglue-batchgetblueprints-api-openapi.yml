@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetBlueprints API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchGetBlueprints #X Amz Target=AWSGlue.BatchGetBlueprints #X Amz Target=AWSGlue.BatchGetBlueprints API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -199,95 +199,71 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.BatchGetBlueprints'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InternalServiceException: {}
     NullableBoolean:
       type: boolean
-    Blueprints:
+    BlueprintParameterSpec:
+      type: string
+      minLength: 1
+      maxLength: 131072
+    BlueprintNames:
       type: array
       items:
-        $ref: '#/components/schemas/Blueprint'
-    OperationTimeoutException: {}
+        $ref: '#/components/schemas/OrchestrationNameString'
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
     BatchGetBlueprintNames:
       type: array
       items:
         $ref: '#/components/schemas/OrchestrationNameString'
       minItems: 1
       maxItems: 25
-    BatchGetBlueprintsRequest:
-      type: object
-      required:
-      - Names
-      title: BatchGetBlueprintsRequest
-      properties:
-        Names:
-          allOf:
-          - $ref: '#/components/schemas/BatchGetBlueprintNames'
-          - description: A list of blueprint names.
-        IncludeBlueprint:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Specifies whether or not to include the blueprint in the response.
-        IncludeParameterSpec:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.
-    Generic512CharString:
-      type: string
-      minLength: 1
-      maxLength: 512
-    ErrorString:
-      type: string
-    BlueprintNames:
-      type: array
-      items:
-        $ref: '#/components/schemas/OrchestrationNameString'
-    BatchGetBlueprintsResponse:
-      type: object
-      properties:
-        Blueprints:
-          allOf:
-          - $ref: '#/components/schemas/Blueprints'
-          - description: Returns a list of blueprint as a <code>Blueprints</code> object.
-        MissingBlueprints:
-          allOf:
-          - $ref: '#/components/schemas/BlueprintNames'
-          - description: Returns a list of <code>BlueprintNames</code> that were not found.
-    BlueprintParameterSpec:
-      type: string
-      minLength: 1
-      maxLength: 131072
-    OrchestrationNameString:
-      type: string
-      pattern: '[\.\-_A-Za-z0-9]+'
-      minLength: 1
-      maxLength: 128
-    LastActiveDefinition:
-      type: object
-      properties:
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/Generic512CharString'
-          - description: The description of the blueprint.
-        LastModifiedOn:
-          allOf:
-          - $ref: '#/components/schemas/TimestampValue'
-          - description: The date and time the blueprint was last modified.
-        ParameterSpec:
-          allOf:
-          - $ref: '#/components/schemas/BlueprintParameterSpec'
-          - description: A JSON string specifying the parameters for the blueprint.
-        BlueprintLocation:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.
-        BlueprintServiceLocation:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.
-      description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
-    GenericString:
-      type: string
     BlueprintStatus:
       type: string
       enum:
@@ -295,10 +271,15 @@ components:
       - ACTIVE
       - UPDATING
       - FAILED
-    TimestampValue:
+    OperationTimeoutException: {}
+    GenericString:
       type: string
-      format: date-time
-    InvalidInputException: {}
+    Generic512CharString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    ErrorString:
+      type: string
     Blueprint:
       type: object
       properties:
@@ -343,49 +324,68 @@ components:
           - $ref: '#/components/schemas/LastActiveDefinition'
           - description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
       description: The details of a blueprint.
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    InvalidInputException: {}
+    LastActiveDefinition:
+      type: object
+      properties:
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/Generic512CharString'
+          - description: The description of the blueprint.
+        LastModifiedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The date and time the blueprint was last modified.
+        ParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintParameterSpec'
+          - description: A JSON string specifying the parameters for the blueprint.
+        BlueprintLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.
+        BlueprintServiceLocation:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.
+      description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
+    Blueprints:
+      type: array
+      items:
+        $ref: '#/components/schemas/Blueprint'
+    BatchGetBlueprintsRequest:
+      type: object
+      required:
+      - Names
+      title: BatchGetBlueprintsRequest
+      properties:
+        Names:
+          allOf:
+          - $ref: '#/components/schemas/BatchGetBlueprintNames'
+          - description: A list of blueprint names.
+        IncludeBlueprint:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the blueprint in the response.
+        IncludeParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.
+    InternalServiceException: {}
+    BatchGetBlueprintsResponse:
+      type: object
+      properties:
+        Blueprints:
+          allOf:
+          - $ref: '#/components/schemas/Blueprints'
+          - description: Returns a list of blueprint as a <code>Blueprints</code> object.
+        MissingBlueprints:
+          allOf:
+          - $ref: '#/components/schemas/BlueprintNames'
+          - description: Returns a list of <code>BlueprintNames</code> that were not found.
+    TimestampValue:
+      type: string
+      format: date-time
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListSchemaVersions API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListSchemaVersions #X Amz Target=AWSGlue.ListSchemaVersions #X Amz Target=AWSGlue.ListSchemaVersions API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -224,15 +224,54 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListSchemaVersions'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    CreatedTimestamp:
-      type: string
-    InternalServiceException: {}
     SchemaVersionList:
       type: array
       items:
         $ref: '#/components/schemas/SchemaVersionListItem'
-    EntityNotFoundException: {}
     SchemaId:
       type: object
       properties:
@@ -253,6 +292,24 @@ components:
       type: integer
       minimum: 1
       maximum: 100
+    ListSchemaVersionsInput:
+      type: object
+      required:
+      - SchemaId
+      title: ListSchemaVersionsInput
+      properties:
+        SchemaId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaId'
+          - description: '<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>'
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/MaxResultsNumber'
+          - description: Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryTokenString'
+          - description: A continuation token, if this is a continuation call.
     SchemaVersionIdString:
       type: string
       pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
@@ -265,14 +322,16 @@ components:
       - PENDING
       - FAILURE
       - DELETING
-    AccessDeniedException: {}
-    SchemaRegistryNameString:
+    VersionLongNumber:
+      type: integer
+      minimum: 1
+      maximum: 100000
+    GlueResourceArn:
       type: string
-      pattern: '[a-zA-Z0-9-_$#.]+'
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
       minLength: 1
-      maxLength: 255
-    SchemaRegistryTokenString:
-      type: string
+      maxLength: 10240
+    AccessDeniedException: {}
     ListSchemaVersionsResponse:
       type: object
       properties:
@@ -284,12 +343,18 @@ components:
           allOf:
           - $ref: '#/components/schemas/SchemaRegistryTokenString'
           - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
-    GlueResourceArn:
+    SchemaRegistryNameString:
       type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      pattern: '[a-zA-Z0-9-_$#.]+'
       minLength: 1
-      maxLength: 10240
+      maxLength: 255
     InvalidInputException: {}
+    SchemaRegistryTokenString:
+      type: string
+    CreatedTimestamp:
+      type: string
+    InternalServiceException: {}
+    EntityNotFoundException: {}
     SchemaVersionListItem:
       type: object
       properties:
@@ -314,71 +379,6 @@ components:
           - $ref: '#/components/schemas/CreatedTimestamp'
           - description: The date and time the schema version was created.
       description: An object containing the details about a schema version.
-    VersionLongNumber:
-      type: integer
-      minimum: 1
-      maximum: 100000
-    ListSchemaVersionsInput:
-      type: object
-      required:
-      - SchemaId
-      title: ListSchemaVersionsInput
-      properties:
-        SchemaId:
-          allOf:
-          - $ref: '#/components/schemas/SchemaId'
-          - description: '<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>'
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/MaxResultsNumber'
-          - description: Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/SchemaRegistryTokenString'
-          - description: A continuation token, if this is a continuation call.
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

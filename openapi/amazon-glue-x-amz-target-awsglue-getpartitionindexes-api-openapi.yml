@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetPartitionIndexes API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetPartitionIndexes #X Amz Target=AWSGlue.GetPartitionIndexes #X Amz Target=AWSGlue.GetPartitionIndexes API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -231,27 +231,98 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetPartitionIndexes'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InternalServiceException: {}
-    ColumnTypeString:
-      type: string
-      minLength: 0
-      maxLength: 131072
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    EntityNotFoundException: {}
-    PartitionValueList:
+    KeySchemaElement:
       type: object
       required:
-      - Values
+      - Name
+      - Type
       properties:
-        Values:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/ValueStringList'
-          - description: The list of values.
-      description: Contains a list of values defining partitions.
-    ValueString:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of a partition key.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ColumnTypeString'
+          - description: The type of a partition key.
+      description: A partition key pair consisting of a name and a type.
+    ConflictException: {}
+    GetPartitionIndexesRequest:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      title: GetPartitionIndexesRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The catalog ID where the table resides.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Specifies the name of a database from which you want to retrieve partition indexes.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Specifies the name of a table for which you want to retrieve the partition indexes.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, included if this is a continuation call.
+    PartitionIndexDescriptorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PartitionIndexDescriptor'
+    NameString:
       type: string
-      maxLength: 1024
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     PartitionIndexDescriptor:
       type: object
       required:
@@ -276,91 +347,10 @@ components:
           - $ref: '#/components/schemas/BackfillErrors'
           - description: A list of errors that can occur when registering partition indexes for an existing table.
       description: A descriptor for a partition index in a table.
-    KeySchemaElementList:
-      type: array
-      items:
-        $ref: '#/components/schemas/KeySchemaElement'
-      minItems: 1
-    OperationTimeoutException: {}
-    GetPartitionIndexesRequest:
-      type: object
-      required:
-      - DatabaseName
-      - TableName
-      title: GetPartitionIndexesRequest
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The catalog ID where the table resides.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Specifies the name of a database from which you want to retrieve partition indexes.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Specifies the name of a table for which you want to retrieve the partition indexes.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, included if this is a continuation call.
-    BackfillErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/BackfillError'
-    KeySchemaElement:
-      type: object
-      required:
-      - Name
-      - Type
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of a partition key.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/ColumnTypeString'
-          - description: The type of a partition key.
-      description: A partition key pair consisting of a name and a type.
-    Token:
-      type: string
-    PartitionIndexDescriptorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PartitionIndexDescriptor'
-    PartitionIndexStatus:
-      type: string
-      enum:
-      - CREATING
-      - ACTIVE
-      - DELETING
-      - FAILED
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    ConflictException: {}
-    BackfillErrorCode:
-      type: string
-      enum:
-      - ENCRYPTED_PARTITION_ERROR
-      - INTERNAL_ERROR
-      - INVALID_PARTITION_TYPE_DATA_ERROR
-      - MISSING_PARTITION_VALUE_ERROR
-      - UNSUPPORTED_PARTITION_CHARACTER_ERROR
     ValueStringList:
       type: array
       items:
         $ref: '#/components/schemas/ValueString'
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InvalidInputException: {}
     BackfillError:
       type: object
       properties:
@@ -373,10 +363,56 @@ components:
           - $ref: '#/components/schemas/BackfillErroredPartitionsList'
           - description: A list of a limited number of partitions in the response.
       description: '<p>A list of errors that can occur when registering partition indexes for an existing table.</p> <p>These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:</p> <ul> <li> <p>EncryptedPartitionError: The partitions are encrypted.</p> </li> <li> <p>InvalidPartitionTypeDataError: The partition value doesn''t match the data type for that partition column.</p> </li> <li> <p>MissingPartitionValueError: The partitions are encrypted.</p> </li> <li> <p>UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.</p> </li> <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li> </ul>'
+    BackfillErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/BackfillError'
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OperationTimeoutException: {}
+    KeySchemaElementList:
+      type: array
+      items:
+        $ref: '#/components/schemas/KeySchemaElement'
+      minItems: 1
+    PartitionIndexStatus:
+      type: string
+      enum:
+      - CREATING
+      - ACTIVE
+      - DELETING
+      - FAILED
+    PartitionValueList:
+      type: object
+      required:
+      - Values
+      properties:
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/ValueStringList'
+          - description: The list of values.
+      description: Contains a list of values defining partitions.
+    InvalidInputException: {}
+    BackfillErrorCode:
+      type: string
+      enum:
+      - ENCRYPTED_PARTITION_ERROR
+      - INTERNAL_ERROR
+      - INVALID_PARTITION_TYPE_DATA_ERROR
+      - MISSING_PARTITION_VALUE_ERROR
+      - UNSUPPORTED_PARTITION_CHARACTER_ERROR
     BackfillErroredPartitionsList:
       type: array
       items:
         $ref: '#/components/schemas/PartitionValueList'
+    Token:
+      type: string
+    ValueString:
+      type: string
+      maxLength: 1024
     GetPartitionIndexesResponse:
       type: object
       properties:
@@ -388,49 +424,13 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: A continuation token, present if the current list segment is not the last.
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    EntityNotFoundException: {}
+    InternalServiceException: {}
+    ColumnTypeString:
+      type: string
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
   securitySchemes:
     hmac:
       type: apiKey

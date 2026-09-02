@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.SearchTables API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.SearchTables #X Amz Target=AWSGlue.SearchTables #X Amz Target=AWSGlue.SearchTables API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -211,48 +211,144 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.SearchTables'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    SearchTablesRequest:
+    Boolean:
+      type: boolean
+    ParametersMap:
       type: object
-      title: SearchTablesRequest
+      additionalProperties:
+        $ref: '#/components/schemas/ParametersMapValue'
+    SchemaId:
+      type: object
       properties:
-        CatalogId:
+        SchemaArn:
           allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: A unique identifier, consisting of <code> <i>account_id</i> </code>.
-        NextToken:
+          - $ref: '#/components/schemas/GlueResourceArn'
+          - description: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        SchemaName:
           allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, included if this is a continuation call.
-        Filters:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        RegistryName:
           allOf:
-          - $ref: '#/components/schemas/SearchPropertyPredicates'
-          - description: '<p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>'
-        SearchText:
-          allOf:
-          - $ref: '#/components/schemas/ValueString'
-          - description: <p>A string used for a text search.</p> <p>Specifying a value in quotes filters based on an exact match to the value.</p>
-        SortCriteria:
-          allOf:
-          - $ref: '#/components/schemas/SortCriteria'
-          - description: A list of criteria for sorting the results by a field name, in an ascending or descending order.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum number of tables to return in a single response.
-        ResourceShareType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceShareType'
-          - description: <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> </ul>
-    FederationIdentifier:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema registry that contains the schema.
+      description: The unique ID of the schema in the Glue schema registry.
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    VersionString:
       type: string
       minLength: 1
-      maxLength: 512
+      maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    IntegerFlag:
+    ColumnValuesString:
+      type: string
+    ViewTextString:
+      type: string
+      maxLength: 409600
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    SortCriterion:
+      type: object
+      properties:
+        FieldName:
+          allOf:
+          - $ref: '#/components/schemas/ValueString'
+          - description: The name of the field on which to sort.
+        Sort:
+          allOf:
+          - $ref: '#/components/schemas/Sort'
+          - description: An ascending or descending sort.
+      description: Specifies a field to sort by and a sort order.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    SchemaVersionIdString:
+      type: string
+      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
+      minLength: 36
+      maxLength: 36
+    LocationString:
+      type: string
+      maxLength: 2056
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    FormatString:
+      type: string
+      maxLength: 128
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    SerDeInfo:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Name of the SerDe.
+        SerializationLibrary:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersMap'
+          - description: These key-value pairs define initialization parameters for the SerDe.
+      description: Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
+    LocationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationString'
+    NonNegativeInteger:
       type: integer
       minimum: 0
-      maximum: 1
     StorageDescriptor:
       type: object
       properties:
@@ -313,186 +409,23 @@ components:
           - $ref: '#/components/schemas/SchemaReference'
           - description: <p>An object that references a schema stored in the Glue Schema Registry.</p> <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
       description: Describes the physical storage of table data.
-    ColumnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Column'
-    LocationStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationString'
-    InternalServiceException: {}
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    FormatString:
-      type: string
-      maxLength: 128
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    ColumnTypeString:
-      type: string
-      minLength: 0
-      maxLength: 131072
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Boolean:
-      type: boolean
-    LocationString:
-      type: string
-      maxLength: 2056
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    FederatedTable:
-      type: object
-      properties:
-        Identifier:
-          allOf:
-          - $ref: '#/components/schemas/FederationIdentifier'
-          - description: A unique identifier for the federated table.
-        DatabaseIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/FederationIdentifier'
-          - description: A unique identifier for the federated database.
-        ConnectionName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the connection to the external metastore.
-      description: A table that points to an entity outside the Glue Data Catalog.
-    ColumnValueStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnValuesString'
-    SchemaId:
-      type: object
-      properties:
-        SchemaArn:
-          allOf:
-          - $ref: '#/components/schemas/GlueResourceArn'
-          - description: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
-        SchemaName:
-          allOf:
-          - $ref: '#/components/schemas/SchemaRegistryNameString'
-          - description: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
-        RegistryName:
-          allOf:
-          - $ref: '#/components/schemas/SchemaRegistryNameString'
-          - description: The name of the schema registry that contains the schema.
-      description: The unique ID of the schema in the Glue schema registry.
-    PageSize:
+    VersionLongNumber:
       type: integer
       minimum: 1
-      maximum: 1000
-    PropertyPredicate:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/ValueString'
-          - description: The key of the property.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/ValueString'
-          - description: The value of the property.
-        Comparator:
-          allOf:
-          - $ref: '#/components/schemas/Comparator'
-          - description: The comparator used to compare this property to others.
-      description: Defines a property predicate.
-    ResourceShareType:
-      type: string
-      enum:
-      - FOREIGN
-      - ALL
-      - FEDERATED
-    ValueString:
-      type: string
-      maxLength: 1024
-    NameStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-    OperationTimeoutException: {}
-    SortCriteria:
-      type: array
-      items:
-        $ref: '#/components/schemas/SortCriterion'
-      minItems: 0
-      maxItems: 1
-    Column:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the <code>Column</code>.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/ColumnTypeString'
-          - description: The data type of the <code>Column</code>.
-        Comment:
-          allOf:
-          - $ref: '#/components/schemas/CommentString'
-          - description: A free-form text comment.
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/ParametersMap'
-          - description: These key-value pairs define properties associated with the column.
-      description: A column in a <code>Table</code>.
-    Sort:
-      type: string
-      enum:
-      - ASC
-      - DESC
-    ParametersMapValue:
-      type: string
-      maxLength: 512000
-    CommentString:
-      type: string
-      minLength: 0
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    SkewedInfo:
-      type: object
-      properties:
-        SkewedColumnNames:
-          allOf:
-          - $ref: '#/components/schemas/NameStringList'
-          - description: A list of names of columns that contain skewed values.
-        SkewedColumnValues:
-          allOf:
-          - $ref: '#/components/schemas/ColumnValueStringList'
-          - description: A list of values that appear so frequently as to be considered skewed.
-        SkewedColumnValueLocationMaps:
-          allOf:
-          - $ref: '#/components/schemas/LocationMap'
-          - description: A mapping of skewed values to the columns that contain them.
-      description: Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
-    Comparator:
-      type: string
-      enum:
-      - EQUALS
-      - GREATER_THAN
-      - LESS_THAN
-      - GREATER_THAN_EQUALS
-      - LESS_THAN_EQUALS
-    Token:
-      type: string
-    SchemaVersionIdString:
-      type: string
-      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
-      minLength: 36
-      maxLength: 36
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+      maximum: 100000
     OrderList:
       type: array
       items:
         $ref: '#/components/schemas/Order'
+    GlueResourceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      minLength: 1
+      maxLength: 10240
+    LocationMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ColumnValuesString'
     TableIdentifier:
       type: object
       properties:
@@ -509,102 +442,65 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the target table.
       description: A structure that describes a target table for resource linking.
-    SearchTablesResponse:
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OperationTimeoutException: {}
+    SkewedInfo:
       type: object
       properties:
-        NextToken:
+        SkewedColumnNames:
           allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, present if the current list segment is not the last.
-        TableList:
+          - $ref: '#/components/schemas/NameStringList'
+          - description: A list of names of columns that contain skewed values.
+        SkewedColumnValues:
           allOf:
-          - $ref: '#/components/schemas/TableList'
-          - description: A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.
+          - $ref: '#/components/schemas/ColumnValueStringList'
+          - description: A list of values that appear so frequently as to be considered skewed.
+        SkewedColumnValueLocationMaps:
+          allOf:
+          - $ref: '#/components/schemas/LocationMap'
+          - description: A mapping of skewed values to the columns that contain them.
+      description: Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
     SchemaRegistryNameString:
       type: string
       pattern: '[a-zA-Z0-9-_$#.]+'
       minLength: 1
       maxLength: 255
-    SerDeInfo:
+    SearchTablesRequest:
       type: object
+      title: SearchTablesRequest
       properties:
-        Name:
+        CatalogId:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Name of the SerDe.
-        SerializationLibrary:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: A unique identifier, consisting of <code> <i>account_id</i> </code>.
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
-        Parameters:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, included if this is a continuation call.
+        Filters:
           allOf:
-          - $ref: '#/components/schemas/ParametersMap'
-          - description: These key-value pairs define initialization parameters for the SerDe.
-      description: Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
-    SchemaReference:
-      type: object
-      properties:
-        SchemaId:
-          allOf:
-          - $ref: '#/components/schemas/SchemaId'
-          - description: A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.
-        SchemaVersionId:
-          allOf:
-          - $ref: '#/components/schemas/SchemaVersionIdString'
-          - description: The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.
-        SchemaVersionNumber:
-          allOf:
-          - $ref: '#/components/schemas/VersionLongNumber'
-          - description: The version number of the schema.
-      description: An object that references a schema stored in the Glue Schema Registry.
-    ColumnValuesString:
-      type: string
-    ParametersMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParametersMapValue'
-    GlueResourceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
-      minLength: 1
-      maxLength: 10240
-    SortCriterion:
-      type: object
-      properties:
-        FieldName:
+          - $ref: '#/components/schemas/SearchPropertyPredicates'
+          - description: '<p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>'
+        SearchText:
           allOf:
           - $ref: '#/components/schemas/ValueString'
-          - description: The name of the field on which to sort.
-        Sort:
+          - description: <p>A string used for a text search.</p> <p>Specifying a value in quotes filters based on an exact match to the value.</p>
+        SortCriteria:
           allOf:
-          - $ref: '#/components/schemas/Sort'
-          - description: An ascending or descending sort.
-      description: Specifies a field to sort by and a sort order.
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    VersionString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Order:
-      type: object
-      required:
-      - Column
-      - SortOrder
-      properties:
-        Column:
+          - $ref: '#/components/schemas/SortCriteria'
+          - description: A list of criteria for sorting the results by a field name, in an ascending or descending order.
+        MaxResults:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the column.
-        SortOrder:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of tables to return in a single response.
+        ResourceShareType:
           allOf:
-          - $ref: '#/components/schemas/IntegerFlag'
-          - description: Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).
-      description: Specifies the sort order of a sorted column.
+          - $ref: '#/components/schemas/ResourceShareType'
+          - description: <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> </ul>
     Table:
       type: object
       required:
@@ -695,80 +591,184 @@ components:
           - $ref: '#/components/schemas/FederatedTable'
           - description: A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
       description: Represents a collection of related data organized in columns and rows.
-    ViewTextString:
+    ResourceShareType:
       type: string
-      maxLength: 409600
+      enum:
+      - FOREIGN
+      - ALL
+      - FEDERATED
     Timestamp:
       type: string
       format: date-time
-    Integer:
-      type: integer
-    LocationMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ColumnValuesString'
     InvalidInputException: {}
-    VersionLongNumber:
-      type: integer
-      minimum: 1
-      maximum: 100000
-    SearchPropertyPredicates:
-      type: array
-      items:
-        $ref: '#/components/schemas/PropertyPredicate'
-    NonNegativeInteger:
-      type: integer
-      minimum: 0
+    Order:
+      type: object
+      required:
+      - Column
+      - SortOrder
+      properties:
+        Column:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the column.
+        SortOrder:
+          allOf:
+          - $ref: '#/components/schemas/IntegerFlag'
+          - description: Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).
+      description: Specifies the sort order of a sorted column.
     TableList:
       type: array
       items:
         $ref: '#/components/schemas/Table'
+    FederationIdentifier:
+      type: string
+      minLength: 1
+      maxLength: 512
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ColumnValueStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnValuesString'
+    Token:
+      type: string
+    ValueString:
+      type: string
+      maxLength: 1024
+    Comparator:
+      type: string
+      enum:
+      - EQUALS
+      - GREATER_THAN
+      - LESS_THAN
+      - GREATER_THAN_EQUALS
+      - LESS_THAN_EQUALS
+    NameStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+    Sort:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    PropertyPredicate:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/ValueString'
+          - description: The key of the property.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/ValueString'
+          - description: The value of the property.
+        Comparator:
+          allOf:
+          - $ref: '#/components/schemas/Comparator'
+          - description: The comparator used to compare this property to others.
+      description: Defines a property predicate.
+    SortCriteria:
+      type: array
+      items:
+        $ref: '#/components/schemas/SortCriterion'
+      minItems: 0
+      maxItems: 1
+    InternalServiceException: {}
+    CommentString:
+      type: string
+      minLength: 0
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    FederatedTable:
+      type: object
+      properties:
+        Identifier:
+          allOf:
+          - $ref: '#/components/schemas/FederationIdentifier'
+          - description: A unique identifier for the federated table.
+        DatabaseIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/FederationIdentifier'
+          - description: A unique identifier for the federated database.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the external metastore.
+      description: A table that points to an entity outside the Glue Data Catalog.
+    SchemaReference:
+      type: object
+      properties:
+        SchemaId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaId'
+          - description: A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.
+        SchemaVersionId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionIdString'
+          - description: The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.
+        SchemaVersionNumber:
+          allOf:
+          - $ref: '#/components/schemas/VersionLongNumber'
+          - description: The version number of the schema.
+      description: An object that references a schema stored in the Glue Schema Registry.
+    ParametersMapValue:
+      type: string
+      maxLength: 512000
+    Integer:
+      type: integer
+    ColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Column'
+    ColumnTypeString:
+      type: string
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     TableTypeString:
       type: string
       maxLength: 255
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    Column:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the <code>Column</code>.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ColumnTypeString'
+          - description: The data type of the <code>Column</code>.
+        Comment:
+          allOf:
+          - $ref: '#/components/schemas/CommentString'
+          - description: A free-form text comment.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersMap'
+          - description: These key-value pairs define properties associated with the column.
+      description: A column in a <code>Table</code>.
+    IntegerFlag:
+      type: integer
+      minimum: 0
+      maximum: 1
+    SearchTablesResponse:
+      type: object
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, present if the current list segment is not the last.
+        TableList:
+          allOf:
+          - $ref: '#/components/schemas/TableList'
+          - description: A list of the requested <code>Table</code> objects. The <code>SearchTables</code> response returns only the tables that you have access to.
+    SearchPropertyPredicates:
+      type: array
+      items:
+        $ref: '#/components/schemas/PropertyPredicate'
   securitySchemes:
     hmac:
       type: apiKey

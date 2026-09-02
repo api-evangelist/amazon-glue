@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateColumnStatisticsForTable API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateColumnStatisticsForTable #X Amz Target=AWSGlue.UpdateColumnStatisticsForTable #X Amz Target=AWSGlue.UpdateColumnStatisticsForTable API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -226,41 +226,10 @@ paths:
       - '#X Amz Target=AWSGlue.UpdateColumnStatisticsForTable'
 components:
   schemas:
-    UpdateColumnStatisticsForTableResponse:
-      type: object
-      properties:
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/ColumnStatisticsErrors'
-          - description: List of ColumnStatisticsErrors.
-    BooleanColumnStatisticsData:
-      type: object
-      required:
-      - NumberOfTrues
-      - NumberOfFalses
-      - NumberOfNulls
-      properties:
-        NumberOfTrues:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of true values in the column.
-        NumberOfFalses:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of false values in the column.
-        NumberOfNulls:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of null values in the column.
-      description: Defines column statistics supported for Boolean data columns.
-    Blob:
-      type: string
-    InternalServiceException: {}
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NonNegativeDouble:
+      type: number
+      format: double
+      minimum: 0
     LongColumnStatisticsData:
       type: object
       required:
@@ -284,94 +253,14 @@ components:
           - $ref: '#/components/schemas/NonNegativeLong'
           - description: The number of distinct values in a column.
       description: Defines column statistics supported for integer data columns.
-    ColumnStatisticsError:
-      type: object
-      properties:
-        ColumnStatistics:
-          allOf:
-          - $ref: '#/components/schemas/ColumnStatistics'
-          - description: The <code>ColumnStatistics</code> of the column.
-        Error:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetail'
-          - description: An error message with the reason for the failure of an operation.
-      description: Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.
-    UpdateColumnStatisticsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnStatistics'
-      minItems: 0
-      maxItems: 25
-    EntityNotFoundException: {}
-    UpdateColumnStatisticsForTableRequest:
-      type: object
-      required:
-      - DatabaseName
-      - TableName
-      - ColumnStatisticsList
-      title: UpdateColumnStatisticsForTableRequest
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database where the partitions reside.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the partitions' table.
-        ColumnStatisticsList:
-          allOf:
-          - $ref: '#/components/schemas/UpdateColumnStatisticsList'
-          - description: A list of the column statistics.
-    ErrorDetail:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The code associated with this error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A message describing the error.
-      description: Contains details about an error.
-    DecimalColumnStatisticsData:
-      type: object
-      required:
-      - NumberOfNulls
-      - NumberOfDistinctValues
-      properties:
-        MinimumValue:
-          allOf:
-          - $ref: '#/components/schemas/DecimalNumber'
-          - description: The lowest value in the column.
-        MaximumValue:
-          allOf:
-          - $ref: '#/components/schemas/DecimalNumber'
-          - description: The highest value in the column.
-        NumberOfNulls:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of null values in the column.
-        NumberOfDistinctValues:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of distinct values in a column.
-      description: Defines column statistics supported for fixed-point number data columns.
-    OperationTimeoutException: {}
-    ColumnStatisticsErrors:
-      type: array
-      items:
-        $ref: '#/components/schemas/ColumnStatisticsError'
-    Long:
-      type: integer
     NonNegativeLong:
       type: integer
       minimum: 0
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     DoubleColumnStatisticsData:
       type: object
       required:
@@ -395,18 +284,6 @@ components:
           - $ref: '#/components/schemas/NonNegativeLong'
           - description: The number of distinct values in a column.
       description: Defines column statistics supported for floating-point number data columns.
-    TypeString:
-      type: string
-      minLength: 0
-      maxLength: 20000
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Double:
-      type: number
-      format: double
-    NonNegativeDouble:
-      type: number
-      format: double
-      minimum: 0
     ColumnStatisticsData:
       type: object
       required:
@@ -445,46 +322,11 @@ components:
           - $ref: '#/components/schemas/BinaryColumnStatisticsData'
           - description: Binary column statistics data.
       description: Contains the individual types of column statistics data. Only one data object should be set and indicated by the <code>Type</code> attribute.
-    ColumnStatisticsType:
+    TypeString:
       type: string
-      enum:
-      - BOOLEAN
-      - DATE
-      - DECIMAL
-      - DOUBLE
-      - LONG
-      - STRING
-      - BINARY
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
+      minLength: 0
+      maxLength: 20000
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    StringColumnStatisticsData:
-      type: object
-      required:
-      - MaximumLength
-      - AverageLength
-      - NumberOfNulls
-      - NumberOfDistinctValues
-      properties:
-        MaximumLength:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The size of the longest string in the column.
-        AverageLength:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeDouble'
-          - description: The average string length in the column.
-        NumberOfNulls:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of null values in the column.
-        NumberOfDistinctValues:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The number of distinct values in a column.
-      description: Defines column statistics supported for character sequence data values.
     ColumnStatistics:
       type: object
       required:
@@ -510,14 +352,186 @@ components:
           - $ref: '#/components/schemas/ColumnStatisticsData'
           - description: A <code>ColumnStatisticData</code> object that contains the statistics data values.
       description: Represents the generated column-level statistics for a table or partition.
-    GlueEncryptionException: {}
     NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GlueEncryptionException: {}
+    UpdateColumnStatisticsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnStatistics'
+      minItems: 0
+      maxItems: 25
+    ColumnStatisticsErrors:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnStatisticsError'
+    DecimalNumber:
+      type: object
+      required:
+      - UnscaledValue
+      - Scale
+      properties:
+        UnscaledValue:
+          allOf:
+          - $ref: '#/components/schemas/Blob'
+          - description: The unscaled numeric value.
+        Scale:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The scale that determines where the decimal point falls in the unscaled value.
+      description: Contains a numeric value in decimal format.
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The code associated with this error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A message describing the error.
+      description: Contains details about an error.
+    Long:
+      type: integer
+    OperationTimeoutException: {}
+    ColumnStatisticsError:
+      type: object
+      properties:
+        ColumnStatistics:
+          allOf:
+          - $ref: '#/components/schemas/ColumnStatistics'
+          - description: The <code>ColumnStatistics</code> of the column.
+        Error:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetail'
+          - description: An error message with the reason for the failure of an operation.
+      description: Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.
+    Timestamp:
+      type: string
+      format: date-time
+    UpdateColumnStatisticsForTableRequest:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      - ColumnStatisticsList
+      title: UpdateColumnStatisticsForTableRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database where the partitions reside.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the partitions' table.
+        ColumnStatisticsList:
+          allOf:
+          - $ref: '#/components/schemas/UpdateColumnStatisticsList'
+          - description: A list of the column statistics.
+    InvalidInputException: {}
+    Blob:
+      type: string
+    DecimalColumnStatisticsData:
+      type: object
+      required:
+      - NumberOfNulls
+      - NumberOfDistinctValues
+      properties:
+        MinimumValue:
+          allOf:
+          - $ref: '#/components/schemas/DecimalNumber'
+          - description: The lowest value in the column.
+        MaximumValue:
+          allOf:
+          - $ref: '#/components/schemas/DecimalNumber'
+          - description: The highest value in the column.
+        NumberOfNulls:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of null values in the column.
+        NumberOfDistinctValues:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of distinct values in a column.
+      description: Defines column statistics supported for fixed-point number data columns.
+    ColumnStatisticsType:
+      type: string
+      enum:
+      - BOOLEAN
+      - DATE
+      - DECIMAL
+      - DOUBLE
+      - LONG
+      - STRING
+      - BINARY
+    BooleanColumnStatisticsData:
+      type: object
+      required:
+      - NumberOfTrues
+      - NumberOfFalses
+      - NumberOfNulls
+      properties:
+        NumberOfTrues:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of true values in the column.
+        NumberOfFalses:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of false values in the column.
+        NumberOfNulls:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of null values in the column.
+      description: Defines column statistics supported for Boolean data columns.
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    BinaryColumnStatisticsData:
+      type: object
+      required:
+      - MaximumLength
+      - AverageLength
+      - NumberOfNulls
+      properties:
+        MaximumLength:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The size of the longest bit sequence in the column.
+        AverageLength:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeDouble'
+          - description: The average bit sequence length in the column.
+        NumberOfNulls:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of null values in the column.
+      description: Defines column statistics supported for bit sequence data values.
+    UpdateColumnStatisticsForTableResponse:
+      type: object
+      properties:
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/ColumnStatisticsErrors'
+          - description: List of ColumnStatisticsErrors.
     Integer:
       type: integer
+    Double:
+      type: number
+      format: double
     DateColumnStatisticsData:
       type: object
       required:
@@ -541,72 +555,34 @@ components:
           - $ref: '#/components/schemas/NonNegativeLong'
           - description: The number of distinct values in a column.
       description: Defines column statistics supported for timestamp data columns.
-    BinaryColumnStatisticsData:
+    StringColumnStatisticsData:
       type: object
       required:
       - MaximumLength
       - AverageLength
       - NumberOfNulls
+      - NumberOfDistinctValues
       properties:
         MaximumLength:
           allOf:
           - $ref: '#/components/schemas/NonNegativeLong'
-          - description: The size of the longest bit sequence in the column.
+          - description: The size of the longest string in the column.
         AverageLength:
           allOf:
           - $ref: '#/components/schemas/NonNegativeDouble'
-          - description: The average bit sequence length in the column.
+          - description: The average string length in the column.
         NumberOfNulls:
           allOf:
           - $ref: '#/components/schemas/NonNegativeLong'
           - description: The number of null values in the column.
-      description: Defines column statistics supported for bit sequence data values.
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    DecimalNumber:
-      type: object
-      required:
-      - UnscaledValue
-      - Scale
-      properties:
-        UnscaledValue:
+        NumberOfDistinctValues:
           allOf:
-          - $ref: '#/components/schemas/Blob'
-          - description: The unscaled numeric value.
-        Scale:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The scale that determines where the decimal point falls in the unscaled value.
-      description: Contains a numeric value in decimal format.
+          - $ref: '#/components/schemas/NonNegativeLong'
+          - description: The number of distinct values in a column.
+      description: Defines column statistics supported for character sequence data values.
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -617,8 +593,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

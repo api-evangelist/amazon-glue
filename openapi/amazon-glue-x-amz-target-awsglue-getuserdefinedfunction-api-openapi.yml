@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUserDefinedFunction API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUserDefinedFunction #X Amz Target=AWSGlue.GetUserDefinedFunction #X Amz Target=AWSGlue.GetUserDefinedFunction API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -226,27 +226,36 @@ paths:
       - '#X Amz Target=AWSGlue.GetUserDefinedFunction'
 components:
   schemas:
-    GetUserDefinedFunctionRequest:
+    ResourceUri:
       type: object
-      required:
-      - DatabaseName
-      - FunctionName
-      title: GetUserDefinedFunctionRequest
       properties:
-        CatalogId:
+        ResourceType:
           allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.
-        DatabaseName:
+          - $ref: '#/components/schemas/ResourceType'
+          - description: The type of the resource.
+        Uri:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database where the function is located.
-        FunctionName:
+          - $ref: '#/components/schemas/URI'
+          - description: The URI for accessing the resource.
+      description: The URIs for function resources.
+    URI:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GlueEncryptionException: {}
+    GetUserDefinedFunctionResponse:
+      type: object
+      properties:
+        UserDefinedFunction:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the function.
-    InternalServiceException: {}
-    EntityNotFoundException: {}
+          - $ref: '#/components/schemas/UserDefinedFunction'
+          - description: The requested function definition.
     ResourceUriList:
       type: array
       items:
@@ -289,85 +298,52 @@ components:
           - $ref: '#/components/schemas/CatalogIdString'
           - description: The ID of the Data Catalog in which the function resides.
       description: Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
-    OperationTimeoutException: {}
-    ResourceUri:
-      type: object
-      properties:
-        ResourceType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceType'
-          - description: The type of the resource.
-        Uri:
-          allOf:
-          - $ref: '#/components/schemas/URI'
-          - description: The URI for accessing the resource.
-      description: The URIs for function resources.
-    URI:
-      type: string
-      minLength: 1
-      maxLength: 1024
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     CatalogIdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    OperationTimeoutException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidInputException: {}
     ResourceType:
       type: string
       enum:
       - JAR
       - FILE
       - ARCHIVE
-    GlueEncryptionException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    GetUserDefinedFunctionResponse:
-      type: object
-      properties:
-        UserDefinedFunction:
-          allOf:
-          - $ref: '#/components/schemas/UserDefinedFunction'
-          - description: The requested function definition.
     PrincipalType:
       type: string
       enum:
       - USER
       - ROLE
       - GROUP
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    GetUserDefinedFunctionRequest:
+      type: object
+      required:
+      - DatabaseName
+      - FunctionName
+      title: GetUserDefinedFunctionRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database where the function is located.
+        FunctionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the function.
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -378,8 +354,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

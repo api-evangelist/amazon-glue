@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetJobBookmark API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetJobBookmark #X Amz Target=AWSGlue.GetJobBookmark #X Amz Target=AWSGlue.GetJobBookmark API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -225,17 +225,61 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetJobBookmark'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    JsonValue:
-      type: string
-    InternalServiceException: {}
-    EntityNotFoundException: {}
+    GetJobBookmarkResponse:
+      type: object
+      properties:
+        JobBookmarkEntry:
+          allOf:
+          - $ref: '#/components/schemas/JobBookmarkEntry'
+          - description: A structure that defines a point that a job can resume processing.
     JobName:
       type: string
     ValidationException: {}
     OperationTimeoutException: {}
-    IntegerValue:
-      type: integer
     JobBookmarkEntry:
       type: object
       properties:
@@ -268,6 +312,7 @@ components:
           - $ref: '#/components/schemas/JsonValue'
           - description: The bookmark itself.
       description: Defines a point that a job can resume processing.
+    InvalidInputException: {}
     GetJobBookmarkRequest:
       type: object
       required:
@@ -282,59 +327,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/RunId'
           - description: The unique run identifier associated with this job run.
-    InvalidInputException: {}
-    GetJobBookmarkResponse:
-      type: object
-      properties:
-        JobBookmarkEntry:
-          allOf:
-          - $ref: '#/components/schemas/JobBookmarkEntry'
-          - description: A structure that defines a point that a job can resume processing.
+    IntegerValue:
+      type: integer
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    JsonValue:
+      type: string
     RunId:
       type: string
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

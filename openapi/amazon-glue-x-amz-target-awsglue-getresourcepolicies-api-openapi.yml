@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetResourcePolicies API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetResourcePolicies #X Amz Target=AWSGlue.GetResourcePolicies #X Amz Target=AWSGlue.GetResourcePolicies API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -224,50 +224,50 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetResourcePolicies'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    InternalServiceException: {}
-    PolicyJsonString:
-      type: string
-      minLength: 2
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    GetResourcePoliciesResponseList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GluePolicy'
-    OperationTimeoutException: {}
-    Token:
-      type: string
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GetResourcePoliciesRequest:
-      type: object
-      title: GetResourcePoliciesRequest
-      properties:
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if this is a continuation request.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum size of a list to return.
-    GetResourcePoliciesResponse:
-      type: object
-      properties:
-        GetResourcePoliciesResponseList:
-          allOf:
-          - $ref: '#/components/schemas/GetResourcePoliciesResponseList'
-          - description: A list of the individual resource policies and the account-level resource policy.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if the returned list does not contain the last resource policy available.
     GluePolicy:
       type: object
       properties:
@@ -288,54 +288,54 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date and time at which the policy was last updated.
       description: A structure for returning a resource policy.
+    GetResourcePoliciesResponseList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GluePolicy'
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
     GlueEncryptionException: {}
+    GetResourcePoliciesResponse:
+      type: object
+      properties:
+        GetResourcePoliciesResponseList:
+          allOf:
+          - $ref: '#/components/schemas/GetResourcePoliciesResponseList'
+          - description: A list of the individual resource policies and the account-level resource policy.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if the returned list does not contain the last resource policy available.
+    OperationTimeoutException: {}
     Timestamp:
       type: string
       format: date-time
     InvalidInputException: {}
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+    Token:
+      type: string
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InternalServiceException: {}
+    GetResourcePoliciesRequest:
+      type: object
+      title: GetResourcePoliciesRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if this is a continuation request.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum size of a list to return.
+    PolicyJsonString:
+      type: string
+      minLength: 2
   securitySchemes:
     hmac:
       type: apiKey

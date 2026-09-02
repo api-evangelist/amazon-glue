@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchDeleteConnection API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchDeleteConnection #X Amz Target=AWSGlue.BatchDeleteConnection #X Amz Target=AWSGlue.BatchDeleteConnection API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -187,6 +187,10 @@ paths:
       - '#X Amz Target=AWSGlue.BatchDeleteConnection'
 components:
   schemas:
+    NameStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
     ErrorDetail:
       type: object
       properties:
@@ -199,39 +203,6 @@ components:
           - $ref: '#/components/schemas/DescriptionString'
           - description: A message describing the error.
       description: Contains details about an error.
-    NameStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-    OperationTimeoutException: {}
-    InternalServiceException: {}
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    BatchDeleteConnectionResponse:
-      type: object
-      properties:
-        Succeeded:
-          allOf:
-          - $ref: '#/components/schemas/NameStringList'
-          - description: A list of names of the connection definitions that were successfully deleted.
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/ErrorByName'
-          - description: A map of the names of connections that were not successfully deleted to error details.
-    DeleteConnectionNameList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-      minItems: 0
-      maxItems: 25
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     BatchDeleteConnectionRequest:
       type: object
       required:
@@ -246,16 +217,51 @@ components:
           allOf:
           - $ref: '#/components/schemas/DeleteConnectionNameList'
           - description: A list of names of the connections to delete.
+    InternalServiceException: {}
     CatalogIdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    DeleteConnectionNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+      minItems: 0
+      maxItems: 25
+    BatchDeleteConnectionResponse:
+      type: object
+      properties:
+        Succeeded:
+          allOf:
+          - $ref: '#/components/schemas/NameStringList'
+          - description: A list of names of the connection definitions that were successfully deleted.
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/ErrorByName'
+          - description: A map of the names of connections that were not successfully deleted to error details.
+    OperationTimeoutException: {}
     ErrorByName:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/ErrorDetail'
   parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -268,14 +274,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -286,14 +286,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

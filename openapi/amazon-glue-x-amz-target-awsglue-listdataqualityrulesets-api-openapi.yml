@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListDataQualityRulesets API'
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListDataQualityRulesets #X Amz Target=AWSGlue.ListDataQualityRulesets #X Amz Target=AWSGlue.ListDataQualityRulesets API'
   description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -224,22 +224,81 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListDataQualityRulesets'
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    TagsMap:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    InternalServiceException: {}
     DescriptionString:
       type: string
       minLength: 0
       maxLength: 2048
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    NullableInteger:
+    DataQualityTargetTable:
+      type: object
+      required:
+      - TableName
+      - DatabaseName
+      properties:
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the Glue table.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the database where the Glue table exists.
+      description: An object representing an Glue table.
+    PageSize:
       type: integer
-    EntityNotFoundException: {}
+      minimum: 1
+      maximum: 1000
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PaginationToken:
+      type: string
     DataQualityRulesetFilterCriteria:
       type: object
       properties:
@@ -272,28 +331,54 @@ components:
           - $ref: '#/components/schemas/DataQualityTargetTable'
           - description: The name and database name of the target table.
       description: The criteria used to filter data quality rulesets.
-    ListDataQualityRulesetsResponse:
+    OperationTimeoutException: {}
+    Timestamp:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    TagsMap:
       type: object
-      properties:
-        Rulesets:
-          allOf:
-          - $ref: '#/components/schemas/DataQualityRulesetList'
-          - description: A paginated list of rulesets for the specified list of Glue tables.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: A pagination token, if more results are available.
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
     DataQualityRulesetList:
       type: array
       items:
         $ref: '#/components/schemas/DataQualityRulesetListDetails'
-    PaginationToken:
+    NullableInteger:
+      type: integer
+    HashString:
       type: string
-    OperationTimeoutException: {}
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ListDataQualityRulesetsRequest:
+      type: object
+      title: ListDataQualityRulesetsRequest
+      properties:
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A paginated token to offset the results.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return.
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityRulesetFilterCriteria'
+          - description: 'The filter criteria. '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagsMap'
+          - description: A list of key-value pair tags.
+    InternalServiceException: {}
+    EntityNotFoundException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     DataQualityRulesetListDetails:
       type: object
       properties:
@@ -326,102 +411,17 @@ components:
           - $ref: '#/components/schemas/NullableInteger'
           - description: The number of rules in the ruleset.
       description: Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    DataQualityTargetTable:
+    ListDataQualityRulesetsResponse:
       type: object
-      required:
-      - TableName
-      - DatabaseName
       properties:
-        TableName:
+        Rulesets:
           allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the Glue table.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the database where the Glue table exists.
-      description: An object representing an Glue table.
-    ListDataQualityRulesetsRequest:
-      type: object
-      title: ListDataQualityRulesetsRequest
-      properties:
+          - $ref: '#/components/schemas/DataQualityRulesetList'
+          - description: A paginated list of rulesets for the specified list of Glue tables.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/PaginationToken'
-          - description: A paginated token to offset the results.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum number of results to return.
-        Filter:
-          allOf:
-          - $ref: '#/components/schemas/DataQualityRulesetFilterCriteria'
-          - description: 'The filter criteria. '
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagsMap'
-          - description: A list of key-value pair tags.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
+          - description: A pagination token, if more results are available.
   securitySchemes:
     hmac:
       type: apiKey
