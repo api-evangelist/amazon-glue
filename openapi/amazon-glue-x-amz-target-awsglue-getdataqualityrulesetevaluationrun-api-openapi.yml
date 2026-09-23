@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetDataQualityRulesetEvaluati…'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -212,59 +215,59 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDataQualityRulesetEvaluationRun'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
+    RulesetNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+      minItems: 1
+      maxItems: 10
+    GlueTableAdditionalOptions:
+      type: object
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DescriptionString'
+    HashString:
       type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    NullableBoolean:
-      type: boolean
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    GetDataQualityRulesetEvaluationRunRequest:
+      type: object
+      required:
+      - RunId
+      title: GetDataQualityRulesetEvaluationRunRequest
+      properties:
+        RunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique run identifier associated with this run.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EntityNotFoundException: {}
+    NullableInteger:
+      type: integer
+    RoleString:
+      type: string
+    InternalServiceException: {}
     ExecutionTime:
       type: integer
+    Timestamp:
+      type: string
+      format: date-time
+    OperationTimeoutException: {}
+    UriString:
+      type: string
+    Timeout:
+      type: integer
+      minimum: 1
+    GenericString:
+      type: string
     DataSource:
       type: object
       required:
@@ -275,17 +278,33 @@ components:
           - $ref: '#/components/schemas/GlueTable'
           - description: An Glue table.
       description: A data source (an Glue table) for which you want data quality results.
-    NameString:
+    TaskStatusType:
       type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    DataQualityResultIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/HashString'
-      minItems: 1
-      maxItems: 10
+      enum:
+      - STARTING
+      - RUNNING
+      - STOPPING
+      - STOPPED
+      - SUCCEEDED
+      - FAILED
+      - TIMEOUT
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    DataQualityEvaluationRunAdditionalRunOptions:
+      type: object
+      properties:
+        CloudWatchMetricsEnabled:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Whether or not to enable CloudWatch metrics.
+        ResultsS3Prefix:
+          allOf:
+          - $ref: '#/components/schemas/UriString'
+          - description: Prefix for Amazon S3 to store results.
+      description: Additional run options you can specify for an evaluation run.
     GlueTable:
       type: object
       required:
@@ -313,20 +332,6 @@ components:
           - $ref: '#/components/schemas/GlueTableAdditionalOptions'
           - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
       description: The database and table in the Glue Data Catalog that is used for input or output data.
-    UriString:
-      type: string
-    DataQualityEvaluationRunAdditionalRunOptions:
-      type: object
-      properties:
-        CloudWatchMetricsEnabled:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Whether or not to enable CloudWatch metrics.
-        ResultsS3Prefix:
-          allOf:
-          - $ref: '#/components/schemas/UriString'
-          - description: Prefix for Amazon S3 to store results.
-      description: Additional run options you can specify for an evaluation run.
     GetDataQualityRulesetEvaluationRunResponse:
       type: object
       properties:
@@ -386,59 +391,57 @@ components:
           allOf:
           - $ref: '#/components/schemas/DataQualityResultIdList'
           - description: A list of result IDs for the data quality results for the run.
-    OperationTimeoutException: {}
-    GenericString:
-      type: string
-    Timeout:
-      type: integer
-      minimum: 1
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    TaskStatusType:
-      type: string
-      enum:
-      - STARTING
-      - RUNNING
-      - STOPPING
-      - STOPPED
-      - SUCCEEDED
-      - FAILED
-      - TIMEOUT
-    NullableInteger:
-      type: integer
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    RoleString:
-      type: string
-    RulesetNames:
+    DataQualityResultIdList:
       type: array
       items:
-        $ref: '#/components/schemas/NameString'
+        $ref: '#/components/schemas/HashString'
       minItems: 1
       maxItems: 10
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    GlueTableAdditionalOptions:
-      type: object
-      minProperties: 1
-      maxProperties: 10
-      additionalProperties:
-        $ref: '#/components/schemas/DescriptionString'
-    GetDataQualityRulesetEvaluationRunRequest:
-      type: object
-      required:
-      - RunId
-      title: GetDataQualityRulesetEvaluationRunRequest
-      properties:
-        RunId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The unique run identifier associated with this run.
+    NullableBoolean:
+      type: boolean
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

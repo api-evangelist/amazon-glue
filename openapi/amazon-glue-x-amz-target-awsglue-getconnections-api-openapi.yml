@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetConnections #X Amz Target=AWSGlue.GetConnections #X Amz Target=AWSGlue.GetConnections API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetConnections API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -225,29 +228,60 @@ paths:
       - '#X Amz Target=AWSGlue.GetConnections'
 components:
   schemas:
+    PhysicalConnectionRequirements:
+      type: object
+      properties:
+        SubnetId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The subnet ID used by the connection.
+        SecurityGroupIdList:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The security group ID list used by the connection.
+        AvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.
+      description: Specifies the physical requirements for a connection.
+    Boolean:
+      type: boolean
+    ConnectionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Connection'
+    InvalidInputException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    ConnectionProperties:
+      type: object
+      minProperties: 0
+      maxProperties: 100
+      additionalProperties:
+        $ref: '#/components/schemas/ValueString'
+    GlueEncryptionException: {}
     MatchCriteria:
       type: array
       items:
         $ref: '#/components/schemas/NameString'
       minItems: 0
       maxItems: 10
-    Boolean:
-      type: boolean
-    DescriptionString:
+    NameString:
       type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    ConnectionType:
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ValueString:
       type: string
-      enum:
-      - JDBC
-      - SFTP
-      - MONGODB
-      - KAFKA
-      - NETWORK
-      - MARKETPLACE
-      - CUSTOM
+      maxLength: 1024
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EntityNotFoundException: {}
     Connection:
       type: object
       properties:
@@ -288,20 +322,6 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The user, group, or role that last updated this connection definition.
       description: Defines a connection to a data source.
-    ConnectionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Connection'
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GlueEncryptionException: {}
     GetConnectionsRequest:
       type: object
       title: GetConnectionsRequest
@@ -326,22 +346,41 @@ components:
           allOf:
           - $ref: '#/components/schemas/PageSize'
           - description: The maximum number of connections to return in one response.
-    CatalogIdString:
+    ConnectionType:
       type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+      enum:
+      - JDBC
+      - SFTP
+      - MONGODB
+      - KAFKA
+      - NETWORK
+      - MARKETPLACE
+      - CUSTOM
+    SecurityGroupIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+      minItems: 0
+      maxItems: 50
     OperationTimeoutException: {}
-    ConnectionProperties:
-      type: object
-      minProperties: 0
-      maxProperties: 100
-      additionalProperties:
-        $ref: '#/components/schemas/ValueString'
-    Timestamp:
+    Token:
       type: string
-      format: date-time
-    InvalidInputException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    GetConnectionsResponse:
+      type: object
+      properties:
+        ConnectionList:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionList'
+          - description: A list of requested connection definitions.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if the list of connections returned does not include the last of the filtered connections.
     GetConnectionsFilter:
       type: object
       properties:
@@ -354,66 +393,12 @@ components:
           - $ref: '#/components/schemas/ConnectionType'
           - description: The type of connections to return. Currently, SFTP is not supported.
       description: Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.
-    SecurityGroupIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-      minItems: 0
-      maxItems: 50
-    PhysicalConnectionRequirements:
-      type: object
-      properties:
-        SubnetId:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The subnet ID used by the connection.
-        SecurityGroupIdList:
-          allOf:
-          - $ref: '#/components/schemas/SecurityGroupIdList'
-          - description: The security group ID list used by the connection.
-        AvailabilityZone:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.
-      description: Specifies the physical requirements for a connection.
-    Token:
+    Timestamp:
       type: string
-    ValueString:
-      type: string
-      maxLength: 1024
-    EntityNotFoundException: {}
-    GetConnectionsResponse:
-      type: object
-      properties:
-        ConnectionList:
-          allOf:
-          - $ref: '#/components/schemas/ConnectionList'
-          - description: A list of requested connection definitions.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if the list of connections returned does not include the last of the filtered connections.
+      format: date-time
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -424,8 +409,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

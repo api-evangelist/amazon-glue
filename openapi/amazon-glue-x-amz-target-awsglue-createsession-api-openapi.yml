@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateSession #X Amz Target=AWSGlue.CreateSession #X Amz Target=AWSGlue.CreateSession API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.CreateSession API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -265,100 +268,8 @@ paths:
       - '#X Amz Target=AWSGlue.CreateSession'
 components:
   schemas:
-    OrchestrationArgumentsValue:
-      type: string
-      minLength: 0
-      maxLength: 4096
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    DoubleValue:
-      type: number
-      format: double
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    OrchestrationNameString:
-      type: string
-      pattern: '[\.\-_A-Za-z0-9]+'
-      minLength: 1
-      maxLength: 128
-    PythonVersionString:
-      type: string
-      pattern: ^([2-3]|3[.]9)$
+    AlreadyExistsException: {}
     ResourceNumberLimitExceededException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    OrchestrationRoleArn:
-      type: string
-      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
-      minLength: 20
-      maxLength: 2048
-    OrchestrationArgumentsMap:
-      type: object
-      minProperties: 0
-      maxProperties: 75
-      additionalProperties:
-        $ref: '#/components/schemas/OrchestrationArgumentsValue'
-    Session:
-      type: object
-      properties:
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The ID of the session.
-        CreatedOn:
-          allOf:
-          - $ref: '#/components/schemas/TimestampValue'
-          - description: The time and date when the session was created.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/SessionStatus'
-          - description: 'The session status. '
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: The error message displayed during the session.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: The description of the session.
-        Role:
-          allOf:
-          - $ref: '#/components/schemas/OrchestrationRoleArn'
-          - description: The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.
-        Command:
-          allOf:
-          - $ref: '#/components/schemas/SessionCommand'
-          - description: The command object.See SessionCommand.
-        DefaultArguments:
-          allOf:
-          - $ref: '#/components/schemas/OrchestrationArgumentsMap'
-          - description: 'A map array of key-value pairs. Max is 75 pairs. '
-        Connections:
-          allOf:
-          - $ref: '#/components/schemas/ConnectionsList'
-          - description: The number of connections used for the session.
-        Progress:
-          allOf:
-          - $ref: '#/components/schemas/DoubleValue'
-          - description: The code execution progress of the session.
-        MaxCapacity:
-          allOf:
-          - $ref: '#/components/schemas/NullableDouble'
-          - description: 'The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. '
-        SecurityConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the SecurityConfiguration structure to be used with the session.
-        GlueVersion:
-          allOf:
-          - $ref: '#/components/schemas/GlueVersionString'
-          - description: The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.
-      description: The period in which a remote Spark runtime environment is running.
     SessionCommand:
       type: object
       properties:
@@ -371,8 +282,19 @@ components:
           - $ref: '#/components/schemas/PythonVersionString'
           - description: Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.
       description: The <code>SessionCommand</code> that runs the job.
-    AlreadyExistsException: {}
-    AccessDeniedException: {}
+    TimestampValue:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    OrchestrationArgumentsValue:
+      type: string
+      minLength: 0
+      maxLength: 4096
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     CreateSessionRequest:
       type: object
       required:
@@ -442,13 +364,120 @@ components:
           - $ref: '#/components/schemas/OrchestrationNameString'
           - description: 'The origin of the request. '
       description: Request to create a new session.
-    ValidationException: {}
-    OperationTimeoutException: {}
-    GenericString:
+    PythonVersionString:
       type: string
+      pattern: ^([2-3]|3[.]9)$
+    IdempotentParameterMismatchException: {}
+    WorkerType:
+      type: string
+      enum:
+      - Standard
+      - G.1X
+      - G.2X
+      - G.025X
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    Session:
+      type: object
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The ID of the session.
+        CreatedOn:
+          allOf:
+          - $ref: '#/components/schemas/TimestampValue'
+          - description: The time and date when the session was created.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/SessionStatus'
+          - description: 'The session status. '
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: The error message displayed during the session.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: The description of the session.
+        Role:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationRoleArn'
+          - description: The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.
+        Command:
+          allOf:
+          - $ref: '#/components/schemas/SessionCommand'
+          - description: The command object.See SessionCommand.
+        DefaultArguments:
+          allOf:
+          - $ref: '#/components/schemas/OrchestrationArgumentsMap'
+          - description: 'A map array of key-value pairs. Max is 75 pairs. '
+        Connections:
+          allOf:
+          - $ref: '#/components/schemas/ConnectionsList'
+          - description: The number of connections used for the session.
+        Progress:
+          allOf:
+          - $ref: '#/components/schemas/DoubleValue'
+          - description: The code execution progress of the session.
+        MaxCapacity:
+          allOf:
+          - $ref: '#/components/schemas/NullableDouble'
+          - description: 'The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. '
+        SecurityConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the SecurityConfiguration structure to be used with the session.
+        GlueVersion:
+          allOf:
+          - $ref: '#/components/schemas/GlueVersionString'
+          - description: The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.
+      description: The period in which a remote Spark runtime environment is running.
+    OrchestrationArgumentsMap:
+      type: object
+      minProperties: 0
+      maxProperties: 75
+      additionalProperties:
+        $ref: '#/components/schemas/OrchestrationArgumentsValue'
+    CreateSessionResponse:
+      type: object
+      properties:
+        Session:
+          allOf:
+          - $ref: '#/components/schemas/Session'
+          - description: Returns the session object in the response.
+    NullableInteger:
+      type: integer
+    InternalServiceException: {}
+    OrchestrationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    OperationTimeoutException: {}
+    OrchestrationRoleArn:
+      type: string
+      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
+      minLength: 20
+      maxLength: 2048
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
     Timeout:
       type: integer
       minimum: 1
+    ValidationException: {}
+    GenericString:
+      type: string
     ConnectionsList:
       type: object
       properties:
@@ -457,47 +486,12 @@ components:
           - $ref: '#/components/schemas/OrchestrationStringList'
           - description: A list of connections used by the job.
       description: Specifies the connections used by a job.
-    InvalidInputException: {}
     TagsMap:
       type: object
       minProperties: 0
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    NullableInteger:
-      type: integer
-    WorkerType:
-      type: string
-      enum:
-      - Standard
-      - G.1X
-      - G.2X
-      - G.025X
-    OrchestrationStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericString'
-    CreateSessionResponse:
-      type: object
-      properties:
-        Session:
-          allOf:
-          - $ref: '#/components/schemas/Session'
-          - description: Returns the session object in the response.
-    InternalServiceException: {}
-    NullableDouble:
-      type: number
-      format: double
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    GlueVersionString:
-      type: string
-      pattern: ^\w+\.\w+$
-      minLength: 1
-      maxLength: 255
-    IdempotentParameterMismatchException: {}
     SessionStatus:
       type: string
       enum:
@@ -507,30 +501,21 @@ components:
       - TIMEOUT
       - STOPPING
       - STOPPED
-    TimestampValue:
+    AccessDeniedException: {}
+    DescriptionString:
       type: string
-      format: date-time
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NullableDouble:
+      type: number
+      format: double
+    DoubleValue:
+      type: number
+      format: double
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -541,8 +526,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

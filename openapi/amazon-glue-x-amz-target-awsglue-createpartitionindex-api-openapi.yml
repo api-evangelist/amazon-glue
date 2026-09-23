@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreatePartitionIndex #X Amz Target=AWSGlue.CreatePartitionIndex #X Amz Target=AWSGlue.CreatePartitionIndex API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.CreatePartitionIndex API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -251,50 +254,42 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.CreatePartitionIndex'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    AlreadyExistsException: {}
+    ResourceNumberLimitExceededException: {}
+    InvalidInputException: {}
+    GlueEncryptionException: {}
+    KeyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+      minItems: 1
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EntityNotFoundException: {}
+    PartitionIndex:
+      type: object
+      required:
+      - Keys
+      - IndexName
+      properties:
+        Keys:
+          allOf:
+          - $ref: '#/components/schemas/KeyList'
+          - description: The keys for the partition index.
+        IndexName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the partition index.
+      description: A structure for a partition index.
+    InternalServiceException: {}
+    OperationTimeoutException: {}
+    CreatePartitionIndexResponse:
+      type: object
+      properties: {}
     CreatePartitionIndexRequest:
       type: object
       required:
@@ -319,46 +314,54 @@ components:
           allOf:
           - $ref: '#/components/schemas/PartitionIndex'
           - description: Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.
-    ResourceNumberLimitExceededException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GlueEncryptionException: {}
-    AlreadyExistsException: {}
-    KeyList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-      minItems: 1
     CatalogIdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    OperationTimeoutException: {}
-    PartitionIndex:
-      type: object
-      required:
-      - Keys
-      - IndexName
-      properties:
-        Keys:
-          allOf:
-          - $ref: '#/components/schemas/KeyList'
-          - description: The keys for the partition index.
-        IndexName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the partition index.
-      description: A structure for a partition index.
-    CreatePartitionIndexResponse:
-      type: object
-      properties: {}
-    InvalidInputException: {}
-    InternalServiceException: {}
-    EntityNotFoundException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

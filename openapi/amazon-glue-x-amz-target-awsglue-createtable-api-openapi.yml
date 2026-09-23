@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateTable #X Amz Target=AWSGlue.CreateTable #X Amz Target=AWSGlue.CreateTable API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.CreateTable API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -277,56 +280,23 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.CreateTable'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    Boolean:
-      type: boolean
-    ParametersMap:
+    SerDeInfo:
       type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ParametersMapValue'
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Name of the SerDe.
+        SerializationLibrary:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersMap'
+          - description: These key-value pairs define initialization parameters for the SerDe.
+      description: Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
     CreateTableRequest:
       type: object
       required:
@@ -354,134 +324,50 @@ components:
           allOf:
           - $ref: '#/components/schemas/TransactionIdString'
           - description: The ID of the transaction.
-    SchemaId:
+    ParametersMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ParametersMapValue'
+    AlreadyExistsException: {}
+    ResourceNumberLimitExceededException: {}
+    SkewedInfo:
       type: object
       properties:
-        SchemaArn:
+        SkewedColumnNames:
           allOf:
-          - $ref: '#/components/schemas/GlueResourceArn'
-          - description: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
-        SchemaName:
+          - $ref: '#/components/schemas/NameStringList'
+          - description: A list of names of columns that contain skewed values.
+        SkewedColumnValues:
           allOf:
-          - $ref: '#/components/schemas/SchemaRegistryNameString'
-          - description: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
-        RegistryName:
+          - $ref: '#/components/schemas/ColumnValueStringList'
+          - description: A list of values that appear so frequently as to be considered skewed.
+        SkewedColumnValueLocationMaps:
           allOf:
-          - $ref: '#/components/schemas/SchemaRegistryNameString'
-          - description: The name of the schema registry that contains the schema.
-      description: The unique ID of the schema in the Glue schema registry.
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    CreateTableResponse:
-      type: object
-      properties: {}
-    ColumnValuesString:
-      type: string
-    ViewTextString:
-      type: string
-      maxLength: 409600
-    TableInput:
+          - $ref: '#/components/schemas/LocationMap'
+          - description: A mapping of skewed values to the columns that contain them.
+      description: Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
+    Order:
       type: object
       required:
-      - Name
+      - Column
+      - SortOrder
       properties:
-        Name:
+        Column:
           allOf:
           - $ref: '#/components/schemas/NameString'
-          - description: The table name. For Hive compatibility, this is folded to lowercase when it is stored.
-        Description:
+          - description: The name of the column.
+        SortOrder:
           allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A description of the table.
-        Owner:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
-        LastAccessTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The last time that the table was accessed.
-        LastAnalyzedTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The last time that column statistics were computed for this table.
-        Retention:
-          allOf:
-          - $ref: '#/components/schemas/NonNegativeInteger'
-          - description: The retention time for this table.
-        StorageDescriptor:
-          allOf:
-          - $ref: '#/components/schemas/StorageDescriptor'
-          - description: A storage descriptor containing information about the physical storage of this table.
-        PartitionKeys:
-          allOf:
-          - $ref: '#/components/schemas/ColumnList'
-          - description: '<p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> <p> <code>"PartitionKeys": []</code> </p>'
-        ViewOriginalText:
-          allOf:
-          - $ref: '#/components/schemas/ViewTextString'
-          - description: Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
-        ViewExpandedText:
-          allOf:
-          - $ref: '#/components/schemas/ViewTextString'
-          - description: Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
-        TableType:
-          allOf:
-          - $ref: '#/components/schemas/TableTypeString'
-          - description: <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p> <p>Glue related table types:</p> <dl> <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/ParametersMap'
-          - description: These key-value pairs define properties associated with the table.
-        TargetTable:
-          allOf:
-          - $ref: '#/components/schemas/TableIdentifier'
-          - description: A <code>TableIdentifier</code> structure that describes a target table for resource linking.
-      description: A structure used to define a table.
-    ResourceNumberLimitExceededException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    SchemaVersionIdString:
-      type: string
-      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
-      minLength: 36
-      maxLength: 36
-    GlueEncryptionException: {}
-    LocationString:
-      type: string
-      maxLength: 2056
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    FormatString:
-      type: string
-      maxLength: 128
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    SerDeInfo:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Name of the SerDe.
-        SerializationLibrary:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
-        Parameters:
-          allOf:
-          - $ref: '#/components/schemas/ParametersMap'
-          - description: These key-value pairs define initialization parameters for the SerDe.
-      description: Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
-    LocationStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LocationString'
-    AlreadyExistsException: {}
+          - $ref: '#/components/schemas/IntegerFlag'
+          - description: Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).
+      description: Specifies the sort order of a sorted column.
+    Boolean:
+      type: boolean
+    VersionLongNumber:
+      type: integer
+      minimum: 1
+      maximum: 100000
+    InvalidInputException: {}
     StorageDescriptor:
       type: object
       properties:
@@ -542,75 +428,78 @@ components:
           - $ref: '#/components/schemas/SchemaReference'
           - description: <p>An object that references a schema stored in the Glue Schema Registry.</p> <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
       description: Describes the physical storage of table data.
-    VersionLongNumber:
-      type: integer
-      minimum: 1
-      maximum: 100000
-    OrderList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Order'
-    GlueResourceArn:
+    SchemaId:
+      type: object
+      properties:
+        SchemaArn:
+          allOf:
+          - $ref: '#/components/schemas/GlueResourceArn'
+          - description: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        SchemaName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.
+        RegistryName:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryNameString'
+          - description: The name of the schema registry that contains the schema.
+      description: The unique ID of the schema in the Glue schema registry.
+    ColumnTypeString:
       type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
-      minLength: 1
-      maxLength: 10240
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     NonNegativeInteger:
       type: integer
       minimum: 0
+    ViewTextString:
+      type: string
+      maxLength: 409600
+    FormatString:
+      type: string
+      maxLength: 128
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ColumnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Column'
+    LocationString:
+      type: string
+      maxLength: 2056
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    TableTypeString:
+      type: string
+      maxLength: 255
+    GlueEncryptionException: {}
+    TransactionIdString:
+      type: string
+      pattern: '[\p{L}\p{N}\p{P}]*'
+      minLength: 1
+      maxLength: 255
     KeyList:
       type: array
       items:
         $ref: '#/components/schemas/NameString'
       minItems: 1
-    ResourceNotReadyException: {}
-    LocationMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ColumnValuesString'
-    TableIdentifier:
-      type: object
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog in which the table resides.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database that contains the target table.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the target table.
-      description: A structure that describes a target table for resource linking.
-    CatalogIdString:
+    ParametersMapValue:
+      type: string
+      maxLength: 512000
+    NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    OperationTimeoutException: {}
-    SkewedInfo:
-      type: object
-      properties:
-        SkewedColumnNames:
-          allOf:
-          - $ref: '#/components/schemas/NameStringList'
-          - description: A list of names of columns that contain skewed values.
-        SkewedColumnValues:
-          allOf:
-          - $ref: '#/components/schemas/ColumnValueStringList'
-          - description: A list of values that appear so frequently as to be considered skewed.
-        SkewedColumnValueLocationMaps:
-          allOf:
-          - $ref: '#/components/schemas/LocationMap'
-          - description: A mapping of skewed values to the columns that contain them.
-      description: Specifies skewed values in a table. Skewed values are those that occur with very high frequency.
-    SchemaRegistryNameString:
+    GlueResourceArn:
       type: string
-      pattern: '[a-zA-Z0-9-_$#.]+'
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
       minLength: 1
-      maxLength: 255
+      maxLength: 10240
+    LocationStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LocationString'
+    ConcurrentModificationException: {}
+    EntityNotFoundException: {}
     PartitionIndex:
       type: object
       required:
@@ -626,46 +515,102 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the partition index.
       description: A structure for a partition index.
-    PartitionIndexList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PartitionIndex'
-      maxItems: 3
-    ConcurrentModificationException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    Order:
+    ResourceNotReadyException: {}
+    TableInput:
       type: object
       required:
-      - Column
-      - SortOrder
+      - Name
       properties:
-        Column:
+        Name:
           allOf:
           - $ref: '#/components/schemas/NameString'
-          - description: The name of the column.
-        SortOrder:
+          - description: The table name. For Hive compatibility, this is folded to lowercase when it is stored.
+        Description:
           allOf:
-          - $ref: '#/components/schemas/IntegerFlag'
-          - description: Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).
-      description: Specifies the sort order of a sorted column.
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of the table.
+        Owner:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
+        LastAccessTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The last time that the table was accessed.
+        LastAnalyzedTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The last time that column statistics were computed for this table.
+        Retention:
+          allOf:
+          - $ref: '#/components/schemas/NonNegativeInteger'
+          - description: The retention time for this table.
+        StorageDescriptor:
+          allOf:
+          - $ref: '#/components/schemas/StorageDescriptor'
+          - description: A storage descriptor containing information about the physical storage of this table.
+        PartitionKeys:
+          allOf:
+          - $ref: '#/components/schemas/ColumnList'
+          - description: '<p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p> <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p> <p> <code>"PartitionKeys": []</code> </p>'
+        ViewOriginalText:
+          allOf:
+          - $ref: '#/components/schemas/ViewTextString'
+          - description: Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
+        ViewExpandedText:
+          allOf:
+          - $ref: '#/components/schemas/ViewTextString'
+          - description: Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
+        TableType:
+          allOf:
+          - $ref: '#/components/schemas/TableTypeString'
+          - description: <p>The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such as Athena, may create tables with additional table types. </p> <p>Glue related table types:</p> <dl> <dt>EXTERNAL_TABLE</dt> <dd> <p>Hive compatible attribute - indicates a non-Hive managed table.</p> </dd> <dt>GOVERNED</dt> <dd> <p>Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.</p> </dd> </dl>
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersMap'
+          - description: These key-value pairs define properties associated with the table.
+        TargetTable:
+          allOf:
+          - $ref: '#/components/schemas/TableIdentifier'
+          - description: A <code>TableIdentifier</code> structure that describes a target table for resource linking.
+      description: A structure used to define a table.
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    InternalServiceException: {}
     ColumnValueStringList:
       type: array
       items:
         $ref: '#/components/schemas/ColumnValuesString'
-    NameStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-    InternalServiceException: {}
-    EntityNotFoundException: {}
+    SchemaVersionIdString:
+      type: string
+      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
+      minLength: 36
+      maxLength: 36
     CommentString:
       type: string
       minLength: 0
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+    CreateTableResponse:
+      type: object
+      properties: {}
+    OperationTimeoutException: {}
+    OrderList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Order'
+    IntegerFlag:
+      type: integer
+      minimum: 0
+      maximum: 1
+    Integer:
+      type: integer
     SchemaReference:
       type: object
       properties:
@@ -682,28 +627,8 @@ components:
           - $ref: '#/components/schemas/VersionLongNumber'
           - description: The version number of the schema.
       description: An object that references a schema stored in the Glue Schema Registry.
-    ParametersMapValue:
+    ColumnValuesString:
       type: string
-      maxLength: 512000
-    Integer:
-      type: integer
-    ColumnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Column'
-    ColumnTypeString:
-      type: string
-      minLength: 0
-      maxLength: 131072
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    TransactionIdString:
-      type: string
-      pattern: '[\p{L}\p{N}\p{P}]*'
-      minLength: 1
-      maxLength: 255
-    TableTypeString:
-      type: string
-      maxLength: 255
     Column:
       type: object
       required:
@@ -726,10 +651,88 @@ components:
           - $ref: '#/components/schemas/ParametersMap'
           - description: These key-value pairs define properties associated with the column.
       description: A column in a <code>Table</code>.
-    IntegerFlag:
-      type: integer
-      minimum: 0
-      maximum: 1
+    NameStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    PartitionIndexList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PartitionIndex'
+      maxItems: 3
+    TableIdentifier:
+      type: object
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the table resides.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database that contains the target table.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the target table.
+      description: A structure that describes a target table for resource linking.
+    LocationMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ColumnValuesString'
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

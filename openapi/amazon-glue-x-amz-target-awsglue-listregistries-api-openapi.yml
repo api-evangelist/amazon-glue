@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListRegistries #X Amz Target=AWSGlue.ListRegistries #X Amz Target=AWSGlue.ListRegistries API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.ListRegistries API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListRegistries
-      description: Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.
+      description: Returns a list of registries that you have created, with minimal registry information. Registries in the Deleting status will not be included in the results. Empty results will be returned if there are no registries available.
       responses:
         '200':
           description: Success
@@ -211,57 +214,29 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListRegistries'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
+    SchemaRegistryTokenString:
       type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    UpdatedTimestamp:
+    InvalidInputException: {}
+    RegistryListDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/RegistryListItem'
+    GlueResourceArn:
       type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      minLength: 1
+      maxLength: 10240
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    MaxResultsNumber:
+      type: integer
+      minimum: 1
+      maximum: 100
+    InternalServiceException: {}
     RegistryListItem:
       type: object
       properties:
@@ -290,16 +265,17 @@ components:
           - $ref: '#/components/schemas/UpdatedTimestamp'
           - description: The date the registry was updated.
       description: A structure containing the details for a registry.
-    MaxResultsNumber:
-      type: integer
-      minimum: 1
-      maximum: 100
-    GlueResourceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
-      minLength: 1
-      maxLength: 10240
-    AccessDeniedException: {}
+    ListRegistriesResponse:
+      type: object
+      properties:
+        Registries:
+          allOf:
+          - $ref: '#/components/schemas/RegistryListDefinition'
+          - description: An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryTokenString'
+          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
     ListRegistriesInput:
       type: object
       title: ListRegistriesInput
@@ -312,37 +288,64 @@ components:
           allOf:
           - $ref: '#/components/schemas/SchemaRegistryTokenString'
           - description: A continuation token, if this is a continuation call.
-    ListRegistriesResponse:
-      type: object
-      properties:
-        Registries:
-          allOf:
-          - $ref: '#/components/schemas/RegistryListDefinition'
-          - description: An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/SchemaRegistryTokenString'
-          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
-    SchemaRegistryNameString:
+    UpdatedTimestamp:
       type: string
-      pattern: '[a-zA-Z0-9-_$#.]+'
-      minLength: 1
-      maxLength: 255
-    InvalidInputException: {}
-    SchemaRegistryTokenString:
+    CreatedTimestamp:
       type: string
+    AccessDeniedException: {}
     RegistryStatus:
       type: string
       enum:
       - AVAILABLE
       - DELETING
-    CreatedTimestamp:
+    DescriptionString:
       type: string
-    InternalServiceException: {}
-    RegistryListDefinition:
-      type: array
-      items:
-        $ref: '#/components/schemas/RegistryListItem'
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDataflowGraph #X Amz Target=AWSGlue.GetDataflowGraph #X Amz Target=AWSGlue.GetDataflowGraph API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetDataflowGraph API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: GetDataflowGraph
-      description: 'Transforms a Python script into a directed acyclic graph (DAG). '
+      description: Transforms a Python script into a directed acyclic graph (DAG).
       responses:
         '200':
           description: Success
@@ -199,71 +202,7 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDataflowGraph'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    Boolean:
-      type: boolean
-    CodeGenEdge:
-      type: object
-      required:
-      - Source
-      - Target
-      properties:
-        Source:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenIdentifier'
-          - description: The ID of the node at which the edge starts.
-        Target:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenIdentifier'
-          - description: The ID of the node at which the edge ends.
-        TargetParameter:
-          allOf:
-          - $ref: '#/components/schemas/CodeGenArgName'
-          - description: The target of the edge.
-      description: Represents a directional edge in a directed acyclic graph (DAG).
     GetDataflowGraphRequest:
       type: object
       title: GetDataflowGraphRequest
@@ -272,12 +211,24 @@ components:
           allOf:
           - $ref: '#/components/schemas/PythonScript'
           - description: The Python script to transform.
-    PythonScript:
-      type: string
-    DagNodes:
+    CodeGenNodeArgs:
       type: array
       items:
-        $ref: '#/components/schemas/CodeGenNode'
+        $ref: '#/components/schemas/CodeGenNodeArg'
+      minItems: 0
+      maxItems: 50
+    Boolean:
+      type: boolean
+    CodeGenIdentifier:
+      type: string
+      pattern: '[A-Za-z_][A-Za-z0-9_]*'
+      minLength: 1
+      maxLength: 255
+    InvalidInputException: {}
+    CodeGenArgValue:
+      type: string
+    PythonScript:
+      type: string
     CodeGenNode:
       type: object
       required:
@@ -302,22 +253,46 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The line number of the node.
       description: Represents a node in a directed acyclic graph (DAG)
-    CodeGenNodeArgs:
+    DagNodes:
       type: array
       items:
-        $ref: '#/components/schemas/CodeGenNodeArg'
-      minItems: 0
-      maxItems: 50
+        $ref: '#/components/schemas/CodeGenNode'
+    InternalServiceException: {}
+    CodeGenEdge:
+      type: object
+      required:
+      - Source
+      - Target
+      properties:
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenIdentifier'
+          - description: The ID of the node at which the edge starts.
+        Target:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenIdentifier'
+          - description: The ID of the node at which the edge ends.
+        TargetParameter:
+          allOf:
+          - $ref: '#/components/schemas/CodeGenArgName'
+          - description: The target of the edge.
+      description: Represents a directional edge in a directed acyclic graph (DAG).
+    GetDataflowGraphResponse:
+      type: object
+      properties:
+        DagNodes:
+          allOf:
+          - $ref: '#/components/schemas/DagNodes'
+          - description: A list of the nodes in the resulting DAG.
+        DagEdges:
+          allOf:
+          - $ref: '#/components/schemas/DagEdges'
+          - description: A list of the edges in the resulting DAG.
     OperationTimeoutException: {}
-    DagEdges:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeGenEdge'
-    CodeGenArgName:
-      type: string
     CodeGenNodeType:
       type: string
-    InvalidInputException: {}
+    Integer:
+      type: integer
     CodeGenNodeArg:
       type: object
       required:
@@ -337,27 +312,55 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: True if the value is used as a parameter.
       description: An argument or property of a node.
-    InternalServiceException: {}
-    GetDataflowGraphResponse:
-      type: object
-      properties:
-        DagNodes:
-          allOf:
-          - $ref: '#/components/schemas/DagNodes'
-          - description: A list of the nodes in the resulting DAG.
-        DagEdges:
-          allOf:
-          - $ref: '#/components/schemas/DagEdges'
-          - description: A list of the edges in the resulting DAG.
-    Integer:
-      type: integer
-    CodeGenArgValue:
+    CodeGenArgName:
       type: string
-    CodeGenIdentifier:
-      type: string
-      pattern: '[A-Za-z_][A-Za-z0-9_]*'
-      minLength: 1
-      maxLength: 255
+    DagEdges:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeGenEdge'
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

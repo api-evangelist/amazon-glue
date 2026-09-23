@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.DeleteSchemaVersions #X Amz Target=AWSGlue.DeleteSchemaVersions #X Amz Target=AWSGlue.DeleteSchemaVersions API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.DeleteSchemaVersions API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,16 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: DeleteSchemaVersions
-      description: <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p> <p>When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the <code>DeleteSchemaCheckpoint</code> API before using this API.</p> <p>You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code> API. This operation will also delete the attached <code>SchemaVersionMetadata</code> under the schema versions. Hard deletes will be enforced on the database.</p> <p>If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.</p>
+      description: 'Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the GetSchemaVersions API after this call will list the status of the deleted versions.
+
+
+        When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the DeleteSchemaCheckpoint API before using this API.
+
+
+        You cannot use the DeleteSchemaVersions API to delete the first schema version in the schema set. The first schema version can only be deleted by the DeleteSchema API. This operation will also delete the attached SchemaVersionMetadata under the schema versions. Hard deletes will be enforced on the database.
+
+
+        If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.'
       responses:
         '200':
           description: Success
@@ -212,50 +224,21 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.DeleteSchemaVersions'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    DeleteSchemaVersionsResponse:
+      type: object
+      properties:
+        SchemaVersionErrors:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionErrorList'
+          - description: A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.
+    ErrorMessageString:
+      type: string
+    VersionLongNumber:
+      type: integer
+      minimum: 1
+      maximum: 100000
+    InvalidInputException: {}
     SchemaId:
       type: object
       properties:
@@ -272,62 +255,6 @@ components:
           - $ref: '#/components/schemas/SchemaRegistryNameString'
           - description: The name of the schema registry that contains the schema.
       description: The unique ID of the schema in the Glue schema registry.
-    ErrorMessageString:
-      type: string
-    ErrorCodeString:
-      type: string
-    SchemaVersionErrorItem:
-      type: object
-      properties:
-        VersionNumber:
-          allOf:
-          - $ref: '#/components/schemas/VersionLongNumber'
-          - description: The version number of the schema.
-        ErrorDetails:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetails'
-          - description: The details of the error for the schema version.
-      description: An object that contains the error details for an operation on a schema version.
-    DeleteSchemaVersionsResponse:
-      type: object
-      properties:
-        SchemaVersionErrors:
-          allOf:
-          - $ref: '#/components/schemas/SchemaVersionErrorList'
-          - description: A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.
-    VersionLongNumber:
-      type: integer
-      minimum: 1
-      maximum: 100000
-    SchemaVersionErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SchemaVersionErrorItem'
-    GlueResourceArn:
-      type: string
-      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
-      minLength: 1
-      maxLength: 10240
-    AccessDeniedException: {}
-    ErrorDetails:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/ErrorCodeString'
-          - description: The error code for an error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessageString'
-          - description: The error message for an error.
-      description: An object containing error details.
-    SchemaRegistryNameString:
-      type: string
-      pattern: '[a-zA-Z0-9-_$#.]+'
-      minLength: 1
-      maxLength: 255
-    ConcurrentModificationException: {}
-    InvalidInputException: {}
     DeleteSchemaVersionsInput:
       type: object
       required:
@@ -343,12 +270,97 @@ components:
           allOf:
           - $ref: '#/components/schemas/VersionsString'
           - description: '<p>A version range may be supplied which may be of the format:</p> <ul> <li> <p>a single version number, 5</p> </li> <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li> </ul>'
-    EntityNotFoundException: {}
+    GlueResourceArn:
+      type: string
+      pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
+      minLength: 1
+      maxLength: 10240
+    ConcurrentModificationException: {}
     VersionsString:
       type: string
       pattern: '[1-9][0-9]*|[1-9][0-9]*-[1-9][0-9]*'
       minLength: 1
       maxLength: 100000
+    EntityNotFoundException: {}
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    SchemaVersionErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaVersionErrorItem'
+    SchemaVersionErrorItem:
+      type: object
+      properties:
+        VersionNumber:
+          allOf:
+          - $ref: '#/components/schemas/VersionLongNumber'
+          - description: The version number of the schema.
+        ErrorDetails:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetails'
+          - description: The details of the error for the schema version.
+      description: An object that contains the error details for an operation on a schema version.
+    ErrorDetails:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCodeString'
+          - description: The error code for an error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessageString'
+          - description: The error message for an error.
+      description: An object containing error details.
+    ErrorCodeString:
+      type: string
+    AccessDeniedException: {}
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateTrigger #X Amz Target=AWSGlue.UpdateTrigger #X Amz Target=AWSGlue.UpdateTrigger API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.UpdateTrigger API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -226,60 +229,6 @@ paths:
       - '#X Amz Target=AWSGlue.UpdateTrigger'
 components:
   schemas:
-    Condition:
-      type: object
-      properties:
-        LogicalOperator:
-          allOf:
-          - $ref: '#/components/schemas/LogicalOperator'
-          - description: A logical operator.
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.
-        State:
-          allOf:
-          - $ref: '#/components/schemas/JobRunState'
-          - description: The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.
-        CrawlerName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the crawler to which this condition applies.
-        CrawlState:
-          allOf:
-          - $ref: '#/components/schemas/CrawlState'
-          - description: The state of the crawler to which this condition applies.
-      description: Defines a condition under which a trigger fires.
-    Logical:
-      type: string
-      enum:
-      - AND
-      - ANY
-    TriggerState:
-      type: string
-      enum:
-      - CREATING
-      - CREATED
-      - ACTIVATING
-      - ACTIVATED
-      - DEACTIVATING
-      - DEACTIVATED
-      - DELETING
-      - UPDATING
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    LogicalOperator:
-      type: string
-      enum:
-      - EQUALS
-    IdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     Predicate:
       type: object
       properties:
@@ -292,28 +241,6 @@ components:
           - $ref: '#/components/schemas/ConditionList'
           - description: A list of the conditions that determine when the trigger will fire.
       description: Defines the predicate of the trigger, which determines when it fires.
-    NotifyDelayAfter:
-      type: integer
-      minimum: 1
-    UpdateTriggerRequest:
-      type: object
-      required:
-      - Name
-      - TriggerUpdate
-      title: UpdateTriggerRequest
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the trigger to update.
-        TriggerUpdate:
-          allOf:
-          - $ref: '#/components/schemas/TriggerUpdate'
-          - description: The new values with which to update the trigger.
-    BatchWindow:
-      type: integer
-      minimum: 1
-      maximum: 900
     Trigger:
       type: object
       properties:
@@ -358,82 +285,51 @@ components:
           - $ref: '#/components/schemas/EventBatchingCondition'
           - description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
       description: Information about a specific trigger.
-    BatchSize:
-      type: integer
-      minimum: 1
-      maximum: 100
+    IdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ConditionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Condition'
+    InvalidInputException: {}
+    CrawlState:
+      type: string
+      enum:
+      - RUNNING
+      - CANCELLING
+      - CANCELLED
+      - SUCCEEDED
+      - FAILED
+      - ERROR
+    TriggerState:
+      type: string
+      enum:
+      - CREATING
+      - CREATED
+      - ACTIVATING
+      - ACTIVATED
+      - DEACTIVATING
+      - DEACTIVATED
+      - DELETING
+      - UPDATING
+    GenericMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/GenericString'
     NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GenericMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/GenericString'
-    OperationTimeoutException: {}
-    GenericString:
-      type: string
-    ActionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Action'
-    ConcurrentModificationException: {}
-    TriggerUpdate:
-      type: object
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Reserved for future use.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A description of this trigger.
-        Schedule:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: 'A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.'
-        Actions:
-          allOf:
-          - $ref: '#/components/schemas/ActionList'
-          - description: The actions initiated by this trigger.
-        Predicate:
-          allOf:
-          - $ref: '#/components/schemas/Predicate'
-          - description: The predicate of this trigger, which defines when it will fire.
-        EventBatchingCondition:
-          allOf:
-          - $ref: '#/components/schemas/EventBatchingCondition'
-          - description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
-      description: A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.
-    Timeout:
+    BatchSize:
       type: integer
       minimum: 1
-    InvalidInputException: {}
-    TriggerType:
-      type: string
-      enum:
-      - SCHEDULED
-      - CONDITIONAL
-      - ON_DEMAND
-      - EVENT
-    EventBatchingCondition:
-      type: object
-      required:
-      - BatchSize
-      properties:
-        BatchSize:
-          allOf:
-          - $ref: '#/components/schemas/BatchSize'
-          - description: Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.
-        BatchWindow:
-          allOf:
-          - $ref: '#/components/schemas/BatchWindow'
-          - description: Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.
-      description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+      maximum: 100
+    ConcurrentModificationException: {}
     EntityNotFoundException: {}
-    InternalServiceException: {}
     Action:
       type: object
       properties:
@@ -462,6 +358,85 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the crawler to be used with this action.
       description: Defines an action to be initiated by a trigger.
+    TriggerType:
+      type: string
+      enum:
+      - SCHEDULED
+      - CONDITIONAL
+      - ON_DEMAND
+      - EVENT
+    InternalServiceException: {}
+    ActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Action'
+    EventBatchingCondition:
+      type: object
+      required:
+      - BatchSize
+      properties:
+        BatchSize:
+          allOf:
+          - $ref: '#/components/schemas/BatchSize'
+          - description: Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.
+        BatchWindow:
+          allOf:
+          - $ref: '#/components/schemas/BatchWindow'
+          - description: Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.
+      description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+    UpdateTriggerResponse:
+      type: object
+      properties:
+        Trigger:
+          allOf:
+          - $ref: '#/components/schemas/Trigger'
+          - description: The resulting trigger definition.
+    NotificationProperty:
+      type: object
+      properties:
+        NotifyDelayAfter:
+          allOf:
+          - $ref: '#/components/schemas/NotifyDelayAfter'
+          - description: After a job run starts, the number of minutes to wait before sending a job run delay notification.
+      description: Specifies configuration properties of a notification.
+    OperationTimeoutException: {}
+    BatchWindow:
+      type: integer
+      minimum: 1
+      maximum: 900
+    LogicalOperator:
+      type: string
+      enum:
+      - EQUALS
+    Condition:
+      type: object
+      properties:
+        LogicalOperator:
+          allOf:
+          - $ref: '#/components/schemas/LogicalOperator'
+          - description: A logical operator.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/JobRunState'
+          - description: The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.
+        CrawlerName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the crawler to which this condition applies.
+        CrawlState:
+          allOf:
+          - $ref: '#/components/schemas/CrawlState'
+          - description: The state of the crawler to which this condition applies.
+      description: Defines a condition under which a trigger fires.
+    Timeout:
+      type: integer
+      minimum: 1
+    GenericString:
+      type: string
     JobRunState:
       type: string
       enum:
@@ -474,55 +449,65 @@ components:
       - TIMEOUT
       - ERROR
       - WAITING
-    UpdateTriggerResponse:
+    UpdateTriggerRequest:
       type: object
+      required:
+      - Name
+      - TriggerUpdate
+      title: UpdateTriggerRequest
       properties:
-        Trigger:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/Trigger'
-          - description: The resulting trigger definition.
-    ConditionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Condition'
-    CrawlState:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the trigger to update.
+        TriggerUpdate:
+          allOf:
+          - $ref: '#/components/schemas/TriggerUpdate'
+          - description: The new values with which to update the trigger.
+    Logical:
       type: string
       enum:
-      - RUNNING
-      - CANCELLING
-      - CANCELLED
-      - SUCCEEDED
-      - FAILED
-      - ERROR
-    NotificationProperty:
+      - AND
+      - ANY
+    NotifyDelayAfter:
+      type: integer
+      minimum: 1
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    TriggerUpdate:
       type: object
       properties:
-        NotifyDelayAfter:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/NotifyDelayAfter'
-          - description: After a job run starts, the number of minutes to wait before sending a job run delay notification.
-      description: Specifies configuration properties of a notification.
+          - $ref: '#/components/schemas/NameString'
+          - description: Reserved for future use.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A description of this trigger.
+        Schedule:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: 'A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.'
+        Actions:
+          allOf:
+          - $ref: '#/components/schemas/ActionList'
+          - description: The actions initiated by this trigger.
+        Predicate:
+          allOf:
+          - $ref: '#/components/schemas/Predicate'
+          - description: The predicate of this trigger, which defines when it will fire.
+        EventBatchingCondition:
+          allOf:
+          - $ref: '#/components/schemas/EventBatchingCondition'
+          - description: Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+      description: A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -533,8 +518,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

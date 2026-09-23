@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListMLTransforms #X Amz Target=AWSGlue.ListMLTransforms #X Amz Target=AWSGlue.ListMLTransforms API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.ListMLTransforms API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: ListMLTransforms
-      description: ' Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. '
+      description: Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional Tags field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved.
       responses:
         '200':
           description: Success
@@ -224,50 +227,55 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListMLTransforms'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    TransformType:
+      type: string
+      enum:
+      - FIND_MATCHES
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ListMLTransformsResponse:
+      type: object
+      required:
+      - TransformIds
+      properties:
+        TransformIds:
+          allOf:
+          - $ref: '#/components/schemas/TransformIdList'
+          - description: The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A continuation token, if the returned list does not contain the last metric available.
+    InvalidInputException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ColumnTypeString:
+      type: string
+      minLength: 0
+      maxLength: 131072
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    ColumnNameString:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    PaginationToken:
+      type: string
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     TransformFilterCriteria:
       type: object
       properties:
@@ -308,6 +316,43 @@ components:
           - $ref: '#/components/schemas/TransformSchema'
           - description: Filters on datasets with a specific schema. The <code>Map&lt;Column, Type&gt;</code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.
       description: The criteria used to filter the machine learning transforms.
+    SortDirectionType:
+      type: string
+      enum:
+      - DESCENDING
+      - ASCENDING
+    EntityNotFoundException: {}
+    InternalServiceException: {}
+    TransformSortCriteria:
+      type: object
+      required:
+      - Column
+      - SortDirection
+      properties:
+        Column:
+          allOf:
+          - $ref: '#/components/schemas/TransformSortColumnType'
+          - description: The column to be used in the sorting criteria that are associated with the machine learning transform.
+        SortDirection:
+          allOf:
+          - $ref: '#/components/schemas/SortDirectionType'
+          - description: The sort direction to be used in the sorting criteria that are associated with the machine learning transform.
+      description: The sorting criteria that are associated with the machine learning transform.
+    TransformIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/HashString'
+    TransformSchema:
+      type: array
+      items:
+        $ref: '#/components/schemas/SchemaColumn'
+      maxItems: 100
+    OperationTimeoutException: {}
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
     TransformSortColumnType:
       type: string
       enum:
@@ -322,10 +367,6 @@ components:
       - NOT_READY
       - READY
       - DELETING
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
     ListMLTransformsRequest:
       type: object
       title: ListMLTransformsRequest
@@ -350,86 +391,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagsMap'
           - description: Specifies to return only these tagged resources.
-    SortDirectionType:
-      type: string
-      enum:
-      - DESCENDING
-      - ASCENDING
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    ListMLTransformsResponse:
-      type: object
-      required:
-      - TransformIds
-      properties:
-        TransformIds:
-          allOf:
-          - $ref: '#/components/schemas/TransformIdList'
-          - description: The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: A continuation token, if the returned list does not contain the last metric available.
-    PaginationToken:
-      type: string
-    TransformSchema:
-      type: array
-      items:
-        $ref: '#/components/schemas/SchemaColumn'
-      maxItems: 100
-    OperationTimeoutException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
     TagsMap:
       type: object
       minProperties: 0
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    TransformType:
-      type: string
-      enum:
-      - FIND_MATCHES
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    TransformSortCriteria:
-      type: object
-      required:
-      - Column
-      - SortDirection
-      properties:
-        Column:
-          allOf:
-          - $ref: '#/components/schemas/TransformSortColumnType'
-          - description: The column to be used in the sorting criteria that are associated with the machine learning transform.
-        SortDirection:
-          allOf:
-          - $ref: '#/components/schemas/SortDirectionType'
-          - description: The sort direction to be used in the sorting criteria that are associated with the machine learning transform.
-      description: The sorting criteria that are associated with the machine learning transform.
-    TransformIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/HashString'
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    GlueVersionString:
-      type: string
-      pattern: ^\w+\.\w+$
-      minLength: 1
-      maxLength: 255
     SchemaColumn:
       type: object
       properties:
@@ -442,16 +409,52 @@ components:
           - $ref: '#/components/schemas/ColumnTypeString'
           - description: The type of data in the column.
       description: A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.
-    ColumnNameString:
+    Timestamp:
       type: string
-      minLength: 1
-      maxLength: 1024
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    ColumnTypeString:
-      type: string
-      minLength: 0
-      maxLength: 131072
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+      format: date-time
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

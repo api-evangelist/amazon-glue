@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.QuerySchemaVersionMetadata #X Amz Target=AWSGlue.QuerySchemaVersionMetadata #X Amz Target=AWSGlue.QuerySchemaVersionMetadata API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.QuerySchemaVersionMetadata…'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: QuerySchemaVersionMetadata
-      description: 'Queries for the schema version metadata information. '
+      description: Queries for the schema version metadata information.
       responses:
         '200':
           description: Success
@@ -199,50 +202,18 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.QuerySchemaVersionMetadata'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    MetadataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetadataKeyValuePair'
+    SchemaRegistryTokenString:
+      type: string
+    VersionLongNumber:
+      type: integer
+      minimum: 1
+      maximum: 100000
+    InvalidInputException: {}
     SchemaId:
       type: object
       properties:
@@ -259,37 +230,90 @@ components:
           - $ref: '#/components/schemas/SchemaRegistryNameString'
           - description: The name of the schema registry that contains the schema.
       description: The unique ID of the schema in the Glue schema registry.
-    SchemaVersionIdString:
-      type: string
-      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
-      minLength: 36
-      maxLength: 36
-    MetadataValueString:
-      type: string
-      pattern: '[a-zA-Z0-9+-=._./@]+'
-      minLength: 1
-      maxLength: 256
-    MetadataKeyString:
-      type: string
-      pattern: '[a-zA-Z0-9+-=._./@]+'
-      minLength: 1
-      maxLength: 128
-    VersionLongNumber:
-      type: integer
-      minimum: 1
-      maximum: 100000
-    LatestSchemaVersionBoolean:
-      type: boolean
+    OtherMetadataValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/OtherMetadataValueListItem'
     GlueResourceArn:
       type: string
       pattern: arn:(aws|aws-us-gov|aws-cn):glue:.*
       minLength: 1
       maxLength: 10240
-    AccessDeniedException: {}
+    MetadataInfo:
+      type: object
+      properties:
+        MetadataValue:
+          allOf:
+          - $ref: '#/components/schemas/MetadataValueString'
+          - description: The metadata key’s corresponding value.
+        CreatedTime:
+          allOf:
+          - $ref: '#/components/schemas/CreatedTimestamp'
+          - description: The time at which the entry was created.
+        OtherMetadataValueList:
+          allOf:
+          - $ref: '#/components/schemas/OtherMetadataValueList'
+          - description: Other metadata belonging to the same metadata key.
+      description: A structure containing metadata information for a schema version.
+    SchemaVersionNumber:
+      type: object
+      properties:
+        LatestVersion:
+          allOf:
+          - $ref: '#/components/schemas/LatestSchemaVersionBoolean'
+          - description: The latest version available for the schema.
+        VersionNumber:
+          allOf:
+          - $ref: '#/components/schemas/VersionLongNumber'
+          - description: The version number of the schema.
+      description: A structure containing the schema version information.
+    MetadataKeyString:
+      type: string
+      pattern: '[a-zA-Z0-9+-=._./@]+'
+      minLength: 1
+      maxLength: 128
+    EntityNotFoundException: {}
+    SchemaRegistryNameString:
+      type: string
+      pattern: '[a-zA-Z0-9-_$#.]+'
+      minLength: 1
+      maxLength: 255
+    QuerySchemaVersionMetadataResponse:
+      type: object
+      properties:
+        MetadataInfoMap:
+          allOf:
+          - $ref: '#/components/schemas/MetadataInfoMap'
+          - description: A map of a metadata key and associated values.
+        SchemaVersionId:
+          allOf:
+          - $ref: '#/components/schemas/SchemaVersionIdString'
+          - description: The unique version ID of the schema version.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/SchemaRegistryTokenString'
+          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
+    SchemaVersionIdString:
+      type: string
+      pattern: '[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}'
+      minLength: 36
+      maxLength: 36
     QuerySchemaVersionMetadataMaxResults:
       type: integer
       minimum: 1
       maximum: 50
+    OtherMetadataValueListItem:
+      type: object
+      properties:
+        MetadataValue:
+          allOf:
+          - $ref: '#/components/schemas/MetadataValueString'
+          - description: The metadata key’s corresponding value for the other metadata belonging to the same metadata key.
+        CreatedTime:
+          allOf:
+          - $ref: '#/components/schemas/CreatedTimestamp'
+          - description: The time at which the entry was created.
+      description: A structure containing other metadata for a schema version belonging to the same metadata key.
     MetadataKeyValuePair:
       type: object
       properties:
@@ -302,15 +326,6 @@ components:
           - $ref: '#/components/schemas/MetadataValueString'
           - description: A metadata key’s corresponding value.
       description: A structure containing a key value pair for metadata.
-    OtherMetadataValueList:
-      type: array
-      items:
-        $ref: '#/components/schemas/OtherMetadataValueListItem'
-    SchemaRegistryNameString:
-      type: string
-      pattern: '[a-zA-Z0-9-_$#.]+'
-      minLength: 1
-      maxLength: 255
     QuerySchemaVersionMetadataInput:
       type: object
       title: QuerySchemaVersionMetadataInput
@@ -339,75 +354,63 @@ components:
           allOf:
           - $ref: '#/components/schemas/SchemaRegistryTokenString'
           - description: A continuation token, if this is a continuation call.
-    QuerySchemaVersionMetadataResponse:
-      type: object
-      properties:
-        MetadataInfoMap:
-          allOf:
-          - $ref: '#/components/schemas/MetadataInfoMap'
-          - description: A map of a metadata key and associated values.
-        SchemaVersionId:
-          allOf:
-          - $ref: '#/components/schemas/SchemaVersionIdString'
-          - description: The unique version ID of the schema version.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/SchemaRegistryTokenString'
-          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
-    InvalidInputException: {}
+    LatestSchemaVersionBoolean:
+      type: boolean
     MetadataInfoMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/MetadataInfo'
-    SchemaRegistryTokenString:
-      type: string
-    MetadataInfo:
-      type: object
-      properties:
-        MetadataValue:
-          allOf:
-          - $ref: '#/components/schemas/MetadataValueString'
-          - description: The metadata key’s corresponding value.
-        CreatedTime:
-          allOf:
-          - $ref: '#/components/schemas/CreatedTimestamp'
-          - description: The time at which the entry was created.
-        OtherMetadataValueList:
-          allOf:
-          - $ref: '#/components/schemas/OtherMetadataValueList'
-          - description: Other metadata belonging to the same metadata key.
-      description: A structure containing metadata information for a schema version.
     CreatedTimestamp:
       type: string
-    OtherMetadataValueListItem:
-      type: object
-      properties:
-        MetadataValue:
-          allOf:
-          - $ref: '#/components/schemas/MetadataValueString'
-          - description: The metadata key’s corresponding value for the other metadata belonging to the same metadata key.
-        CreatedTime:
-          allOf:
-          - $ref: '#/components/schemas/CreatedTimestamp'
-          - description: The time at which the entry was created.
-      description: A structure containing other metadata for a schema version belonging to the same metadata key.
-    SchemaVersionNumber:
-      type: object
-      properties:
-        LatestVersion:
-          allOf:
-          - $ref: '#/components/schemas/LatestSchemaVersionBoolean'
-          - description: The latest version available for the schema.
-        VersionNumber:
-          allOf:
-          - $ref: '#/components/schemas/VersionLongNumber'
-          - description: The version number of the schema.
-      description: A structure containing the schema version information.
-    EntityNotFoundException: {}
-    MetadataList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetadataKeyValuePair'
+    AccessDeniedException: {}
+    MetadataValueString:
+      type: string
+      pattern: '[a-zA-Z0-9+-=._./@]+'
+      minLength: 1
+      maxLength: 256
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.CreateMLTransform #X Amz Target=AWSGlue.CreateMLTransform #X Amz Target=AWSGlue.CreateMLTransform API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.CreateMLTransform API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateMLTransform
-      description: <p>Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.</p> <p>Call this operation as the first step in the process of using a machine learning transform (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an optional <code>Description</code>, in addition to the parameters that you want to use for your algorithm.</p> <p>You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
+      description: 'Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.
+
+
+        Call this operation as the first step in the process of using a machine learning transform (such as the FindMatches transform) for deduplicating data. You can provide an optional Description, in addition to the parameters that you want to use for your algorithm.
+
+
+        You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include Role, and optionally, AllocatedCapacity, Timeout, and MaxRetries. For more information, see Jobs.'
       responses:
         '200':
           description: Success
@@ -251,57 +260,7 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.CreateMLTransform'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    NullableBoolean:
-      type: boolean
     TransformEncryption:
       type: object
       properties:
@@ -314,6 +273,28 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The name of the security configuration.
       description: <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p> <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
+    AlreadyExistsException: {}
+    ResourceNumberLimitExceededException: {}
+    TransformType:
+      type: string
+      enum:
+      - FIND_MATCHES
+    GlueTableAdditionalOptions:
+      type: object
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DescriptionString'
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    InvalidInputException: {}
     TransformParameters:
       type: object
       required:
@@ -328,19 +309,6 @@ components:
           - $ref: '#/components/schemas/FindMatchesParameters'
           - description: The parameters for the find matches algorithm.
       description: The algorithm-specific parameters that are associated with the machine learning transform.
-    GlueTables:
-      type: array
-      items:
-        $ref: '#/components/schemas/GlueTable'
-      minItems: 0
-      maxItems: 10
-    ResourceNumberLimitExceededException: {}
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    AlreadyExistsException: {}
     FindMatchesParameters:
       type: object
       properties:
@@ -361,70 +329,12 @@ components:
           - $ref: '#/components/schemas/NullableBoolean'
           - description: <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p> <p>Note that setting this value to true may increase the conflation execution time.</p>
       description: The parameters to configure the find matches transform.
-    GlueTable:
-      type: object
-      required:
-      - DatabaseName
-      - TableName
-      properties:
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A database name in the Glue Data Catalog.
-        TableName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A table name in the Glue Data Catalog.
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: A unique identifier for the Glue Data Catalog.
-        ConnectionName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the connection to the Glue Data Catalog.
-        AdditionalOptions:
-          allOf:
-          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
-          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
-      description: The database and table in the Glue Data Catalog that is used for input or output data.
-    AccessDeniedException: {}
-    OperationTimeoutException: {}
-    CreateMLTransformResponse:
-      type: object
-      properties:
-        TransformId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: A unique identifier that is generated for the transform.
-    Timeout:
-      type: integer
-      minimum: 1
-    GenericBoundedDouble:
-      type: number
-      format: double
-      minimum: 0
-      maximum: 1
-    InvalidInputException: {}
-    TagsMap:
-      type: object
-      minProperties: 0
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    TransformType:
-      type: string
-      enum:
-      - FIND_MATCHES
-    NullableInteger:
-      type: integer
-    HashString:
+    ColumnNameString:
       type: string
       minLength: 1
-      maxLength: 255
+      maxLength: 1024
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    RoleString:
-      type: string
+    IdempotentParameterMismatchException: {}
     WorkerType:
       type: string
       enum:
@@ -432,36 +342,20 @@ components:
       - G.1X
       - G.2X
       - G.025X
-    InternalServiceException: {}
-    MLUserDataEncryptionModeString:
-      type: string
-      enum:
-      - DISABLED
-      - SSE-KMS
-    NullableDouble:
+    GenericBoundedDouble:
       type: number
       format: double
-    GlueTableAdditionalOptions:
-      type: object
-      minProperties: 1
-      maxProperties: 10
-      additionalProperties:
-        $ref: '#/components/schemas/DescriptionString'
-    TagValue:
+      minimum: 0
+      maximum: 1
+    NameString:
       type: string
-      minLength: 0
-      maxLength: 256
-    GlueVersionString:
-      type: string
-      pattern: ^\w+\.\w+$
       minLength: 1
       maxLength: 255
-    IdempotentParameterMismatchException: {}
-    ColumnNameString:
-      type: string
-      minLength: 1
-      maxLength: 1024
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    NullableInteger:
+      type: integer
+    RoleString:
+      type: string
     CreateMLTransformRequest:
       type: object
       required:
@@ -523,6 +417,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/TransformEncryption'
           - description: The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
+    InternalServiceException: {}
+    GlueTables:
+      type: array
+      items:
+        $ref: '#/components/schemas/GlueTable'
+      minItems: 0
+      maxItems: 10
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    OperationTimeoutException: {}
     MLUserDataEncryption:
       type: object
       required:
@@ -537,6 +444,108 @@ components:
           - $ref: '#/components/schemas/NameString'
           - description: The ID for the customer-provided KMS key.
       description: The encryption-at-rest settings of the transform that apply to accessing user data.
+    Timeout:
+      type: integer
+      minimum: 1
+    CreateMLTransformResponse:
+      type: object
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: A unique identifier that is generated for the transform.
+    MLUserDataEncryptionModeString:
+      type: string
+      enum:
+      - DISABLED
+      - SSE-KMS
+    TagsMap:
+      type: object
+      minProperties: 0
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    AccessDeniedException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NullableDouble:
+      type: number
+      format: double
+    GlueTable:
+      type: object
+      required:
+      - DatabaseName
+      - TableName
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A database name in the Glue Data Catalog.
+        TableName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A table name in the Glue Data Catalog.
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: A unique identifier for the Glue Data Catalog.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the Glue Data Catalog.
+        AdditionalOptions:
+          allOf:
+          - $ref: '#/components/schemas/GlueTableAdditionalOptions'
+          - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
+      description: The database and table in the Glue Data Catalog that is used for input or output data.
+    NullableBoolean:
+      type: boolean
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

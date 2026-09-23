@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetDatabases #X Amz Target=AWSGlue.GetDatabases #X Amz Target=AWSGlue.GetDatabases API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetDatabases API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -224,171 +227,11 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetDatabases'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     ParametersMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/ParametersMapValue'
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    CatalogGetterPageSize:
-      type: integer
-      minimum: 1
-      maximum: 100
-    URI:
-      type: string
-      minLength: 1
-      maxLength: 1024
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    FederatedDatabase:
-      type: object
-      properties:
-        Identifier:
-          allOf:
-          - $ref: '#/components/schemas/FederationIdentifier'
-          - description: A unique identifier for the federated database.
-        ConnectionName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the connection to the external metastore.
-      description: A database that points to an entity outside the Glue Data Catalog.
-    DataLakePrincipal:
-      type: object
-      properties:
-        DataLakePrincipalIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/DataLakePrincipalString'
-          - description: An identifier for the Lake Formation principal.
-      description: The Lake Formation principal.
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GlueEncryptionException: {}
-    DatabaseIdentifier:
-      type: object
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog in which the database resides.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database.
-      description: A structure that describes a target database for resource linking.
-    GetDatabasesResponse:
-      type: object
-      required:
-      - DatabaseList
-      properties:
-        DatabaseList:
-          allOf:
-          - $ref: '#/components/schemas/DatabaseList'
-          - description: A list of <code>Database</code> objects from the specified catalog.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    OperationTimeoutException: {}
-    ResourceShareType:
-      type: string
-      enum:
-      - FOREIGN
-      - ALL
-      - FEDERATED
-    Permission:
-      type: string
-      enum:
-      - ALL
-      - SELECT
-      - ALTER
-      - DROP
-      - DELETE
-      - INSERT
-      - CREATE_DATABASE
-      - CREATE_TABLE
-      - DATA_LOCATION_ACCESS
-    Timestamp:
-      type: string
-      format: date-time
-    PrincipalPermissionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PrincipalPermissions'
-    InvalidInputException: {}
-    GetDatabasesRequest:
-      type: object
-      title: GetDatabasesRequest
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if this is a continuation call.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/CatalogGetterPageSize'
-          - description: The maximum number of databases to return in one response.
-        ResourceShareType:
-          allOf:
-          - $ref: '#/components/schemas/ResourceShareType'
-          - description: <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> </ul>
     Database:
       type: object
       required:
@@ -431,17 +274,27 @@ components:
           - $ref: '#/components/schemas/FederatedDatabase'
           - description: A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
       description: The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.
-    DataLakePrincipalString:
-      type: string
-      minLength: 1
-      maxLength: 255
-    FederationIdentifier:
-      type: string
-      minLength: 1
-      maxLength: 512
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    Token:
-      type: string
+    GetDatabasesRequest:
+      type: object
+      title: GetDatabasesRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if this is a continuation call.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/CatalogGetterPageSize'
+          - description: The maximum number of databases to return in one response.
+        ResourceShareType:
+          allOf:
+          - $ref: '#/components/schemas/ResourceShareType'
+          - description: <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will list the federated databases (referencing an external entity) shared with your account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> </ul>
+    InvalidInputException: {}
     PrincipalPermissions:
       type: object
       properties:
@@ -454,18 +307,168 @@ components:
           - $ref: '#/components/schemas/PermissionList'
           - description: The permissions that are granted to the principal.
       description: Permissions granted to a principal.
-    InternalServiceException: {}
-    PermissionList:
+    DataLakePrincipalString:
+      type: string
+      minLength: 1
+      maxLength: 255
+    PrincipalPermissionsList:
       type: array
       items:
-        $ref: '#/components/schemas/Permission'
-    ParametersMapValue:
-      type: string
-      maxLength: 512000
+        $ref: '#/components/schemas/PrincipalPermissions'
+    FederatedDatabase:
+      type: object
+      properties:
+        Identifier:
+          allOf:
+          - $ref: '#/components/schemas/FederationIdentifier'
+          - description: A unique identifier for the federated database.
+        ConnectionName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the connection to the external metastore.
+      description: A database that points to an entity outside the Glue Data Catalog.
     DatabaseList:
       type: array
       items:
         $ref: '#/components/schemas/Database'
+    GlueEncryptionException: {}
+    DatabaseIdentifier:
+      type: object
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog in which the database resides.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database.
+      description: A structure that describes a target database for resource linking.
+    ParametersMapValue:
+      type: string
+      maxLength: 512000
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    ResourceShareType:
+      type: string
+      enum:
+      - FOREIGN
+      - ALL
+      - FEDERATED
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InternalServiceException: {}
+    GetDatabasesResponse:
+      type: object
+      required:
+      - DatabaseList
+      properties:
+        DatabaseList:
+          allOf:
+          - $ref: '#/components/schemas/DatabaseList'
+          - description: A list of <code>Database</code> objects from the specified catalog.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.
+    URI:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    OperationTimeoutException: {}
+    CatalogGetterPageSize:
+      type: integer
+      minimum: 1
+      maximum: 100
+    Permission:
+      type: string
+      enum:
+      - ALL
+      - SELECT
+      - ALTER
+      - DROP
+      - DELETE
+      - INSERT
+      - CREATE_DATABASE
+      - CREATE_TABLE
+      - DATA_LOCATION_ACCESS
+    Token:
+      type: string
+    PermissionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+    DataLakePrincipal:
+      type: object
+      properties:
+        DataLakePrincipalIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/DataLakePrincipalString'
+          - description: An identifier for the Lake Formation principal.
+      description: The Lake Formation principal.
+    FederationIdentifier:
+      type: string
+      minLength: 1
+      maxLength: 512
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

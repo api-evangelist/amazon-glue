@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchStopJobRun #X Amz Target=AWSGlue.BatchStopJobRun #X Amz Target=AWSGlue.BatchStopJobRun API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.BatchStopJobRun API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -199,132 +202,13 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.BatchStopJobRun'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
-      type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     IdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    BatchStopJobRunJobRunIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/IdString'
-      minItems: 1
-      maxItems: 25
-    BatchStopJobRunRequest:
-      type: object
-      required:
-      - JobName
-      - JobRunIds
-      title: BatchStopJobRunRequest
-      properties:
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the job definition for which to stop job runs.
-        JobRunIds:
-          allOf:
-          - $ref: '#/components/schemas/BatchStopJobRunJobRunIdList'
-          - description: A list of the <code>JobRunIds</code> that should be stopped for that job definition.
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    BatchStopJobRunSuccessfulSubmission:
-      type: object
-      properties:
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the job definition used in the job run that was stopped.
-        JobRunId:
-          allOf:
-          - $ref: '#/components/schemas/IdString'
-          - description: The <code>JobRunId</code> of the job run that was stopped.
-      description: Records a successful request to stop a specified <code>JobRun</code>.
-    ErrorDetail:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The code associated with this error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/DescriptionString'
-          - description: A message describing the error.
-      description: Contains details about an error.
-    OperationTimeoutException: {}
-    BatchStopJobRunResponse:
-      type: object
-      properties:
-        SuccessfulSubmissions:
-          allOf:
-          - $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmissionList'
-          - description: A list of the JobRuns that were successfully submitted for stopping.
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchStopJobRunErrorList'
-          - description: A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.
     InvalidInputException: {}
-    BatchStopJobRunErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchStopJobRunError'
-    InternalServiceException: {}
-    BatchStopJobRunSuccessfulSubmissionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmission'
     BatchStopJobRunError:
       type: object
       properties:
@@ -341,6 +225,125 @@ components:
           - $ref: '#/components/schemas/ErrorDetail'
           - description: Specifies details about the error that was encountered.
       description: Records an error that occurred when attempting to stop a specified job run.
+    BatchStopJobRunErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchStopJobRunError'
+    BatchStopJobRunRequest:
+      type: object
+      required:
+      - JobName
+      - JobRunIds
+      title: BatchStopJobRunRequest
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition for which to stop job runs.
+        JobRunIds:
+          allOf:
+          - $ref: '#/components/schemas/BatchStopJobRunJobRunIdList'
+          - description: A list of the <code>JobRunIds</code> that should be stopped for that job definition.
+    BatchStopJobRunResponse:
+      type: object
+      properties:
+        SuccessfulSubmissions:
+          allOf:
+          - $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmissionList'
+          - description: A list of the JobRuns that were successfully submitted for stopping.
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchStopJobRunErrorList'
+          - description: A list of the errors that were encountered in trying to stop <code>JobRuns</code>, including the <code>JobRunId</code> for which each error was encountered and details about the error.
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    BatchStopJobRunJobRunIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IdString'
+      minItems: 1
+      maxItems: 25
+    InternalServiceException: {}
+    ErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The code associated with this error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/DescriptionString'
+          - description: A message describing the error.
+      description: Contains details about an error.
+    BatchStopJobRunSuccessfulSubmissionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/BatchStopJobRunSuccessfulSubmission'
+    OperationTimeoutException: {}
+    BatchStopJobRunSuccessfulSubmission:
+      type: object
+      properties:
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the job definition used in the job run that was stopped.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/IdString'
+          - description: The <code>JobRunId</code> of the job run that was stopped.
+      description: Records a successful request to stop a specified <code>JobRun</code>.
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

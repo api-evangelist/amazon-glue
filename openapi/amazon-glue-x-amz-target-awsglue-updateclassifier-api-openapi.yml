@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateClassifier #X Amz Target=AWSGlue.UpdateClassifier #X Amz Target=AWSGlue.UpdateClassifier API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.UpdateClassifier API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: UpdateClassifier
-      description: Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).
+      description: Modifies an existing classifier (a GrokClassifier, an XMLClassifier, a JsonClassifier, or a CsvClassifier, depending on which field is present).
       responses:
         '200':
           description: Success
@@ -212,66 +215,19 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.UpdateClassifier'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    CsvHeaderOption:
+    CsvQuoteSymbol:
       type: string
-      enum:
-      - UNKNOWN
-      - PRESENT
-      - ABSENT
-    CsvHeader:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
+      pattern: '[^\r\n]'
+      minLength: 1
+      maxLength: 1
     GrokPattern:
       type: string
       minLength: 1
       maxLength: 2048
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\t]*'
-    UpdateGrokClassifierRequest:
+    InvalidInputException: {}
+    UpdateJsonClassifierRequest:
       type: object
       required:
       - Name
@@ -279,22 +235,32 @@ components:
         Name:
           allOf:
           - $ref: '#/components/schemas/NameString'
-          - description: The name of the <code>GrokClassifier</code>.
-        Classification:
+          - description: The name of the classifier.
+        JsonPath:
           allOf:
-          - $ref: '#/components/schemas/Classification'
-          - description: An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.
-        GrokPattern:
-          allOf:
-          - $ref: '#/components/schemas/GrokPattern'
-          - description: The grok pattern used by this classifier.
-        CustomPatterns:
-          allOf:
-          - $ref: '#/components/schemas/CustomPatterns'
-          - description: Optional custom grok patterns used by this classifier.
-      description: Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
-    NullableBoolean:
-      type: boolean
+          - $ref: '#/components/schemas/JsonPath'
+          - description: A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.
+      description: Specifies a JSON classifier to be updated.
+    UpdateClassifierResponse:
+      type: object
+      properties: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    RowTag:
+      type: string
+    CustomPatterns:
+      type: string
+      minLength: 0
+      maxLength: 16000
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    EntityNotFoundException: {}
+    CustomDatatypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
     UpdateClassifierRequest:
       type: object
       title: UpdateClassifierRequest
@@ -315,27 +281,20 @@ components:
           allOf:
           - $ref: '#/components/schemas/UpdateCsvClassifierRequest'
           - description: A <code>CsvClassifier</code> object with updated fields.
-    CustomPatterns:
+    CsvHeaderOption:
       type: string
-      minLength: 0
-      maxLength: 16000
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    UpdateJsonClassifierRequest:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the classifier.
-        JsonPath:
-          allOf:
-          - $ref: '#/components/schemas/JsonPath'
-          - description: A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.
-      description: Specifies a JSON classifier to be updated.
+      enum:
+      - UNKNOWN
+      - PRESENT
+      - ABSENT
     JsonPath:
       type: string
+    VersionMismatchException: {}
+    OperationTimeoutException: {}
+    CsvHeader:
+      type: array
+      items:
+        $ref: '#/components/schemas/NameString'
     UpdateXMLClassifierRequest:
       type: object
       required:
@@ -354,11 +313,6 @@ components:
           - $ref: '#/components/schemas/RowTag'
           - description: The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
       description: Specifies an XML classifier to be updated.
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     UpdateCsvClassifierRequest:
       type: object
       required:
@@ -401,31 +355,80 @@ components:
           - $ref: '#/components/schemas/CustomDatatypes'
           - description: Specifies a list of supported custom datatypes.
       description: Specifies a custom CSV classifier to be updated.
-    OperationTimeoutException: {}
-    VersionMismatchException: {}
-    RowTag:
+    UpdateGrokClassifierRequest:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the <code>GrokClassifier</code>.
+        Classification:
+          allOf:
+          - $ref: '#/components/schemas/Classification'
+          - description: An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.
+        GrokPattern:
+          allOf:
+          - $ref: '#/components/schemas/GrokPattern'
+          - description: The grok pattern used by this classifier.
+        CustomPatterns:
+          allOf:
+          - $ref: '#/components/schemas/CustomPatterns'
+          - description: Optional custom grok patterns used by this classifier.
+      description: Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.
+    Classification:
       type: string
-    InvalidInputException: {}
     CsvColumnDelimiter:
       type: string
       pattern: '[^\r\n]'
       minLength: 1
       maxLength: 1
-    CustomDatatypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/NameString'
-    EntityNotFoundException: {}
-    UpdateClassifierResponse:
-      type: object
-      properties: {}
-    CsvQuoteSymbol:
-      type: string
-      pattern: '[^\r\n]'
-      minLength: 1
-      maxLength: 1
-    Classification:
-      type: string
+    NullableBoolean:
+      type: boolean
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

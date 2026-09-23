@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.StartMLEvaluationTaskRun #X Amz Target=AWSGlue.StartMLEvaluationTaskRun #X Amz Target=AWSGlue.StartMLEvaluationTaskRun API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.StartMLEvaluationTaskRun API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: StartMLEvaluationTaskRun
-      description: <p>Starts a task to estimate the quality of the transform. </p> <p>When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.</p> <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more information about the stats of the <code>EvaluationTaskRun</code>.</p>
+      description: 'Starts a task to estimate the quality of the transform.
+
+
+        When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.
+
+
+        Returns a unique identifier for the run. You can call GetMLTaskRun to get more information about the stats of the EvaluationTaskRun.'
       responses:
         '200':
           description: Success
@@ -238,13 +247,36 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.StartMLEvaluationTaskRun'
 components:
+  schemas:
+    InternalServiceException: {}
+    ConcurrentRunsExceededException: {}
+    StartMLEvaluationTaskRunResponse:
+      type: object
+      properties:
+        TaskRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier associated with this run.
+    MLTransformNotReadyException: {}
+    StartMLEvaluationTaskRunRequest:
+      type: object
+      required:
+      - TransformId
+      title: StartMLEvaluationTaskRunRequest
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier of the machine learning transform.
+    OperationTimeoutException: {}
+    InvalidInputException: {}
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EntityNotFoundException: {}
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -263,14 +295,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -281,35 +313,12 @@ components:
       schema:
         type: string
       required: false
-  schemas:
-    StartMLEvaluationTaskRunRequest:
-      type: object
-      required:
-      - TransformId
-      title: StartMLEvaluationTaskRunRequest
-      properties:
-        TransformId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The unique identifier of the machine learning transform.
-    OperationTimeoutException: {}
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    StartMLEvaluationTaskRunResponse:
-      type: object
-      properties:
-        TaskRunId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The unique identifier associated with this run.
-    MLTransformNotReadyException: {}
-    InvalidInputException: {}
-    ConcurrentRunsExceededException: {}
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

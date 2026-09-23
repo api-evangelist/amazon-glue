@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateDevEndpoint #X Amz Target=AWSGlue.UpdateDevEndpoint #X Amz Target=AWSGlue.UpdateDevEndpoint API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.UpdateDevEndpoint API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -225,87 +228,27 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.UpdateDevEndpoint'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    PublicKeysList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GenericString'
-      maxItems: 5
-    BooleanValue:
-      type: boolean
-    DevEndpointCustomLibraries:
+    UpdateDevEndpointResponse:
       type: object
-      properties:
-        ExtraPythonLibsS3Path:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> </note>
-        ExtraJarsS3Path:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> </note>
-      description: Custom libraries to be loaded into a development endpoint.
-    ValidationException: {}
-    OperationTimeoutException: {}
-    GenericString:
-      type: string
+      properties: {}
+    InvalidInputException: {}
     MapValue:
       type: object
       minProperties: 0
       maxProperties: 100
       additionalProperties:
         $ref: '#/components/schemas/GenericString'
-    UpdateDevEndpointResponse:
-      type: object
-      properties: {}
-    InvalidInputException: {}
-    StringList:
+    BooleanValue:
+      type: boolean
+    EntityNotFoundException: {}
+    InternalServiceException: {}
+    OperationTimeoutException: {}
+    PublicKeysList:
       type: array
       items:
         $ref: '#/components/schemas/GenericString'
+      maxItems: 5
     UpdateDevEndpointRequest:
       type: object
       required:
@@ -344,8 +287,68 @@ components:
           allOf:
           - $ref: '#/components/schemas/MapValue'
           - description: '<p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>'
-    InternalServiceException: {}
-    EntityNotFoundException: {}
+    ValidationException: {}
+    GenericString:
+      type: string
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GenericString'
+    DevEndpointCustomLibraries:
+      type: object
+      properties:
+        ExtraPythonLibsS3Path:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> </note>
+        ExtraJarsS3Path:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> </note>
+      description: Custom libraries to be loaded into a development endpoint.
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

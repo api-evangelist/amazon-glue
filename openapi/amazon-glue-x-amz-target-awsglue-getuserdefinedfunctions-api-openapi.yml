@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetUserDefinedFunctions #X Amz Target=AWSGlue.GetUserDefinedFunctions #X Amz Target=AWSGlue.GetUserDefinedFunctions API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetUserDefinedFunctions API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -250,27 +253,62 @@ components:
           - $ref: '#/components/schemas/URI'
           - description: The URI for accessing the resource.
       description: The URIs for function resources.
-    CatalogGetterPageSize:
-      type: integer
-      minimum: 1
-      maximum: 100
-    URI:
+    PrincipalType:
       type: string
-      minLength: 1
-      maxLength: 1024
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+      enum:
+      - USER
+      - ROLE
+      - GROUP
+    InvalidInputException: {}
+    GlueEncryptionException: {}
     NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GlueEncryptionException: {}
     ResourceUriList:
       type: array
       items:
         $ref: '#/components/schemas/ResourceUri'
       minItems: 0
       maxItems: 1000
+    EntityNotFoundException: {}
+    InternalServiceException: {}
+    GetUserDefinedFunctionsRequest:
+      type: object
+      required:
+      - Pattern
+      title: GetUserDefinedFunctionsRequest
+      properties:
+        CatalogId:
+          allOf:
+          - $ref: '#/components/schemas/CatalogIdString'
+          - description: The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.
+        Pattern:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: An optional function-name pattern string that filters the function definitions returned.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if this is a continuation call.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/CatalogGetterPageSize'
+          - description: The maximum number of functions to return in one response.
+    URI:
+      type: string
+      minLength: 1
+      maxLength: 1024
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    Timestamp:
+      type: string
+      format: date-time
+    OperationTimeoutException: {}
     UserDefinedFunction:
       type: object
       properties:
@@ -307,36 +345,12 @@ components:
           - $ref: '#/components/schemas/CatalogIdString'
           - description: The ID of the Data Catalog in which the function resides.
       description: Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
-    CatalogIdString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    OperationTimeoutException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    UserDefinedFunctionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UserDefinedFunction'
-    ResourceType:
-      type: string
-      enum:
-      - JAR
-      - FILE
-      - ARCHIVE
-    PrincipalType:
-      type: string
-      enum:
-      - USER
-      - ROLE
-      - GROUP
+    CatalogGetterPageSize:
+      type: integer
+      minimum: 1
+      maximum: 100
     Token:
       type: string
-    InternalServiceException: {}
-    EntityNotFoundException: {}
     GetUserDefinedFunctionsResponse:
       type: object
       properties:
@@ -348,53 +362,24 @@ components:
           allOf:
           - $ref: '#/components/schemas/Token'
           - description: A continuation token, if the list of functions returned does not include the last requested function.
-    GetUserDefinedFunctionsRequest:
-      type: object
-      required:
-      - Pattern
-      title: GetUserDefinedFunctionsRequest
-      properties:
-        CatalogId:
-          allOf:
-          - $ref: '#/components/schemas/CatalogIdString'
-          - description: The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.
-        Pattern:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: An optional function-name pattern string that filters the function definitions returned.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if this is a continuation call.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/CatalogGetterPageSize'
-          - description: The maximum number of functions to return in one response.
+    ResourceType:
+      type: string
+      enum:
+      - JAR
+      - FILE
+      - ARCHIVE
+    UserDefinedFunctionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UserDefinedFunction'
+    CatalogIdString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -405,8 +390,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

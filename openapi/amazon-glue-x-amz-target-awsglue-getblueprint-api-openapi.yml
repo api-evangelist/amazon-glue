@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetBlueprint #X Amz Target=AWSGlue.GetBlueprint #X Amz Target=AWSGlue.GetBlueprint API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetBlueprint API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -212,91 +215,11 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetBlueprint'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    NullableBoolean:
-      type: boolean
-    GetBlueprintResponse:
-      type: object
-      properties:
-        Blueprint:
-          allOf:
-          - $ref: '#/components/schemas/Blueprint'
-          - description: Returns a <code>Blueprint</code> object.
-    BlueprintParameterSpec:
+    TimestampValue:
       type: string
-      minLength: 1
-      maxLength: 131072
-    OrchestrationNameString:
-      type: string
-      pattern: '[\.\-_A-Za-z0-9]+'
-      minLength: 1
-      maxLength: 128
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    GetBlueprintRequest:
-      type: object
-      required:
-      - Name
-      title: GetBlueprintRequest
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the blueprint.
-        IncludeBlueprint:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Specifies whether or not to include the blueprint in the response.
-        IncludeParameterSpec:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Specifies whether or not to include the parameter specification.
+      format: date-time
+    InvalidInputException: {}
     BlueprintStatus:
       type: string
       enum:
@@ -304,15 +227,6 @@ components:
       - ACTIVE
       - UPDATING
       - FAILED
-    OperationTimeoutException: {}
-    GenericString:
-      type: string
-    Generic512CharString:
-      type: string
-      minLength: 1
-      maxLength: 512
-    ErrorString:
-      type: string
     Blueprint:
       type: object
       properties:
@@ -357,7 +271,23 @@ components:
           - $ref: '#/components/schemas/LastActiveDefinition'
           - description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
       description: The details of a blueprint.
-    InvalidInputException: {}
+    NameString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    GetBlueprintResponse:
+      type: object
+      properties:
+        Blueprint:
+          allOf:
+          - $ref: '#/components/schemas/Blueprint'
+          - description: Returns a <code>Blueprint</code> object.
+    Generic512CharString:
+      type: string
+      minLength: 1
+      maxLength: 512
+    EntityNotFoundException: {}
     LastActiveDefinition:
       type: object
       properties:
@@ -383,10 +313,83 @@ components:
           - description: Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.
       description: When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
     InternalServiceException: {}
-    EntityNotFoundException: {}
-    TimestampValue:
+    GetBlueprintRequest:
+      type: object
+      required:
+      - Name
+      title: GetBlueprintRequest
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the blueprint.
+        IncludeBlueprint:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the blueprint in the response.
+        IncludeParameterSpec:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies whether or not to include the parameter specification.
+    BlueprintParameterSpec:
       type: string
-      format: date-time
+      minLength: 1
+      maxLength: 131072
+    OperationTimeoutException: {}
+    OrchestrationNameString:
+      type: string
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    GenericString:
+      type: string
+    ErrorString:
+      type: string
+    NullableBoolean:
+      type: boolean
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

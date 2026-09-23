@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetBlueprintRuns #X Amz Target=AWSGlue.GetBlueprintRuns #X Amz Target=AWSGlue.GetBlueprintRuns API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetBlueprintRuns API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -225,18 +228,23 @@ paths:
       - '#X Amz Target=AWSGlue.GetBlueprintRuns'
 components:
   schemas:
-    OrchestrationIAMRoleArn:
-      type: string
-      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
-      minLength: 1
-      maxLength: 1024
-    MessageString:
-      type: string
+    BlueprintRuns:
+      type: array
+      items:
+        $ref: '#/components/schemas/BlueprintRun'
     IdString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    TimestampValue:
+      type: string
+      format: date-time
+    InvalidInputException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
     GetBlueprintRunsResponse:
       type: object
       properties:
@@ -248,50 +256,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/GenericString'
           - description: A continuation token, if not all blueprint runs have been returned.
-    GetBlueprintRunsRequest:
-      type: object
-      required:
-      - BlueprintName
-      title: GetBlueprintRunsRequest
-      properties:
-        BlueprintName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The name of the blueprint.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/GenericString'
-          - description: A continuation token, if this is a continuation request.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum size of a list to return.
-    BlueprintParameters:
-      type: string
-      minLength: 1
-      maxLength: 131072
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    OrchestrationNameString:
-      type: string
-      pattern: '[\.\-_A-Za-z0-9]+'
-      minLength: 1
-      maxLength: 128
     NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    BlueprintRuns:
-      type: array
-      items:
-        $ref: '#/components/schemas/BlueprintRun'
-    OperationTimeoutException: {}
-    GenericString:
+    BlueprintParameters:
       type: string
-    InvalidInputException: {}
+      minLength: 1
+      maxLength: 131072
+    MessageString:
+      type: string
+    EntityNotFoundException: {}
+    BlueprintRunState:
+      type: string
+      enum:
+      - RUNNING
+      - SUCCEEDED
+      - FAILED
+      - ROLLING_BACK
+    InternalServiceException: {}
     BlueprintRun:
       type: object
       properties:
@@ -336,39 +320,40 @@ components:
           - $ref: '#/components/schemas/OrchestrationIAMRoleArn'
           - description: The role ARN. This role will be assumed by the Glue service and will be used to create the workflow and other entities of a workflow.
       description: The details of a blueprint run.
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    BlueprintRunState:
+    GetBlueprintRunsRequest:
+      type: object
+      required:
+      - BlueprintName
+      title: GetBlueprintRunsRequest
+      properties:
+        BlueprintName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The name of the blueprint.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/GenericString'
+          - description: A continuation token, if this is a continuation request.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum size of a list to return.
+    OperationTimeoutException: {}
+    OrchestrationNameString:
       type: string
-      enum:
-      - RUNNING
-      - SUCCEEDED
-      - FAILED
-      - ROLLING_BACK
-    TimestampValue:
+      pattern: '[\.\-_A-Za-z0-9]+'
+      minLength: 1
+      maxLength: 128
+    GenericString:
       type: string
-      format: date-time
+    OrchestrationIAMRoleArn:
+      type: string
+      pattern: arn:aws[^:]*:iam::[0-9]*:role/.+
+      minLength: 1
+      maxLength: 1024
   parameters:
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -379,8 +364,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

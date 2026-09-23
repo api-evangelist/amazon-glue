@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.UpdateMLTransform #X Amz Target=AWSGlue.UpdateMLTransform #X Amz Target=AWSGlue.UpdateMLTransform API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.UpdateMLTransform API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: UpdateMLTransform
-      description: <p>Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.</p> <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).</p>
+      description: 'Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.
+
+
+        After calling this operation, you can call the StartMLEvaluationTaskRun operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).'
       responses:
         '200':
           description: Success
@@ -225,57 +231,17 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.UpdateMLTransform'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
+    TransformType:
       type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
-    NullableBoolean:
-      type: boolean
+      enum:
+      - FIND_MATCHES
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
     TransformParameters:
       type: object
       required:
@@ -290,11 +256,6 @@ components:
           - $ref: '#/components/schemas/FindMatchesParameters'
           - description: The parameters for the find matches algorithm.
       description: The algorithm-specific parameters that are associated with the machine learning transform.
-    NameString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
     FindMatchesParameters:
       type: object
       properties:
@@ -315,30 +276,11 @@ components:
           - $ref: '#/components/schemas/NullableBoolean'
           - description: <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p> <p>Note that setting this value to true may increase the conflation execution time.</p>
       description: The parameters to configure the find matches transform.
-    AccessDeniedException: {}
-    OperationTimeoutException: {}
-    Timeout:
-      type: integer
-      minimum: 1
-    GenericBoundedDouble:
-      type: number
-      format: double
-      minimum: 0
-      maximum: 1
-    InvalidInputException: {}
-    TransformType:
-      type: string
-      enum:
-      - FIND_MATCHES
-    NullableInteger:
-      type: integer
-    HashString:
+    ColumnNameString:
       type: string
       minLength: 1
-      maxLength: 255
+      maxLength: 1024
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    RoleString:
-      type: string
     WorkerType:
       type: string
       enum:
@@ -346,28 +288,21 @@ components:
       - G.1X
       - G.2X
       - G.025X
-    InternalServiceException: {}
-    EntityNotFoundException: {}
-    NullableDouble:
+    GenericBoundedDouble:
       type: number
       format: double
-    GlueVersionString:
+      minimum: 0
+      maximum: 1
+    NameString:
       type: string
-      pattern: ^\w+\.\w+$
       minLength: 1
       maxLength: 255
-    UpdateMLTransformResponse:
-      type: object
-      properties:
-        TransformId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The unique identifier for the transform that was updated.
-    ColumnNameString:
-      type: string
-      minLength: 1
-      maxLength: 1024
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    EntityNotFoundException: {}
+    NullableInteger:
+      type: integer
+    RoleString:
+      type: string
     UpdateMLTransformRequest:
       type: object
       required:
@@ -418,6 +353,77 @@ components:
           allOf:
           - $ref: '#/components/schemas/NullableInteger'
           - description: The maximum number of times to retry a task for this transform after a task run fails.
+    InternalServiceException: {}
+    UpdateMLTransformResponse:
+      type: object
+      properties:
+        TransformId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique identifier for the transform that was updated.
+    OperationTimeoutException: {}
+    GlueVersionString:
+      type: string
+      pattern: ^\w+\.\w+$
+      minLength: 1
+      maxLength: 255
+    Timeout:
+      type: integer
+      minimum: 1
+    AccessDeniedException: {}
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+    NullableDouble:
+      type: number
+      format: double
+    NullableBoolean:
+      type: boolean
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.ListDataQualityResults #X Amz Target=AWSGlue.ListDataQualityResults #X Amz Target=AWSGlue.ListDataQualityResults API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.ListDataQualityResults API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -211,76 +214,58 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.ListDataQualityResults'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DescriptionString:
+    DataQualityResultDescriptionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataQualityResultDescription'
+    GlueTableAdditionalOptions:
+      type: object
+      minProperties: 1
+      maxProperties: 10
+      additionalProperties:
+        $ref: '#/components/schemas/DescriptionString'
+    HashString:
       type: string
-      minLength: 0
-      maxLength: 2048
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    DataQualityResultDescription:
+      type: object
+      properties:
+        ResultId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The unique result ID for this data quality result.
+        DataSource:
+          allOf:
+          - $ref: '#/components/schemas/DataSource'
+          - description: The table name associated with the data quality result.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: The job name associated with the data quality result.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: The job run ID associated with the data quality result.
+        StartedOn:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time that the run started for this data quality result.
+      description: Describes a data quality result.
+    InvalidInputException: {}
     PageSize:
       type: integer
       minimum: 1
       maximum: 1000
-    DataSource:
-      type: object
-      required:
-      - GlueTable
-      properties:
-        GlueTable:
-          allOf:
-          - $ref: '#/components/schemas/GlueTable'
-          - description: An Glue table.
-      description: A data source (an Glue table) for which you want data quality results.
+    PaginationToken:
+      type: string
     NameString:
       type: string
       minLength: 1
       maxLength: 255
       x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    PaginationToken:
-      type: string
     ListDataQualityResultsResponse:
       type: object
       required:
@@ -294,6 +279,63 @@ components:
           allOf:
           - $ref: '#/components/schemas/PaginationToken'
           - description: A pagination token, if more results are available.
+    InternalServiceException: {}
+    ListDataQualityResultsRequest:
+      type: object
+      title: ListDataQualityResultsRequest
+      properties:
+        Filter:
+          allOf:
+          - $ref: '#/components/schemas/DataQualityResultFilterCriteria'
+          - description: The filter criteria.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/PaginationToken'
+          - description: A paginated token to offset the results.
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/PageSize'
+          - description: The maximum number of results to return.
+    OperationTimeoutException: {}
+    DataQualityResultFilterCriteria:
+      type: object
+      properties:
+        DataSource:
+          allOf:
+          - $ref: '#/components/schemas/DataSource'
+          - description: Filter results by the specified data source. For example, retrieving all results for an Glue table.
+        JobName:
+          allOf:
+          - $ref: '#/components/schemas/NameString'
+          - description: Filter results by the specified job name.
+        JobRunId:
+          allOf:
+          - $ref: '#/components/schemas/HashString'
+          - description: Filter results by the specified job run ID.
+        StartedAfter:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Filter results by runs that started after this time.
+        StartedBefore:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: Filter results by runs that started before this time.
+      description: Criteria used to return data quality results.
+    DataSource:
+      type: object
+      required:
+      - GlueTable
+      properties:
+        GlueTable:
+          allOf:
+          - $ref: '#/components/schemas/GlueTable'
+          - description: An Glue table.
+      description: A data source (an Glue table) for which you want data quality results.
+    DescriptionString:
+      type: string
+      minLength: 0
+      maxLength: 2048
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*'
     GlueTable:
       type: object
       required:
@@ -321,91 +363,52 @@ components:
           - $ref: '#/components/schemas/GlueTableAdditionalOptions'
           - description: '<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>'
       description: The database and table in the Glue Data Catalog that is used for input or output data.
-    OperationTimeoutException: {}
-    DataQualityResultDescription:
-      type: object
-      properties:
-        ResultId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The unique result ID for this data quality result.
-        DataSource:
-          allOf:
-          - $ref: '#/components/schemas/DataSource'
-          - description: The table name associated with the data quality result.
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: The job name associated with the data quality result.
-        JobRunId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: The job run ID associated with the data quality result.
-        StartedOn:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time that the run started for this data quality result.
-      description: Describes a data quality result.
-    ListDataQualityResultsRequest:
-      type: object
-      title: ListDataQualityResultsRequest
-      properties:
-        Filter:
-          allOf:
-          - $ref: '#/components/schemas/DataQualityResultFilterCriteria'
-          - description: The filter criteria.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/PaginationToken'
-          - description: A paginated token to offset the results.
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/PageSize'
-          - description: The maximum number of results to return.
     Timestamp:
       type: string
       format: date-time
-    InvalidInputException: {}
-    DataQualityResultFilterCriteria:
-      type: object
-      properties:
-        DataSource:
-          allOf:
-          - $ref: '#/components/schemas/DataSource'
-          - description: Filter results by the specified data source. For example, retrieving all results for an Glue table.
-        JobName:
-          allOf:
-          - $ref: '#/components/schemas/NameString'
-          - description: Filter results by the specified job name.
-        JobRunId:
-          allOf:
-          - $ref: '#/components/schemas/HashString'
-          - description: Filter results by the specified job run ID.
-        StartedAfter:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Filter results by runs that started after this time.
-        StartedBefore:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: Filter results by runs that started before this time.
-      description: Criteria used to return data quality results.
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InternalServiceException: {}
-    GlueTableAdditionalOptions:
-      type: object
-      minProperties: 1
-      maxProperties: 10
-      additionalProperties:
-        $ref: '#/components/schemas/DescriptionString'
-    DataQualityResultDescriptionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataQualityResultDescription'
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

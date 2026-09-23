@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2017-03-31'
   x-release: v4
-  title: 'AWS Glue #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.BatchCreatePartition #X Amz Target=AWSGlue.GetResourcePolicies #X Amz Target=AWSGlue.GetResourcePolicies #X Amz Target=AWSGlue.GetResourcePolicies API'
-  description: <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue service.</p>
+  title: 'AWS Glue #X Amz Target=AWSGlue.GetResourcePolicies API'
+  description: 'Glue
+
+    Defines the public endpoint for the Glue service.'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
     backgroundColor: '#FFFFFF'
@@ -23,6 +25,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/glue-2017-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -124,7 +127,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: GetResourcePolicies
-      description: <p>Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.</p> <p>If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can't return the Data Catalog resource policy.</p>
+      description: 'Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.
+
+
+        If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can''t return the Data Catalog resource policy.'
       responses:
         '200':
           description: Success
@@ -224,50 +230,40 @@ paths:
       tags:
       - '#X Amz Target=AWSGlue.GetResourcePolicies'
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    HashString:
+      type: string
+      minLength: 1
+      maxLength: 255
+      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
+    InvalidInputException: {}
+    PageSize:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    GlueEncryptionException: {}
+    GetResourcePoliciesResponse:
+      type: object
+      properties:
+        GetResourcePoliciesResponseList:
+          allOf:
+          - $ref: '#/components/schemas/GetResourcePoliciesResponseList'
+          - description: A list of the individual resource policies and the account-level resource policy.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/Token'
+          - description: A continuation token, if the returned list does not contain the last resource policy available.
+    InternalServiceException: {}
+    GetResourcePoliciesResponseList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GluePolicy'
+    OperationTimeoutException: {}
+    PolicyJsonString:
+      type: string
+      minLength: 2
+    Token:
+      type: string
     GluePolicy:
       type: object
       properties:
@@ -288,39 +284,6 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date and time at which the policy was last updated.
       description: A structure for returning a resource policy.
-    GetResourcePoliciesResponseList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GluePolicy'
-    PageSize:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    GlueEncryptionException: {}
-    GetResourcePoliciesResponse:
-      type: object
-      properties:
-        GetResourcePoliciesResponseList:
-          allOf:
-          - $ref: '#/components/schemas/GetResourcePoliciesResponseList'
-          - description: A list of the individual resource policies and the account-level resource policy.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/Token'
-          - description: A continuation token, if the returned list does not contain the last resource policy available.
-    OperationTimeoutException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    InvalidInputException: {}
-    Token:
-      type: string
-    HashString:
-      type: string
-      minLength: 1
-      maxLength: 255
-      x-pattern: '[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\t]*'
-    InternalServiceException: {}
     GetResourcePoliciesRequest:
       type: object
       title: GetResourcePoliciesRequest
@@ -333,9 +296,52 @@ components:
           allOf:
           - $ref: '#/components/schemas/PageSize'
           - description: The maximum size of a list to return.
-    PolicyJsonString:
+    Timestamp:
       type: string
-      minLength: 2
+      format: date-time
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
